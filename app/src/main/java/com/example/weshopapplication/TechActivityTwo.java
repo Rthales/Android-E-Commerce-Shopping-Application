@@ -122,12 +122,13 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         this.fourthProductSizeLbl = findViewById(R.id.fourthProductSizeLbl);
 
         this.fourthProductColourSpinner = findViewById(R.id.fourthProductDropDownMenu);
-        this.fourthProductMenu = findViewById(R.id.fourthProductDropDownMenu);
-
         this.fourthProductQuantity = findViewById(R.id.fourthProductQuantityLbl);
         this.fourthAddToBasketButton = findViewById(R.id.fourthAddToBasketButton);
 
         this.fourthProductQuantityDropDown = findViewById(R.id.fourthProductQuantityDropDown);
+
+        this.fourthProductSizeLbl = findViewById(R.id.fourthProductSizeLbl);
+        this.fourthProductMenu = findViewById(R.id.fourthProductSizeMenu);
 
         // Put array list on the heap
         this.listOfColours = new ArrayList<>();
@@ -172,6 +173,12 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
         thirdSizeDropDownMenu.setAdapter(sizeArrayAdapter);
         thirdSizeDropDownMenu.setOnItemSelectedListener(TechActivityTwo.this);
+
+        this.sizeArrayAdapter = new SizeArrayAdapter(TechActivityTwo.this, secondListOfSizes);
+        sizeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        fourthProductMenu.setAdapter(sizeArrayAdapter);
+        fourthProductMenu.setOnItemSelectedListener(TechActivityTwo.this);
 
 
         this.thirdAddToBasketButton.setOnClickListener(new View.OnClickListener() { // Add Listener for third button
@@ -224,7 +231,6 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
                         quantityError.show(); // Show the quantity error.
                         quantityError.setCancelable(true);
-                        return;
 
                     } else {
 
@@ -347,18 +353,28 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     }
 
     private boolean addThirdProductSizes() { // Adds the required sizes to the third product
+        boolean addedSizes = false;
         Size[] sizes = {new Size(0, "Please choose size"), new Size(1, "Small"), new Size(2, "Medium"), new Size(3, "Large")};
 
         for (Size theSizes : sizes) {
             listOfSizes.add(theSizes);
+            addedSizes = true;
         }
 
         return true;
     }
 
-    //private boolean addFourthProductSizes() {
+    private boolean addFourthProductSizes() {
+        boolean addedSizes = false;
+        Size[] fourthProdSizes = {new Size(0, "Please choose Size"), new Size(1, "64GB"), new Size(2, "128GB"), new Size(3, "256GB"), new Size(4, "512GB")};
 
-    //}
+        for (Size sizes : fourthProdSizes) {
+            secondListOfSizes.add(sizes);
+            addedSizes = true;
+        }
+
+        return true;
+    }
 
     private boolean addToQuantitiesList() { // Routine that adds the quantities to the array list
 
