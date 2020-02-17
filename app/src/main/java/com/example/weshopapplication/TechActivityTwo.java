@@ -37,6 +37,9 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     private Spinner thirdQuantityDropDown;
     private Button thirdAddToBasketButton;
 
+    private TextView thirdSizeLbl;
+    private Spinner thirdSizeDropDownMenu;
+
     // Components for the Fourth Product to sell
     private TextView fourthProductTextView;
     private ImageView fourthProductImage;
@@ -46,14 +49,18 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
     private TextView fourthProductQuantity;
     private Spinner fourthProductQuantityDropDown;
+    private TextView fourthProductSizeLbl;
+    private Spinner fourthProductMenu;
     private Button fourthAddToBasketButton;
 
     // An array list of colours, quantities and capacity
     private ArrayList<TechActivity.Colours> listOfColours;
     private ArrayList<TechActivity.Quantities> listOfQuantities;
+    private ArrayList<Size> listOfSizes;
 
     private ArrayList<TechActivity.Colours> secondListOfColours;
     private ArrayList<TechActivity.Quantities> secondListOfQuantities;
+    private ArrayList<Size> secondListOfSizes;
 
     private double quantity_zero_cost = 0.0;
     private double quantity_one_cost = 249.99;
@@ -74,6 +81,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     // Array adapters to aid the addition of colours, capacity and colours to the array list
     private CustomArrayAdapter quantitiesAdapter;
     private ColourArrayAdapter colourArrayAdapter;
+    private SizeArrayAdapter sizeArrayAdapter;
 
     // Boolean variables that holds either true or false
     private boolean addedColours = false;
@@ -97,6 +105,9 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         this.thirdProductColourLbl = findViewById(R.id.thirdColourLbl);
         this.thirdProductDropDown = findViewById(R.id.thirdColourDropDownMenu);
 
+        this.thirdSizeDropDownMenu = findViewById(R.id.thirdProductSizeDropDown);
+        this.thirdSizeLbl = findViewById(R.id.thirdProductSizeLbl);
+
         this.thirdQuantityLabel = findViewById(R.id.thirdQuantityLbl);
         this.thirdQuantityDropDown = findViewById(R.id.thirdQuantityDropDownMenu);
         this.thirdAddToBasketButton = findViewById(R.id.thirdAddToBasketBtn);
@@ -108,7 +119,10 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         this.fourthProductCost = findViewById(R.id.fourthProductImgCost);
         this.fourthProductColourLbl = findViewById(R.id.fourthProductColourLabel);
 
+        this.fourthProductSizeLbl = findViewById(R.id.fourthProductSizeLbl);
+
         this.fourthProductColourSpinner = findViewById(R.id.fourthProductDropDownMenu);
+        this.fourthProductMenu = findViewById(R.id.fourthProductDropDownMenu);
 
         this.fourthProductQuantity = findViewById(R.id.fourthProductQuantityLbl);
         this.fourthAddToBasketButton = findViewById(R.id.fourthAddToBasketButton);
@@ -118,12 +132,15 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         // Put array list on the heap
         this.listOfColours = new ArrayList<>();
         this.listOfQuantities = new ArrayList<>();
+        this.listOfSizes = new ArrayList<>();
 
         this.secondListOfColours = new ArrayList<>();
         this.secondListOfQuantities = new ArrayList<>();
+        this.secondListOfSizes = new ArrayList<>();
 
         addToColoursList(); // Method to add to the colours array list
         addToQuantitiesList();
+        addThirdProductSizes();
 
         // SET UP THE THIRD PRODUCT QUANTITIES DROP DOWN MENU TO SHOW
         this.quantitiesAdapter = new CustomArrayAdapter(TechActivityTwo.this, listOfQuantities);
@@ -149,6 +166,12 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         fourthProductQuantityDropDown.setAdapter(quantitiesAdapter);
         fourthProductQuantityDropDown.setOnItemSelectedListener(TechActivityTwo.this);
+
+        this.sizeArrayAdapter = new SizeArrayAdapter(TechActivityTwo.this, listOfSizes);
+        sizeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        thirdSizeDropDownMenu.setAdapter(sizeArrayAdapter);
+        thirdSizeDropDownMenu.setOnItemSelectedListener(TechActivityTwo.this);
 
 
         this.thirdAddToBasketButton.setOnClickListener(new View.OnClickListener() { // Add Listener for third button
@@ -323,8 +346,21 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         return true;
     }
 
+    private boolean addThirdProductSizes() { // Adds the required sizes to the third product
+        Size[] sizes = {new Size(0, "lease choose size"), new Size(1, "Small"), new Size(2, "Medium"), new Size(3, "Large")};
+
+        for (Size theSizes : sizes) {
+            listOfSizes.add(theSizes);
+        }
+
+        return true;
+    }
+
+    //private boolean addFourthProductSizes() {
+
+    //}
+
     private boolean addToQuantitiesList() { // Routine that adds the quantities to the array list
-        String quantitiesAddedMsg = "Quantities Added Success";
 
         TechActivity.Quantities[] quantitiesArray = {new TechActivity.Quantities(0), new TechActivity.Quantities(1), new TechActivity.Quantities(2),
                 new TechActivity.Quantities(3), new TechActivity.Quantities(4), new TechActivity.Quantities(5)};

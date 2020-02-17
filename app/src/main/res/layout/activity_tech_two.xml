@@ -101,7 +101,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/thirdAddToBasketBtn"
-        app:layout_constraintStart_toEndOf="@+id/spinner5" />
+        app:layout_constraintStart_toEndOf="@+id/thirdProductSizeDropDown" />
 
     <TextView
         android:id="@+id/fourthProductTitleLbl"
@@ -175,7 +175,7 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/fourthAddToBasketButton"
-        app:layout_constraintStart_toEndOf="@+id/textView21" />
+        app:layout_constraintStart_toEndOf="@+id/fourthProductSizeLbl" />
 
     <Spinner
         android:id="@+id/fourthProductQuantityDropDown"
@@ -201,7 +201,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/thirdProductSizeLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
@@ -214,25 +214,34 @@
         app:layout_constraintStart_toEndOf="@+id/thirdColourDropDownMenu" />
 
     <Spinner
-        android:id="@+id/spinner5"
+        android:id="@+id/thirdProductSizeDropDown"
         android:layout_width="84dp"
         android:layout_height="19dp"
         android:layout_marginStart="9dp"
         android:layout_marginBottom="13dp"
         app:layout_constraintBottom_toTopOf="@+id/thirdAddToBasketBtn"
-        app:layout_constraintStart_toEndOf="@+id/textView11" />
+        app:layout_constraintStart_toEndOf="@+id/thirdProductSizeLbl" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/fourthProductSizeLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="6dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="4dp"
         android:text="Size"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/fourthAddToBasketButton"
         app:layout_constraintStart_toEndOf="@+id/fourthProductDropDownMenu" />
+
+    <Spinner
+        android:id="@+id/fourthProductSizeMenu"
+        android:layout_width="67dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/fourthAddToBasketButton"
+        app:layout_constraintStart_toEndOf="@+id/fourthProductSizeLbl" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

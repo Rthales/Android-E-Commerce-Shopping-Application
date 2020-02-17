@@ -123,7 +123,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/add_btnSave"
+            android:id="@+id/btnSubmit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -133,7 +133,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/add_btnBack"
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
