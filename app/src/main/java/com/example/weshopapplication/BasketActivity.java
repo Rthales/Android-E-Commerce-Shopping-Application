@@ -44,14 +44,12 @@ public class BasketActivity extends AppCompatActivity {
             }
         };
 
-        ListView view = findViewById(R.id.listViewBasket);
-        view.setAdapter(arrayAdapter);
+        ListView view = findViewById(R.id.listViewBasket); // Find the list view component
+        view.setAdapter(arrayAdapter); // Set its adapter
 
         for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // Loop over the hash map of products
             arrayAdapter.add(entry.toString()); // Add the entries to the adapter list
         }
-
-
     }
 
     protected void onDestroy() {

@@ -142,6 +142,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         addToColoursList(); // Method to add to the colours array list
         addToQuantitiesList();
         addThirdProductSizes();
+        addFourthProductSizes();
 
         // SET UP THE THIRD PRODUCT QUANTITIES DROP DOWN MENU TO SHOW
         this.quantitiesAdapter = new CustomArrayAdapter(TechActivityTwo.this, listOfQuantities);
@@ -328,8 +329,8 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
         dialog.show(); // Show the progress bar
 
-        //Products fourthTechProduct = new Products(current_product_id++, fourthProductTextView.getText().toString(), fourthProductColourSpinner.getSelectedItem().toString(), (int) fourthProductQuantityDropDown.getSelectedItemId(), fourthProductCost.getText().toString());
-        //listOfProductsToAdd.put(current_product_id++, fourthTechProduct);
+        Products fourthTechProduct = new Products(current_product_id++, fourthProductTextView.getText().toString(), fourthProductColourSpinner.getSelectedItem().toString(), (int) fourthProductQuantityDropDown.getSelectedItemId(), fourthProductCost.getText().toString(), fourthProductMenu.getSelectedItem().toString());
+        listOfProductsToAdd.put(current_product_id++, fourthTechProduct);
 
     }
 
@@ -385,9 +386,9 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
                 new TechActivity.Quantities(3), new TechActivity.Quantities(4), new TechActivity.Quantities(5)};
 
 
-        for (TechActivity.Quantities qty : quantitiesArray) {
+        for (TechActivity.Quantities qty : quantitiesArray) { // For each quantity in the array
             listOfQuantities.add(qty);
-            addedQuantities = true;
+            addedQuantities = true; // Quantities
         }
 
         for (TechActivity.Quantities qty2 : secondProductQuantities) {
@@ -421,6 +422,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // Routine that determines which item has been selected
         boolean valueAppended = false;
+
         int[] quantityIndexes = {0, 1, 2, 3, 4, 5};
         int[] capacityIndexes = {0, 1, 2, 3}; // Array of capacity indexes
 

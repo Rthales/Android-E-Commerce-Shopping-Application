@@ -57,12 +57,13 @@ public class DatabaseManipulator {
         int index = 0;
 
         if (cursor.moveToFirst()) {
-            do {
 
+            do {
                 String[] complaints_data = new String[]{cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)};
 
-                listOfComplaints.add(complaints_data);
-                index++;
+                listOfComplaints.add(complaints_data); // Add the retrieved data to the array list
+                index++; // Increment the index
+
             } while (cursor.moveToNext()); // While loop to go to the next row.
         }
 
