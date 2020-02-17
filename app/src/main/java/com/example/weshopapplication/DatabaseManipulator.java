@@ -16,10 +16,10 @@ import java.util.List;
 
 public class DatabaseManipulator {
 
-    private static final String DATABASE_NAME = "customer_complaints.db";
+    private static final String DATABASE_NAME = "customer_complaints.db"; // The Database name to create
     private static int DB_VERSION = 1; // Database version
 
-    private static final String TABLE_NAME = "issues";
+    private static final String TABLE_NAME = "issues"; // The table name
     private static Context context;
     private static final String INSERT_DATA = "INSERT INTO " + TABLE_NAME
             + " (username, email, phone_number, problem) VALUES (?,?,?,?)";
@@ -35,9 +35,10 @@ public class DatabaseManipulator {
     }
 
     // Routine that inserts data into the table
-    public long insert(String username, String email, String phone_number, String problem) {
+    public long insert(String username, String email, String phone_number, String problem) { // Routine to insert data into the table
         this.sqlStatement.bindString(1, username);
         this.sqlStatement.bindString(2, email);
+
         this.sqlStatement.bindString(3, phone_number);
         this.sqlStatement.bindString(4, problem);
 
@@ -48,7 +49,7 @@ public class DatabaseManipulator {
         db.delete(TABLE_NAME, null, null); // Deletes the table if required
     }
 
-    public List<String[]> selectAllData() {
+    public List<String[]> selectAllData() { // Routine to select all the data from the db
         List<String[]> listOfComplaints = new ArrayList<>();
 
         Cursor cursor = db.query(TABLE_NAME, new String[]{"id", "username", "email", "phone_number", "problem"}, null, null, null, null, "username ASC");
@@ -57,11 +58,12 @@ public class DatabaseManipulator {
 
         if (cursor.moveToFirst()) {
             do {
+
                 String[] complaints_data = new String[]{cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)};
 
                 listOfComplaints.add(complaints_data);
                 index++;
-            } while (cursor.moveToNext());
+            } while (cursor.moveToNext()); // While loop to go to the next row.
         }
 
         if (cursor != null && !cursor.isClosed()) {
@@ -78,7 +80,7 @@ public class DatabaseManipulator {
             super(context, DATABASE_NAME, null, DB_VERSION);
         }
 
-        public void onCreate(SQLiteDatabase db) {
+        public void onCreate(SQLiteDatabase db) { // Creates the DB
             db.execSQL("CREATE TABLE " + TABLE_NAME + " (id INTEGER PRIMARY KEY, username TEXT, email TEXT, phone_number TEXT, problem TEXT)");
         }
 

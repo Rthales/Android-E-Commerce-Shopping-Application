@@ -292,8 +292,8 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
         dialog.show(); // Show the progress bar
 
-        //Products thirdTechProduct = new Products(current_product_id, thirdProductTextView.getText().toString(), thirdProductDropDown.getSelectedItem().toString(), (int) thirdQuantityDropDown.getSelectedItemId(), thirdProductCostTxt.getText().toString());
-        //listOfProductsToAdd.put(current_product_id, thirdTechProduct);
+        Products thirdTechProduct = new Products(current_product_id, thirdProductTextView.getText().toString(), thirdProductDropDown.getSelectedItem().toString(), (int) thirdQuantityDropDown.getSelectedItemId(), thirdProductCostTxt.getText().toString(), thirdSizeDropDownMenu.getSelectedItem().toString());
+        listOfProductsToAdd.put(current_product_id, thirdTechProduct);
     }
 
     private void addProductFourToBasket() { // Adds the fourth product to the basket
@@ -347,7 +347,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     }
 
     private boolean addThirdProductSizes() { // Adds the required sizes to the third product
-        Size[] sizes = {new Size(0, "lease choose size"), new Size(1, "Small"), new Size(2, "Medium"), new Size(3, "Large")};
+        Size[] sizes = {new Size(0, "Please choose size"), new Size(1, "Small"), new Size(2, "Medium"), new Size(3, "Large")};
 
         for (Size theSizes : sizes) {
             listOfSizes.add(theSizes);

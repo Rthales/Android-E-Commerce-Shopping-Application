@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">We Shop E-Commerce</string>
 
+
     <string name="phone_number_lbl">Enter Phone Number</string>
     <string name="problem_lbl">Enter Problem Here Please</string>
 

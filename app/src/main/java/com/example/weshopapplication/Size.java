@@ -27,6 +27,6 @@ public class Size {
 
     @Override
     public String toString() {
-        return this.productSize;
+        return " " + this.productSize;
     }
 }
