@@ -166,6 +166,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         // SET UP QUANTITY FOR FOURTH PRODUCT
         this.quantitiesAdapter = new CustomArrayAdapter(TechActivityTwo.this, secondListOfQuantities);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         fourthProductQuantityDropDown.setAdapter(quantitiesAdapter);
         fourthProductQuantityDropDown.setOnItemSelectedListener(TechActivityTwo.this);
 

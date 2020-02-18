@@ -140,7 +140,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         this.sizesAdapter = new SizesAdapter(TechActivity.this, listOfSizes);
         sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        this.sizesAdapter = new SizesAdapter(TechActivity.this, secondListOfSizes);
         sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         firstProductSizesMenu.setAdapter(sizesAdapter);
@@ -169,6 +168,11 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         secondProductQuantityOptions.setAdapter(quantitiesCustomAdapter);
         secondProductColourOptions.setAdapter(colourArrayAdapter);
+
+        this.sizesAdapter = new SizesAdapter(TechActivity.this, secondListOfSizes);
+        sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        secondProductSizesMenu.setAdapter(sizesAdapter);
+        secondProductSizesMenu.setOnItemSelectedListener(this);
 
         this.nextPageBtn = findViewById(R.id.nextPageBtn);
 
