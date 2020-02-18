@@ -424,8 +424,6 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         boolean valueAppended = false;
 
         int[] quantityIndexes = {0, 1, 2, 3, 4, 5};
-        int[] capacityIndexes = {0, 1, 2, 3}; // Array of capacity indexes
-
         String text_to_append = "Product Cost £: ";
 
         if (parent.getItemAtPosition(position).equals(listOfQuantities.get(quantityIndexes[0]))) {

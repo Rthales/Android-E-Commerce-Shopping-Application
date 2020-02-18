@@ -247,7 +247,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private void setVisibilityOfLogout() {
 
-
     }
 
     public void transitionToHomepage() { // Routine that takes user to home page

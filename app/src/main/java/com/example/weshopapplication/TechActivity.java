@@ -118,10 +118,12 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         // Create 2nd array list
         this.secondListOfColours = new ArrayList<>();
         this.secondListOfQuantities = new ArrayList<>();
+        this.secondListOfSizes = new ArrayList<>();
 
         addToColoursList();
         addToQuantitiesList();
         addToSizesList();
+        addToSizesTwoList();
 
         this.colourArrayAdapter = new ColourArrayAdapter(TechActivity.this, listOfColours); // Create an array adapter for the colours drop down menu
         colourArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -138,8 +140,14 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         this.sizesAdapter = new SizesAdapter(TechActivity.this, listOfSizes);
         sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        this.sizesAdapter = new SizesAdapter(TechActivity.this, secondListOfSizes);
+        sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         firstProductSizesMenu.setAdapter(sizesAdapter);
         firstProductSizesMenu.setOnItemSelectedListener(this);
+
+        secondProductSizesMenu.setAdapter(sizesAdapter);
+        secondProductSizesMenu.setOnItemSelectedListener(this);
 
         secondProductColourOptions.setOnItemSelectedListener(this);
         secondProductQuantityOptions.setOnItemSelectedListener(this);
@@ -151,7 +159,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         this.secondProductColour = findViewById(R.id.secondProductColourTxt);
         this.secondAddToBasketButton = findViewById(R.id.secondAddToBasketBtn);
-
 
         // Create adapters for the 2nd product
         this.quantitiesCustomAdapter = new CustomArrayAdapter(TechActivity.this, secondListOfQuantities);
@@ -391,6 +398,18 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         for (Size sizes : techSizes) {
             listOfSizes.add(sizes);
+            addedSizes = true;
+        }
+
+        return true;
+    }
+
+    private boolean addToSizesTwoList() {
+        boolean addedSizes = false;
+        Size[] watchSizes = {new Size(0, "Please choose size"), new Size(1, "40MM"), new Size(2, "44MM")};
+
+        for (Size size : watchSizes) {
+            secondListOfSizes.add(size);
             addedSizes = true;
         }
 

@@ -374,6 +374,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
                 passwordField.setError("Password must start with upper case character");
                 startsWithUppercase = false;
+
                 isValid = false;
                 break;
 
@@ -444,7 +445,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             public void run() {
 
                 try {
-
                     Thread.sleep(2100);
                 } catch (InterruptedException exc) {
                     Log.d("Error : ", exc.toString());
