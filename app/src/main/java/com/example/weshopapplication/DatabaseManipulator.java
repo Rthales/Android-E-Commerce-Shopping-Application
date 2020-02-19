@@ -16,12 +16,10 @@ import java.util.List;
 
 public class DatabaseManipulator {
 
-    private static final String DATABASE_NAME = "customer_complaints.db"; // The Database name to create
-    private static final String PAYMENT_DATABASE_NAME = "payments.db"; // The database name for the payments
+    private static final String DATABASE_NAME = "complaints.db"; // The Database name to create
     private static int DB_VERSION = 1; // Database version
 
     private static final String TABLE_NAME = "issues"; // The table name
-    private static final String PAYMENT_TABLE = "payments"; // The payment table to be created
     private static Context context;
 
     private static final String INSERT_DATA = "INSERT INTO " + TABLE_NAME
@@ -29,8 +27,6 @@ public class DatabaseManipulator {
     private SQLiteStatement sqlStatement; // The SQL statement
 
     private static SQLiteDatabase db;
-    private static final String INSERT_PAYMENT_DATA = "INSERT INTO " + PAYMENT_TABLE
-            + " (card_number, card_cvv, cardholder_name) VALUES (?,?,?)";
 
     public DatabaseManipulator(Context context) {
         DatabaseManipulator.context = context;
@@ -38,7 +34,7 @@ public class DatabaseManipulator {
         DatabaseManipulator.db = helper.getWritableDatabase();
 
         this.sqlStatement = DatabaseManipulator.db.compileStatement(INSERT_DATA);
-        this.sqlStatement = DatabaseManipulator.db.compileStatement(INSERT_PAYMENT_DATA);
+
     }
 
     // Routine that inserts data into the table
@@ -52,17 +48,9 @@ public class DatabaseManipulator {
         return this.sqlStatement.executeInsert();
     }
 
-    public long insertPaymentData(String card_number, String card_cvv, String cardholder_name) { // Routine to insert payment data into the database
-        this.sqlStatement.bindString(1, card_number);
-        this.sqlStatement.bindString(2, card_cvv);
-        this.sqlStatement.bindString(3, cardholder_name);
-
-        return this.sqlStatement.executeInsert();
-    }
 
     public void deleteAllData() { // Routine to delete all the data from the DB
         db.delete(TABLE_NAME, null, null); // Deletes the table if required
-        db.delete(PAYMENT_TABLE, null, null); // Delete payment table
     }
 
     public List<String[]> selectAllData() { // Routine to select all the data from the db
