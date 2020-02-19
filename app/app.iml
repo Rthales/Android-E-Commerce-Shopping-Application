@@ -109,6 +109,9 @@
     <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.13@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.mockito:mockito-core:1.10.19@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.room:room-testing:2.2.3@aar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/sabin/Desktop/Java Projects/We-Shop-E-Commerce-Android-Application/app/libs/mail.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/sabin/Desktop/Java Projects/We-Shop-E-Commerce-Android-Application/app/libs/activation.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/sabin/Desktop/Java Projects/We-Shop-E-Commerce-Android-Application/app/libs/additionnal.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.collection:collection:1.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.room:room-common:2.2.3@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.concurrent:concurrent-futures:1.0.0@jar" level="project" />

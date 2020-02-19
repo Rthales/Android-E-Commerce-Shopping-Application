@@ -91,7 +91,7 @@
         android:drawablePadding="15dp"
         android:ems="10"
         android:hint="Card CVV"
-        android:inputType="textPersonName"
+        android:inputType="numberPassword"
         android:paddingLeft="15dp"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
