@@ -1,14 +1,19 @@
 package com.example.weshopapplication;
 
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -21,11 +26,15 @@ import java.util.Map;
 // Any Errors: N/A
 
 
-public class BasketActivity extends AppCompatActivity {
+public class BasketActivity extends AppCompatActivity implements View.OnClickListener {
+    private Button placeOrderBtn;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basket);
+        this.placeOrderBtn = findViewById(R.id.placeOrderBtn);
+
+        this.placeOrderBtn.setOnClickListener(this);
 
         Intent intent = getIntent();
         HashMap<Integer, Products> hashMap = (HashMap<Integer, Products>) intent.getSerializableExtra("map"); // Get the hash map from the tech activity
@@ -66,5 +75,45 @@ public class BasketActivity extends AppCompatActivity {
 
     protected void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public void onClick(View v) {
+        try {
+            if (v.getId() == R.id.placeOrderBtn) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(BasketActivity.this)
+                        .setTitle("Checkout")
+                        .setMessage("Are you sure you are finished browsing?")
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (dialog != null) {
+
+                                    dialog.dismiss();
+
+                                    finish();
+                                }
+                            }
+                        }).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                Intent checkOutActivity = new Intent(BasketActivity.this, PaymentActivity.class);
+                                startActivity(checkOutActivity);
+                            }
+                        });
+
+                builder.show();
+                builder.setCancelable(true);
+            }
+        } catch (ActivityNotFoundException exc) {
+            Log.d("Error", exc.toString());
+        }
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
