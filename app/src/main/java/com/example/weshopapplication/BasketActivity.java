@@ -81,9 +81,12 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         try {
             if (v.getId() == R.id.placeOrderBtn) {
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(BasketActivity.this)
                         .setTitle("Checkout")
+
                         .setMessage("Are you sure you are finished browsing?")
+
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
                             @Override
 

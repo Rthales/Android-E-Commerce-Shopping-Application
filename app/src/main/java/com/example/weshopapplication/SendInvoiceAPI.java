@@ -20,17 +20,17 @@ import javax.mail.internet.MimeMessage;
 // Date of Last Modification: 19/02/2020
 // Any Bugs? None
 
-public class SendInvoiceAPI extends AsyncTask<Void, Void, Void> {
-    private Context context;
+public class SendInvoiceAPI extends AsyncTask<Void, Void, Void> { // The class inherits from an Asynchronous Task with 3 parameters initially Void
+    private Context context; // The context
     private Session session;
 
-    private String email;
-    private String subject;
-    private String emailContent;
+    private String email; // The e-mail to send to
+    private String subject; // The subject
+    private String emailContent; // The content of the e-mail to send (The product order)
 
     private ProgressDialog dialog;
 
-    public SendInvoiceAPI(Context context, Session session, String email, String subject, String emailContent, ProgressDialog dialog) {
+    public SendInvoiceAPI(Context context, Session session, String email, String subject, String emailContent, ProgressDialog dialog) { // Constructor
         this.context = context;
         this.session = session;
         this.email = email;
@@ -67,6 +67,7 @@ public class SendInvoiceAPI extends AsyncTask<Void, Void, Void> {
         });
 
         try {
+
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(MailCredentialsAPI.EMAIL_ADDRESS));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(emailContent));
@@ -78,6 +79,6 @@ public class SendInvoiceAPI extends AsyncTask<Void, Void, Void> {
             exc.printStackTrace();
         }
 
-        return null;
+        return null; // Return nothing otherwise
     }
 }
