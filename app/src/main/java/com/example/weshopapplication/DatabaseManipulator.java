@@ -26,9 +26,9 @@ public class DatabaseManipulator {
             + " (username, email, phone_number, problem) VALUES (?,?,?,?)";
     private SQLiteStatement sqlStatement; // The SQL statement
 
-    private static SQLiteDatabase db;
+    private static SQLiteDatabase db; // The SQL database
 
-    public DatabaseManipulator(Context context) {
+    public DatabaseManipulator(Context context) { // Constructor for the database manipulator
         DatabaseManipulator.context = context;
         OpenHelper helper = new OpenHelper(DatabaseManipulator.context);
         DatabaseManipulator.db = helper.getWritableDatabase();

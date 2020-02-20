@@ -20,6 +20,7 @@ public class PaymentActivity extends AppCompatActivity {
     private TextView expiryMonthLbl;
 
     private Vector<String> months;
+    private Vector<String> years; // The years in a txt file will get stored in a vector
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

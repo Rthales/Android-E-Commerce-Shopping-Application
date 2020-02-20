@@ -35,6 +35,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     private TextView firstSportsOutdoorColourLbl;
     private Spinner firstSportsOutdoorsColourMenu;
 
+
     private TextView firstSportsOutdoorQuantityLbl;
     private Spinner firstSportsOutdoorQuantityMenu;
 
@@ -60,15 +61,15 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     private double[] productOneCosts = {0.00, 90.00, 180.00, 360.00, 720.00, 1440.00};
     private double[] productTwoCosts = {0.00, 50.00, 100.00, 150.00, 200.00, 250.00};
 
-    private ArrayList<TechActivity.Colours> listOfColoursOne;
-    private ArrayList<TechActivity.Quantities> listOfQuantitiesOne;
+    private ArrayList<TechActivity.Colours> listOfColoursOne; // An array list of colours
+    private ArrayList<TechActivity.Quantities> listOfQuantitiesOne; // An array list of quantities
     private ArrayList<Size> listOfSizesOne;
 
     private ArrayList<TechActivity.Colours> listOfColoursTwo;
     private ArrayList<TechActivity.Quantities> listOfQuantitiesTwo;
     private ArrayList<Size> listOfSizesTwo;
 
-    private ColourArrayAdapter coloursAdapter;
+    private ColourArrayAdapter coloursAdapter; // A colours adapter is needed to store objects in a drop-down menu (spinner)
     private CustomArrayAdapter quantitiesAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
 
@@ -78,7 +79,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     private boolean sizesAdded;
     private boolean addedToBasket; // True or false to determine if the products have been added to the basket after adding to the hash map
 
-    private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<>(); // A HashMap of products to add here.
+    private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<>(); // A HashMap of products to add to the basket with a corresponding ID that each product will have.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,6 +123,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         this.listOfQuantitiesTwo = new ArrayList<>();
         this.listOfSizesTwo = new ArrayList<>();
 
+        // Method calls to add to the specific array lists
         addToColoursList();
         addToQuantitiesList();
         addToSizesList();
@@ -129,41 +131,47 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         // Set up the colours adapter
         this.coloursAdapter = new ColourArrayAdapter(SportsAndOutdoorsActivity.this, listOfColoursOne);
         coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         firstSportsOutdoorsColourMenu.setAdapter(coloursAdapter);
         firstSportsOutdoorsColourMenu.setOnItemSelectedListener(this);
 
         // Create array adapter for the quantities for product 1
         this.quantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivity.this, listOfQuantitiesOne);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         firstSportsOutdoorQuantityMenu.setAdapter(quantitiesAdapter);
         firstSportsOutdoorQuantityMenu.setOnItemSelectedListener(this);
 
         // Create array adapter for the sizes
         this.sizeArrayAdapter = new SizeArrayAdapter(SportsAndOutdoorsActivity.this, listOfSizesOne);
         sizeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         firstSportsOutdoorsSizeMenu.setAdapter(sizeArrayAdapter);
         firstSportsOutdoorsSizeMenu.setOnItemSelectedListener(this);
 
         this.coloursAdapter = new ColourArrayAdapter(SportsAndOutdoorsActivity.this, listOfColoursTwo);
         coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         secondSportsOutdoorsColourMenu.setAdapter(coloursAdapter);
         secondSportsOutdoorsColourMenu.setOnItemSelectedListener(this);
 
         // Create the Array Adapter for the quantities for the second product
         this.quantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivity.this, listOfQuantitiesTwo);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         secondSportsOutdoorQuantityMenu.setAdapter(quantitiesAdapter);
         secondSportsOutdoorQuantityMenu.setOnItemSelectedListener(this);
 
         // Create the sizes array adapter for the second product
         this.sizeArrayAdapter = new SizeArrayAdapter(SportsAndOutdoorsActivity.this, listOfSizesTwo);
         sizeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         secondSportsOutdoorSizeMenu.setAdapter(sizeArrayAdapter);
         secondSportsOutdoorSizeMenu.setOnItemSelectedListener(this);
 
-        this.nextPageBtn = findViewById(R.id.nextPageBtn);
+        this.nextPageBtn = findViewById(R.id.nextPageBtn); // The next page button
 
-        this.nextPageBtn.setOnClickListener(new View.OnClickListener() {
+        this.nextPageBtn.setOnClickListener(new View.OnClickListener() { // Add an action listener to the next page button to take the user to the next page
             @Override
             public void onClick(View v) {
                 try {
@@ -171,9 +179,9 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                     Intent nextSportsActivity = new Intent(SportsAndOutdoorsActivity.this, SportsAndOutdoorsActivityTwo.class);
                     startActivity(nextSportsActivity);
 
-                } catch (ActivityNotFoundException exc) {
+                } catch (ActivityNotFoundException exc) { // Catch the error if the activity has not been found
 
-                    Log.d("Error : ", exc.toString());
+                    Log.d("Error : ", exc.toString()); // Log the error to the console
                 }
             }
         });
@@ -185,14 +193,18 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                 if (v.getId() == R.id.firstAddToBasketBtn) {
 
                     if (firstSportsOutdoorsColourMenu.getSelectedItemPosition() == 0) {
-                        AlertDialog.Builder coloursError = new AlertDialog.Builder(SportsAndOutdoorsActivity.this)
+
+                        AlertDialog.Builder coloursError = new AlertDialog.Builder(SportsAndOutdoorsActivity.this) // Create an alert dialogue for the user to see
                                 .setTitle("Error")
                                 .setMessage("You must select a colour before adding to basket")
+
                                 .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+
                                     @Override
+
                                     public void onClick(DialogInterface dialog, int which) {
-                                        if (dialog != null) {
-                                            dialog.dismiss();
+                                        if (dialog != null) { // If there is a dialog
+                                            dialog.dismiss(); // Dismiss it
                                         }
                                     }
                                 });
@@ -200,7 +212,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                         coloursError.show();
                         coloursError.setCancelable(true);
                     } else {
-                        addToBasketOne();
+                        addToBasketOne(); // Otherwise add the product to the basket one
                     }
                 }
 
@@ -211,9 +223,9 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             @Override
             public void onClick(View v) {
 
-                if (v.getId() == R.id.secondAddToBasketBtn) {
+                if (v.getId() == R.id.secondAddToBasketBtn) { // If the second add to basket button is clicked
 
-                    if (secondSportsOutdoorsColourMenu.getSelectedItemPosition() == 0) {
+                    if (secondSportsOutdoorsColourMenu.getSelectedItemPosition() == 0) { // If index 0 is chosen for the colour menu
 
                     }
                 }
@@ -221,16 +233,17 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         });
     }
 
-    private boolean addToColoursList() {
+    private boolean addToColoursList() { // Routine returns true or false if the colours have been added to the array list or not.
+
         TechActivity.Colours[] colours = {new TechActivity.Colours(0, "Choose colour please"), new TechActivity.Colours(1, "Honey Yellow"),
                 new TechActivity.Colours(2, "Graphite Gray"), new TechActivity.Colours(3, "Midnight Black"),
                 new TechActivity.Colours(4, "Orange")};
 
-        for (TechActivity.Colours productColours : colours) {
-            listOfColoursOne.add(productColours);
+        for (TechActivity.Colours productColours : colours) { // For each colours in the array
+            listOfColoursOne.add(productColours); // Add it to the array list
 
             listOfColoursTwo.add(productColours);
-            coloursAdded = true;
+            coloursAdded = true; // Colours have been added
         }
 
         return true;
@@ -265,21 +278,23 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         return true;
     }
 
-    private void addToBasketOne() {
+    private boolean addToBasketOne() { // Adds the first product to the basket
 
+        return true;
     }
 
-    private void addToBasketTwo() {
+    private boolean addToBasketTwo() { // Adds the second product to the basket
+
+        return true;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // Method that determines which item has been selected and at which index
 
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
+    public void onNothingSelected(AdapterView<?> parent) { // Nothing selected
 
     }
 
@@ -305,9 +320,9 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             @Override
             public void onClick(View v) {
 
-                Intent basketIntent = new Intent(SportsAndOutdoorsActivity.this, BasketActivity.class);
-                basketIntent.putExtra("map", listOfProductsToAddToBasket);
-                startActivity(basketIntent);
+                Intent basketIntent = new Intent(SportsAndOutdoorsActivity.this, BasketActivity.class); // Create a basket intent
+                basketIntent.putExtra("map", listOfProductsToAddToBasket); // Transit over the hash map data to the basket
+                startActivity(basketIntent); // Start the intent
             }
         });
 
