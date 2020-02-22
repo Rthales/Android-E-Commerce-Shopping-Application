@@ -23,7 +23,7 @@ public class DatabaseManipulator {
     private static Context context;
 
     private static final String INSERT_DATA = "INSERT INTO " + TABLE_NAME
-            + " (username, email, phone_number, problem) VALUES (?,?,?,?)";
+            + " (username, email, phone_number, problem) VALUES (?,?,?,?)"; // Insert Query (DML) that inserts data into the contacts DB
     private SQLiteStatement sqlStatement; // The SQL statement
 
     private static SQLiteDatabase db; // The SQL database
@@ -45,7 +45,7 @@ public class DatabaseManipulator {
         this.sqlStatement.bindString(3, phone_number);
         this.sqlStatement.bindString(4, problem);
 
-        return this.sqlStatement.executeInsert();
+        return this.sqlStatement.executeInsert(); // Return the execution of the statement
     }
 
 
@@ -54,7 +54,7 @@ public class DatabaseManipulator {
     }
 
     public List<String[]> selectAllData() { // Routine to select all the data from the db
-        List<String[]> listOfComplaints = new ArrayList<>();
+        List<String[]> listOfComplaints = new ArrayList<>(); // An array list of complaints
 
         Cursor cursor = db.query(TABLE_NAME, new String[]{"id", "username", "email", "phone_number", "problem"}, null, null, null, null, "username ASC");
 
@@ -81,20 +81,20 @@ public class DatabaseManipulator {
         return listOfComplaints;
     }
 
-    public static class OpenHelper extends SQLiteOpenHelper {
+    public static class OpenHelper extends SQLiteOpenHelper { // A Helper Class that inherits from SQLiteOpenHelper
         public OpenHelper(Context context) {
-            super(context, DATABASE_NAME, null, DB_VERSION);
+            super(context, DATABASE_NAME, null, DB_VERSION); // Inherit the features using super()
         }
 
-        public void onCreate(SQLiteDatabase db) { // Creates the DB
+        public void onCreate(SQLiteDatabase db) { // Creates the DB. Method overridden
             db.execSQL("CREATE TABLE " + TABLE_NAME + " (id INTEGER PRIMARY KEY, username TEXT, email TEXT, phone_number TEXT, problem TEXT)");
         }
 
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-            DB_VERSION = newVersion;
+            DB_VERSION = newVersion; // Set the DB version to the newest version
 
-            db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
-            onCreate(db);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME); // DROP The specific table if it exists
+            onCreate(db); // Execute method
         }
     }
 }

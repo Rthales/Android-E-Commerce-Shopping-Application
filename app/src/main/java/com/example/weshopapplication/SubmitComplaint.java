@@ -8,6 +8,11 @@ import android.widget.EditText;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+// Author of Application: Sabin Constantin Lungu
+// Purpose of Class: Allows customers to Submit a complaint through the Contact Us Form if they are experiencing any issues with the app.
+// Date of Last Modification: 22/02/2020
+// Any Bugs? None.
+
 public class SubmitComplaint extends AppCompatActivity implements View.OnClickListener {
     private DatabaseManipulator databaseManipulator;
 
@@ -59,6 +64,7 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
 
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
+
             public void onClick(DialogInterface dialog, int which) {
                 SubmitComplaint.this.finish();
             }
@@ -77,6 +83,5 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
-
     }
 }
