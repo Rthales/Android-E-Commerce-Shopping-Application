@@ -9,6 +9,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Vector;
 
+// Author of Application/Class: Sabin Constantin Lungu
+// Purpose of Application/Class: Allows Customers to pay for the products chosen
+// Date of Last Modification: 22/02/2020
+// Any Bugs? None
+
 public class PaymentActivity extends AppCompatActivity {
     private RadioButton visaPayment;
     private RadioButton paypalPayment;
@@ -28,6 +33,5 @@ public class PaymentActivity extends AppCompatActivity {
         setContentView(R.layout.activity_payment);
 
     }
-
 
 }
