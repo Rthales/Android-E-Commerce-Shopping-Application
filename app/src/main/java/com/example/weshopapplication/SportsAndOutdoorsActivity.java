@@ -113,7 +113,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         this.secondSportsOutdoorSizeMenu = findViewById(R.id.secondSportsOutdoorsSizeMenu);
 
         this.secondSportsAddToBasketBtn = findViewById(R.id.secondSportsOutdoorsAddToBasketBtn);
-        this.nextPageBtn = findViewById(R.id.nextPageBtn); // Button for taking the user to the next page.
+        this.nextPageBtn = findViewById(R.id.nextPageBtnClothing); // Button for taking the user to the next page.
 
         // Create the array lists
         this.listOfColoursOne = new ArrayList<>();
@@ -170,7 +170,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         secondSportsOutdoorSizeMenu.setAdapter(sizeArrayAdapter);
         secondSportsOutdoorSizeMenu.setOnItemSelectedListener(this);
 
-        this.nextPageBtn = findViewById(R.id.nextPageBtn); // The next page button
+        this.nextPageBtn = findViewById(R.id.nextPageBtnClothing); // The next page button
 
         this.nextPageBtn.setOnClickListener(new View.OnClickListener() { // Add an action listener to the next page button to take the user to the next page
             @Override

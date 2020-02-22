@@ -208,7 +208,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/nextPageBtn"
+        android:id="@+id/nextPageBtnClothing"
         android:layout_width="124dp"
         android:layout_height="37dp"
         android:layout_marginStart="298dp"

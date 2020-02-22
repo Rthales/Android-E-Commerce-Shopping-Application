@@ -17,7 +17,7 @@ public class ClothingCategory extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clothing_category);
 
-        this.nextButton = findViewById(R.id.nextPageBtn);
+        this.nextButton = findViewById(R.id.nextPageBtnClothing);
 
     }
 
@@ -25,7 +25,7 @@ public class ClothingCategory extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         try {
 
-            if (v.getId() == R.id.nextPageBtn) {
+            if (v.getId() == R.id.nextPageBtnClothing) {
                 Intent intent = new Intent(ClothingCategory.this, ClothingActivityTwo.class);
                 startActivity(intent);
 
