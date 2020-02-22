@@ -94,7 +94,6 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
                                 if (dialog != null) {
 
                                     dialog.dismiss();
-
                                     finish();
                                 }
                             }

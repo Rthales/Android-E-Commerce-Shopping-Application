@@ -36,6 +36,7 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
 
                 String username = ((EditText) findViewById(R.id.add_usernameField)).getText().toString();
                 String email = ((EditText) findViewById(R.id.add_complaintEmailField)).getText().toString();
+
                 String phone_number = ((EditText) findViewById(R.id.add_complaint_phoneNumberField)).getText().toString();
                 String problem = ((EditText) findViewById(R.id.add_complaint_fieldProblem)).getText().toString();
 

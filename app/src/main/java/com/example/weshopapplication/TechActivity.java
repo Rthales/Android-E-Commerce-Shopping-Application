@@ -317,7 +317,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
-    private void addToBasketOne() {
+    private boolean addToBasketOne() {
 
         final ProgressDialog dialog = new ProgressDialog(TechActivity.this);
         dialog.setTitle("Adding to Basket..");
@@ -346,9 +346,11 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         Products firstProduct = new Products(current_product_id, firstProductText.getText().toString(), firstProductColourOptions.getSelectedItem().toString(), (int) firstProductQuantityOptions.getSelectedItemId(), productCost.getText().toString(), firstProductSizesMenu.getSelectedItem().toString());
 
         listOfProductsToAddToBasket.put(current_product_id, firstProduct); // Add the product data to the hash map
+
+        return true;
     }
 
-    private void addToBasketTwo() { // Adds the second product on the First Tech Activity to the basket
+    private boolean addToBasketTwo() { // Adds the second product on the First Tech Activity to the basket
 
         final ProgressDialog dialog = new ProgressDialog(TechActivity.this);
         dialog.setTitle("Adding to Basket..");
@@ -376,6 +378,8 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         Products secondProduct = new Products(current_product_id++, secondProductText.getText().toString(), secondProductColourOptions.getSelectedItem().toString(), (int) secondProductQuantityOptions.getSelectedItemId(), secondProductCost.getText().toString(), secondProductSizesMenu.getSelectedItem().toString());
         listOfProductsToAddToBasket.put(current_product_id++, secondProduct);
+
+        return true;
 
     }
 

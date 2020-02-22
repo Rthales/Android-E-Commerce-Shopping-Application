@@ -28,14 +28,114 @@ public class SendInvoiceAPI extends AsyncTask<Void, Void, Void> { // The class i
     private String subject; // The subject
     private String emailContent; // The content of the e-mail to send (The product order)
 
+    private String cardNumber;
+    private String cardCVV;
+    private String cardHolderName;
+
+    private String expiryMonth;
+    private String expiryYear;
+
     private ProgressDialog dialog;
 
-    public SendInvoiceAPI(Context context, Session session, String email, String subject, String emailContent, ProgressDialog dialog) { // Constructor
+    public SendInvoiceAPI(Context context, Session session, String email, String subject, String emailContent, String cardNumber, String cardCVV, String cardHolderName, String expiryMonth, String expiryYear, ProgressDialog dialog) {
         this.context = context;
         this.session = session;
         this.email = email;
         this.subject = subject;
         this.emailContent = emailContent;
+        this.cardNumber = cardNumber;
+        this.cardCVV = cardCVV;
+        this.cardHolderName = cardHolderName;
+        this.expiryMonth = expiryMonth;
+        this.expiryYear = expiryYear;
+        this.dialog = dialog;
+    }
+
+    public Context getContext() {
+        return context;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
+    public Session getSession() {
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSubject() {
+        return subject;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getEmailContent() {
+        return emailContent;
+    }
+
+    public void setEmailContent(String emailContent) {
+        this.emailContent = emailContent;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+
+    public String getCardCVV() {
+        return cardCVV;
+    }
+
+    public void setCardCVV(String cardCVV) {
+        this.cardCVV = cardCVV;
+    }
+
+    public String getCardHolderName() {
+        return cardHolderName;
+    }
+
+    public void setCardHolderName(String cardHolderName) {
+        this.cardHolderName = cardHolderName;
+    }
+
+    public String getExpiryMonth() {
+        return expiryMonth;
+    }
+
+    public void setExpiryMonth(String expiryMonth) {
+        this.expiryMonth = expiryMonth;
+    }
+
+    public String getExpiryYear() {
+        return expiryYear;
+    }
+
+    public void setExpiryYear(String expiryYear) {
+        this.expiryYear = expiryYear;
+    }
+
+    public ProgressDialog getDialog() {
+        return dialog;
+    }
+
+    public void setDialog(ProgressDialog dialog) {
         this.dialog = dialog;
     }
 
@@ -74,7 +174,9 @@ public class SendInvoiceAPI extends AsyncTask<Void, Void, Void> { // The class i
 
             message.setSubject(subject);
             message.setText(emailContent);
+
             Transport.send(message);
+
         } catch (MessagingException exc) {
             exc.printStackTrace();
         }

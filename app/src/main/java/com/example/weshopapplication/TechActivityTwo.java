@@ -27,6 +27,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     // Components for the Third Product
     private TextView thirdProductTextView;
     private ImageView thirdProductImage;
+
     private TextView thirdProductCostTxt;
     private TextView thirdProductColourLbl;
 
@@ -43,6 +44,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     // Components for the Fourth Product to sell
     private TextView fourthProductTextView;
     private ImageView fourthProductImage;
+
     private TextView fourthProductCost;
     private TextView fourthProductColourLbl;
     private Spinner fourthProductColourSpinner;
@@ -50,6 +52,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     private TextView fourthProductQuantity;
     private Spinner fourthProductQuantityDropDown;
     private TextView fourthProductSizeLbl;
+
     private Spinner fourthProductMenu;
     private Button fourthAddToBasketButton;
 
@@ -289,12 +292,14 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
             @Override
             public void run() {
                 try {
+
                     Thread.sleep(1900);
                 } catch (InterruptedException exc) {
                     Log.d("Error : ", exc.toString());
                 }
 
                 dialog.dismiss();
+
             }
         }).start();
 
@@ -319,6 +324,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
             @Override
             public void run() {
                 try {
+
                     Thread.sleep(1900);
                 } catch (InterruptedException exc) {
                     Log.d("Error : ", exc.toString());
