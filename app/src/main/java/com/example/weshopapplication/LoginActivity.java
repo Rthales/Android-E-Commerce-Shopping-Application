@@ -42,7 +42,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth auth; // Firebase authentication variable
     private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns
-    private final int logout_button_id = 101;
+    private final int LOGOUT_BUTTON_ID = 101;
+
     private boolean isAdded = false;
     public boolean isLoggedIn = false;
 

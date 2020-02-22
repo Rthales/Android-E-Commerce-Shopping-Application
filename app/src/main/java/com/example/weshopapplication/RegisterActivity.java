@@ -497,7 +497,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     }
 
     private void writeToFirestore() { // Routine to write to firestore
-
+        // Get the entries
         String usernameEntry = usernameField.getText().toString();
         String emailEntry = emailAddressField.getText().toString();
         String passwordEntry = passwordField.getText().toString();
@@ -526,8 +526,8 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
     private void transitionToLogin() { // Take the user to the login page after registration
         String errorMessage = "Error";
-        try {
 
+        try {
             // Take user to login
             Intent loginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(loginIntent); // Start the login activity
