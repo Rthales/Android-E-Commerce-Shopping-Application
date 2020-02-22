@@ -109,8 +109,8 @@
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="444dp"
-        android:layout_height="41dp"
+        android:layout_width="439dp"
+        android:layout_height="45dp"
         android:layout_marginBottom="352dp"
         android:background="@drawable/button_round"
         android:text="Add To Basket"
@@ -118,7 +118,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.535"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -221,8 +221,8 @@
 
     <Button
         android:id="@+id/button8"
-        android:layout_width="441dp"
-        android:layout_height="41dp"
+        android:layout_width="443dp"
+        android:layout_height="46dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/button_round"
         android:text="Add To Basket"
