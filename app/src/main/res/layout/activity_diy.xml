@@ -215,19 +215,23 @@
         android:id="@+id/spinner26"
         android:layout_width="64dp"
         android:layout_height="23dp"
-        tools:layout_editor_absoluteX="344dp"
-        tools:layout_editor_absoluteY="585dp" />
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/button9"
+        app:layout_constraintStart_toEndOf="@+id/textView44" />
 
     <Button
         android:id="@+id/button9"
         android:layout_width="425dp"
         android:layout_height="46dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/button_round"
         android:text="Add To Basket"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="-7dp"
-        tools:layout_editor_absoluteY="633dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button10"
