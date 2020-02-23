@@ -24,7 +24,7 @@
         android:layout_width="287dp"
         android:layout_height="180dp"
         android:layout_marginStart="76dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/textView36"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/diy_paint_bq" />
@@ -116,5 +116,128 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginBottom="360dp"
+        android:text="Diall Paint Brush 3 Pack"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="284dp"
+        android:layout_height="166dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="184dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/diy_paint_brush" />
+
+    <TextView
+        android:id="@+id/textView41"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="149dp"
+        android:layout_marginBottom="7dp"
+        android:text="Product Cost £:"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView43"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="124dp"
+        android:text="Colour"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner24"
+        android:layout_width="76dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="124dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView42" />
+
+    <TextView
+        android:id="@+id/textView43"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="125dp"
+        android:text="Size"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinner24" />
+
+    <Spinner
+        android:id="@+id/spinner25"
+        android:layout_width="69dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="124dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView43" />
+
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="125dp"
+        android:text="Quantity"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinner25" />
+
+    <Spinner
+        android:id="@+id/spinner26"
+        android:layout_width="64dp"
+        android:layout_height="23dp"
+        tools:layout_editor_absoluteX="344dp"
+        tools:layout_editor_absoluteY="585dp" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="425dp"
+        android:layout_height="46dp"
+        android:background="@drawable/button_round"
+        android:text="Add To Basket"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="-7dp"
+        tools:layout_editor_absoluteY="633dp" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="91dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="313dp"
+        android:layout_marginBottom="4dp"
+        android:background="@android:color/black"
+        android:text="Next Page"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
