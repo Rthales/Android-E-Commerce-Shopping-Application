@@ -193,11 +193,11 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                 if (v.getId() == R.id.firstAddToBasketBtn) {
 
-                    if (firstSportsOutdoorsColourMenu.getSelectedItemPosition() == 0) {
+                    if (firstSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 && firstSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 && firstSportsOutdoorsSizeMenu.getSelectedItemId() == 0) {
 
-                        AlertDialog.Builder coloursError = new AlertDialog.Builder(SportsAndOutdoorsActivity.this) // Create an alert dialogue for the user to see
+                        AlertDialog.Builder error = new AlertDialog.Builder(SportsAndOutdoorsActivity.this) // Create an alert dialogue for the user to see
                                 .setTitle("Error")
-                                .setMessage("You must select a colour before adding to basket")
+                                .setMessage("You must select a valid option before adding the product to the basket")
 
                                 .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
 
@@ -210,9 +210,11 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                                     }
                                 });
 
-                        coloursError.show();
-                        coloursError.setCancelable(true);
+                        error.show();
+                        error.setCancelable(true);
+
                     } else {
+
                         addToBasketOne(); // Otherwise add the product to the basket one
                     }
                 }
