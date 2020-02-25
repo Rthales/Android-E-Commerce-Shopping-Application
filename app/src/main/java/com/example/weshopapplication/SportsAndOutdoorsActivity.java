@@ -193,7 +193,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                 if (v.getId() == R.id.firstAddToBasketBtn) {
 
-                    if (firstSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 && firstSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 && firstSportsOutdoorsSizeMenu.getSelectedItemId() == 0) {
+                    if (firstSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 || firstSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 || firstSportsOutdoorsSizeMenu.getSelectedItemId() == 0) {
 
                         AlertDialog.Builder error = new AlertDialog.Builder(SportsAndOutdoorsActivity.this) // Create an alert dialogue for the user to see
                                 .setTitle("Error")
