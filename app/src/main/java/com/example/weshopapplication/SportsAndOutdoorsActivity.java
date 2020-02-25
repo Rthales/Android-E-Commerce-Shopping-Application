@@ -228,6 +228,21 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                     if (secondSportsOutdoorsColourMenu.getSelectedItemPosition() == 0) { // If index 0 is chosen for the colour menu
 
+                        AlertDialog.Builder colourMenu = new AlertDialog.Builder(SportsAndOutdoorsActivity.this)
+                                .setTitle("Colour Error")
+
+                                .setMessage("You must choose a colour before adding to the basket")
+                                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (dialog != null) {
+                                            dialog.dismiss();
+                                        }
+                                    }
+                                });
+
+                        colourMenu.show();
+                        colourMenu.setCancelable(true);
                     }
                 }
             }
