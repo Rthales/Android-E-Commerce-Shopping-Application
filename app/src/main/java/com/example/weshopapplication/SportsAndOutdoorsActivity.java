@@ -286,7 +286,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         Size[] sizes = {new Size(0, "Please choose Size"), new Size(1, "S"), new Size(2, "M"),
                 new Size(3, "L"), new Size(4, "XL")};
 
-        for (Size theSizes : sizes) {
+        for (Size theSizes : sizes) { // For each of the sizes in the array
             listOfSizesOne.add(theSizes);
             listOfSizesTwo.add(theSizes);
 
