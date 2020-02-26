@@ -363,6 +363,19 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                     startActivity(techActivity);
                     break;
 
+                case R.id.clothingCategory:
+                    Intent clothingActivity = new Intent(SportsAndOutdoorsActivity.this, ClothingCategory.class);
+                    startActivity(clothingActivity);
+                    break;
+
+                case R.id.diyCategory:
+                    Intent diyActivity = new Intent(SportsAndOutdoorsActivity.this, DIYActivity.class);
+                    startActivity(diyActivity);
+                    break;
+
+                default:
+                    super.onOptionsItemSelected(item);
+
             }
 
         } catch (ActivityNotFoundException exc) {
