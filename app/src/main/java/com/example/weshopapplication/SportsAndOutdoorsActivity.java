@@ -301,34 +301,36 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     private boolean addToBasketOne() { // Adds the first product to the basket
 
-        final ProgressDialog dialog = new ProgressDialog(SportsAndOutdoorsActivity.this);
-        dialog.setTitle("Adding to Basket..");
+        final ProgressDialog dialog = new ProgressDialog(SportsAndOutdoorsActivity.this); // Spinning progress dialog
+        dialog.setTitle("Adding to Basket.."); // Set the title of the dialog
         dialog.setMessage("Please Wait");
 
         dialog.setCancelable(false);
 
-        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
 
         new Thread(new Runnable() { // Create a new thread
 
             @Override
             public void run() {
                 try {
-                    Thread.sleep(1900);
+
+                    Thread.sleep(1900); // Sleep for 1.9 seconds.
                 } catch (InterruptedException exc) {
                     Log.d("Error : ", exc.toString());
                 }
 
                 dialog.dismiss();
             }
-        }).start();
+        }).start(); // Starts the thread
 
         dialog.show();
 
+        // Create an instance for the first product and adds it to the hash map.
         Products firstSportsProduct = new Products(current_product_id, firstSportsOutdoorTxt.getText().toString(), firstSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) firstSportsOutdoorQuantityMenu.getSelectedItemId(), firstSportsOutdoorCostTxt.getText().toString(), firstSportsOutdoorsSizeMenu.getSelectedItem().toString());
         listOfProductsToAddToBasket.put(current_product_id, firstSportsProduct);
 
-        return true;
+        return true; // Returns true.
 
     }
 
@@ -388,6 +390,24 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[2]))) {
             secondSportsOutdoorCostLbl.setText(null);
             secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[2]);
+            valueAppended = true;
+        }
+
+        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[3]))) {
+            secondSportsOutdoorCostLbl.setText(null);
+            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[3]);
+            valueAppended = true;
+        }
+
+        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[4]))) {
+            secondSportsOutdoorCostLbl.setText(null);
+            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[4]);
+            valueAppended = true;
+        }
+
+        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[5]))) {
+            secondSportsOutdoorCostLbl.setText(null);
+            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[5]);
             valueAppended = true;
         }
     }
