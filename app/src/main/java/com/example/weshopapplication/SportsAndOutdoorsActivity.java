@@ -349,6 +349,26 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     public boolean onOptionsItemSelected(MenuItem item) {
 
+        try {
+
+            switch (item.getItemId()) {
+                case R.id.sportsAndOutdoorsCategory:
+                    Intent sportsCategory = new Intent(SportsAndOutdoorsActivity.this, SportsAndOutdoorsActivity.class);
+                    startActivity(sportsCategory);
+
+                    break;
+
+                case R.id.techCategory:
+                    Intent techActivity = new Intent(SportsAndOutdoorsActivity.this, TechActivity.class);
+                    startActivity(techActivity);
+                    break;
+
+            }
+
+        } catch (ActivityNotFoundException exc) {
+            Log.d("Error ", exc.toString());
+        }
+
         return true;
     }
 }
