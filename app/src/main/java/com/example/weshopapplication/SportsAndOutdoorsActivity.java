@@ -251,6 +251,8 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                         colourMenu.show();
                         colourMenu.setCancelable(true);
+                    } else {
+                        addToBasketTwo();
                     }
                 }
             }
@@ -357,6 +359,35 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     }
 
     private boolean addToBasketTwo() { // Adds the second product to the basket
+
+        final ProgressDialog dialog = new ProgressDialog(SportsAndOutdoorsActivity.this); // Spinning progress dialog
+        dialog.setTitle("Adding to Basket.."); // Set the title of the dialog
+        dialog.setMessage("Please Wait");
+
+        dialog.setCancelable(false);
+
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
+
+        new Thread(new Runnable() { // Create a new thread
+
+            @Override
+            public void run() {
+                try {
+
+                    Thread.sleep(1900); // Sleep for 1.9 seconds.
+                } catch (InterruptedException exc) {
+                    Log.d("Error : ", exc.toString());
+                }
+
+                dialog.dismiss();
+            }
+        }).start(); // Starts the thread
+
+        dialog.show();
+
+        // Create an instance for the first product and adds it to the hash map.
+        Products secondSportsProduct = new Products(current_product_id, secondSportsOutdoorCostLbl.getText().toString(), secondSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) secondSportsOutdoorQuantityMenu.getSelectedItemId(), secondSportsOutdoorCostLbl.getText().toString(), secondSportsOutdoorSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id, secondSportsProduct);
 
         return true;
     }
