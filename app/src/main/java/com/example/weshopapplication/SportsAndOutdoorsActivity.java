@@ -39,7 +39,6 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     private TextView firstSportsOutdoorColourLbl;
     private Spinner firstSportsOutdoorsColourMenu;
 
-
     private TextView firstSportsOutdoorQuantityLbl;
     private Spinner firstSportsOutdoorQuantityMenu;
 
@@ -49,6 +48,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     private TextView secondSportsOutdoorTxt;
     private ImageView secondSportsOutdoorImg;
+
     private TextView secondSportsOutdoorCostLbl;
     private TextView secondSportsOutdoorColourLbl;
     private Spinner secondSportsOutdoorsColourMenu;
@@ -75,6 +75,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     private ColourArrayAdapter coloursAdapter; // A colours adapter is needed to store objects in a drop-down menu (spinner)
     private CustomArrayAdapter quantitiesAdapter;
+    private CustomArrayAdapter secondQuantitiesAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
 
     private boolean coloursAdded; // Flag to determine if the colours have been added to the drop-down list
@@ -161,10 +162,10 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         secondSportsOutdoorsColourMenu.setOnItemSelectedListener(this);
 
         // Create the Array Adapter for the quantities for the second product
-        this.quantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivity.this, listOfQuantitiesTwo);
+        this.secondQuantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivity.this, listOfQuantitiesTwo);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        secondSportsOutdoorQuantityMenu.setAdapter(quantitiesAdapter);
+        secondSportsOutdoorQuantityMenu.setAdapter(secondQuantitiesAdapter);
         secondSportsOutdoorQuantityMenu.setOnItemSelectedListener(this);
 
         // Create the sizes array adapter for the second product
@@ -353,7 +354,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // Method that determines which item has been selected and at which index
         boolean valueAppended = false;
-        int[] indexes = {0, 1, 2, 3, 4, 5};
+        int[] indexes = {0, 1, 2, 3, 4};
         String appendText = "Product Cost £: ";
 
         if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[0]))) {
@@ -379,10 +380,6 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             firstSportsOutdoorCostTxt.setText(null);
             firstSportsOutdoorCostTxt.append(appendText + productOneCosts[4]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[5]))) {
-            firstSportsOutdoorCostTxt.setText(null);
-            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[5]);
-            valueAppended = true;
         }
 
 
@@ -390,35 +387,21 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             secondSportsOutdoorCostLbl.setText(null);
             secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[0]);
             valueAppended = true;
-        }
-
-        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[1]))) {
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[1]))) {
             secondSportsOutdoorCostLbl.setText(null);
             secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[1]);
             valueAppended = true;
-        }
-
-        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[2]))) {
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[2]))) {
             secondSportsOutdoorCostLbl.setText(null);
             secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[2]);
             valueAppended = true;
-        }
-
-        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[3]))) {
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[3]))) {
             secondSportsOutdoorCostLbl.setText(null);
             secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[3]);
             valueAppended = true;
-        }
-
-        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[4]))) {
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[4]))) {
             secondSportsOutdoorCostLbl.setText(null);
             secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[4]);
-            valueAppended = true;
-        }
-
-        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[5]))) {
-            secondSportsOutdoorCostLbl.setText(null);
-            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[5]);
             valueAppended = true;
         }
     }
