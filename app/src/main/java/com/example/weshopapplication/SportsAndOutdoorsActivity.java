@@ -317,9 +317,22 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             firstSportsOutdoorCostTxt.setText(null);
             firstSportsOutdoorCostTxt.append(appendText + productOneCosts[1]);
             valueAppended = true; // Value is appended
+
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[2]))) {
             firstSportsOutdoorCostTxt.setText(null);
             firstSportsOutdoorCostTxt.append(appendText + productOneCosts[2]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[3]))) {
+            firstSportsOutdoorCostTxt.setText(null);
+            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[3]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[4]))) {
+            firstSportsOutdoorCostTxt.setText(null);
+            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[4]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[5]))) {
+            firstSportsOutdoorCostTxt.setText(null);
+            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[5]);
             valueAppended = true;
         }
     }
