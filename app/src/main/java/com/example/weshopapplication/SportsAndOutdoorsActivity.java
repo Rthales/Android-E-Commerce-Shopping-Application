@@ -234,14 +234,16 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                 if (v.getId() == R.id.secondAddToBasketBtn) { // If the second add to basket button is clicked
 
-                    if (secondSportsOutdoorsColourMenu.getSelectedItemPosition() == 0) { // If index 0 is chosen for the colour menu
+                    if (secondSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 && secondSportsOutdoorQuantityMenu.getSelectedItemPosition() == 0 || secondSportsOutdoorSizeMenu.getSelectedItemPosition() == 0) { // If index 0 is chosen for the colour menu
 
                         AlertDialog.Builder colourMenu = new AlertDialog.Builder(SportsAndOutdoorsActivity.this)
-                                .setTitle("Colour Error")
+                                .setTitle("Error")
 
-                                .setMessage("You must choose a colour before adding to the basket")
+                                .setMessage("You must choose an option before adding to the basket")
+
                                 .setNegativeButton("OK", new DialogInterface.OnClickListener() {
                                     @Override
+
                                     public void onClick(DialogInterface dialog, int which) {
                                         if (dialog != null) {
                                             dialog.dismiss();
@@ -252,6 +254,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                         colourMenu.show();
                         colourMenu.setCancelable(true);
                     } else {
+
                         addToBasketTwo();
                     }
                 }
@@ -386,8 +389,8 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         dialog.show();
 
         // Create an instance for the first product and adds it to the hash map.
-        Products secondSportsProduct = new Products(current_product_id, secondSportsOutdoorCostLbl.getText().toString(), secondSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) secondSportsOutdoorQuantityMenu.getSelectedItemId(), secondSportsOutdoorCostLbl.getText().toString(), secondSportsOutdoorSizeMenu.getSelectedItem().toString());
-        listOfProductsToAddToBasket.put(current_product_id, secondSportsProduct);
+        Products secondSportsProduct = new Products(current_product_id++, secondSportsOutdoorCostLbl.getText().toString(), secondSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) secondSportsOutdoorQuantityMenu.getSelectedItemId(), secondSportsOutdoorCostLbl.getText().toString(), secondSportsOutdoorSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id++, secondSportsProduct);
 
         return true;
     }
