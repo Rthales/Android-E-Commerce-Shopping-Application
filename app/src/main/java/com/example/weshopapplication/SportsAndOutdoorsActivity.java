@@ -1,5 +1,6 @@
 package com.example.weshopapplication;
 
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -31,6 +32,7 @@ import java.util.HashMap;
 public class SportsAndOutdoorsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private int current_product_id = 1;
     private ImageView cartIcon;
+
     private TextView firstSportsOutdoorTxt;
     private ImageView firstSportsOutdoorImg;
     private TextView firstSportsOutdoorCostTxt;
@@ -299,7 +301,35 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     private boolean addToBasketOne() { // Adds the first product to the basket
 
+        final ProgressDialog dialog = new ProgressDialog(SportsAndOutdoorsActivity.this);
+        dialog.setTitle("Adding to Basket..");
+        dialog.setMessage("Please Wait");
+
+        dialog.setCancelable(false);
+
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+
+        new Thread(new Runnable() { // Create a new thread
+
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1900);
+                } catch (InterruptedException exc) {
+                    Log.d("Error : ", exc.toString());
+                }
+
+                dialog.dismiss();
+            }
+        }).start();
+
+        dialog.show();
+
+        Products firstSportsProduct = new Products(current_product_id, firstSportsOutdoorTxt.getText().toString(), firstSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) firstSportsOutdoorQuantityMenu.getSelectedItem(), firstSportsOutdoorCostTxt.getText().toString(), firstSportsOutdoorsSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id, firstSportsProduct);
+
         return true;
+
     }
 
     private boolean addToBasketTwo() { // Adds the second product to the basket
