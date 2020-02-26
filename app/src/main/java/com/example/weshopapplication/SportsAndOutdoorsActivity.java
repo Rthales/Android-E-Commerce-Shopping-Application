@@ -325,7 +325,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
         dialog.show();
 
-        Products firstSportsProduct = new Products(current_product_id, firstSportsOutdoorTxt.getText().toString(), firstSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) firstSportsOutdoorQuantityMenu.getSelectedItem(), firstSportsOutdoorCostTxt.getText().toString(), firstSportsOutdoorsSizeMenu.getSelectedItem().toString());
+        Products firstSportsProduct = new Products(current_product_id, firstSportsOutdoorTxt.getText().toString(), firstSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) firstSportsOutdoorQuantityMenu.getSelectedItemId(), firstSportsOutdoorCostTxt.getText().toString(), firstSportsOutdoorsSizeMenu.getSelectedItem().toString());
         listOfProductsToAddToBasket.put(current_product_id, firstSportsProduct);
 
         return true;
