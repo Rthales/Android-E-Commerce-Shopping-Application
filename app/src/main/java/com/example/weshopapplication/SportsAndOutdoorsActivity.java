@@ -21,13 +21,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
 // Author of Application & Class: Sabin Constantin Lungu
 // Purpose of Class: Stores the code needed to implement the Sports and Outdoors Activity 1.
 // Date of Last Modification: 13/02/2020
-// Any Errors? Currently None
+// Any Errors? Currently None.
+
 
 public class SportsAndOutdoorsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    // Set-up variables
     private int current_product_id = 1;
     private ImageView cartIcon;
     private TextView firstSportsOutdoorTxt;
@@ -308,7 +309,19 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // Method that determines which item has been selected and at which index
+        boolean valueAppended = false;
+        int[] indexes = {0, 1, 2, 3, 4, 5};
+        String appendText = "Product Cost £: ";
 
+        if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[1]))) {
+            firstSportsOutdoorCostTxt.setText(null);
+            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[1]);
+            valueAppended = true; // Value is appended
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[2]))) {
+            firstSportsOutdoorCostTxt.setText(null);
+            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[2]);
+            valueAppended = true;
+        }
     }
 
     @Override
