@@ -129,6 +129,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
         // Method calls to add to the specific array lists
         addToColoursList();
+        addToColoursListTwo();
         addToQuantitiesList();
         addToSizesList();
 
@@ -262,9 +263,19 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
         for (TechActivity.Colours productColours : colours) { // For each colours in the array
             listOfColoursOne.add(productColours); // Add it to the array list
-
-            listOfColoursTwo.add(productColours);
             coloursAdded = true; // Colours have been added
+        }
+
+        return true;
+    }
+
+    private boolean addToColoursListTwo() {
+        TechActivity.Colours[] colours = {new TechActivity.Colours(0, "Choose colour please"), new TechActivity.Colours(1, "Dark Blue"),
+                new TechActivity.Colours(2, "Dark Red"), new TechActivity.Colours(3, "Honey Yellow")};
+
+        for (TechActivity.Colours theColours : colours) {
+            listOfColoursTwo.add(theColours);
+            coloursAdded = true;
         }
 
         return true;
