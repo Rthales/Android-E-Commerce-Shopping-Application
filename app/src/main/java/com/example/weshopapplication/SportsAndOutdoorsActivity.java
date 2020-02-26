@@ -343,6 +343,12 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         int[] indexes = {0, 1, 2, 3, 4, 5};
         String appendText = "Product Cost £: ";
 
+        if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[0]))) {
+            firstSportsOutdoorCostTxt.setText(null);
+            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[0]);
+            valueAppended = true;
+        }
+
         if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[1]))) {
             firstSportsOutdoorCostTxt.setText(null);
             firstSportsOutdoorCostTxt.append(appendText + productOneCosts[1]);
@@ -363,6 +369,25 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[5]))) {
             firstSportsOutdoorCostTxt.setText(null);
             firstSportsOutdoorCostTxt.append(appendText + productOneCosts[5]);
+            valueAppended = true;
+        }
+
+
+        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[0]))) {
+            secondSportsOutdoorCostLbl.setText(null);
+            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[0]);
+            valueAppended = true;
+        }
+
+        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[1]))) {
+            secondSportsOutdoorCostLbl.setText(null);
+            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[1]);
+            valueAppended = true;
+        }
+
+        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[2]))) {
+            secondSportsOutdoorCostLbl.setText(null);
+            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[2]);
             valueAppended = true;
         }
     }
