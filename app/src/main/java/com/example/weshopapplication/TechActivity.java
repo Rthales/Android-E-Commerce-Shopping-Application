@@ -171,6 +171,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         this.sizesAdapter = new SizesAdapter(TechActivity.this, secondListOfSizes);
         sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         secondProductSizesMenu.setAdapter(sizesAdapter);
         secondProductSizesMenu.setOnItemSelectedListener(this);
 

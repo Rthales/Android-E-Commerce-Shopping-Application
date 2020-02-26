@@ -107,6 +107,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
         this.secondSportsOutdoorTxt = findViewById(R.id.secondSportsOutdoorsProductTxt);
         this.secondSportsOutdoorImg = findViewById(R.id.secondSportsOutdoorsImg);
+
         this.secondSportsOutdoorCostLbl = findViewById(R.id.secondSportsOutdoorProductCostLbl);
         this.secondSportsOutdoorColourLbl = findViewById(R.id.secondSportsOutdoorsColourLbl);
         this.secondSportsOutdoorsColourMenu = findViewById(R.id.secondSportsOutdoorsColourMenu);
@@ -116,7 +117,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         this.secondSportsOutdoorSizeLbl = findViewById(R.id.secondSportsOutdoorsSizeLbl);
         this.secondSportsOutdoorSizeMenu = findViewById(R.id.secondSportsOutdoorsSizeMenu);
 
-        this.secondSportsAddToBasketBtn = findViewById(R.id.secondSportsOutdoorsAddToBasketBtn);
+        this.secondSportsAddToBasketBtn = findViewById(R.id.secondAddToBasketBtn);
         this.nextPageBtn = findViewById(R.id.nextPageTech); // Button for taking the user to the next page.
 
         // Create the array lists
@@ -193,7 +194,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             }
         });
 
-        this.firstSportsAddToBasketBtn.setOnClickListener(new View.OnClickListener() { // Add action listener to the first button
+        firstSportsAddToBasketBtn.setOnClickListener(new View.OnClickListener() { // Add action listener to the first button
             @Override
             public void onClick(View v) {
 
@@ -228,15 +229,15 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             }
         });
 
-        this.secondSportsAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+        secondSportsAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (v.getId() == R.id.secondAddToBasketBtn) { // If the second add to basket button is clicked
 
-                    if (secondSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 && secondSportsOutdoorQuantityMenu.getSelectedItemPosition() == 0 || secondSportsOutdoorSizeMenu.getSelectedItemPosition() == 0) { // If index 0 is chosen for the colour menu
+                    if (secondSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 || secondSportsOutdoorQuantityMenu.getSelectedItemPosition() == 0 || secondSportsOutdoorSizeMenu.getSelectedItemPosition() == 0) { // If index 0 is chosen for the colour menu
 
-                        AlertDialog.Builder colourMenu = new AlertDialog.Builder(SportsAndOutdoorsActivity.this)
+                        AlertDialog.Builder errorMenu = new AlertDialog.Builder(SportsAndOutdoorsActivity.this)
                                 .setTitle("Error")
 
                                 .setMessage("You must choose an option before adding to the basket")
@@ -251,8 +252,8 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                                     }
                                 });
 
-                        colourMenu.show();
-                        colourMenu.setCancelable(true);
+                        errorMenu.show();
+                        errorMenu.setCancelable(true);
                     } else {
 
                         addToBasketTwo();
@@ -389,7 +390,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         dialog.show();
 
         // Create an instance for the first product and adds it to the hash map.
-        Products secondSportsProduct = new Products(current_product_id++, secondSportsOutdoorCostLbl.getText().toString(), secondSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) secondSportsOutdoorQuantityMenu.getSelectedItemId(), secondSportsOutdoorCostLbl.getText().toString(), secondSportsOutdoorSizeMenu.getSelectedItem().toString());
+        Products secondSportsProduct = new Products(current_product_id++, secondSportsOutdoorTxt.getText().toString(), secondSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) secondSportsOutdoorQuantityMenu.getSelectedItemId(), secondSportsOutdoorCostLbl.getText().toString(), secondSportsOutdoorSizeMenu.getSelectedItem().toString());
         listOfProductsToAddToBasket.put(current_product_id++, secondSportsProduct);
 
         return true;
