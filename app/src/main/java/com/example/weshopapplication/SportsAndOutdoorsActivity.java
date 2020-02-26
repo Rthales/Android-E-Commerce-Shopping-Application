@@ -131,7 +131,8 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         // Method calls to add to the specific array lists
         addToColoursList();
         addToColoursListTwo();
-        addToQuantitiesList();
+        addToQuantitiesListOne();
+        addToQuantitiesListTwo();
         addToSizesList();
 
         // Set up the colours adapter
@@ -163,7 +164,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
         // Create the Array Adapter for the quantities for the second product
         this.secondQuantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivity.this, listOfQuantitiesTwo);
-        quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        secondQuantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         secondSportsOutdoorQuantityMenu.setAdapter(secondQuantitiesAdapter);
         secondSportsOutdoorQuantityMenu.setOnItemSelectedListener(this);
@@ -282,15 +283,24 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         return true;
     }
 
-    private boolean addToQuantitiesList() {
+    private boolean addToQuantitiesListOne() {
         TechActivity.Quantities[] quantities = {new TechActivity.Quantities(0), new TechActivity.Quantities(1), new TechActivity.Quantities(2)
                 , new TechActivity.Quantities(3), new TechActivity.Quantities(4), new TechActivity.Quantities(5)};
 
         for (TechActivity.Quantities quantitiesArray : quantities) {
-            // Add the quantities to the list
             listOfQuantitiesOne.add(quantitiesArray);
-            listOfQuantitiesTwo.add(quantitiesArray);
+            quantitiesAdded = true;
+        }
 
+        return true;
+    }
+
+    private boolean addToQuantitiesListTwo() {
+        TechActivity.Quantities[] quantities = {new TechActivity.Quantities(0), new TechActivity.Quantities(1), new TechActivity.Quantities(2)
+                , new TechActivity.Quantities(3), new TechActivity.Quantities(4), new TechActivity.Quantities(5)};
+
+        for (TechActivity.Quantities quantitiesArray : quantities) {
+            listOfQuantitiesTwo.add(quantitiesArray);
             quantitiesAdded = true;
         }
 
