@@ -1,6 +1,8 @@
 package com.example.weshopapplication;
 
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 // Any Errors? Currently None
 
 public class SportsAndOutdoorsActivityTwo extends AppCompatActivity {
+    private TextView sportsOutdoorsTxtTwo;
+    private ImageView thirdSportsOutdoorsImg;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
