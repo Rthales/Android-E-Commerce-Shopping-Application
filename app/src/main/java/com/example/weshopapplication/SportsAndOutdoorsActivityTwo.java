@@ -1,6 +1,8 @@
 package com.example.weshopapplication;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -16,8 +18,9 @@ import java.util.HashMap;
 // Date of Last Modification: 13/02/2020
 // Any Errors? Currently None
 
-public class SportsAndOutdoorsActivityTwo extends AppCompatActivity {
+public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private int current_product_id = 1;
+    private ImageView cartIcon;
     private TextView sportsOutdoorsTxtTwo;
     private ImageView thirdSportsOutdoorsImg;
 
@@ -80,6 +83,8 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity {
         this.thirdSportsOutdoorsImg = findViewById(R.id.thirdSportsOutdoorsImg);
         this.thirdSportsOutdoorsCostLbl = findViewById(R.id.thirdSportsOutdoorsCostLbl);
 
+        this.cartIcon = findViewById(R.id.cart_icon);
+
         this.thirdSportsOutdoorsColoursLbl = findViewById(R.id.thirdSportsOutdoorsColourLbl);
         this.thirdSportsOutdoorsColoursMenu = findViewById(R.id.thirdSportsOutdoorsColourMenu);
 
@@ -95,6 +100,96 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity {
 
         this.fourthSportsOutdoorsColourLbl = findViewById(R.id.fourthSportsOutdoorsColourLbl);
         this.fourthSportsOutdoorsColourMenu = findViewById(R.id.fourthSportsOutdoorsColourMenu);
+
+        this.fourthSportsOutdoorsSizeLbl = findViewById(R.id.fourthProductSizeLbl);
+        this.fourthSportsOutdoorsSizeMenu = findViewById(R.id.fourthSportsOutdoorsSizeMenu);
+
+        this.fourthSportsOutdoorsQuantityLbl = findViewById(R.id.fourthSportsOutdoorsQuantityLbl);
+        this.fourthSportsOutdoorsQuantityMenu = findViewById(R.id.fourthSportsOutdoorsQuantityMenu);
+        this.fourthAddToBasketBtn = findViewById(R.id.fourthAddToBasketButton);
+
+        this.listOfColoursOne = new ArrayList<>();
+        this.listOfColoursTwo = new ArrayList<>();
+
+        this.listOfSizesOne = new ArrayList<>();
+        this.listOfSizesTwo = new ArrayList<>();
+
+        this.listOfQuantitiesOne = new ArrayList<>();
+        this.listOfQuantitiesTwo = new ArrayList<>();
+
+        addToColoursListOne();
+        addToColoursListTwo();
+
+        addToSizesListOne();
+        addToSizesListTwo();
+
+        addToQuantitiesListOne();
+        addToQuantitiesListTwo();
+
+        this.quantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivityTwo.this, listOfQuantitiesOne);
+        quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        thirdSportsOutdoorsQuantityMenu.setAdapter(quantitiesAdapter);
+        thirdSportsOutdoorsQuantityMenu.setOnItemSelectedListener(this);
+
+
+        // Initialise adapters
+
+        this.thirdSportsOutdoorsAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (v.getId() == R.id.thirdAddToBasketBtn) {
+
+                }
+            }
+        });
+
+        this.fourthAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+    }
+
+    private boolean addToColoursListOne() {
+        return true;
+    }
+
+    private boolean addToColoursListTwo() {
+        return true;
+    }
+
+    private boolean addToSizesListOne() {
+        return true;
+    }
+
+    private boolean addToSizesListTwo() {
+        return true;
+    }
+
+    private boolean addToQuantitiesListOne() {
+        return true;
+    }
+
+    private boolean addToQuantitiesListTwo() {
+        return true;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
 }
