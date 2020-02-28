@@ -132,6 +132,14 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         thirdSportsOutdoorsQuantityMenu.setAdapter(quantitiesAdapter);
         thirdSportsOutdoorsQuantityMenu.setOnItemSelectedListener(this);
 
+        this.sizesAdapter = new SizesAdapter(SportsAndOutdoorsActivityTwo.this, listOfSizesOne);
+        sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        thirdSportsOutdoorsSizeMenu.setAdapter(sizesAdapter);
+        thirdSportsOutdoorsSizeMenu.setOnItemSelectedListener(this);
+
+        this.coloursAdapter = new ColourArrayAdapter(SportsAndOutdoorsActivityTwo.this, listOfColoursOne);
+
 
         // Initialise adapters
 
@@ -154,15 +162,15 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
     }
 
-    private boolean addToColoursListOne() {
+    private boolean addToColoursListOne() { // Adds the colours for the third product to the array list
         return true;
     }
 
-    private boolean addToColoursListTwo() {
+    private boolean addToColoursListTwo() { // Adds the colours for the fourth product to the array list
         return true;
     }
 
-    private boolean addToSizesListOne() {
+    private boolean addToSizesListOne() { // Adds the sizes for the third product to the array list
         return true;
     }
 
@@ -179,7 +187,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // Routine to determine which item has been selected
 
     }
 
