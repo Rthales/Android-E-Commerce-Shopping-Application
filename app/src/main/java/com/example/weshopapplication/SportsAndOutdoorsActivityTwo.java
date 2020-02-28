@@ -80,6 +80,21 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity {
         this.thirdSportsOutdoorsImg = findViewById(R.id.thirdSportsOutdoorsImg);
         this.thirdSportsOutdoorsCostLbl = findViewById(R.id.thirdSportsOutdoorsCostLbl);
 
+        this.thirdSportsOutdoorsColoursLbl = findViewById(R.id.thirdSportsOutdoorsColourLbl);
+        this.thirdSportsOutdoorsColoursMenu = findViewById(R.id.thirdSportsOutdoorsColourMenu);
+
+        this.thirdSportsOutdoorsSizeLbl = findViewById(R.id.thirdSportsOutdoorsSizeLbl);
+        this.thirdSportsOutdoorsSizeMenu = findViewById(R.id.thirdSportsOutdoorsSizeMenu);
+
+        this.thirdSportsOutdoorsQuantityLbl = findViewById(R.id.thirdQuantityLbl);
+        this.thirdSportsOutdoorsQuantityMenu = findViewById(R.id.thirdSportsOutdoorsQuantityMenu);
+        this.thirdSportsOutdoorsAddToBasketBtn = findViewById(R.id.thirdSportsOutdoorsAddToBasketBtn);
+
+        this.fourthSportsOutdoorsTxt = findViewById(R.id.fourthSportsOutdoorsTxt);
+        this.fourthSportsOutdoorsImg = findViewById(R.id.fourthSportsOutdoorsImg);
+
+        this.fourthSportsOutdoorsColourLbl = findViewById(R.id.fourthSportsOutdoorsColourLbl);
+        this.fourthSportsOutdoorsColourMenu = findViewById(R.id.fourthSportsOutdoorsColourMenu);
 
     }
 }
