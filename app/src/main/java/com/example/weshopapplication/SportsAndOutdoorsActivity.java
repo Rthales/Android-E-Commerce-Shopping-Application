@@ -75,6 +75,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     private ColourArrayAdapter coloursAdapter; // A colours adapter is needed to store objects in a drop-down menu (spinner)
     private CustomArrayAdapter quantitiesAdapter;
+
     private CustomArrayAdapter secondQuantitiesAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
 
