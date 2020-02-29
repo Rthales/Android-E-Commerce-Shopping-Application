@@ -163,6 +163,12 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         fourthSportsOutdoorsColourMenu.setAdapter(coloursAdapter);
         fourthSportsOutdoorsColourMenu.setOnItemSelectedListener(this);
 
+        this.sizesAdapter = new SizeArrayAdapter(SportsAndOutdoorsActivityTwo.this, listOfSizesTwo);
+        sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        fourthSportsOutdoorsSizeMenu.setAdapter(sizesAdapter);
+        fourthSportsOutdoorsSizeMenu.setOnItemSelectedListener(this);
+
         // Initialise adapters
 
         this.thirdSportsOutdoorsAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
@@ -202,6 +208,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
                 if(fourthSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 || fourthSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 || fourthSportsOutdoorsQuantityMenu.getSelectedItemPosition() == 0) {
                     AlertDialog.Builder chooseError = new AlertDialog.Builder(SportsAndOutdoorsActivityTwo.this)
                             .setTitle("Error")
+
                             .setMessage("You must choose an appropriate option before adding to the basket")
                             .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                                 @Override
@@ -280,8 +287,8 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         dialog.show();
 
         // Create an instance for the first product and adds it to the hash map.
-        Products firstSportsProduct = new Products(current_product_id, sportsOutdoorsTxtTwo.getText().toString(), thirdSportsOutdoorsColoursMenu.getSelectedItem().toString(), (int) thirdSportsOutdoorsQuantityMenu.getSelectedItemId(), thirdSportsOutdoorsCostLbl.getText().toString(), thirdSportsOutdoorsSizeMenu.getSelectedItem().toString());
-        listOfProductsToAddToBasket.put(current_product_id, firstSportsProduct);
+        Products thirdProduct = new Products(current_product_id, sportsOutdoorsTxtTwo.getText().toString(), thirdSportsOutdoorsColoursMenu.getSelectedItem().toString(), (int) thirdSportsOutdoorsQuantityMenu.getSelectedItemId(), thirdSportsOutdoorsCostLbl.getText().toString(), thirdSportsOutdoorsSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id, thirdProduct);
     }
 
     private void addToBasketFour() {
