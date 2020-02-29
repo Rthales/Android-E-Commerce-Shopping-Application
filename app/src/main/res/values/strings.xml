@@ -21,5 +21,10 @@
     <string name="add_next_dialog_confirm_no">"No"</string>
 
     <string name="check_data_title">"Username - E-mail - Telephone No - Problem"</string>
+    <string name="login_below_to_browse_products">Login below to browse products</string>
+    <string name="e_mail_address">E-mail Address</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="login_below">Login Below</string>
 
 </resources>
