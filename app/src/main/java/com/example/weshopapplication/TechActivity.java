@@ -598,7 +598,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
         public String toString() { // Returns the data.
-            return " " + this.quantity;
+            return " " + this.quantity + " ";
         }
     }
 
