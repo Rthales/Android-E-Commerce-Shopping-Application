@@ -1,5 +1,6 @@
 package com.example.weshopapplication;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -148,7 +150,22 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
             public void onClick(View v) {
 
                 if (v.getId() == R.id.thirdAddToBasketBtn) {
+                    if(thirdSportsOutdoorsColoursMenu.getSelectedItemPosition() == 0 || thirdSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 || thirdSportsOutdoorsQuantityMenu.getSelectedItemPosition() == 0) {
+                        AlertDialog.Builder chooseError = new AlertDialog.Builder(SportsAndOutdoorsActivityTwo.this)
+                                .setTitle("Error")
+                                .setMessage("You must choose an appropriate option before adding to the basket")
+                                .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if(dialog != null) {
+                                            dialog.dismiss();
+                                        }
+                                    }
+                                });
 
+                        chooseError.show();
+                        chooseError.setCancelable(false);
+                    }
                 }
             }
         });
@@ -163,6 +180,18 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     }
 
     private boolean addToColoursListOne() { // Adds the colours for the third product to the array list
+
+        boolean coloursAdded = false;
+
+        TechActivity.Colours[] colours = {new TechActivity.Colours(0, "Choose colour please"),
+        new TechActivity.Colours(1, "Red"), new TechActivity.Colours(2, "Sky Blue")
+        , new TechActivity.Colours(3, "Dark Yellow"), new TechActivity.Colours(4, "Blood Orange")};
+
+        for(TechActivity.Colours theColours : colours) {
+            listOfColoursOne.add(theColours);
+            coloursAdded = true;
+        }
+
         return true;
     }
 
