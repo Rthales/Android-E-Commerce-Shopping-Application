@@ -128,9 +128,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         addToColoursListOne();
         addToColoursListTwo();
 
-        addToQuantitiesListOne();
-        addToQuantitiesListTwo();
-
+        addToQuantitiesList();
         addToSizesListOne();
 
         this.quantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivityTwo.this, listOfQuantitiesOne);
@@ -260,6 +258,18 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         return true;
     }
 
+    private boolean addToQuantitiesList() {
+        TechActivity.Quantities[] quantities = {new TechActivity.Quantities(0), new TechActivity.Quantities(1), new TechActivity.Quantities(2),
+                new TechActivity.Quantities(3), new TechActivity.Quantities(4), new TechActivity.Quantities(5)};
+
+        for (TechActivity.Quantities theQuantities : quantities) {
+            listOfQuantitiesOne.add(theQuantities);
+            listOfQuantitiesTwo.add(theQuantities);
+        }
+
+        return true;
+    }
+
     private void addToBasketThree() {
         final ProgressDialog dialog = new ProgressDialog(SportsAndOutdoorsActivityTwo.this); // Spinning progress dialog
         dialog.setTitle("Adding to Basket.."); // Set the title of the dialog
@@ -301,15 +311,12 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         new Size(3, "L"), new Size(4, "XL")};
 
         for(Size theSize : sizes) {
+
             listOfSizesOne.add(theSize);
             listOfSizesTwo.add(theSize);
             sizesAdded = true;
         }
 
-        return true;
-    }
-
-    private boolean addToSizesListTwo() {
         return true;
     }
 
