@@ -175,7 +175,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         secondProductSizesMenu.setAdapter(sizesAdapter);
         secondProductSizesMenu.setOnItemSelectedListener(this);
 
-        this.nextPageBtn = findViewById(R.id.nextPageTech);
+        this.nextPageBtn = findViewById(R.id.sportsNextPage);
 
         this.nextPageBtn.setOnClickListener(new View.OnClickListener() { // Add a listener for the next page button
             @Override

@@ -150,12 +150,12 @@
         android:text="Add To Basket"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/nextPageTech"
+        app:layout_constraintBottom_toTopOf="@+id/sportsNextPage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/nextPageTech"
+        android:id="@+id/sportsNextPage"
         android:layout_width="111dp"
         android:layout_height="36dp"
         android:layout_marginStart="301dp"

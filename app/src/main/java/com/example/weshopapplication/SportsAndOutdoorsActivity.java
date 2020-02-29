@@ -58,6 +58,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     private TextView secondSportsOutdoorSizeLbl;
     private Spinner secondSportsOutdoorSizeMenu;
+
     private Button secondSportsAddToBasketBtn;
     private Button nextPageBtn;
 
@@ -104,6 +105,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
         this.firstSportsOutdoorsSizeLbl = findViewById(R.id.firstSportsOutdoorSizeLbl);
         this.firstSportsOutdoorsSizeMenu = findViewById(R.id.firstSportsOutdoorSizeMenu);
+
         this.firstSportsAddToBasketBtn = findViewById(R.id.firstAddToBasketBtn); // Button for the first product to add to the basket.
 
         this.secondSportsOutdoorTxt = findViewById(R.id.secondSportsOutdoorsProductTxt);
@@ -115,11 +117,12 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
         this.secondSportsOutdoorQuantityLbl = findViewById(R.id.secondsSportsOutdoorQuantityLbl);
         this.secondSportsOutdoorQuantityMenu = findViewById(R.id.secondSportsOutdoorsQuantityMenu);
+
         this.secondSportsOutdoorSizeLbl = findViewById(R.id.secondSportsOutdoorsSizeLbl);
         this.secondSportsOutdoorSizeMenu = findViewById(R.id.secondSportsOutdoorsSizeMenu);
 
         this.secondSportsAddToBasketBtn = findViewById(R.id.secondAddToBasketBtn);
-        this.nextPageBtn = findViewById(R.id.nextPageTech); // Button for taking the user to the next page.
+        this.nextPageBtn = findViewById(R.id.sportsNextPage); // Button for taking the user to the next page.
 
         // Create the array lists
         this.listOfColoursOne = new ArrayList<>();
@@ -133,6 +136,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         // Method calls to add to the specific array lists
         addToColoursList();
         addToColoursListTwo();
+
         addToQuantitiesListOne();
         addToQuantitiesListTwo();
         addToSizesList();
@@ -178,7 +182,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         secondSportsOutdoorSizeMenu.setAdapter(sizeArrayAdapter);
         secondSportsOutdoorSizeMenu.setOnItemSelectedListener(this);
 
-        this.nextPageBtn = findViewById(R.id.nextPageTech); // The next page button
+        this.nextPageBtn = findViewById(R.id.sportsNextPage); // The next page button
 
         this.nextPageBtn.setOnClickListener(new View.OnClickListener() { // Add an action listener to the next page button to take the user to the next page
             @Override
@@ -221,7 +225,9 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                         error.show();
                         error.setCancelable(true);
 
-                    } else {
+                    }
+
+                    else {
 
                         addToBasketOne(); // Otherwise add the product to the basket one
                     }
