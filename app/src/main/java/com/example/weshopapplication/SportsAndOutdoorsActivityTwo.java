@@ -2,8 +2,11 @@ package com.example.weshopapplication;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -75,9 +78,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     private SizeArrayAdapter sizesAdapter;
     private ColourArrayAdapter coloursAdapter;
 
-
     private HashMap<Integer, Products> listOfProductsToAddToBasket; // A HashMap to store the products when adding to the basket
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,6 +125,8 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
         this.listOfQuantitiesOne = new ArrayList<>();
         this.listOfQuantitiesTwo = new ArrayList<>();
+
+        this.listOfProductsToAddToBasket = new HashMap<>();
 
         addToColoursListOne();
         addToColoursListTwo();
@@ -173,7 +176,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
             @Override
             public void onClick(View v) {
 
-                if (v.getId() == R.id.thirdAddToBasketBtn) {
+                if (v.getId() == R.id.thirdSportsOutdoorsAddToBasketBtn) {
 
                     if(thirdSportsOutdoorsColoursMenu.getSelectedItemPosition() == 0 || thirdSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 || thirdSportsOutdoorsQuantityMenu.getSelectedItemPosition() == 0) {
                         AlertDialog.Builder chooseError = new AlertDialog.Builder(SportsAndOutdoorsActivityTwo.this)
@@ -203,6 +206,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         this.fourthAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(fourthSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 || fourthSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 || fourthSportsOutdoorsQuantityMenu.getSelectedItemPosition() == 0) {
                     AlertDialog.Builder chooseError = new AlertDialog.Builder(SportsAndOutdoorsActivityTwo.this)
                             .setTitle("Error")
@@ -324,7 +328,29 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         return true;
     }
 
-    private boolean addToQuantitiesListTwo() {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) { // Add the toolbar menu
+        // Inflate the activities menu
+        MenuInflater activityInflater = getMenuInflater(); // Get the activity inflater
+        activityInflater.inflate(R.menu.homepagemenu, menu);
+
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.basket_action_button, menu);
+
+        View view = menu.findItem(R.id.cart_menu).getActionView();
+
+        cartIcon = view.findViewById(R.id.cart_icon);
+
+        cartIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent basketIntent = new Intent(SportsAndOutdoorsActivityTwo.this, BasketActivity.class); // Create a basket intent
+                basketIntent.putExtra("map", listOfProductsToAddToBasket); // Transit over the hash map data to the basket
+                startActivity(basketIntent); // Start the intent
+            }
+        });
+
         return true;
     }
 
