@@ -150,12 +150,14 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
             public void onClick(View v) {
 
                 if (v.getId() == R.id.thirdAddToBasketBtn) {
+
                     if(thirdSportsOutdoorsColoursMenu.getSelectedItemPosition() == 0 || thirdSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 || thirdSportsOutdoorsQuantityMenu.getSelectedItemPosition() == 0) {
                         AlertDialog.Builder chooseError = new AlertDialog.Builder(SportsAndOutdoorsActivityTwo.this)
                                 .setTitle("Error")
                                 .setMessage("You must choose an appropriate option before adding to the basket")
                                 .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                                     @Override
+
                                     public void onClick(DialogInterface dialog, int which) {
                                         if(dialog != null) {
                                             dialog.dismiss();
@@ -167,13 +169,19 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
                         chooseError.setCancelable(false);
                     }
                 }
+
+                else {
+                   // addToBasketThree();
+                }
             }
         });
 
         this.fourthAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(v.getId() == R.id.fourthAddToBasketButton) {
 
+                }
             }
         });
 
