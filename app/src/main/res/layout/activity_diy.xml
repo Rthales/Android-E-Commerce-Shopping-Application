@@ -8,7 +8,7 @@
     tools:context=".DIYActivity">
 
     <TextView
-        android:id="@+id/diyFirst"
+        android:id="@+id/diyFirstProduct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
@@ -17,21 +17,21 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView7"
+        app:layout_constraintBottom_toTopOf="@+id/diyFirstProductImg"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/diyFirstProductImg"
         android:layout_width="277dp"
         android:layout_height="155dp"
         android:layout_marginStart="76dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView36"
+        app:layout_constraintBottom_toTopOf="@+id/diyFirstProductCostTxt"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/diy_paint_bq" />
 
     <TextView
-        android:id="@+id/textView36"
+        android:id="@+id/diyFirstProductCostTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="156dp"
@@ -40,11 +40,11 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView38"
+        app:layout_constraintBottom_toTopOf="@+id/diyFirstProductSizeLbl"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView37"
+        android:id="@+id/diyFirstProductColourLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -53,19 +53,19 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/diyFirstProductAddToBasketBtn"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner21"
+        android:id="@+id/diyFirstProductColourMenu"
         android:layout_width="70dp"
         android:layout_height="22dp"
         android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/textView37" />
+        app:layout_constraintBottom_toTopOf="@+id/diyFirstProductAddToBasketBtn"
+        app:layout_constraintStart_toEndOf="@+id/diyFirstProductColourLbl" />
 
     <TextView
-        android:id="@+id/textView38"
+        android:id="@+id/diyFirstProductSizeLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
@@ -74,20 +74,20 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/spinner21" />
+        app:layout_constraintBottom_toTopOf="@+id/diyFirstProductAddToBasketBtn"
+        app:layout_constraintStart_toEndOf="@+id/diyFirstProductColourMenu" />
 
     <Spinner
-        android:id="@+id/spinner22"
+        android:id="@+id/diyFirstProductSizeMenu"
         android:layout_width="61dp"
         android:layout_height="20dp"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/textView38" />
+        app:layout_constraintBottom_toTopOf="@+id/diyFirstProductAddToBasketBtn"
+        app:layout_constraintStart_toEndOf="@+id/diyFirstProductSizeLbl" />
 
     <TextView
-        android:id="@+id/textView39"
+        android:id="@+id/diyFirstProductQuantityLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="14dp"
@@ -95,19 +95,19 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/spinner22" />
+        app:layout_constraintBottom_toTopOf="@+id/diyFirstProductAddToBasketBtn"
+        app:layout_constraintStart_toEndOf="@+id/diyFirstProductSizeMenu" />
 
     <Spinner
-        android:id="@+id/spinner23"
+        android:id="@+id/diyFirstProductQuantityMenu"
         android:layout_width="67dp"
         android:layout_height="22dp"
         android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/textView39" />
+        app:layout_constraintBottom_toTopOf="@+id/diyFirstProductAddToBasketBtn"
+        app:layout_constraintStart_toEndOf="@+id/diyFirstProductQuantityLbl" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/diyFirstProductAddToBasketBtn"
         android:layout_width="425dp"
         android:layout_height="46dp"
         android:layout_marginBottom="400dp"
@@ -120,7 +120,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView40"
+        android:id="@+id/diySecondProductTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
@@ -133,7 +133,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/diySecondProductImg"
         android:layout_width="284dp"
         android:layout_height="166dp"
         android:layout_marginStart="76dp"
@@ -143,7 +143,7 @@
         app:srcCompat="@drawable/diy_paint_brush" />
 
     <TextView
-        android:id="@+id/textView41"
+        android:id="@+id/diySecondProductCostLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
