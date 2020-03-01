@@ -257,7 +257,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(homeIntent);
 
         } catch (ActivityNotFoundException act) {
-            Log.d("Error", act.toString());
+            Log.d(String.valueOf(R.string.error), act.toString());
         }
     }
 }

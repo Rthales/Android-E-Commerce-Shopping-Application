@@ -274,7 +274,10 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     private boolean addToColoursList() { // Routine returns true or false if the colours have been added to the array list or not.
 
-        TechActivity.Colours[] colours = {new TechActivity.Colours(0, String.valueOf(R.string.firstColour)), new TechActivity.Colours(1, String.valueOf(R.string.sportsFirstColour)),
+        Context context = getApplicationContext();
+        String[] coloursResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.colourYellow)};
+
+        TechActivity.Colours[] colours = {new TechActivity.Colours(0, coloursResources[0]), new TechActivity.Colours(1, coloursResources[1]),
                 new TechActivity.Colours(2, String.valueOf(R.string.sportsSecondColour)), new TechActivity.Colours(3, String.valueOf(R.string.sportsThirdColour)),
                 new TechActivity.Colours(4, String.valueOf(R.string.sportsFourthColour))};
 
