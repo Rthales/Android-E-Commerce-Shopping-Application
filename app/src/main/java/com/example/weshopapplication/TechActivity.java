@@ -198,19 +198,14 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         firstAddToBasketButton.setOnClickListener(new View.OnClickListener() { // Adds a listener for the first add to basket button
             @Override
             public void onClick(View v) {
-                String colourErrorTitleOne = " First Colour Menu Error";
-                String colourErrorBodyMsg = "You must select a colour before adding the product to cart";
-
-                String quantityErrorTitleOne = "First Quantity Menu Error";
-                String quantityErrorBodyMsg = "You must select a quantity before adding the product to cart";
 
                 if (v.getId() == R.id.thirdAddToBasketBtn) { // If the first add to basket button is clicked
 
-                    if (firstProductColourOptions.getSelectedItemPosition() == 0) { //
+                    if (firstProductColourOptions.getSelectedItemPosition() == 0 || firstProductQuantityOptions.getSelectedItemPosition() == 0 || firstProductSizesMenu.getSelectedItemPosition() == 0) { //
 
                         AlertDialog.Builder colourErrorOne = new AlertDialog.Builder(TechActivity.this)
-                                .setTitle(colourErrorTitleOne)
-                                .setMessage(colourErrorBodyMsg).setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                .setTitle(R.string.error)
+                                .setMessage(R.string.errorMsg).setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
 
                                     public void onClick(DialogInterface dialog, int which) {
@@ -228,30 +223,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
                     else {
 
-                        addToBasketOne();
-                    }
-
-                    if (firstProductQuantityOptions.getSelectedItemPosition() == 0) {
-
-                        AlertDialog.Builder quantityErrorOne = new AlertDialog.Builder(TechActivity.this)
-
-                                .setTitle(quantityErrorTitleOne).setMessage(quantityErrorBodyMsg)
-
-                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
-
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        if (dialog != null) {
-                                            dialog.dismiss();
-                                        }
-                                    }
-                                });
-
-                        quantityErrorOne.show(); // Show the error
-                        quantityErrorOne.setCancelable(true);
-                    }
-
-                    else {
                         addToBasketOne();
                     }
                 }
@@ -303,6 +274,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void run() {
                 try {
+
                     Thread.sleep(1900);
                 } catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
