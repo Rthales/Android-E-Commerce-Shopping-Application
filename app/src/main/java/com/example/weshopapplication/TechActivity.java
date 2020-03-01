@@ -262,21 +262,13 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View secondButton) {
 
-                String colourErrorTitleTwo = "Second Colour Menu Error";
-                String colourErrorTwoBodyMsg = "You must select a colour before adding the product to cart";
-
-                String quantityTitleErrorTwo = "Second Quantity Menu Error";
-                String quantityErrorTwoBodyMsg = "You must select a quantity before adding the product to cart";
-
                 if (secondButton.getId() == R.id.secondAddToBasketBtn) {
 
-                    if (secondProductColourOptions.getSelectedItemPosition() == 0) {
+                    if (secondProductColourOptions.getSelectedItemPosition() == 0 || secondProductQuantityOptions.getSelectedItemPosition() == 0 || secondProductSizesMenu.getSelectedItemPosition() == 0) {
 
                         AlertDialog.Builder secondProductColourError = new AlertDialog.Builder(TechActivity.this)
-                                .setTitle(colourErrorTitleTwo)
-
-                                .setMessage(colourErrorTwoBodyMsg)
-
+                                .setTitle(R.string.error)
+                                .setMessage(R.string.errorMsg)
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
 
@@ -291,29 +283,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                         secondProductColourError.setCancelable(true); // User can click outside the Window to cancel the dialogue
                     }
 
-                    if (secondProductQuantityOptions.getSelectedItemPosition() == 0) { // If the selected item is at position 0
-
-                        AlertDialog.Builder secondProductQuantityError = new AlertDialog.Builder(TechActivity.this)
-                                .setTitle(quantityTitleErrorTwo)
-
-                                .setMessage(quantityErrorTwoBodyMsg)
-                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-
-                                        if (dialog != null) {
-                                            dialog.dismiss();
-                                        }
-                                    }
-                                });
-
-                        secondProductQuantityError.show();
-                        secondProductQuantityError.setCancelable(true);
-                    }
-
-                    else {
-                        addToBasketTwo();
-                    }
                 }
             }
         });

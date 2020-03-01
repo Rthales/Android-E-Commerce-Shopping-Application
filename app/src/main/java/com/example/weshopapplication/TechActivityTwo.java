@@ -296,7 +296,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
                     Thread.sleep(1900);
                 } catch (InterruptedException exc) {
-                    Log.d("Error : ", exc.toString());
+                    Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
                 dialog.dismiss();
