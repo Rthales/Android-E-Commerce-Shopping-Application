@@ -114,4 +114,10 @@ I will be making use of my MacBook Pro to develop my project. The software that 
 
 # Survey Data Gathering - Analysis
 
+The images below shows a Questionnaire that I have created which asks the public what they would like to see from the application.
+
+# Figure 1
+
 <img width="884" alt="Question 1" src="https://user-images.githubusercontent.com/29733613/75634775-76bfda80-5c08-11ea-827d-820f89a1299f.png">
+
+# Figure 2
