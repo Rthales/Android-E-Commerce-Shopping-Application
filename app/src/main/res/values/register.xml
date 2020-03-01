@@ -13,4 +13,5 @@
     <string name="emailEmpty">E-mail Field Cannot Be Left Empty</string>
     <string name="emailLength">E-mail Cant Have More Than 25 Characters</string>
     <string name="emailAtSymbol">E-mail should contain an @ symbol</string>
+    <string name="emailRegexWarning">E-mail Regex Warning</string>
 </resources>

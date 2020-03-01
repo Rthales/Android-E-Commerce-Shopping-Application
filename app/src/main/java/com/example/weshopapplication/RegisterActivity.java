@@ -271,10 +271,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     private boolean validateEmailAddress() { // Routine that validates the e-mail address.
         Context context = getApplicationContext();
         String[] emailAddressResources = new String[]{context.getString(R.string.emailError), context.getString(R.string.reEnterEmail), context.getString(R.string.emailEmpty), context.getString(R.string.emailLength)
-                , context.getString(R.string.emailAtSymbol)};
+                , context.getString(R.string.emailAtSymbol), context.getString(R.string.emailRegexWarning)};
 
         String emailAddressInputField = emailAddressField.getText().toString().trim(); // Get the input for the emailAddress
-
 
         if (emailAddressInputField.isEmpty()) {
 
@@ -310,7 +309,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
         if (!regexPatterns.matcher(emailAddressInputField).find()) { // If there is no regex characters matched including the @ symbol that is needed
 
             emailAddressField.setError(emailAddressResources[4]);
-            AlertDialog.Builder emailRegexWarning = new AlertDialog.Builder(RegisterActivity.this).setTitle("E-mail Regex Warning").setMessage("E-mail must contain @ symbol")
+            AlertDialog.Builder emailRegexWarning = new AlertDialog.Builder(RegisterActivity.this).setTitle(emailAddressResources[5]).setMessage(emailAddressResources[4])
                     .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
 
                         @Override
@@ -342,7 +341,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
         if (passwordEntryField.isEmpty() && !regexPatterns.matcher(passwordEntryField).matches()) { // If the password is empty and there are no regex characters found
 
             AlertDialog.Builder passwordWarning = new AlertDialog.Builder(RegisterActivity.this).setTitle("Password Warning")
-                    .setMessage("Re-enter Password Please").setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    .setMessage("Re-enter Password Please").setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             if (dialog != null) { // If the dialog is empty
@@ -455,7 +454,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                 try {
                     Thread.sleep(2100);
                 } catch (InterruptedException exc) {
-                    Log.d("Error : ", exc.toString());
+                    Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
 
@@ -527,7 +526,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Log.d("error : ", e.toString());
+                Log.d(String.valueOf(R.string.error), e.toString());
             }
         });
     }
@@ -541,7 +540,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
         } catch (ActivityNotFoundException act) {
 
-            Log.d("Error", act.toString());
+            Log.d(String.valueOf(R.string.error), act.toString());
         }
     }
 }
