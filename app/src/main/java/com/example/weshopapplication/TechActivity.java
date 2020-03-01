@@ -252,8 +252,9 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
                         secondProductColourError.show();
                         secondProductColourError.setCancelable(true); // User can click outside the Window to cancel the dialogue
+                    } else {
+                        addToBasketTwo();
                     }
-
                 }
             }
         });

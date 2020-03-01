@@ -145,6 +145,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
         addToColoursList(); // Method to add to the colours array list
         addToQuantitiesList();
+
         addThirdProductSizes();
         addFourthProductSizes();
 
@@ -157,6 +158,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         // SET UP THE THIRD PRODUCT COLOUR SPINNER DROP DOWN MENU TO SHOW
         this.colourArrayAdapter = new ColourArrayAdapter(TechActivityTwo.this, listOfColours);
         colourArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         thirdProductDropDown.setAdapter(colourArrayAdapter);
         thirdProductDropDown.setOnItemSelectedListener(TechActivityTwo.this);
 
@@ -186,7 +188,6 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         fourthProductMenu.setAdapter(sizeArrayAdapter);
         fourthProductMenu.setOnItemSelectedListener(TechActivityTwo.this);
 
-
         this.thirdAddToBasketButton.setOnClickListener(new View.OnClickListener() { // Add Listener for third button
             @Override
 
@@ -194,11 +195,11 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
                 if (v.getId() == R.id.thirdAddToBasketBtn) {
 
-                    if (thirdProductDropDown.getSelectedItemPosition() == 0) {
+                    if (thirdProductDropDown.getSelectedItemPosition() == 0 || thirdQuantityDropDown.getSelectedItemPosition() == 0 || thirdSizeDropDownMenu.getSelectedItemPosition() == 0) {
 
-                        AlertDialog.Builder colourError = new AlertDialog.Builder(TechActivityTwo.this).setTitle("Colour Error")
-                                .setMessage("You must select a colour before adding to the basket.")
-                                .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                        AlertDialog.Builder colourError = new AlertDialog.Builder(TechActivityTwo.this).setTitle(R.string.error)
+                                .setMessage(R.string.errorMsg)
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
 
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
@@ -211,37 +212,11 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
                         colourError.show(); // Show the error
                         colourError.setCancelable(true); // Set cancelable to true
-                        return;
                     } else {
 
                         addProductThreeToBasket();
                     }
 
-                    if (thirdQuantityDropDown.getSelectedItemPosition() == 0) { // If no value is chosen for the quantity
-
-                        AlertDialog.Builder quantityError = new AlertDialog.Builder(TechActivityTwo.this).setTitle("Quantity Error") // Create an alert dialogue
-
-                                .setMessage("You must select a quantity before adding to the basket")
-
-                                .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
-
-                                    @Override
-
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        if (dialog != null) { // If there is no dialogue
-
-                                            dialog.dismiss(); // Delete it
-                                        }
-                                    }
-                                });
-
-                        quantityError.show(); // Show the quantity error.
-                        quantityError.setCancelable(true);
-
-                    } else {
-
-                        addProductThreeToBasket();
-                    }
                 }
             }
         });
