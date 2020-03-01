@@ -73,12 +73,14 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     // COST FOR THE FIRST PRODUCT
     private double quantity_two_cost = 2 * quantity_one_cost; // Quantity 2 is 3 times the price of 1 quantity.
     private double quantity_three_cost = 3 * quantity_one_cost;
+
     private double quantity_four_cost = 4 * quantity_one_cost;
     private double quantity_five_cost = 5 * quantity_one_cost;
 
     private double product_four_zero_cost = 0.00;
     private double product_four_one_cost = 750.00;
     private double product_four_two_cost = 2 * product_four_one_cost;
+
     private double product_four_three_cost = 3 * product_four_one_cost;
     private double product_four_four_cost = 4 * product_four_one_cost;
 
@@ -228,12 +230,12 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
                 if (view.getId() == R.id.fourthAddToBasketButton) {
 
 
-                    if (fourthProductColourSpinner.getSelectedItemPosition() == 0 || fourthProductQuantityDropDown.getSelectedItemPosition() == 0) {
-                        AlertDialog.Builder error = new AlertDialog.Builder(TechActivityTwo.this).setTitle("Error")
+                    if (fourthProductColourSpinner.getSelectedItemPosition() == 0 || fourthProductQuantityDropDown.getSelectedItemPosition() == 0 || fourthProductMenu.getSelectedItemPosition() == 0) {
+                        AlertDialog.Builder error = new AlertDialog.Builder(TechActivityTwo.this).setTitle(R.string.error)
 
-                                .setMessage("You must select a colour, capacity and quantity in order to add to basket")
+                                .setMessage(R.string.errorMsg)
 
-                                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         if (dialog != null) {
@@ -577,7 +579,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
         } catch (ActivityNotFoundException exc) {
 
-            Log.d("Error : ", exc.toString());
+            Log.d(String.valueOf(R.string.error), exc.toString());
         }
 
         return true;
