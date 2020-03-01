@@ -211,8 +211,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                         AlertDialog.Builder error = new AlertDialog.Builder(SportsAndOutdoorsActivity.this) // Create an alert dialogue for the user to see
                                 .setTitle(R.string.error)
-                                .setMessage("You must select a valid option before adding the product to the basket")
-
+                                .setMessage(R.string.errorMsg)
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
 
                                     @Override
@@ -521,7 +520,6 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     public boolean onOptionsItemSelected(MenuItem item) {
 
         try {
-
             switch (item.getItemId()) {
                 case R.id.sportsAndOutdoorsCategory:
                     Intent sportsCategory = new Intent(SportsAndOutdoorsActivity.this, SportsAndOutdoorsActivity.class);
