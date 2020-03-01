@@ -426,50 +426,51 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // Method that determines which item has been selected and at which index
         boolean valueAppended = false;
         int[] indexes = {0, 1, 2, 3, 4};
-        String appendText = "Product Cost £: ";
+        Context context = getApplicationContext();
+        String[] productResources = new String[]{context.getString(R.string.productCost)};
 
         if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[0]))) {
             firstSportsOutdoorCostTxt.setText(null);
-            firstSportsOutdoorCostTxt.setText(appendText + (productOneCosts[0]));
+            firstSportsOutdoorCostTxt.setText(productResources[0] + (productOneCosts[0]));
             valueAppended = true;
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[1]))) {
-            firstSportsOutdoorCostTxt.setText(appendText + (productOneCosts[1]));
+            firstSportsOutdoorCostTxt.setText(productResources[0] + (productOneCosts[1]));
             valueAppended = true; // Value is appended
 
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[2]))) {
             firstSportsOutdoorCostTxt.setText(null);
-            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[2]);
+            firstSportsOutdoorCostTxt.append(productResources[0] + productOneCosts[2]);
             valueAppended = true;
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[3]))) {
             firstSportsOutdoorCostTxt.setText(null);
-            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[3]);
+            firstSportsOutdoorCostTxt.append(productResources[0] + productOneCosts[3]);
             valueAppended = true;
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[4]))) {
             firstSportsOutdoorCostTxt.setText(null);
-            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[4]);
+            firstSportsOutdoorCostTxt.append(productResources[0] + productOneCosts[4]);
             valueAppended = true;
         }
 
 
         if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[0]))) {
             secondSportsOutdoorCostLbl.setText(null);
-            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[0]);
+            secondSportsOutdoorCostLbl.append(productResources[0] + productTwoCosts[0]);
             valueAppended = true;
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[1]))) {
             secondSportsOutdoorCostLbl.setText(null);
-            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[1]);
+            secondSportsOutdoorCostLbl.append(productResources[0] + productTwoCosts[1]);
             valueAppended = true;
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[2]))) {
             secondSportsOutdoorCostLbl.setText(null);
-            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[2]);
+            secondSportsOutdoorCostLbl.append(productResources[0] + productTwoCosts[2]);
             valueAppended = true;
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[3]))) {
             secondSportsOutdoorCostLbl.setText(null);
-            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[3]);
+            secondSportsOutdoorCostLbl.append(productResources[0] + productTwoCosts[3]);
             valueAppended = true;
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[4]))) {
             secondSportsOutdoorCostLbl.setText(null);
-            secondSportsOutdoorCostLbl.append(appendText + productTwoCosts[4]);
+            secondSportsOutdoorCostLbl.append(productResources[0] + productTwoCosts[4]);
             valueAppended = true;
         }
     }
