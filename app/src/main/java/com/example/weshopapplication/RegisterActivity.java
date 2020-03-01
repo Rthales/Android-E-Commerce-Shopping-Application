@@ -183,7 +183,8 @@ public class RegisterActivity extends AppCompatActivity { // Register class
         String usernameInputField = usernameField.getText().toString().trim();
 
         Context context = getApplicationContext();
-        String[] usernameValidationResource = new String[]{context.getString(R.string.empty), context.getString(R.string.usernameLength), context.getString(R.string.usernameReEnter)};
+        String[] usernameValidationResource = new String[]{context.getString(R.string.empty), context.getString(R.string.usernameLength), context.getString(R.string.usernameReEnter), context.getString(R.string.usernameRegex),
+                context.getString(R.string.usernameReEnter), context.getString(R.string.usernameRegexWarning)};
 
         if (usernameInputField.isEmpty()) { // If the input field is left empty
 
@@ -238,10 +239,10 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             }
 
             if (regexPatterns.matcher(usernameInputField).find()) { // If the username has a regex character.
-                usernameField.setError("Username should not contain regex character");
+                usernameField.setError(usernameValidationResource[3]);
 
-                AlertDialog.Builder regexWarning = new AlertDialog.Builder(RegisterActivity.this).setMessage("Please re-enter Username.")
-                        .setTitle("Username Regex Warning").setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                AlertDialog.Builder regexWarning = new AlertDialog.Builder(RegisterActivity.this).setMessage(usernameValidationResource[4])
+                        .setTitle(usernameValidationResource[5]).setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                             @Override
 
                             public void onClick(DialogInterface dialog, int which) {
