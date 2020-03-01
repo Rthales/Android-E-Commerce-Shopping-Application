@@ -8,7 +8,7 @@
     tools:context=".ClothingActivityTwo">
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/clothingThirdProductTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
@@ -17,21 +17,21 @@
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+        app:layout_constraintBottom_toTopOf="@+id/clothingThirdProductImg"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/clothingThirdProductImg"
         android:layout_width="225dp"
         android:layout_height="218dp"
         android:layout_marginStart="100dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        app:layout_constraintBottom_toTopOf="@+id/clothingThirdProductCost"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/clothing_women_top" />
 
     <TextView
-        android:id="@+id/textView26"
+        android:id="@+id/clothingThirdProductCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
@@ -40,11 +40,11 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView28"
+        app:layout_constraintBottom_toTopOf="@+id/clothingThirdProductSizeLbl"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/clothingThirdProductColourLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -57,15 +57,15 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner15"
+        android:id="@+id/clothingThirdProductColourMenu"
         android:layout_width="74dp"
         android:layout_height="22dp"
         android:layout_marginBottom="406dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView27" />
+        app:layout_constraintStart_toEndOf="@+id/clothingThirdProductColourLbl" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/clothingThirdProductSizeLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
@@ -75,19 +75,19 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinner15" />
+        app:layout_constraintStart_toEndOf="@+id/clothingThirdProductColourMenu" />
 
     <Spinner
-        android:id="@+id/spinner16"
+        android:id="@+id/clothingThirdProductSizeMenu"
         android:layout_width="58dp"
         android:layout_height="21dp"
         android:layout_marginStart="2dp"
         android:layout_marginBottom="406dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView28" />
+        app:layout_constraintStart_toEndOf="@+id/clothingThirdProductSizeLbl" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/clothingThirdProductQuantityLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
@@ -97,18 +97,18 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinner16" />
+        app:layout_constraintStart_toEndOf="@+id/clothingThirdProductSizeMenu" />
 
     <Spinner
-        android:id="@+id/spinner17"
+        android:id="@+id/clothingThirdProductQuantityMenu"
         android:layout_width="71dp"
         android:layout_height="21dp"
         android:layout_marginBottom="404dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView29" />
+        app:layout_constraintStart_toEndOf="@+id/clothingThirdProductQuantityLbl" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/clothingThirdProductAddToBasketBtn"
         android:layout_width="439dp"
         android:layout_height="45dp"
         android:layout_marginBottom="352dp"

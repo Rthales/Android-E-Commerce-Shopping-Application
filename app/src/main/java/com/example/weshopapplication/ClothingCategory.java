@@ -25,7 +25,7 @@ public class ClothingCategory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clothing_category);
 
-        this.nextPageBtn = findViewById(R.id.nextPageC);
+        this.nextPageBtn = findViewById(R.id.clothingNextPageBtn);
 
         this.nextPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
