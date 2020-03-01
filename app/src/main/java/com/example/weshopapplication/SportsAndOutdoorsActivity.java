@@ -196,7 +196,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                 } catch (ActivityNotFoundException exc) { // Catch the error if the activity has not been found
 
-                    Log.d("Error : ", exc.toString()); // Log the error to the console
+                    Log.d(String.valueOf(R.string.error), exc.toString()); // Log the error to the console
                 }
             }
         });
@@ -276,11 +276,12 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     private boolean addToColoursList() { // Routine returns true or false if the colours have been added to the array list or not.
 
         Context context = getApplicationContext();
-        String[] coloursResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.colourYellow)};
+        String[] coloursResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.colourYellow), context.getString(R.string.colourBlack),
+                context.getString(R.string.colourRed), context.getString(R.string.skyBlue)};
 
         TechActivity.Colours[] colours = {new TechActivity.Colours(0, coloursResources[0]), new TechActivity.Colours(1, coloursResources[1]),
-                new TechActivity.Colours(2, String.valueOf(R.string.sportsSecondColour)), new TechActivity.Colours(3, String.valueOf(R.string.sportsThirdColour)),
-                new TechActivity.Colours(4, String.valueOf(R.string.sportsFourthColour))};
+                new TechActivity.Colours(2, coloursResources[2]), new TechActivity.Colours(3, coloursResources[3]),
+                new TechActivity.Colours(4, coloursResources[4])};
 
         for (TechActivity.Colours productColours : colours) { // For each colours in the array
             listOfColoursOne.add(productColours); // Add it to the array list
