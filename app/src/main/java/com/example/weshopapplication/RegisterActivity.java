@@ -336,12 +336,15 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     }
 
     private boolean validatePassword() { // Routine to validate the password
+        Context context = getApplicationContext();
+
+        String[] passwordResources = new String[]{context.getString(R.string.passwordWarning), context.getString(R.string.passwordReEnter), context.getString(R.string.passwordRegexEmpty)};
         String passwordEntryField = passwordField.getText().toString().trim(); // Get the password input and trim it
 
         if (passwordEntryField.isEmpty() && !regexPatterns.matcher(passwordEntryField).matches()) { // If the password is empty and there are no regex characters found
 
-            AlertDialog.Builder passwordWarning = new AlertDialog.Builder(RegisterActivity.this).setTitle("Password Warning")
-                    .setMessage("Re-enter Password Please").setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+            AlertDialog.Builder passwordWarning = new AlertDialog.Builder(RegisterActivity.this).setTitle(passwordResources[0])
+                    .setMessage(passwordResources[1]).setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             if (dialog != null) { // If the dialog is empty
@@ -353,7 +356,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             passwordWarning.show();
             passwordField.setText("");
 
-            passwordField.setError("Password cannot be left empty & must contain special characters");
+            passwordField.setError(passwordResources[2]);
             isEmpty = true; // Is empty is true
             hasRegex = false;
 

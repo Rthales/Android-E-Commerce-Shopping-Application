@@ -14,4 +14,8 @@
     <string name="emailLength">E-mail Cant Have More Than 25 Characters</string>
     <string name="emailAtSymbol">E-mail should contain an @ symbol</string>
     <string name="emailRegexWarning">E-mail Regex Warning</string>
+
+    <string name="passwordWarning">Password Warning</string>
+    <string name="passwordReEnter">Re-Enter Password Please</string>
+    <string name="passwordRegexEmpty">Password cannot be left empty and must contain special characters</string>
 </resources>
