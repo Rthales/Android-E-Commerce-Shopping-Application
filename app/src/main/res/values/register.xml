@@ -26,4 +26,5 @@
     <string name="termsAndConditionsMust">Terms and Conditions Box must be checked.</string>
 
     <string name="creatingAccount">Creating Account...</string>
+    <string name="finish">Are you sure you are finished browsing?</string>
 </resources>

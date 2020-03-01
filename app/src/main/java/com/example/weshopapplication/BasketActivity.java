@@ -1,6 +1,7 @@
 package com.example.weshopapplication;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -81,13 +82,16 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.finish)};
+
         try {
             if (v.getId() == R.id.placeOrderBtn) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(BasketActivity.this)
                         .setTitle(R.string.checkout)
 
-                        .setMessage("Are you sure you are finished browsing?")
+                        .setMessage(temp[0])
 
                         .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                             @Override

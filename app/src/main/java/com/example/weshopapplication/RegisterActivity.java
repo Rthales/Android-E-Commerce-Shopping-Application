@@ -533,7 +533,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             @Override
 
             public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(RegisterActivity.this, "Added data to firestore", Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "Added Data To Fire Store", Toast.LENGTH_LONG).show();
             }
 
         }).addOnFailureListener(new OnFailureListener() {
