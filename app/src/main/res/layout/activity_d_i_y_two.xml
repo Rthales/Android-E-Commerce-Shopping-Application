@@ -25,17 +25,18 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="252dp"
-        android:layout_height="218dp"
+        android:layout_width="272dp"
+        android:layout_height="186dp"
         android:layout_marginStart="79dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="80dp"
         android:layout_marginBottom="452dp"
+        android:contentDescription="TODO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        android:contentDescription="TODO"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/diywallpaper" />
 
     <TextView
@@ -52,15 +53,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.062" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="392dp"
+        android:layout_marginBottom="420dp"
         android:text="Colour"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -72,7 +75,7 @@
         android:id="@+id/spinner7"
         android:layout_width="79dp"
         android:layout_height="21dp"
-        android:layout_marginBottom="392dp"
+        android:layout_marginBottom="420dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView13" />
 
@@ -80,8 +83,8 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginBottom="391dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="420dp"
         android:text="Size"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -93,7 +96,7 @@
         android:id="@+id/spinner8"
         android:layout_width="76dp"
         android:layout_height="21dp"
-        android:layout_marginBottom="391dp"
+        android:layout_marginBottom="420dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView15" />
 
@@ -101,8 +104,8 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:layout_marginBottom="389dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="420dp"
         android:text="Quantity"
         android:textColor="@color/white"
         android:textSize="16sp"
@@ -116,9 +119,10 @@
         android:layout_height="23dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="17dp"
-        android:layout_marginBottom="387dp"
+        android:layout_marginBottom="420dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.583"
         app:layout_constraintStart_toEndOf="@+id/textView16" />
 
     <Button
@@ -126,7 +130,7 @@
         android:layout_width="427dp"
         android:layout_height="46dp"
         android:layout_marginStart="6dp"
-        android:layout_marginBottom="332dp"
+        android:layout_marginBottom="356dp"
         android:background="@drawable/button_round"
         android:text="@string/add_to_basket"
         android:textColor="@color/white"
@@ -142,14 +146,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="170dp"
         android:layout_marginEnd="182dp"
-        android:layout_marginBottom="292dp"
+        android:layout_marginBottom="316dp"
         android:text="Sealant"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.227"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="204dp"
+        android:layout_height="173dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/sealant" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
