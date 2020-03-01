@@ -16,6 +16,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -42,7 +44,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(BasketActivity.this, android.R.layout.simple_list_item_1, prod) {
 
-            public View getView(int position, View convertView, ViewGroup parent) {
+            public View getView(int position, View convertView, @NotNull ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
 
                 TextView tv = view.findViewById(android.R.id.text1);
@@ -56,6 +58,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
         ListView view = findViewById(R.id.listViewBasket); // Find the list view component
         view.setAdapter(arrayAdapter); // Set its adapter
 
+        assert hashMap != null;
         for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // Loop over the hash map of products
             arrayAdapter.add(entry.toString()); // Add the entries to the adapter list
         }

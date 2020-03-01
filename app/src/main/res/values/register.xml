@@ -19,4 +19,5 @@
     <string name="passwordError">Password Error</string>
     <string name="passwordReEnter">Re-Enter Password Please</string>
     <string name="passwordRegexEmpty">Password cannot be left empty and must contain special characters</string>
+    <string name="passwordUppercase">Password Must Start With Uppercase Character</string>
 </resources>

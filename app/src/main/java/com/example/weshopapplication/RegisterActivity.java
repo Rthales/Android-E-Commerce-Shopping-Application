@@ -338,7 +338,8 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     private boolean validatePassword() { // Routine to validate the password
         Context context = getApplicationContext();
 
-        String[] passwordResources = new String[]{context.getString(R.string.passwordWarning), context.getString(R.string.passwordReEnter), context.getString(R.string.passwordRegexEmpty), context.getString(R.string.passwordError)};
+        String[] passwordResources = new String[]{context.getString(R.string.passwordWarning), context.getString(R.string.passwordReEnter), context.getString(R.string.passwordRegexEmpty), context.getString(R.string.passwordError),
+                context.getString(R.string.passwordUppercase)};
         String passwordEntryField = passwordField.getText().toString().trim(); // Get the password input and trim it
 
         if (passwordEntryField.isEmpty() && !regexPatterns.matcher(passwordEntryField).matches()) { // If the password is empty and there are no regex characters found
@@ -383,7 +384,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                 pwUpperCase.show();
                 passwordField.setText(""); // Set the field empty
 
-                passwordField.setError("Password must start with upper case character");
+                passwordField.setError(passwordResources[4]);
                 startsWithUppercase = false;
 
                 isValid = false;
