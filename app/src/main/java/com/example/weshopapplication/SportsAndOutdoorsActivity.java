@@ -241,6 +241,8 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         secondSportsAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Context context = getApplicationContext();
+                String[] tempResources = new String[]{context.getString(R.string.chooseOption)};
 
                 if (v.getId() == R.id.secondAddToBasketBtn) { // If the second add to basket button is clicked
 
@@ -249,8 +251,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                         AlertDialog.Builder errorMenu = new AlertDialog.Builder(SportsAndOutdoorsActivity.this)
                                 .setTitle(R.string.error)
 
-                                .setMessage("You must choose an option before adding to the basket")
-
+                                .setMessage(tempResources[0])
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
 
@@ -318,7 +319,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         return true;
     }
 
-    private boolean addToQuantitiesListTwo() {
+    private boolean addToQuantitiesListTwo() { // Add to quantities list two.
 
         Context context = getApplicationContext();
 
@@ -370,7 +371,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
                 } catch (InterruptedException exc) {
-                    Log.d("Error : ", exc.toString());
+                    Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
                 dialog.dismiss();
@@ -388,10 +389,13 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     }
 
     private boolean addToBasketTwo() { // Adds the second product to the basket
+        Context context = getApplicationContext();
 
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
         final ProgressDialog dialog = new ProgressDialog(SportsAndOutdoorsActivity.this); // Spinning progress dialog
-        dialog.setTitle("Adding to Basket.."); // Set the title of the dialog
-        dialog.setMessage("Please Wait");
+        dialog.setTitle(temp[0]); // Set the title of the dialog.
+
+        dialog.setMessage(temp[1]);
 
         dialog.setCancelable(false);
 
@@ -426,6 +430,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // Method that determines which item has been selected and at which index
         boolean valueAppended = false;
         int[] indexes = {0, 1, 2, 3, 4};
+
         Context context = getApplicationContext();
         String[] productResources = new String[]{context.getString(R.string.productCost)};
 
