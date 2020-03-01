@@ -8,11 +8,11 @@
     tools:context=".ClothingCategory">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/clothingFirstProductTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
-        android:layout_marginBottom="692dp"
+        android:layout_marginBottom="680dp"
         android:text="Long Sleeve Checkered Shirt"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/clothingFirstProductImg"
         android:layout_width="194dp"
         android:layout_height="194dp"
         android:layout_marginStart="120dp"
@@ -31,7 +31,7 @@
         app:srcCompat="@drawable/clothingshirt" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/clothingFirstProductCostLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="160dp"
@@ -44,7 +44,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/clothingFirstProductColourLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
@@ -53,20 +53,19 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/clothingFirstProductAddToBasketBtn"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/clothingFirstProductColourMenu"
         android:layout_width="64dp"
         android:layout_height="17dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginBottom="14dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/textView5" />
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/clothingFirstProductAddToBasketBtn"
+        app:layout_constraintStart_toEndOf="@+id/clothingFirstProductColourLbl" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/clothingFirstProductQuantityLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="102dp"
@@ -75,19 +74,19 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
+        app:layout_constraintBottom_toTopOf="@+id/clothingFirstProductAddToBasketBtn"
+        app:layout_constraintStart_toEndOf="@+id/clothingFirstProductSizeLbl" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/firstProductQuantityMenu"
         android:layout_width="82dp"
         android:layout_height="21dp"
         android:layout_marginBottom="11dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/textView6" />
+        app:layout_constraintBottom_toTopOf="@+id/clothingFirstProductAddToBasketBtn"
+        app:layout_constraintStart_toEndOf="@+id/clothingFirstProductQuantityLbl" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/clothingFirstProductAddToBasketBtn"
         android:layout_width="449dp"
         android:layout_height="50dp"
         android:layout_marginBottom="376dp"
@@ -193,7 +192,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/clothingFirstProductSizeLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -202,17 +201,17 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/spinner" />
+        app:layout_constraintBottom_toTopOf="@+id/clothingFirstProductAddToBasketBtn"
+        app:layout_constraintStart_toEndOf="@+id/clothingFirstProductColourMenu" />
 
     <Spinner
-        android:id="@+id/spinner6"
+        android:id="@+id/clothingFirstProductSizeMenu"
         android:layout_width="69dp"
         android:layout_height="18dp"
-        android:layout_marginStart="11dp"
+        android:layout_marginStart="12dp"
         android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
+        app:layout_constraintBottom_toTopOf="@+id/clothingFirstProductAddToBasketBtn"
+        app:layout_constraintStart_toEndOf="@+id/clothingFirstProductSizeLbl" />
 
     <TextView
         android:id="@+id/textView22"
