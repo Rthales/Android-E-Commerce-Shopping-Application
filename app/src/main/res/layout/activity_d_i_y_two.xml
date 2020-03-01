@@ -142,7 +142,7 @@
         android:layout_marginStart="170dp"
         android:layout_marginEnd="182dp"
         android:layout_marginBottom="292dp"
-        android:text="Sealant Advisor"
+        android:text="Sealant"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
