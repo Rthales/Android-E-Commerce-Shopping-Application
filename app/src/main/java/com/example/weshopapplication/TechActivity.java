@@ -385,18 +385,14 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    private boolean addToColoursList() {
+    private boolean addToColoursList() { // Routine to add the first tech product colours to an array list
         boolean addedColours = false;
 
         Context context = getApplicationContext();
+        String[] resources = new String[]{context.getString(R.string.colour), context.getString(R.string.firstColour), context.getString(R.string.secondColour), context.getString(R.string.thirdColour)};
 
-        String colourPrompt = context.getString(R.string.colour);
-        String firstColour = context.getString(R.string.firstColour);
-        String secondColour = context.getString(R.string.secondColour);
+        Colours[] coloursArray = {new Colours(0, resources[0]), new Colours(1, resources[1]), new Colours(2, resources[2]), new Colours(3, resources[3])};
 
-        String thirdColour = context.getString(R.string.thirdColour);
-
-        Colours[] coloursArray = {new Colours(0, colourPrompt), new Colours(1, firstColour), new Colours(2, secondColour), new Colours(3, thirdColour)};
         for (Colours colours : coloursArray) { // For each colour in the array
             listOfColours.add(colours); // Add it to the array list
             
