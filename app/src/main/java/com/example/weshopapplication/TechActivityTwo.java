@@ -2,6 +2,7 @@ package com.example.weshopapplication;
 
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -375,7 +376,12 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
     private boolean addFourthProductSizes() {
         boolean addedSizes = false;
-        Size[] fourthProdSizes = {new Size(0, "Please choose Size"), new Size(1, "64GB"), new Size(2, "128GB"), new Size(3, "256GB"), new Size(4, "512GB")};
+
+        Context context = getApplicationContext();
+
+        String[] techSizesResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.sixtyFourGB), context.getString(R.string.oneTwoEight), context.getString(R.string.twoFiveSix), context.getString(R.string.fiveTwelve)};
+
+        Size[] fourthProdSizes = {new Size(0, techSizesResources[0]), new Size(1, techSizesResources[1]), new Size(2, techSizesResources[2]), new Size(3, techSizesResources[3]), new Size(4, techSizesResources[4])};
 
         for (Size sizes : fourthProdSizes) {
             secondListOfSizes.add(sizes);
@@ -387,11 +393,16 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
     private boolean addToQuantitiesList() { // Routine that adds the quantities to the array list
 
-        TechActivity.Quantities[] quantitiesArray = {new TechActivity.Quantities(0), new TechActivity.Quantities(1), new TechActivity.Quantities(2),
-                new TechActivity.Quantities(3), new TechActivity.Quantities(4), new TechActivity.Quantities(5)};
+        Context context = getApplicationContext();
 
-        TechActivity.Quantities[] secondProductQuantities = {new TechActivity.Quantities(0), new TechActivity.Quantities(1), new TechActivity.Quantities(2),
-                new TechActivity.Quantities(3), new TechActivity.Quantities(4), new TechActivity.Quantities(5)};
+        String[] quantitiesResources = new String[]{context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two), context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+
+        TechActivity.Quantities[] quantitiesArray = {new TechActivity.Quantities(quantitiesResources[0]), new TechActivity.Quantities(quantitiesResources[1]), new TechActivity.Quantities(quantitiesResources[2]),
+                new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
+
+        TechActivity.Quantities[] secondProductQuantities = {new TechActivity.Quantities(quantitiesResources[0]), new TechActivity.Quantities(quantitiesResources[1]), new TechActivity.Quantities(quantitiesResources[2]),
+                new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
 
 
         for (TechActivity.Quantities qty : quantitiesArray) { // For each quantity in the array

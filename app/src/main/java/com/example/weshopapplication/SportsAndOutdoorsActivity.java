@@ -3,6 +3,7 @@ package com.example.weshopapplication;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -298,8 +299,13 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     }
 
     private boolean addToQuantitiesListOne() {
-        TechActivity.Quantities[] quantities = {new TechActivity.Quantities(0), new TechActivity.Quantities(1), new TechActivity.Quantities(2)
-                , new TechActivity.Quantities(3), new TechActivity.Quantities(4), new TechActivity.Quantities(5)};
+
+        Context context = getApplicationContext();
+
+        String[] quantitiesResources = new String[]{context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two), context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+        TechActivity.Quantities[] quantities = {new TechActivity.Quantities(quantitiesResources[0]), new TechActivity.Quantities(quantitiesResources[1]), new TechActivity.Quantities(quantitiesResources[2])
+                , new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
 
         for (TechActivity.Quantities quantitiesArray : quantities) {
             listOfQuantitiesOne.add(quantitiesArray);
@@ -310,8 +316,14 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     }
 
     private boolean addToQuantitiesListTwo() {
-        TechActivity.Quantities[] quantities = {new TechActivity.Quantities(0), new TechActivity.Quantities(1), new TechActivity.Quantities(2)
-                , new TechActivity.Quantities(3), new TechActivity.Quantities(4), new TechActivity.Quantities(5)};
+
+        Context context = getApplicationContext();
+
+        String[] quantitiesResources = new String[]{context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two), context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+
+        TechActivity.Quantities[] quantities = {new TechActivity.Quantities(quantitiesResources[0]), new TechActivity.Quantities(quantitiesResources[1]), new TechActivity.Quantities(quantitiesResources[2])
+                , new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
 
         for (TechActivity.Quantities quantitiesArray : quantities) {
             listOfQuantitiesTwo.add(quantitiesArray);

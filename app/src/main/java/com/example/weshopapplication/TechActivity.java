@@ -443,12 +443,16 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     private boolean addToQuantitiesList() { // Routine to add the quantities to the array list
         boolean addedQuantities = false;
 
-        Quantities[] firstProductQuantities = { // Create quantities array of objects
-                new Quantities(0), new Quantities(1), new Quantities(2)
-                , new Quantities(3), new Quantities(4), new Quantities(5)};
+        Context context = getApplicationContext();
 
-        Quantities[] secondProductQuantities = {new Quantities(0), new Quantities(1), new Quantities(2),
-                new Quantities(3), new Quantities(4), new Quantities(5)};
+        String[] quantitiesResources = new String[]{context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two), context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+        Quantities[] firstProductQuantities = { // Create quantities array of objects
+                new Quantities(quantitiesResources[0]), new Quantities(quantitiesResources[1]), new Quantities(quantitiesResources[2])
+                , new Quantities(quantitiesResources[3]), new Quantities(quantitiesResources[4]), new Quantities(quantitiesResources[5])};
+
+        Quantities[] secondProductQuantities = {new Quantities(quantitiesResources[0]), new Quantities(quantitiesResources[1]), new Quantities(quantitiesResources[2]),
+                new Quantities(quantitiesResources[3]), new Quantities(quantitiesResources[4]), new Quantities(quantitiesResources[5])};
 
         for (Quantities quantities : firstProductQuantities) { // For each quantity in the array
             listOfQuantities.add(quantities); // Add it to the array list
@@ -598,17 +602,17 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public static class Quantities {
-        private int quantity; // Quantity variable
+        private String quantity; // Quantity variable
 
-        public Quantities(int quantity) { // Parameterised constructor that creates the object and the data when this is called.
+        public Quantities(String quantity) { // Parameterised constructor that creates the object and the data when this is called.
             this.quantity = quantity;
         }
 
-        public int getQuantity() { // Gets the quantity
+        public String getQuantity() { // Gets the quantity
             return this.quantity;
         }
 
-        public void setQuantity(int quantity) {
+        public void setQuantity(String quantity) {
             this.quantity = quantity;
         }
 
