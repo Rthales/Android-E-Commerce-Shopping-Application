@@ -60,6 +60,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
         view.setAdapter(arrayAdapter); // Set its adapter
 
         assert hashMap != null;
+
         for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // Loop over the hash map of products
             arrayAdapter.add(entry.toString()); // Add the entries to the adapter list
         }
