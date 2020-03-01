@@ -2,6 +2,7 @@ package com.example.weshopapplication;
 
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -81,7 +82,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        String errorMessage = "Error Caused By : ";
 
         try {
 
@@ -124,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         // Catch the activity not found exception
         catch (ActivityNotFoundException act) {
-            Log.d(errorMessage, act.toString()); // Log the error as to why it occurred.
+            Log.d(String.valueOf(R.string.error), act.toString()); // Log the error as to why it occurred.
         }
 
         return true;
@@ -133,13 +133,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean validateEmailAddress() { // Routine that validates the e-mail address when logging in.
         String emailEntry = emailAddressField.getText().toString().trim(); // Get the email address entry
-        String errorMessage = "Please re-enter E-mail Address";
+        Context context = getApplicationContext();
 
+        String[] tempResources = new String[]{context.getString(R.string.emailError), context.getString(R.string.emailAtSymbol)};
 
         if (!regexPatterns.matcher(emailEntry).find() && emailEntry.isEmpty()) { // If there is no @ symbol and the email field is empty
 
-            AlertDialog.Builder emailError = new AlertDialog.Builder(LoginActivity.this).setTitle("Error")
-                    .setMessage(errorMessage).setNegativeButton("OK", new DialogInterface.OnClickListener() {
+            AlertDialog.Builder emailError = new AlertDialog.Builder(LoginActivity.this).setTitle(R.string.error)
+                    .setMessage(tempResources[0]).setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             if (dialog != null) {
@@ -149,7 +150,7 @@ public class LoginActivity extends AppCompatActivity {
                     });
 
             emailError.show();
-            emailAddressField.setError("E-mail must contain @ symbol");
+            emailAddressField.setError(tempResources[1]);
 
             emailAddressField.setText("");
             return false;
@@ -162,7 +163,6 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-
     private boolean validatePassword() { // Routine that validates the password when logging in.
 
         String passwordEntry = passwordField.getText().toString().trim(); // Get the password entry
@@ -170,11 +170,14 @@ public class LoginActivity extends AppCompatActivity {
 
         if (passwordEntry.isEmpty()) { // If the password field is left empty
             AlertDialog.Builder passwordError = new AlertDialog.Builder(LoginActivity.this).setTitle("Password Error")
+
                     .setMessage("Password should not be left empty")
                     .setNegativeButton("OK", new DialogInterface.OnClickListener() {
                         @Override
+
                         public void onClick(DialogInterface dialog, int which) {
                             if (dialog != null) {
+
                                 dialog.dismiss();
                             }
                         }
@@ -189,6 +192,7 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             passwordField.setError(null);
             login();
+
             showLoginDialogue();
             return true;
         }
