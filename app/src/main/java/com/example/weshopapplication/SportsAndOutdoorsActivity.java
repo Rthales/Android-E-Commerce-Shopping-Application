@@ -210,10 +210,10 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                     if (firstSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 || firstSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 || firstSportsOutdoorsSizeMenu.getSelectedItemId() == 0) {
 
                         AlertDialog.Builder error = new AlertDialog.Builder(SportsAndOutdoorsActivity.this) // Create an alert dialogue for the user to see
-                                .setTitle("Error")
+                                .setTitle(R.string.error)
                                 .setMessage("You must select a valid option before adding the product to the basket")
 
-                                .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
 
                                     @Override
 
@@ -247,11 +247,11 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                     if (secondSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 || secondSportsOutdoorQuantityMenu.getSelectedItemPosition() == 0 || secondSportsOutdoorSizeMenu.getSelectedItemPosition() == 0) { // If index 0 is chosen for the colour menu
 
                         AlertDialog.Builder errorMenu = new AlertDialog.Builder(SportsAndOutdoorsActivity.this)
-                                .setTitle("Error")
+                                .setTitle(R.string.error)
 
                                 .setMessage("You must choose an option before adding to the basket")
 
-                                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
 
                                     public void onClick(DialogInterface dialog, int which) {
@@ -334,8 +334,11 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     }
 
     private boolean addToSizesList() {
-        Size[] sizes = {new Size(0, "Please choose Size"), new Size(1, "S"), new Size(2, "M"),
-                new Size(3, "L"), new Size(4, "XL")};
+        Context context = getApplicationContext();
+        String[] sizesResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.smallSize), context.getString(R.string.mediumSize), context.getString(R.string.largeSize), context.getString(R.string.largeSize)};
+
+        Size[] sizes = {new Size(0, sizesResources[0]), new Size(1, sizesResources[1]), new Size(2, sizesResources[2]),
+                new Size(3, sizesResources[3]), new Size(4, sizesResources[4])};
 
         for (Size theSizes : sizes) { // For each of the sizes in the array
             listOfSizesOne.add(theSizes);

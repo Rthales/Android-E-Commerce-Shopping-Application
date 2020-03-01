@@ -12,5 +12,10 @@
     <string name="medium">Medium</string>
     <string name="large">Large</string>
 
+    <string name="smallSize">S</string>
+    <string name="mediumSize">M</string>
+    <string name="largeSize">L</string>
+    <string name="extraLargeSize">XL</string>
+
 
 </resources>
