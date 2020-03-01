@@ -1,12 +1,14 @@
 package com.example.weshopapplication;
 
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -357,6 +359,44 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // Routine to determine which item has been selected
 
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        try {
+
+            switch (item.getItemId()) {
+                case R.id.sportsAndOutdoorsCategory:
+                    Intent sportsCategory = new Intent(SportsAndOutdoorsActivityTwo.this, SportsAndOutdoorsActivity.class);
+                    startActivity(sportsCategory);
+
+                    break;
+
+                case R.id.techCategory:
+                    Intent techActivity = new Intent(SportsAndOutdoorsActivityTwo.this, TechActivity.class);
+                    startActivity(techActivity);
+                    break;
+
+                case R.id.clothingCategory:
+                    Intent clothingActivity = new Intent(SportsAndOutdoorsActivityTwo.this, ClothingCategory.class);
+                    startActivity(clothingActivity);
+                    break;
+
+                case R.id.diyCategory:
+                    Intent diyActivity = new Intent(SportsAndOutdoorsActivityTwo.this, DIYActivity.class);
+                    startActivity(diyActivity);
+                    break;
+
+                default:
+                    super.onOptionsItemSelected(item);
+
+            }
+
+        } catch (ActivityNotFoundException exc) {
+            Log.d("Error ", exc.toString());
+        }
+
+        return true;
     }
 
     @Override

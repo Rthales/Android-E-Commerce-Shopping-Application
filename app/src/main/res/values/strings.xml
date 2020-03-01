@@ -23,12 +23,23 @@
     <string name="check_data_title">"Username - E-mail - Telephone No - Problem"</string>
     <string name="login_below_to_browse_products">Login below to browse products</string>
     <string name="e_mail_address">E-mail Address</string>
-    <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="login_below">Login Below</string>
     <string name="register_below">Register Below</string>
-    <string name="e_mail_address">E-mail Address</string>
-    <string name="password">Password</string>
+    <string name="don_t_have_an_account_register_today">Don\'t have an account? Register today</string>
+    <string name="we_shop_e_commerce">We Shop E-Commerce</string>
+    <string name="login">Login</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="enter_username">Enter Username</string>
     <string name="register">Register</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="adidas_jacket_women_s">Adidas Jacket Women\'s</string>
+    <string name="add_to_basket">Add to Basket</string>
+    <string name="color">Color</string>
+    <string name="size">Size</string>
+    <string name="quantity">Quantity</string>
+    <string name="adidas_predator_women_s_boots">Adidas Predator Women\'s Boots</string>
+    <string name="product_cost">Product Cost £:</string>
+    <string name="todo">TODO</string>
 
 </resources>

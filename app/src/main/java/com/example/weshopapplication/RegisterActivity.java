@@ -525,7 +525,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     }
 
     private void transitionToLogin() { // Take the user to the login page after registration
-        String errorMessage = "Error";
 
         try {
             // Take user to login
@@ -534,7 +533,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
         } catch (ActivityNotFoundException act) {
 
-            Log.d(errorMessage, act.toString());
+            Log.d("Error", act.toString());
         }
     }
 }
