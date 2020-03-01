@@ -253,11 +253,13 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     }
 
     private void addProductThreeToBasket() { // Adds the third product to basket
-        // SECTION 1
-        // Create the progress dialogue
+
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
+
         final ProgressDialog dialog = new ProgressDialog(TechActivityTwo.this);
-        dialog.setTitle("Adding to Basket..");
-        dialog.setMessage("Please Wait");
+        dialog.setTitle(temp[0]);
+        dialog.setMessage(temp[1]);
 
         dialog.setCancelable(false);
 
@@ -287,9 +289,12 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
     private void addProductFourToBasket() { // Adds the fourth product to the basket
 
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
+
         final ProgressDialog dialog = new ProgressDialog(TechActivityTwo.this);
-        dialog.setTitle("Adding to Basket..");
-        dialog.setMessage("Please Wait");
+        dialog.setTitle(temp[0]);
+        dialog.setMessage(temp[1]);
 
         dialog.setCancelable(false);
 
@@ -303,13 +308,12 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
                     Thread.sleep(1900);
                 } catch (InterruptedException exc) {
-                    Log.d("Error : ", exc.toString());
+                    Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
                 dialog.dismiss();
             }
         }).start();
-
         dialog.show(); // Show the progress bar
 
         Products fourthTechProduct = new Products(current_product_id++, fourthProductTextView.getText().toString(), fourthProductColourSpinner.getSelectedItem().toString(), (int) fourthProductQuantityDropDown.getSelectedItemId(), fourthProductCost.getText().toString(), fourthProductMenu.getSelectedItem().toString());
@@ -345,7 +349,6 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         boolean addedSizes = false;
         Context context = getApplicationContext();
         String[] techTwoSizesResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.small), context.getString(R.string.medium), context.getString(R.string.large)};
-
 
         Size[] sizes = {new Size(0, techTwoSizesResources[0]), new Size(1, techTwoSizesResources[1]), new Size(2, techTwoSizesResources[2]), new Size(3, techTwoSizesResources[3])};
 
