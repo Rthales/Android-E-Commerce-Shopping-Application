@@ -89,8 +89,6 @@ public class LoginActivity extends AppCompatActivity {
 
                 case R.id.sportsAndOutdoorsCategory: // If the sports and outdoors category is chosen
 
-                    // Create intent to go to sports and outdoors category
-
                     Intent sportsIntent = new Intent(LoginActivity.this, SportsAndOutdoorsActivity.class);
                     startActivity(sportsIntent);
 
@@ -127,7 +125,6 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         return true;
-
     }
 
     private boolean validateEmailAddress() { // Routine that validates the e-mail address when logging in.
