@@ -448,8 +448,13 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     private void showSpinningDialogue() { // Routine that shows the spinning dialogue when register button is clicked
         // Create the progress dialogue
         final ProgressDialog dialog = new ProgressDialog(RegisterActivity.this);
-        dialog.setTitle("Creating Account...");
-        dialog.setMessage("Please Wait..");
+
+        Context context = getApplicationContext();
+
+        String[] temp = new String[]{context.getString(R.string.creatingAccount), context.getString(R.string.wait)};
+
+        dialog.setTitle(temp[0]);
+        dialog.setMessage(temp[1]);
 
         dialog.setCancelable(false);
 

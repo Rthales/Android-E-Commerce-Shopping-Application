@@ -24,4 +24,6 @@
     <string name="termsAndConditionsError">Terms and Conditions Box Not Checked</string>
     <string name="tickTermsAndConditions">Please Tick Terms and Conditions Box</string>
     <string name="termsAndConditionsMust">Terms and Conditions Box must be checked.</string>
+
+    <string name="creatingAccount">Creating Account...</string>
 </resources>
