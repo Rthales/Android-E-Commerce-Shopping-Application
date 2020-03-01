@@ -27,7 +27,6 @@ import java.util.Map;
 // Date of Last Modification: 13/02/2020.
 // Any Errors: N/A
 
-
 public class BasketActivity extends AppCompatActivity implements View.OnClickListener {
     private Button placeOrderBtn;
 
@@ -86,11 +85,11 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
             if (v.getId() == R.id.placeOrderBtn) {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(BasketActivity.this)
-                        .setTitle("Checkout")
+                        .setTitle(R.string.checkout)
 
                         .setMessage("Are you sure you are finished browsing?")
 
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                             @Override
 
                             public void onClick(DialogInterface dialog, int which) {
@@ -100,7 +99,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
                                     finish();
                                 }
                             }
-                        }).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        }).setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
@@ -113,7 +112,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
                 builder.setCancelable(true);
             }
         } catch (ActivityNotFoundException exc) {
-            Log.d("Error", exc.toString());
+            Log.d(String.valueOf(R.string.error), exc.toString());
         }
     }
 
