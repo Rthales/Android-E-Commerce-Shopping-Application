@@ -426,7 +426,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
             }
 
         } catch (ActivityNotFoundException exc) {
-            Log.d("Error ", exc.toString());
+            Log.d(String.valueOf(R.string.error), exc.toString());
         }
 
         return true;

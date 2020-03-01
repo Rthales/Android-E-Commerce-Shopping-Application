@@ -269,14 +269,16 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     }
 
     private boolean validateEmailAddress() { // Routine that validates the e-mail address.
+        Context context = getApplicationContext();
+        String[] emailAddressResources = new String[]{context.getString(R.string.emailError), context.getString(R.string.reEnterEmail), context.getString(R.string.emailEmpty), context.getString(R.string.emailLength)};
 
         String emailAddressInputField = emailAddressField.getText().toString().trim(); // Get the input for the emailAddress
 
 
         if (emailAddressInputField.isEmpty()) {
 
-            AlertDialog.Builder emailError = new AlertDialog.Builder(RegisterActivity.this).setTitle("E-mail Error").setMessage("Re-Enter E-mail")
-                    .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+            AlertDialog.Builder emailError = new AlertDialog.Builder(RegisterActivity.this).setTitle(emailAddressResources[0]).setMessage(emailAddressResources[1])
+                    .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
 
                         public void onClick(DialogInterface dialog, int which) {
@@ -290,7 +292,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             emailError.show();
             emailError.setCancelable(true); // User can click outside the window to cancel the error dialogue
 
-            emailAddressField.setError("E-mail Field cannot be left empty");
+            emailAddressField.setError(emailAddressResources[2]);
             isEmpty = true;
             isValid = false;
 
@@ -298,7 +300,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
         }
 
         if (emailAddressInputField.length() > 25) { // If the e-mail length is bigger than 25 characters
-            emailAddressField.setError("E-mail can't have more than 25 characters"); // Display error
+            emailAddressField.setError(emailAddressResources[3]); // Display error
 
             isValid = false; // Not valid
             return false;
