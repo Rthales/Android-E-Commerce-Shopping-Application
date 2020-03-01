@@ -273,9 +273,9 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     private boolean addToColoursList() { // Routine returns true or false if the colours have been added to the array list or not.
 
-        TechActivity.Colours[] colours = {new TechActivity.Colours(0, "Choose colour please"), new TechActivity.Colours(1, "Honey Yellow"),
-                new TechActivity.Colours(2, "Graphite Gray"), new TechActivity.Colours(3, "Midnight Black"),
-                new TechActivity.Colours(4, "Orange")};
+        TechActivity.Colours[] colours = {new TechActivity.Colours(0, String.valueOf(R.string.firstColour)), new TechActivity.Colours(1, String.valueOf(R.string.sportsFirstColour)),
+                new TechActivity.Colours(2, String.valueOf(R.string.sportsSecondColour)), new TechActivity.Colours(3, String.valueOf(R.string.sportsThirdColour)),
+                new TechActivity.Colours(4, String.valueOf(R.string.sportsFourthColour))};
 
         for (TechActivity.Colours productColours : colours) { // For each colours in the array
             listOfColoursOne.add(productColours); // Add it to the array list
@@ -286,8 +286,8 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     }
 
     private boolean addToColoursListTwo() {
-        TechActivity.Colours[] colours = {new TechActivity.Colours(0, "Choose colour please"), new TechActivity.Colours(1, "Dark Blue"),
-                new TechActivity.Colours(2, "Dark Red"), new TechActivity.Colours(3, "Honey Yellow")};
+        TechActivity.Colours[] colours = {new TechActivity.Colours(0, String.valueOf(R.string.firstColour)), new TechActivity.Colours(1, String.valueOf(R.string.blue)),
+                new TechActivity.Colours(2, String.valueOf(R.string.red)), new TechActivity.Colours(3, String.valueOf(R.string.sportsFirstColour))};
 
         for (TechActivity.Colours theColours : colours) {
             listOfColoursTwo.add(theColours);

@@ -2,9 +2,33 @@
     <string name="app_name">We Shop E-Commerce</string>
 
 
+    <string name="colour">Choose Colour</string>
+    <string name="firstColour">Space Gray</string>
+    <string name="secondColour">Silver</string>
+    <string name="thirdColour">Gold</string>
+
+    <string name="sportsFirstColour">Honey Yellow</string>
+    <string name="sportsSecondColour">Graphite Gray</string>
+    <string name="sportsThirdColour">Midnight Black</string>
+    <string name="sportsFourthColour">Orange</string>
+
+    <string name="bloodOrange">Blood Orange</string>
+    <string name="black">Black</string>
+    <string name="skyBlue">Sky Blue</string>
+    <string name="white">White</string>
+    <string name="darkYellow">Dark Yellow</string>
+    <string name="salmon">Salmon Pink</string>
+
+    <string name="limeGreen">Lime Green</string>
+    <string name="rubyRed">Ruby Red</string>
+
+    <string name="blue">Dark Blue</string>
+    <string name="red">Dark Red</string>
+
     <string name="phone_number_lbl">Enter Phone Number</string>
     <string name="problem_lbl">Enter Problem Here Please</string>
-
+    <string name="costIndexOne">0.00</string>
+    <string name="costIndexTwo">60.00</string>
     <string name="main_title">"We Shop Contact Us Form"</string>
     <string name="main_submit_complaint">"Submit Complaint"</string>
     <string name="main_check_complaints">"Check Complaints"</string>

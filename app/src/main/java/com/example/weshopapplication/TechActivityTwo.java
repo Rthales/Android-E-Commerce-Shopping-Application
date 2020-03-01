@@ -343,9 +343,10 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
     private boolean addToColoursList() { // Routine that adds the colours to the array list
 
-        TechActivity.Colours[] firstColoursArray = {new TechActivity.Colours(0, "Please Choose Colour"), new TechActivity.Colours(1, "White"), new TechActivity.Colours(2, "Black")};
-        TechActivity.Colours[] secondColoursArray = {new TechActivity.Colours(0, "Please Choose Colour"), new TechActivity.Colours(1, "Salmon Pink"), new TechActivity.Colours(2, "Lime Green"),
-                new TechActivity.Colours(3, "Ruby Red"), new TechActivity.Colours(4, "Midnight Black")};
+        TechActivity.Colours[] firstColoursArray = {new TechActivity.Colours(0, String.valueOf(R.string.firstColour)), new TechActivity.Colours(1, String.valueOf(R.string.white)), new TechActivity.Colours(2, String.valueOf(R.string.black))};
+
+        TechActivity.Colours[] secondColoursArray = {new TechActivity.Colours(0, String.valueOf(R.string.colour)), new TechActivity.Colours(1, String.valueOf(R.string.salmon)), new TechActivity.Colours(2, String.valueOf(R.string.limeGreen)),
+                new TechActivity.Colours(3, String.valueOf(R.string.rubyRed)), new TechActivity.Colours(4, String.valueOf(R.string.sportsThirdColour))};
 
         for (TechActivity.Colours colours : firstColoursArray) {
             listOfColours.add(colours);

@@ -59,9 +59,8 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
     private Spinner fourthSportsOutdoorsQuantityMenu;
     private Button fourthAddToBasketBtn;
-    private Button nextPageBtn;
 
-    private double[] thirdProductCosts = {0.00, 60.00, 120.00, 240.00, 480.00, 1020.00}; // The costs for the third product
+    private double[] thirdProductCosts = {R.string.costIndexOne, R.string.costIndexTwo, 120.00, 240.00, 480.00, 1020.00}; // The costs for the third product
     private double[] fourthProductCosts = {0.00, 100.00, 200.00, 400.00, 800.00, 1600.00}; // Costs for the fourth product
 
     private boolean coloursAdded; // Determines if the colours have been added to the array list successfully.
@@ -240,9 +239,9 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     private boolean addToColoursListOne() { // Adds the colours for the third product to the array list
         boolean coloursAdded = false;
 
-        TechActivity.Colours[] colours = {new TechActivity.Colours(0, "Choose colour please"),
-        new TechActivity.Colours(1, "Red"), new TechActivity.Colours(2, "Sky Blue")
-        , new TechActivity.Colours(3, "Dark Yellow"), new TechActivity.Colours(4, "Blood Orange")};
+        TechActivity.Colours[] colours = {new TechActivity.Colours(0, String.valueOf(R.string.firstColour)),
+                new TechActivity.Colours(1, String.valueOf(R.string.red)), new TechActivity.Colours(2, String.valueOf(R.string.skyBlue))
+                , new TechActivity.Colours(3, String.valueOf(R.string.darkYellow)), new TechActivity.Colours(4, String.valueOf(R.string.bloodOrange))};
 
         for(TechActivity.Colours theColours : colours) {
             listOfColoursOne.add(theColours);
@@ -255,9 +254,9 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     private boolean addToColoursListTwo() { // Adds the colours for the fourth product to the array list
         boolean coloursAdded = false;
 
-        TechActivity.Colours[] colours = {new TechActivity.Colours(0, "Choose colour please"),
-                new TechActivity.Colours(1, "Black"), new TechActivity.Colours(2, "Red")
-                , new TechActivity.Colours(3, "Orange"), new TechActivity.Colours(4, "White")};
+        TechActivity.Colours[] colours = {new TechActivity.Colours(0, String.valueOf(R.string.firstColour)),
+                new TechActivity.Colours(1, getString(R.string.black)), new TechActivity.Colours(2, String.valueOf(R.string.red))
+                , new TechActivity.Colours(3, String.valueOf(R.string.sportsFourthColour)), new TechActivity.Colours(4, String.valueOf(R.string.white))};
 
         for(TechActivity.Colours theColours : colours) {
             listOfColoursTwo.add(theColours);

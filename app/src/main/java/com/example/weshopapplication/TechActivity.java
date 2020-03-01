@@ -2,6 +2,7 @@ package com.example.weshopapplication;
 
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -387,8 +388,15 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     private boolean addToColoursList() {
         boolean addedColours = false;
 
-        Colours[] coloursArray = {new Colours(0, "Choose Colour Please"), new Colours(1, "Space Gray"), new Colours(2, "Silver"), new Colours(3, "Gold")};
+        Context context = getApplicationContext();
 
+        String colourPrompt = context.getString(R.string.colour);
+        String firstColour = context.getString(R.string.firstColour);
+        String secondColour = context.getString(R.string.secondColour);
+
+        String thirdColour = context.getString(R.string.thirdColour);
+
+        Colours[] coloursArray = {new Colours(0, colourPrompt), new Colours(1, firstColour), new Colours(2, secondColour), new Colours(3, thirdColour)};
         for (Colours colours : coloursArray) { // For each colour in the array
             listOfColours.add(colours); // Add it to the array list
             
