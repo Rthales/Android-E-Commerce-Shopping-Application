@@ -34,4 +34,6 @@
     <string name="basket_password">password</string>
 
     <string name="collection_name">user_data_two</string>
+
+    <string name="loggingIn">Logging In</string>
 </resources>

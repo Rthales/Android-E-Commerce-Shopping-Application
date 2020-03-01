@@ -198,13 +198,14 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void showLoginDialogue() {
-        // Create the progress dialogue
+        Context context = getApplicationContext();
+        String[] tempResources = new String[]{context.getString(R.string.loggingIn), context.getString(R.string.wait)};
         final ProgressDialog dialog = new ProgressDialog(LoginActivity.this);
-        dialog.setTitle("Logging in..");
-        dialog.setMessage("Please Wait..");
+
+        dialog.setTitle(tempResources[0]);
+        dialog.setMessage(tempResources[1]);
 
         dialog.setCancelable(false);
-
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
         new Thread(new Runnable() { // Create a new thread
