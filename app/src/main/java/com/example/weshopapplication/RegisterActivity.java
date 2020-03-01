@@ -391,7 +391,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                 break;
 
             } else {
-
                 isValid = true;
             }
         }
@@ -400,13 +399,17 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     }
 
     private boolean validateTermsAndConditions() { // Validates the terms and conditions box
+        Context context = getApplicationContext();
+
+        String[] termsAndConditionsResources = new String[]{context.getString(R.string.termsAndConditionsError), context.getString(R.string.tickTermsAndConditions),
+                context.getString(R.string.termsAndConditionsMust)};
 
         if (!termsAndConditions.isChecked()) { // If the terms and conditions box is not checked
 
-            AlertDialog.Builder boxError = new AlertDialog.Builder(RegisterActivity.this).setTitle("T&C Box Not Checked")
-                    .setMessage("Please tick terms and conditions box")
+            AlertDialog.Builder boxError = new AlertDialog.Builder(RegisterActivity.this).setTitle(termsAndConditionsResources[0])
+                    .setMessage(termsAndConditionsResources[1])
 
-                    .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
 
                         public void onClick(DialogInterface dialog, int which) {
@@ -417,7 +420,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                     });
 
             boxError.show(); // Show the error
-            termsAndConditions.setError("Must be ticked");
+            termsAndConditions.setError(termsAndConditionsResources[2]);
             isValid = false;
         }
 

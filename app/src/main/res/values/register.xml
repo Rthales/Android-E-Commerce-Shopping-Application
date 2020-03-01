@@ -20,4 +20,8 @@
     <string name="passwordReEnter">Re-Enter Password Please</string>
     <string name="passwordRegexEmpty">Password cannot be left empty and must contain special characters</string>
     <string name="passwordUppercase">Password Must Start With Uppercase Character</string>
+
+    <string name="termsAndConditionsError">Terms and Conditions Box Not Checked</string>
+    <string name="tickTermsAndConditions">Please Tick Terms and Conditions Box</string>
+    <string name="termsAndConditionsMust">Terms and Conditions Box must be checked.</string>
 </resources>
