@@ -10,5 +10,6 @@ public class DIYActivityTwo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_d_i_y_two);
+        System.out.println("Test");
     }
 }
