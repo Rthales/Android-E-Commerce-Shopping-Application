@@ -160,7 +160,7 @@
         android:id="@+id/imageView4"
         android:layout_width="204dp"
         android:layout_height="173dp"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="112dp"
         android:layout_marginBottom="140dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -183,7 +183,7 @@
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
+        android:layout_marginStart="16dp"
         android:layout_marginBottom="82dp"
         android:text="Colour"
         android:textColor="@color/white"
@@ -204,11 +204,43 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="82dp"
         android:text="@string/size"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="628dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinner12" />
+
+    <Spinner
+        android:id="@+id/spinner27"
+        android:layout_width="83dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="82dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="81dp"
+        android:text="@string/quantity"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spinner27" />
+
+    <Spinner
+        android:id="@+id/spinner28"
+        android:layout_width="76dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView45" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
