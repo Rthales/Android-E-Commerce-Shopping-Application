@@ -3,6 +3,7 @@ package com.example.weshopapplication;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -138,7 +139,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             }
 
         } catch (ActivityNotFoundException act) {
-            Log.d("Error : ", act.toString()); // Get the cause of the error.
+            Log.d(String.valueOf(R.string.error), act.toString()); // Get the cause of the error.
         }
 
         return true;
@@ -180,11 +181,14 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
     private boolean validateUsername() { // Routine that validates the username entered by the user against specific criteria
         String usernameInputField = usernameField.getText().toString().trim();
+        Context context = getApplicationContext();
+
+        String[] usernameValidationResource = new String[]{context.getString(R.string.empty)};
 
         if (usernameInputField.isEmpty()) { // If the input field is left empty
 
-            AlertDialog.Builder emptyDialog = new AlertDialog.Builder(RegisterActivity.this).setTitle("Username Error")
-                    .setMessage("Re-enter username please").setNegativeButton("ok", new DialogInterface.OnClickListener() {
+            AlertDialog.Builder emptyDialog = new AlertDialog.Builder(RegisterActivity.this).setTitle(R.string.usernameError)
+                    .setMessage(R.string.usernameErrorMsg).setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
 
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -195,7 +199,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                     });
 
             emptyDialog.show();
-            usernameField.setError("Can't be left empty");
+            usernameField.setError(usernameValidationResource[0]);
 
             usernameField.setText(""); // Flush the empty field out
             isEmpty = true; // The field is empty
