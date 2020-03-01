@@ -69,7 +69,6 @@
     <string name="size">Size</string>
     <string name="quantity">Quantity</string>
     <string name="adidas_predator_women_s_boots">Adidas Predator Women\'s Boots</string>
-    <string name="product_cost">Product Cost £:</string>
     <string name="todo">TODO</string>
 
     <string name="productCost">Product Cost £: </string>
@@ -79,5 +78,6 @@
     <string name="wait">Please Wait</string>
     <string name="chooseOption">You must choose an option before adding to the basket</string>
     <string name="creation_life_wallpaper">Creation Life Wallpaper</string>
+    <string name="product_cost">Product Cost £:</string>
 
 </resources>
