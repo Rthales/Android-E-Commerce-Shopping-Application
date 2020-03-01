@@ -31,4 +31,6 @@
     <string name="basket_username">username</string>
     <string name="basket_email_address">email_address</string>
     <string name="basket_password">password</string>
+
+    <string name="collection_name">user_data_two</string>
 </resources>

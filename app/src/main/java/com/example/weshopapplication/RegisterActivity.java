@@ -518,7 +518,8 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
     private void writeToFirestore() { // Routine to write to Fire Store database.
         Context context = getApplicationContext();
-        String[] registrationResources = new String[]{context.getString(R.string.basket_username), context.getString(R.string.basket_email_address), context.getString(R.string.basket_password)};
+        String[] registrationResources = new String[]{context.getString(R.string.basket_username), context.getString(R.string.basket_email_address), context.getString(R.string.basket_password),
+                context.getString(R.string.collection_name)};
 
         // Get the entries
         String usernameEntry = usernameField.getText().toString();
@@ -531,7 +532,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
         user_data.put(registrationResources[1], emailEntry);
         user_data.put(registrationResources[2], passwordEntry);
 
-        db.collection("user_data_two").add(user_data).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+        db.collection(registrationResources[3]).add(user_data).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
 
             public void onSuccess(DocumentReference documentReference) {
