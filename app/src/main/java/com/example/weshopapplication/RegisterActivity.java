@@ -181,9 +181,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
     private boolean validateUsername() { // Routine that validates the username entered by the user against specific criteria
         String usernameInputField = usernameField.getText().toString().trim();
-        Context context = getApplicationContext();
 
-        String[] usernameValidationResource = new String[]{context.getString(R.string.empty)};
+        Context context = getApplicationContext();
+        String[] usernameValidationResource = new String[]{context.getString(R.string.empty), context.getString(R.string.usernameLength), context.getString(R.string.usernameReEnter)};
 
         if (usernameInputField.isEmpty()) { // If the input field is left empty
 
@@ -212,10 +212,10 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
             if (!Character.isDigit(usernameInputField.charAt(i)) && usernameInputField.length() > 20) { // If the username has no digits or the length is bigger than 20
 
-                usernameField.setError("Username must contain digits and length must not be bigger than 20 characters");
+                usernameField.setError(usernameValidationResource[1]);
 
-                AlertDialog.Builder usernameError = new AlertDialog.Builder(RegisterActivity.this).setMessage("Please re-enter Username")
-                        .setTitle("Username Error").setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                AlertDialog.Builder usernameError = new AlertDialog.Builder(RegisterActivity.this).setMessage(usernameValidationResource[2])
+                        .setTitle(usernameValidationResource[0]).setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                             @Override
 
                             public void onClick(DialogInterface dialog, int which) {
