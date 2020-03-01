@@ -354,10 +354,12 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     }
 
     private boolean addToBasketOne() { // Adds the first product to the basket
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
 
         final ProgressDialog dialog = new ProgressDialog(SportsAndOutdoorsActivity.this); // Spinning progress dialog
-        dialog.setTitle("Adding to Basket.."); // Set the title of the dialog
-        dialog.setMessage("Please Wait");
+        dialog.setTitle(temp[0]); // Set the title of the dialog
+        dialog.setMessage(temp[1]);
 
         dialog.setCancelable(false);
 
@@ -385,7 +387,6 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         listOfProductsToAddToBasket.put(current_product_id, firstSportsProduct);
 
         return true; // Returns true.
-
     }
 
     private boolean addToBasketTwo() { // Adds the second product to the basket
@@ -409,7 +410,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
                 } catch (InterruptedException exc) {
-                    Log.d("Error : ", exc.toString());
+                    Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
                 dialog.dismiss();
