@@ -189,7 +189,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                     startActivity(techActivityTwo);
 
                 } catch (ActivityNotFoundException not) {
-                    Log.d("Error : ", not.toString());
+                    Log.d(String.valueOf(R.string.error), not.toString());
                 }
             }
         });
@@ -210,7 +210,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
                         AlertDialog.Builder colourErrorOne = new AlertDialog.Builder(TechActivity.this)
                                 .setTitle(colourErrorTitleOne)
-                                .setMessage(colourErrorBodyMsg).setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                .setMessage(colourErrorBodyMsg).setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
 
                                     public void onClick(DialogInterface dialog, int which) {
@@ -237,7 +237,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
                                 .setTitle(quantityErrorTitleOne).setMessage(quantityErrorBodyMsg)
 
-                                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
 
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
@@ -277,7 +277,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
                                 .setMessage(colourErrorTwoBodyMsg)
 
-                                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
 
                                     public void onClick(DialogInterface dialog, int which) {
@@ -297,7 +297,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                                 .setTitle(quantityTitleErrorTwo)
 
                                 .setMessage(quantityErrorTwoBodyMsg)
-                                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
 
@@ -322,8 +322,8 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     private boolean addToBasketOne() {
 
         final ProgressDialog dialog = new ProgressDialog(TechActivity.this);
-        dialog.setTitle("Adding to Basket..");
-        dialog.setMessage("Please Wait");
+        dialog.setTitle(R.string.addingBasket);
+        dialog.setMessage(String.valueOf(R.string.wait));
 
         dialog.setCancelable(false);
 
@@ -336,7 +336,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                 try {
                     Thread.sleep(1900);
                 } catch (InterruptedException exc) {
-                    Log.d("Error : ", exc.toString());
+                    Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
                 dialog.dismiss();
@@ -353,7 +353,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private boolean addToBasketTwo() { // Adds the second product on the First Tech Activity to the basket
-
         final ProgressDialog dialog = new ProgressDialog(TechActivity.this);
         dialog.setTitle(R.string.addingBasket);
         dialog.setMessage(String.valueOf(R.string.wait));
@@ -369,7 +368,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                 try {
                     Thread.sleep(1900);
                 } catch (InterruptedException exc) {
-                    Log.d("Error : ", exc.toString());
+                    Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
                 dialog.dismiss();

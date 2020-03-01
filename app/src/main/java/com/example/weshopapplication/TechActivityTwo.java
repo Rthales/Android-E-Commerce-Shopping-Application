@@ -344,10 +344,14 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
     private boolean addToColoursList() { // Routine that adds the colours to the array list
 
-        TechActivity.Colours[] firstColoursArray = {new TechActivity.Colours(0, String.valueOf(R.string.firstColour)), new TechActivity.Colours(1, String.valueOf(R.string.white)), new TechActivity.Colours(2, String.valueOf(R.string.black))};
+        Context context = getApplicationContext();
+        String[] techTwoColourResources = new String[]{context.getString(R.string.colour), context.getString(R.string.white), context.getString(R.string.black), context.getString(R.string.salmon), context.getString(R.string.limeGreen), context.getString(R.string.rubyRed), context.getString(R.string.sportsThirdColour)};
 
-        TechActivity.Colours[] secondColoursArray = {new TechActivity.Colours(0, String.valueOf(R.string.colour)), new TechActivity.Colours(1, String.valueOf(R.string.salmon)), new TechActivity.Colours(2, String.valueOf(R.string.limeGreen)),
-                new TechActivity.Colours(3, String.valueOf(R.string.rubyRed)), new TechActivity.Colours(4, String.valueOf(R.string.sportsThirdColour))};
+
+        TechActivity.Colours[] firstColoursArray = {new TechActivity.Colours(0, techTwoColourResources[0]), new TechActivity.Colours(1, techTwoColourResources[1]), new TechActivity.Colours(2, techTwoColourResources[2])};
+
+        TechActivity.Colours[] secondColoursArray = {new TechActivity.Colours(0, techTwoColourResources[0]), new TechActivity.Colours(1, techTwoColourResources[3]), new TechActivity.Colours(2, techTwoColourResources[4]),
+                new TechActivity.Colours(3, techTwoColourResources[5]), new TechActivity.Colours(4, techTwoColourResources[6])};
 
         for (TechActivity.Colours colours : firstColoursArray) {
             listOfColours.add(colours);

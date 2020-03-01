@@ -11,6 +11,7 @@
     <string name="sportsSecondColour">Graphite Gray</string>
     <string name="sportsThirdColour">Midnight Black</string>
     <string name="sportsFourthColour">Orange</string>
+    <string name="error">Error</string>
 
     <string name="bloodOrange">Blood Orange</string>
     <string name="black">Black</string>
