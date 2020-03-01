@@ -261,9 +261,12 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private boolean addToBasketOne() {
 
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.wait), context.getString(R.string.addingBasket)};
+
         final ProgressDialog dialog = new ProgressDialog(TechActivity.this);
-        dialog.setTitle(R.string.addingBasket);
-        dialog.setMessage(String.valueOf(R.string.wait));
+        dialog.setTitle(temp[1]);
+        dialog.setMessage(temp[0]);
 
         dialog.setCancelable(false);
 
