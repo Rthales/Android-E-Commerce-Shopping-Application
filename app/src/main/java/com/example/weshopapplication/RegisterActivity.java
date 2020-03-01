@@ -270,7 +270,8 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
     private boolean validateEmailAddress() { // Routine that validates the e-mail address.
         Context context = getApplicationContext();
-        String[] emailAddressResources = new String[]{context.getString(R.string.emailError), context.getString(R.string.reEnterEmail), context.getString(R.string.emailEmpty), context.getString(R.string.emailLength)};
+        String[] emailAddressResources = new String[]{context.getString(R.string.emailError), context.getString(R.string.reEnterEmail), context.getString(R.string.emailEmpty), context.getString(R.string.emailLength)
+                , context.getString(R.string.emailAtSymbol)};
 
         String emailAddressInputField = emailAddressField.getText().toString().trim(); // Get the input for the emailAddress
 
@@ -308,9 +309,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
         if (!regexPatterns.matcher(emailAddressInputField).find()) { // If there is no regex characters matched including the @ symbol that is needed
 
-            emailAddressField.setError("E-mail Address must contain @ symbol");
+            emailAddressField.setError(emailAddressResources[4]);
             AlertDialog.Builder emailRegexWarning = new AlertDialog.Builder(RegisterActivity.this).setTitle("E-mail Regex Warning").setMessage("E-mail must contain @ symbol")
-                    .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                    .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
 
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
