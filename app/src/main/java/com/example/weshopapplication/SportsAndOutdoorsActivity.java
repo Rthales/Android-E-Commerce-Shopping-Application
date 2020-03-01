@@ -1,5 +1,6 @@
 package com.example.weshopapplication;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -403,6 +404,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         return true;
     }
 
+    @SuppressLint({"DefaultLocale", "SetTextI18n"})
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // Method that determines which item has been selected and at which index
         boolean valueAppended = false;
@@ -411,13 +413,10 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
         if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[0]))) {
             firstSportsOutdoorCostTxt.setText(null);
-            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[0]);
+            firstSportsOutdoorCostTxt.setText(appendText + (productOneCosts[0]));
             valueAppended = true;
-        }
-
-        if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[1]))) {
-            firstSportsOutdoorCostTxt.setText(null);
-            firstSportsOutdoorCostTxt.append(appendText + productOneCosts[1]);
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[1]))) {
+            firstSportsOutdoorCostTxt.setText(appendText + (productOneCosts[1]));
             valueAppended = true; // Value is appended
 
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[2]))) {

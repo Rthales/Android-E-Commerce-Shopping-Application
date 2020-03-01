@@ -24,6 +24,9 @@
     <string name="login_below_to_browse_products">Login below to browse products</string>
     <string name="e_mail_address">E-mail Address</string>
     <string name="password">Password</string>
+    <string name="error">Error</string>
+    <string name="error2">You must choose an appropriate option before adding to basket</string>
+    <string name="ok">Ok</string>
     <string name="login_below">Login Below</string>
     <string name="register_below">Register Below</string>
     <string name="don_t_have_an_account_register_today">Don\'t have an account? Register today</string>

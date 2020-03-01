@@ -30,6 +30,7 @@ import java.util.HashMap;
 public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private int current_product_id = 1;
     private ImageView cartIcon;
+
     private TextView sportsOutdoorsTxtTwo;
     private ImageView thirdSportsOutdoorsImg;
 
@@ -45,6 +46,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     private Button thirdSportsOutdoorsAddToBasketBtn;
 
     private TextView fourthSportsOutdoorsTxt;
+    private TextView fourthSportsOutdoorsCostLbl;
     private ImageView fourthSportsOutdoorsImg;
 
     private TextView fourthSportsOutdoorsColourLbl;
@@ -106,6 +108,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         this.thirdSportsOutdoorsAddToBasketBtn = findViewById(R.id.thirdSportsOutdoorsAddToBasketBtn);
 
         this.fourthSportsOutdoorsTxt = findViewById(R.id.fourthSportsOutdoorsTxt);
+        this.fourthSportsOutdoorsCostLbl = findViewById(R.id.fourthSportsOutdoorsCostLbl);
         this.fourthSportsOutdoorsImg = findViewById(R.id.fourthSportsOutdoorsImg);
 
         this.fourthSportsOutdoorsColourLbl = findViewById(R.id.fourthSportsOutdoorsColourLbl);
@@ -182,9 +185,9 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
                     if(thirdSportsOutdoorsColoursMenu.getSelectedItemPosition() == 0 || thirdSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 || thirdSportsOutdoorsQuantityMenu.getSelectedItemPosition() == 0) {
                         AlertDialog.Builder chooseError = new AlertDialog.Builder(SportsAndOutdoorsActivityTwo.this)
-                                .setTitle("Error")
-                                .setMessage("You must choose an appropriate option before adding to the basket")
-                                .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                                .setTitle(R.string.error)
+                                .setMessage(R.string.error2)
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
 
                                     public void onClick(DialogInterface dialog, int which) {
@@ -211,10 +214,10 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
                 if(fourthSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 || fourthSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 || fourthSportsOutdoorsQuantityMenu.getSelectedItemPosition() == 0) {
                     AlertDialog.Builder chooseError = new AlertDialog.Builder(SportsAndOutdoorsActivityTwo.this)
-                            .setTitle("Error")
+                            .setTitle(R.string.error)
 
-                            .setMessage("You must choose an appropriate option before adding to the basket")
-                            .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
+                            .setMessage(R.string.error2)
+                            .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                 @Override
 
                                 public void onClick(DialogInterface dialog, int which) {
@@ -276,6 +279,21 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         return true;
     }
 
+    private boolean addToSizesListOne() { // Adds the sizes for the third product to the array list
+        boolean sizesAdded = false;
+        Size[] sizes = {new Size(0, "Choose a Size Please"), new Size(1, "S"), new Size(2, "M"),
+                new Size(3, "L"), new Size(4, "XL")};
+
+        for (Size theSize : sizes) {
+
+            listOfSizesOne.add(theSize);
+            listOfSizesTwo.add(theSize);
+            sizesAdded = true;
+        }
+
+        return true;
+    }
+
     private void addToBasketThree() {
         final ProgressDialog dialog = new ProgressDialog(SportsAndOutdoorsActivityTwo.this); // Spinning progress dialog
         dialog.setTitle("Adding to Basket.."); // Set the title of the dialog
@@ -308,27 +326,36 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     }
 
     private void addToBasketFour() {
+        final ProgressDialog dialog = new ProgressDialog(SportsAndOutdoorsActivityTwo.this); // Spinning progress dialog
+        dialog.setTitle("Adding to Basket.."); // Set the title of the dialog
+        dialog.setMessage("Please Wait");
 
+        dialog.setCancelable(false);
+
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
+
+        new Thread(new Runnable() { // Create a new thread
+
+            @Override
+            public void run() {
+                try {
+
+                    Thread.sleep(1900); // Sleep for 1.9 seconds.
+                } catch (InterruptedException exc) {
+                    Log.d("Error : ", exc.toString());
+                }
+
+                dialog.dismiss();
+            }
+        }).start(); // Starts the thread
+
+        dialog.show();
+
+        // Create an instance for the first product and adds it to the hash map.
+        Products fourthProduct = new Products(current_product_id, fourthSportsOutdoorsTxt.getText().toString(), fourthSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) fourthSportsOutdoorsQuantityMenu.getSelectedItemId(), fourthSportsOutdoorsCostLbl.getText().toString(), fourthSportsOutdoorsSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id, fourthProduct);
     }
 
-    private boolean addToSizesListOne() { // Adds the sizes for the third product to the array list
-        boolean sizesAdded = false;
-        Size[] sizes = {new Size(0, "Choose a Size Please"), new Size(1, "S"), new Size(2, "M"),
-        new Size(3, "L"), new Size(4, "XL")};
-
-        for(Size theSize : sizes) {
-
-            listOfSizesOne.add(theSize);
-            listOfSizesTwo.add(theSize);
-            sizesAdded = true;
-        }
-
-        return true;
-    }
-
-    private boolean addToQuantitiesListOne() {
-        return true;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) { // Add the toolbar menu
