@@ -414,9 +414,9 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         Size[] techSizes = {new Size(0, sizeResources[0]), new Size(1, sizeResources[1]), new Size(2, sizeResources[2]), new Size(3, sizeResources[3]),
                 new Size(4, sizeResources[4])};
 
-        for (Size sizes : techSizes) {
-            listOfSizes.add(sizes);
-            addedSizes = true;
+        for (Size sizes : techSizes) { // For every size in the object array
+            listOfSizes.add(sizes); // Add it to the array list
+            addedSizes = true; // Sizes have been added
         }
 
         return true;
