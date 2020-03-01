@@ -1,0 +1,15 @@
+<resources>
+    <string name="usernameError">Username Error</string>
+    <string name="usernameErrorMsg">Re-Enter Username Please</string>
+    <string name="empty">Cant be left empty</string>
+    <string name="usernameLength">Username must contain digits and length must not be bigger than 20 characters</string>
+    <string name="usernameReEnter">Re-Enter Username Please</string>
+    <string name="usernameRegex">Username should not contain regex character</string>
+    <string name="usernameRegexWarning">Username Regex Warning</string>
+
+
+    <string name="emailError">E-mail Error</string>
+    <string name="reEnterEmail">Re-Enter E-mail</string>
+    <string name="emailEmpty">E-mail Field Cannot Be Left Empty</string>
+    <string name="emailLength">E-mail Cant Have More Than 25 Characters</string>
+</resources>
