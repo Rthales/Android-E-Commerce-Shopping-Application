@@ -33,9 +33,10 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_basket);
-        this.placeOrderBtn = findViewById(R.id.placeOrderBtn);
 
+        setContentView(R.layout.activity_basket);
+
+        this.placeOrderBtn = findViewById(R.id.placeOrderBtn);
         this.placeOrderBtn.setOnClickListener(this);
 
         Intent intent = getIntent();
