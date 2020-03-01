@@ -120,9 +120,8 @@ public class LoginActivity extends AppCompatActivity {
 
                     return super.onOptionsItemSelected(item);
             }
-
         }
-        // Catch the activity not found exception
+
         catch (ActivityNotFoundException act) {
             Log.d(String.valueOf(R.string.error), act.toString()); // Log the error as to why it occurred.
         }
@@ -212,11 +211,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
+
                     Thread.sleep(2400);
 
                 } catch (InterruptedException exc) {
 
-                    Log.d("Error : ", exc.toString());
+                    Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
                 dialog.dismiss();
@@ -239,7 +239,6 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "You are logged in as " + emailInput, Toast.LENGTH_LONG).show();
                     transitionToHomepage(); // Take user to homepage
                     setVisibilityOfLogout();
-
                 }
 
                 else if (!task.isSuccessful()) { // If the task is not successful, i.e the credentials do not match
