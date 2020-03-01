@@ -537,7 +537,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             }
 
         } catch (ActivityNotFoundException exc) {
-            Log.d("Error ", exc.toString());
+            Log.d(String.valueOf(R.string.error), exc.toString());
         }
 
         return true;
