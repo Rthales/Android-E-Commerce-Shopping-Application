@@ -364,7 +364,11 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
     private boolean addThirdProductSizes() { // Adds the required sizes to the third product
         boolean addedSizes = false;
-        Size[] sizes = {new Size(0, "Please choose size"), new Size(1, "Small"), new Size(2, "Medium"), new Size(3, "Large")};
+        Context context = getApplicationContext();
+        String[] techTwoSizesResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.small), context.getString(R.string.medium), context.getString(R.string.large)};
+
+
+        Size[] sizes = {new Size(0, techTwoSizesResources[0]), new Size(1, techTwoSizesResources[1]), new Size(2, techTwoSizesResources[2]), new Size(3, techTwoSizesResources[3])};
 
         for (Size theSizes : sizes) {
             listOfSizes.add(theSizes);
