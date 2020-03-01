@@ -423,58 +423,59 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         boolean valueAppended = false;
         int[] indexes = {0, 1, 2, 3, 4, 5}; // Array of indexes
 
-        String appended_text = "Product Cost : £";
+        Context context = getApplicationContext();
+        String[] productResource = new String[]{context.getString(R.string.product_cost)};
 
         if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[0]))) {
             productCost.setText(null);
-            productCost.append(appended_text + quantity_zero_cost);
+            productCost.append(productResource[0] + quantity_zero_cost);
 
             valueAppended = true;
         }
 
         else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[1]))) { // If the value at index 1 is chosen
             productCost.setText(null); // Flush out the product cost
-            productCost.append(appended_text + quantity_one_cost); // Append the cost
+            productCost.append(productResource[0] + quantity_one_cost); // Append the cost
 
             valueAppended = true;
         }
 
         else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[2]))) {
             productCost.setText(null);
-            productCost.append(appended_text + quantity_two_cost);
+            productCost.append(productResource[0] + quantity_two_cost);
 
             valueAppended = true;
         }
 
         else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[3]))) {
             productCost.setText(null);
-            productCost.append(appended_text + quantity_three_cost);
+            productCost.append(productResource[0] + quantity_three_cost);
             valueAppended = true;
 
         }
 
         else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[4]))) {
             productCost.setText(null);
-            productCost.append(appended_text + quantity_four_cost);
+            productCost.append(productResource[0] + quantity_four_cost);
             valueAppended = true;
 
         }
 
         if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[0]))) {
             secondProductCost.setText(null);
-            secondProductCost.append(appended_text + quantity_zero_cost);
+            secondProductCost.append(productResource[0] + quantity_zero_cost);
             valueAppended = true;
         }
 
         else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[1]))) {
             secondProductCost.setText(null);
-            secondProductCost.append(appended_text + quantity_one_cost);
+            secondProductCost.append(productResource[0] + quantity_one_cost);
             valueAppended = true;
         }
 
         else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[2]))) {
             secondProductCost.setText(null);
-            secondProductCost.append(appended_text + quantity_two_cost);
+            secondProductCost.append(productResource[0] + quantity_two_cost);
 
 
             valueAppended = true;
@@ -482,22 +483,21 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[3]))) { // If the item at index 3 is chosen
             secondProductCost.setText(null); // Set text to null
-            secondProductCost.append(appended_text + quantity_three_cost); // Then append the cost + string.
+            secondProductCost.append(productResource[0] + quantity_three_cost); // Then append the cost + string.
         }
 
         else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[4]))) {
             secondProductCost.setText(null);
-            secondProductCost.append(appended_text + quantity_four_cost);
+            secondProductCost.append(productResource[0] + quantity_four_cost);
         } else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[5]))) {
             secondProductCost.setText(null);
-            secondProductCost.append(appended_text + quantity_five_cost);
+            secondProductCost.append(productResource[0] + quantity_five_cost);
         } else {
             valueAppended = false;
         }
     }
 
     public boolean onOptionsItemSelected(MenuItem item) { // Routine that gets an item selected from the menu
-        String error_message = "Error Cause : ";
 
         try {
 
@@ -539,12 +539,12 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         } catch (ActivityNotFoundException act) { // Catch error
 
-            Log.d(error_message, act.toString()); // Log error if there is a problem.
+            Log.d(String.valueOf(R.string.error), act.toString()); // Log error if there is a problem.
 
 
-        } catch (InterruptedException excp) {
+        } catch (InterruptedException act) {
 
-            Log.d(error_message, excp.toString());
+            Log.d(String.valueOf(R.string.error), act.toString());
         }
 
         return true;

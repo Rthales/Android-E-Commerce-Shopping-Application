@@ -69,6 +69,8 @@
     <string name="product_cost">Product Cost £:</string>
     <string name="todo">TODO</string>
 
+    <string name="productCost">Product Cost £: </string>
+
 
     <string name="addingBasket">Adding To Basket..</string>
     <string name="wait">Please Wait</string>
