@@ -291,8 +291,11 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     }
 
     private boolean addToColoursListTwo() {
-        TechActivity.Colours[] colours = {new TechActivity.Colours(0, String.valueOf(R.string.firstColour)), new TechActivity.Colours(1, String.valueOf(R.string.blue)),
-                new TechActivity.Colours(2, String.valueOf(R.string.red)), new TechActivity.Colours(3, String.valueOf(R.string.sportsFirstColour))};
+        Context context = getApplicationContext();
+        String[] coloursResources = new String[]{context.getString(R.string.firstColour), context.getString(R.string.blue), context.getString(R.string.red), context.getString(R.string.limeGreen)};
+
+        TechActivity.Colours[] colours = {new TechActivity.Colours(0, coloursResources[0]), new TechActivity.Colours(1, coloursResources[1]),
+                new TechActivity.Colours(2, coloursResources[2]), new TechActivity.Colours(3, coloursResources[3])};
 
         for (TechActivity.Colours theColours : colours) {
             listOfColoursTwo.add(theColours);
@@ -338,7 +341,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     private boolean addToSizesList() {
         Context context = getApplicationContext();
-        String[] sizesResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.smallSize), context.getString(R.string.mediumSize), context.getString(R.string.largeSize), context.getString(R.string.largeSize)};
+        String[] sizesResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.smallSize), context.getString(R.string.mediumSize), context.getString(R.string.largeSize), context.getString(R.string.extraLargeSize)};
 
         Size[] sizes = {new Size(0, sizesResources[0]), new Size(1, sizesResources[1]), new Size(2, sizesResources[2]),
                 new Size(3, sizesResources[3]), new Size(4, sizesResources[4])};
