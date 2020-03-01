@@ -152,11 +152,11 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView43"
+        app:layout_constraintBottom_toTopOf="@+id/diySecondProductSizeLbl"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView42"
+        android:id="@+id/diySecondProductColourLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -169,16 +169,16 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner24"
+        android:id="@+id/diySecondProductColourMenu"
         android:layout_width="76dp"
         android:layout_height="21dp"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="104dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView42" />
+        app:layout_constraintStart_toEndOf="@+id/diySecondProductColourLbl" />
 
     <TextView
-        android:id="@+id/textView43"
+        android:id="@+id/diySecondProductSizeLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
@@ -188,19 +188,19 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinner24" />
+        app:layout_constraintStart_toEndOf="@+id/diySecondProductColourMenu" />
 
     <Spinner
-        android:id="@+id/spinner25"
+        android:id="@+id/diySecondProductSizeMenu"
         android:layout_width="69dp"
         android:layout_height="21dp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="104dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView43" />
+        app:layout_constraintStart_toEndOf="@+id/diySecondProductSizeLbl" />
 
     <TextView
-        android:id="@+id/textView44"
+        android:id="@+id/diySecondProductQuantityLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -210,19 +210,19 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinner25" />
+        app:layout_constraintStart_toEndOf="@+id/diySecondProductSizeMenu" />
 
     <Spinner
-        android:id="@+id/spinner26"
+        android:id="@+id/diySecondProductQuantityMenu"
         android:layout_width="64dp"
         android:layout_height="23dp"
         android:layout_marginStart="4dp"
         android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
-        app:layout_constraintStart_toEndOf="@+id/textView44" />
+        app:layout_constraintBottom_toTopOf="@+id/diySecondProductAddToBasketBtn"
+        app:layout_constraintStart_toEndOf="@+id/diySecondProductQuantityLbl" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/diySecondProductAddToBasketBtn"
         android:layout_width="425dp"
         android:layout_height="46dp"
         android:layout_marginBottom="8dp"
@@ -230,12 +230,12 @@
         android:text="Add To Basket"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/nextPageBtn"
+        app:layout_constraintBottom_toTopOf="@+id/diyNextPageBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/nextPageBtn"
+        android:id="@+id/diyNextPageBtn"
         android:layout_width="99dp"
         android:layout_height="36dp"
         android:layout_marginStart="312dp"

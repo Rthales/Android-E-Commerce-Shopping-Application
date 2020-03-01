@@ -25,13 +25,13 @@ public class DIYActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diy);
 
-        this.nextPageBtn = findViewById(R.id.nextPageBtn);
+        this.nextPageBtn = findViewById(R.id.diyNextPageBtn);
 
         this.nextPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    if (v.getId() == R.id.nextPageBtn) {
+                    if (v.getId() == R.id.diyNextPageBtn) {
                         Intent nextDiyIntent = new Intent(DIYActivity.this, DIYActivityTwo.class);
                         startActivity(nextDiyIntent);
                     }
