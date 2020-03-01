@@ -355,8 +355,8 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     private boolean addToBasketTwo() { // Adds the second product on the First Tech Activity to the basket
 
         final ProgressDialog dialog = new ProgressDialog(TechActivity.this);
-        dialog.setTitle("Adding to Basket..");
-        dialog.setMessage("Please Wait");
+        dialog.setTitle(R.string.addingBasket);
+        dialog.setMessage(String.valueOf(R.string.wait));
 
         dialog.setCancelable(false);
 
@@ -389,9 +389,10 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         boolean addedColours = false;
 
         Context context = getApplicationContext();
-        String[] resources = new String[]{context.getString(R.string.colour), context.getString(R.string.firstColour), context.getString(R.string.secondColour), context.getString(R.string.thirdColour)};
 
-        Colours[] coloursArray = {new Colours(0, resources[0]), new Colours(1, resources[1]), new Colours(2, resources[2]), new Colours(3, resources[3])};
+        String[] colourResources = new String[]{context.getString(R.string.colour), context.getString(R.string.firstColour), context.getString(R.string.secondColour), context.getString(R.string.thirdColour)};
+
+        Colours[] coloursArray = {new Colours(0, colourResources[0]), new Colours(1, colourResources[1]), new Colours(2, colourResources[2]), new Colours(3, colourResources[3])};
 
         for (Colours colours : coloursArray) { // For each colour in the array
             listOfColours.add(colours); // Add it to the array list
@@ -406,8 +407,12 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     private boolean addToSizesList() {
         boolean addedSizes = false;
 
-        Size[] techSizes = {new Size(0, "Please choose size"), new Size(1, "64GB"), new Size(2, "128GB"), new Size(3, "256GB"),
-                new Size(4, "512GB")};
+        Context context = getApplicationContext();
+
+        String[] sizeResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.sixtyFourGB), context.getString(R.string.oneTwoEight), context.getString(R.string.twoFiveSix), context.getString(R.string.fiveTwelve)};
+
+        Size[] techSizes = {new Size(0, sizeResources[0]), new Size(1, sizeResources[1]), new Size(2, sizeResources[2]), new Size(3, sizeResources[3]),
+                new Size(4, sizeResources[4])};
 
         for (Size sizes : techSizes) {
             listOfSizes.add(sizes);
@@ -419,7 +424,13 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private boolean addToSizesTwoList() {
         boolean addedSizes = false;
-        Size[] watchSizes = {new Size(0, "Please choose size"), new Size(1, "40MM"), new Size(2, "44MM")};
+
+        Context context = getApplicationContext();
+
+        String[] watchResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.fourtyMM), context.getString(R.string.fourtyTwoMM)};
+
+
+        Size[] watchSizes = {new Size(0, watchResources[0]), new Size(1, watchResources[1]), new Size(2, watchResources[2])};
 
         for (Size size : watchSizes) {
             secondListOfSizes.add(size);
