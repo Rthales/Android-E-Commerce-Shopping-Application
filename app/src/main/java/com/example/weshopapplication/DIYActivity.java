@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,11 +18,28 @@ import java.util.HashMap;
 public class DIYActivity extends AppCompatActivity {
     private ImageView cartIcon;
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
+    private Button nextPageBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diy);
+
+        this.nextPageBtn = findViewById(R.id.nextPageBtn);
+
+        this.nextPageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    if (v.getId() == R.id.nextPageBtn) {
+                        Intent nextDiyIntent = new Intent(DIYActivity.this, DIYActivityTwo.class);
+                        startActivity(nextDiyIntent);
+                    }
+                } catch (ActivityNotFoundException exc) {
+                    Log.d(String.valueOf(R.string.error), exc.toString());
+                }
+            }
+        });
     }
 
     @Override

@@ -229,14 +229,14 @@
         android:text="Add To Basket"
         android:textColor="@color/white"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
+        app:layout_constraintBottom_toTopOf="@+id/nextPageBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button10"
-        android:layout_width="91dp"
-        android:layout_height="37dp"
+        android:id="@+id/nextPageBtn"
+        android:layout_width="99dp"
+        android:layout_height="36dp"
         android:layout_marginStart="312dp"
         android:background="@android:color/black"
         android:text="Next Page"
