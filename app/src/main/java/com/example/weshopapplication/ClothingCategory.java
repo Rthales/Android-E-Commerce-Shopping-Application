@@ -167,6 +167,8 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
                         error.show();
                         error.setCancelable(true);
+                    } else {
+                        clothingAddToBasketOne();
                     }
                 }
             }
@@ -192,6 +194,8 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
                         error.show();
                         error.setCancelable(true);
+                    } else {
+                        clothingAddToBasketTwo();
                     }
                 }
             }
@@ -280,6 +284,14 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
             quantitiesAdded = true; // Quantities have been added.
         }
 
+        return true;
+    }
+
+    private boolean clothingAddToBasketOne() {
+        return true;
+    }
+
+    private boolean clothingAddToBasketTwo() {
         return true;
     }
 
