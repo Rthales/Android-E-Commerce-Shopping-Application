@@ -52,7 +52,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
 
                 tv.setTextColor(Color.WHITE); // Change the colour of the text
 
-                return view;
+                return view; // Return the view
             }
         };
 
@@ -92,8 +92,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(BasketActivity.this)
                         .setTitle(R.string.checkout)
-
-                        .setMessage(temp[0])
+                        .setMessage(temp[0]) // Set the message to the first index in the array
 
                         .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                             @Override
