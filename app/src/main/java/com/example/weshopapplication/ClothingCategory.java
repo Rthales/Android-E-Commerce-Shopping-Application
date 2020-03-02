@@ -1,5 +1,6 @@
 package com.example.weshopapplication;
 
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -123,6 +124,8 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         this.listOfClothingSizesTwo = new ArrayList<>();
         this.listOfClothingQuantitiesTwo = new ArrayList<>();
 
+        this.listOfProductsToAddToBasket = new HashMap<Integer, Products>();
+
         addToColoursList();
         addToSizesList();
         addToQuantitiesList();
@@ -142,6 +145,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         this.quantitiesAdapter = new CustomArrayAdapter(ClothingCategory.this, listOfClothingQuantitiesOne);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         clothingFirstProductQuantityMenu.setAdapter(quantitiesAdapter);
         clothingFirstProductQuantityMenu.setOnItemSelectedListener(this);
 
@@ -288,6 +292,39 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     }
 
     private boolean clothingAddToBasketOne() {
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
+
+        final ProgressDialog dialog = new ProgressDialog(ClothingCategory.this); // Spinning progress dialog
+        dialog.setTitle(temp[0]); // Set the title of the dialog
+        dialog.setMessage(temp[1]);
+
+        dialog.setCancelable(false);
+
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
+
+        new Thread(new Runnable() { // Create a new thread
+
+            @Override
+            public void run() {
+                try {
+
+                    Thread.sleep(1900); // Sleep for 1.9 seconds.
+                } catch (InterruptedException exc) {
+                    Log.d(String.valueOf(R.string.error), exc.toString());
+                }
+
+                dialog.dismiss();
+            }
+        }).start(); // Starts the thread
+
+        dialog.show();
+
+        // Create an instance for the first product and adds it to the hash map.
+        Products clothingFirstProduct = new Products(current_product_id, clothingFirstProductTxt.getText().toString(), clothingFirstProductColourMenu.getSelectedItem().toString(), (int) clothingFirstProductQuantityMenu.getSelectedItemId(), clothingFirstProductCostLbl.getText().toString(), clothingFirstProductSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id, clothingFirstProduct);
+
+
         return true;
     }
 
@@ -357,5 +394,4 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         return true;
     }
-
 }
