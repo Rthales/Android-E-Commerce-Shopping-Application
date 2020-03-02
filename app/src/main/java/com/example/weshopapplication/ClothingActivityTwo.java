@@ -114,7 +114,13 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         this.listOfClothingSizesTwo = new ArrayList<>();
         this.listOfClothingQuantitiesTwo = new ArrayList<>();
 
+        this.listOfProductsToAddToBasket = new HashMap<>();
 
+        addToColoursList();
+        addToSizesList();
+
+        addToQuantitiesListOne();
+        addToQuantitiesListTwo();
 
     }
 
@@ -178,6 +184,22 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
 
+        return true;
+    }
+
+    private boolean addToColoursList() {
+        return true;
+    }
+
+    private boolean addToSizesList() {
+        return true;
+    }
+
+    private boolean addToQuantitiesListOne() {
+        return true;
+    }
+
+    private boolean addToQuantitiesListTwo() {
         return true;
     }
 
