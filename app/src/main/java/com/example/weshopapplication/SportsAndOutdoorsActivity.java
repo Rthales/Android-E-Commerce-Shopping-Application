@@ -137,7 +137,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
         // Method calls to add to the specific array lists
         addToColoursList();
-        addToColoursListTwo();
+        addToColoursListTwo(); // Method call to add to the colours list two.
 
         addToQuantitiesListOne();
         addToQuantitiesListTwo();
@@ -209,7 +209,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                     if (firstSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 || firstSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 || firstSportsOutdoorsSizeMenu.getSelectedItemId() == 0) {
 
-                        AlertDialog.Builder error = new AlertDialog.Builder(SportsAndOutdoorsActivity.this) // Create an alert dialogue for the user to see
+                        AlertDialog.Builder error = new AlertDialog.Builder(SportsAndOutdoorsActivity.this) // Create an alert dialogue for the user to see.
                                 .setTitle(R.string.error)
                                 .setMessage(R.string.errorMsg)
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
@@ -237,7 +237,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             }
         });
 
-        secondSportsAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+        secondSportsAddToBasketBtn.setOnClickListener(new View.OnClickListener() { // Adds an action listener to the second add to basket button
             @Override
             public void onClick(View v) {
                 Context context = getApplicationContext();
@@ -265,7 +265,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                         errorMenu.setCancelable(true);
                     } else {
 
-                        addToBasketTwo();
+                        addToBasketTwo(); // Otherwise if the above condition is false, add to the basket two.
                     }
                 }
             }
@@ -331,9 +331,9 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         TechActivity.Quantities[] quantities = {new TechActivity.Quantities(quantitiesResources[0]), new TechActivity.Quantities(quantitiesResources[1]), new TechActivity.Quantities(quantitiesResources[2])
                 , new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
 
-        for (TechActivity.Quantities quantitiesArray : quantities) {
-            listOfQuantitiesTwo.add(quantitiesArray);
-            quantitiesAdded = true;
+        for (TechActivity.Quantities quantitiesArray : quantities) { // For every quantity in the object array
+            listOfQuantitiesTwo.add(quantitiesArray); // Add it to the array list
+            quantitiesAdded = true; // The quantities have been added to the list is true.
         }
 
         return true;
@@ -364,7 +364,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         dialog.setTitle(temp[0]); // Set the title of the dialog
         dialog.setMessage(temp[1]);
 
-        dialog.setCancelable(false);
+        dialog.setCancelable(false); // The dialog can be cancelled by the user by clicking out of bounds.
 
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
 
@@ -383,11 +383,11 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             }
         }).start(); // Starts the thread
 
-        dialog.show();
+        dialog.show(); // Shows the dialog
 
         // Create an instance for the first product and adds it to the hash map.
         Products firstSportsProduct = new Products(current_product_id, firstSportsOutdoorTxt.getText().toString(), firstSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) firstSportsOutdoorQuantityMenu.getSelectedItemId(), firstSportsOutdoorCostTxt.getText().toString(), firstSportsOutdoorsSizeMenu.getSelectedItem().toString());
-        listOfProductsToAddToBasket.put(current_product_id, firstSportsProduct);
+        listOfProductsToAddToBasket.put(current_product_id, firstSportsProduct); // Add the product instance to the hash map.
 
         return true; // Returns true.
     }
