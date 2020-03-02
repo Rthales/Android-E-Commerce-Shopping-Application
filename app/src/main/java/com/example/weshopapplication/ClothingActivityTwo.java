@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -22,7 +23,7 @@ import java.util.HashMap;
 // Date of Last Modification: 02/03/2020
 // Any Errors? None
 
-public class ClothingActivityTwo extends AppCompatActivity {
+public class ClothingActivityTwo extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private int current_product_id = 1;
     private ImageView cartIcon;
     private TextView clothingThirdProductTxt;
@@ -115,5 +116,20 @@ public class ClothingActivityTwo extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
