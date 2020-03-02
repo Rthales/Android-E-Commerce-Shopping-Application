@@ -31,7 +31,6 @@ import java.util.HashMap;
 
 public class ClothingCategory extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private int current_product_id = 1;
-
     private TextView clothingFirstProductTxt;
     private ImageView clothingFirstProductImg;
     private TextView clothingFirstProductCostLbl;
@@ -130,6 +129,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         addToColoursList();
         addToSizesList();
+
         addToQuantitiesList();
         addToQuantitiesListTwo();
 
@@ -257,7 +257,8 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
             valueAppended = true;
 
         } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[1]))) {
-            clothingFirstProductCostLbl.append(productResources[0] + (clothingProductOneCosts[1]));
+            clothingFirstProductCostLbl.setText(null);
+            clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[1]);
             valueAppended = true; // Value is appended
 
         } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[2]))) {
@@ -452,8 +453,6 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         // Create an instance for the first product and adds it to the hash map.
         Products clothingSecondProduct = new Products(current_product_id++, clothingSecondProductTxt.getText().toString(), clothingSecondProductColourMenu.getSelectedItem().toString(), (int) clothingSecondProductQuantityMenu.getSelectedItemId(), clothingSecondProductCostLbl.getText().toString(), clothingSecondProductSizeMenu.getSelectedItem().toString());
         listOfProductsToAddToBasket.put(current_product_id++, clothingSecondProduct);
-
-
 
 
         return true;
