@@ -17,5 +17,10 @@
     <string name="largeSize">L</string>
     <string name="extraLargeSize">XL</string>
 
+    <string name="thirtyFourRegular">34</string>
+    <string name="thirtyEightRegular">38</string>
+    <string name="forty">40</string>
+    <string name="fortyTwo">42</string>
+
 
 </resources>
