@@ -357,10 +357,13 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                 new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
 
         for (TechActivity.Quantities theQuantities : quantities) {
-
             listOfClothingQuantitiesOne.add(theQuantities); // Add the quantities to the first array list
-            listOfClothingQuantitiesTwo.add(theQuantities);
-            quantitiesAdded = true; // Quantities have been added.
+            quantitiesAdded = true;
+        }
+
+        for (TechActivity.Quantities secondQuantities : quantities) {
+            listOfClothingQuantitiesTwo.add(secondQuantities);
+            quantitiesAdded = true;
         }
 
         return true;
