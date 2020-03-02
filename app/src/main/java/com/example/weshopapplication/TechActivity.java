@@ -29,6 +29,7 @@ import java.util.HashMap;
 // Any Bugs?: Currently none. Unit tested recently. 11/11 Tests completed
 
 public class TechActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    public int current_product_id = 1;
 
     private TextView firstProductText;
     private Thread firstActivityThread;
@@ -42,8 +43,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private TextView secondProductText;
     private ImageView secondProductImg;
-
-    public int current_product_id = 1;
     private TextView secondProductCost;
 
     private TextView secondProductColour;
@@ -300,7 +299,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         dialog.setMessage(temp[1]);
 
         dialog.setCancelable(false);
-
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
 
         new Thread(new Runnable() { // Create a new thread
