@@ -131,6 +131,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         addToColoursList();
         addToSizesList();
         addToQuantitiesList();
+        addToQuantitiesListTwo();
 
         // Set-up Adapters.
         this.coloursAdapter = new ColourArrayAdapter(ClothingCategory.this, listOfClothingColoursOne);
@@ -252,11 +253,11 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[0]))) {
             clothingFirstProductCostLbl.setText(null);
-            clothingFirstProductCostLbl.setText(productResources[0] + clothingProductOneCosts[0]);
+            clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[0]);
             valueAppended = true;
 
         } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[1]))) {
-            clothingFirstProductCostLbl.setText(productResources[0] + (clothingProductOneCosts[1]));
+            clothingFirstProductCostLbl.append(productResources[0] + (clothingProductOneCosts[1]));
             valueAppended = true; // Value is appended
 
         } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[2]))) {
@@ -361,8 +362,21 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
             quantitiesAdded = true;
         }
 
-        for (TechActivity.Quantities secondQuantities : quantities) {
-            listOfClothingQuantitiesTwo.add(secondQuantities);
+        return true;
+    }
+
+    private boolean addToQuantitiesListTwo() {
+        boolean quantitiesAdded = false;
+        Context context = getApplicationContext();
+
+        String[] quantitiesResources = new String[]{context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two),
+                context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+        TechActivity.Quantities[] quantities = new TechActivity.Quantities[]{new TechActivity.Quantities(quantitiesResources[0]), new TechActivity.Quantities(quantitiesResources[1]), new TechActivity.Quantities(quantitiesResources[2]),
+                new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
+
+        for (TechActivity.Quantities theQuantities : quantities) {
+            listOfClothingQuantitiesTwo.add(theQuantities); // Add the quantities to the first array list
             quantitiesAdded = true;
         }
 
@@ -406,6 +420,42 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     }
 
     private boolean clothingAddToBasketTwo() {
+
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
+
+        final ProgressDialog dialog = new ProgressDialog(ClothingCategory.this); // Spinning progress dialog
+        dialog.setTitle(temp[0]); // Set the title of the dialog
+        dialog.setMessage(temp[1]);
+
+        dialog.setCancelable(false);
+
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
+
+        new Thread(new Runnable() { // Create a new thread
+
+            @Override
+            public void run() {
+                try {
+
+                    Thread.sleep(1900); // Sleep for 1.9 seconds.
+                } catch (InterruptedException exc) {
+                    Log.d(String.valueOf(R.string.error), exc.toString());
+                }
+
+                dialog.dismiss();
+            }
+        }).start(); // Starts the thread
+
+        dialog.show();
+
+        // Create an instance for the first product and adds it to the hash map.
+        Products clothingSecondProduct = new Products(current_product_id, clothingSecondProductTxt.getText().toString(), clothingFirstProductColourMenu.getSelectedItem().toString(), (int) clothingFirstProductQuantityMenu.getSelectedItemId(), clothingFirstProductCostLbl.getText().toString(), clothingFirstProductSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id, clothingSecondProduct);
+
+
+
+
         return true;
     }
 
