@@ -478,14 +478,13 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
 
     private void sendNotification() { // Routine to send notification after registration
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID); // Create the notification builder by passing the context to display it in and the channel id
-
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            builder.setChannelId(CHANNEL_ID)
 
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID); // Create the notification builder by passing the context to display it in and the channel id
+
+            builder.setChannelId(CHANNEL_ID)
                     .setSmallIcon(R.drawable.ic_message_black_24dp) // Give the notification an icon
                     .setContentTitle("Registration Status") // Set the content title of it
-
                     .setContentText("You have registered Success!") // Give the message to be displayed
                     .setPriority(NotificationCompat.PRIORITY_HIGH) // Set the priority of the notification
                     .setColor(Color.BLACK) // Give the notification a colour
