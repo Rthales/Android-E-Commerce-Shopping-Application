@@ -59,29 +59,21 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     private Spinner secondProductColourOptions;
     private Spinner secondProductQuantityOptions;
 
-    private ArrayList<Colours> listOfColours;
-    private ArrayList<Quantities> listOfQuantities;
-    private ArrayList<Size> listOfSizes;
+    private ArrayList<Colours> listOfColours = null;
+    private ArrayList<Quantities> listOfQuantities = null;
+    private ArrayList<Size> listOfSizes = null;
 
-    private CustomArrayAdapter quantitiesCustomAdapter;
-    private ColourArrayAdapter colourArrayAdapter;
-    private SizesAdapter sizesAdapter;
+    private CustomArrayAdapter quantitiesCustomAdapter = null;
+    private ColourArrayAdapter colourArrayAdapter = null;
+    private SizesAdapter sizesAdapter = null;
 
-    private ArrayList<Colours> secondListOfColours;
-    private ArrayList<Quantities> secondListOfQuantities;
-    private ArrayList<Size> secondListOfSizes;
+    private ArrayList<Colours> secondListOfColours = null;
+    private ArrayList<Quantities> secondListOfQuantities = null;
+    private ArrayList<Size> secondListOfSizes = null;
 
     private Button nextPageBtn;
-
-    // VARIABLES FOR THE COSTS
-    private double quantity_zero_cost = 0.0;
-    private double quantity_one_cost = 500.00;
-
-    private double quantity_two_cost = 3 * quantity_one_cost; // Quantity 2 is 3 times the price of 1 quantity.
-    private double quantity_three_cost = 4 * quantity_one_cost;
-
-    private double quantity_four_cost = 5 * quantity_one_cost;
-    private double quantity_five_cost = 6 * quantity_one_cost;
+    private double[] techProductOneCosts = new double[]{0.00, 500.00, 1000.00, 2000.00, 4000.00, 8000.00};
+    private double[] techProductTwoCosts = new double[]{0.00, 300.00, 600.00, 1200.00, 2400.00, 4800.00};
 
     private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<>();
 
@@ -428,54 +420,54 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[0]))) {
             productCost.setText(null);
-            productCost.append(productResource[0] + quantity_zero_cost);
+            productCost.append(productResource[0] + techProductOneCosts[0]);
 
             valueAppended = true;
         }
 
         else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[1]))) { // If the value at index 1 is chosen
             productCost.setText(null); // Flush out the product cost
-            productCost.append(productResource[0] + quantity_one_cost); // Append the cost
+            productCost.append(productResource[0] + techProductOneCosts[1]); // Append the cost
 
             valueAppended = true;
         }
 
         else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[2]))) {
             productCost.setText(null);
-            productCost.append(productResource[0] + quantity_two_cost);
+            productCost.append(productResource[0] + techProductOneCosts[2]);
 
             valueAppended = true;
         }
 
         else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[3]))) {
             productCost.setText(null);
-            productCost.append(productResource[0] + quantity_three_cost);
+            productCost.append(productResource[0] + techProductOneCosts[3]);
             valueAppended = true;
 
         }
 
         else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[4]))) {
             productCost.setText(null);
-            productCost.append(productResource[0] + quantity_four_cost);
+            productCost.append(productResource[0] + techProductOneCosts[4]);
             valueAppended = true;
 
         }
 
         if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[0]))) {
             secondProductCost.setText(null);
-            secondProductCost.append(productResource[0] + quantity_zero_cost);
+            secondProductCost.append(productResource[0] + techProductTwoCosts[0]);
             valueAppended = true;
         }
 
         else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[1]))) {
             secondProductCost.setText(null);
-            secondProductCost.append(productResource[0] + quantity_one_cost);
+            secondProductCost.append(productResource[0] + techProductTwoCosts[1]);
             valueAppended = true;
         }
 
         else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[2]))) {
             secondProductCost.setText(null);
-            secondProductCost.append(productResource[0] + quantity_two_cost);
+            secondProductCost.append(productResource[0] + techProductTwoCosts[2]);
 
 
             valueAppended = true;
@@ -483,15 +475,15 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[3]))) { // If the item at index 3 is chosen
             secondProductCost.setText(null); // Set text to null
-            secondProductCost.append(productResource[0] + quantity_three_cost); // Then append the cost + string.
+            secondProductCost.append(productResource[0] + techProductTwoCosts[3]); // Then append the cost + string.
         }
 
         else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[4]))) {
             secondProductCost.setText(null);
-            secondProductCost.append(productResource[0] + quantity_four_cost);
+            secondProductCost.append(productResource[0] + techProductTwoCosts[4]);
         } else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[5]))) {
             secondProductCost.setText(null);
-            secondProductCost.append(productResource[0] + quantity_five_cost);
+            secondProductCost.append(productResource[0] + techProductTwoCosts[5]);
         } else {
             valueAppended = false;
         }
