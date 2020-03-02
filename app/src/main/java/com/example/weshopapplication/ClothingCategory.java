@@ -1,6 +1,7 @@
 package com.example.weshopapplication;
 
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -138,14 +140,35 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         this.clothingFirstProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() { // Add action listener to the first clothing add to product button
             @Override
-            public void onClick(View v) {
+            public void onClick(View firstButton) {
+                if (firstButton.getId() == R.id.clothingFirstProductAddToBasketBtn) {
 
+                    if (clothingFirstProductColourMenu.getSelectedItemPosition() == 0 || clothingFirstProductSizeMenu.getSelectedItemPosition() == 0 || clothingFirstProductQuantityMenu.getSelectedItemPosition() == 0) {
+                        AlertDialog.Builder error = new AlertDialog.Builder(ClothingCategory.this)
+
+                                .setTitle(R.string.error)
+
+                                .setMessage(R.string.errorMsg)
+
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (dialog != null) {
+                                            dialog.cancel();
+                                        }
+                                    }
+                                });
+
+                        error.show();
+                        error.setCancelable(true);
+                    }
+                }
             }
         });
 
         this.clothingSecondProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View secondButton) {
 
             }
         });
