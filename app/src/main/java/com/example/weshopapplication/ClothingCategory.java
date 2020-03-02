@@ -450,8 +450,8 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         dialog.show();
 
         // Create an instance for the first product and adds it to the hash map.
-        Products clothingSecondProduct = new Products(current_product_id, clothingSecondProductTxt.getText().toString(), clothingFirstProductColourMenu.getSelectedItem().toString(), (int) clothingFirstProductQuantityMenu.getSelectedItemId(), clothingFirstProductCostLbl.getText().toString(), clothingFirstProductSizeMenu.getSelectedItem().toString());
-        listOfProductsToAddToBasket.put(current_product_id, clothingSecondProduct);
+        Products clothingSecondProduct = new Products(current_product_id++, clothingSecondProductTxt.getText().toString(), clothingSecondProductColourMenu.getSelectedItem().toString(), (int) clothingSecondProductQuantityMenu.getSelectedItemId(), clothingSecondProductCostLbl.getText().toString(), clothingSecondProductSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id++, clothingSecondProduct);
 
 
 
