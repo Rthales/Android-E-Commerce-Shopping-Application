@@ -54,6 +54,8 @@ public class ClothingCategory extends AppCompatActivity {
     private TextView clothingSecondProductQuantityLbl;
     private Spinner clothingSecondProductQuantityMenu;
 
+    private Button clothingSecondProductAddToBasketBtn;
+
     private double[] clothingProductOneCosts = new double[]{0.00, 25.00, 50.00, 150.00, 450.00, 1350.00};
     private double[] clothingProductTwoCosts = new double[]{0.00, 30.00, 60.00, 120.00, 240.00, 480.00};
 
@@ -61,13 +63,13 @@ public class ClothingCategory extends AppCompatActivity {
     private ColourArrayAdapter coloursAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
 
-    private ArrayList<TechActivity.Colours> listOfColoursOne = null;
-    private ArrayList<Size> listOfSizesOne = null;
-    private ArrayList<TechActivity.Quantities> listOfQuantitiesOne = null;
+    private ArrayList<TechActivity.Colours> listOfClothingColoursOne = null;
+    private ArrayList<Size> listOfClothingSizesOne = null;
+    private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesOne = null;
 
-    private ArrayList<TechActivity.Colours> listOfColoursTwo = null;
-    private ArrayList<Size> listOfSizesTwo = null;
-    private ArrayList<TechActivity.Quantities> listOfQuantitiesTwo = null;
+    private ArrayList<TechActivity.Colours> listOfClothingColoursTwo = null;
+    private ArrayList<Size> listOfClothingSizesTwo = null;
+    private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesTwo = null;
 
     private ImageView cartIcon;
     private Button nextPageBtn;
@@ -94,6 +96,31 @@ public class ClothingCategory extends AppCompatActivity {
         this.clothingSecondProductTxt = findViewById(R.id.clothingSecondProductTxt);
         this.clothingSecondProductImg = findViewById(R.id.clothingSecondProductImg);
 
+        this.clothingSecondProductColourLbl = findViewById(R.id.clothingSecondProductColourLbl);
+        this.clothingSecondProductColourMenu = findViewById(R.id.clothingSecondProductColourMenu);
+
+        this.clothingSecondProductSizeLbl = findViewById(R.id.clothingSecondProductSizeLbl);
+        this.clothingSecondProductSizeMenu = findViewById(R.id.clothingSecondProductSizeMenu);
+
+        this.clothingSecondProductQuantityLbl = findViewById(R.id.clothingSecondProductQuantityLbl);
+        this.clothingSecondProductQuantityMenu = findViewById(R.id.clothingSecondProductQuantityMenu);
+
+        this.clothingSecondProductAddToBasketBtn = findViewById(R.id.clothingSecondProductAddToBasketBtn);
+
+        this.listOfClothingColoursOne = new ArrayList<>();
+        this.listOfClothingSizesOne = new ArrayList<>();
+        this.listOfClothingQuantitiesOne = new ArrayList<>();
+
+        this.listOfClothingColoursTwo = new ArrayList<>();
+        this.listOfClothingSizesTwo = new ArrayList<>();
+        this.listOfClothingQuantitiesTwo = new ArrayList<>();
+
+        addToColoursList();
+        addToSizesList();
+        addToQuantitiesList();
+
+        // Set-up Adapters.
+
 
         this.nextPageBtn = findViewById(R.id.clothingNextPageBtn);
 
@@ -110,6 +137,19 @@ public class ClothingCategory extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private boolean addToColoursList() {
+
+        return true;
+    }
+
+    private boolean addToSizesList() {
+        return true;
+    }
+
+    private boolean addToQuantitiesList() {
+        return true;
     }
 
     @Override

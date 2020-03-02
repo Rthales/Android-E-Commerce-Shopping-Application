@@ -115,6 +115,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         addToColoursList();
         addToQuantitiesList();
+
         addToSizesList();
         addToSizesTwoList();
 
