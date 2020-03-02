@@ -10,12 +10,33 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
 
+// Author of Application: Sabin Constantin Lungu
+// Purpose of Application: Displays the clothing category products.
+// Date of Last Modification: 02/03/2020
+// Any Errors? None Yet.
+
 public class ClothingCategory extends AppCompatActivity {
+    private int current_product_id = 1;
+    private TextView clothingFirstProductTxt;
+    private ImageView clothingFirstProductImg;
+    private TextView clothingFirstProductCostLbl;
+
+    private TextView clothingFirstProductColourLbl;
+    private TextView clothingFirstProductColourMenu;
+
+    private TextView clothingFirstProductSizeLbl; // The size label of the first clothing product.
+    private TextView clothingFirstProductSizeMenu; // The size menu of the clothing activity
+
+
+
+
+
     private ImageView cartIcon;
     private Button nextPageBtn;
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
