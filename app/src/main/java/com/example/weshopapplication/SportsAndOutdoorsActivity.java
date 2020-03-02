@@ -344,7 +344,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         String[] sizesResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.smallSize), context.getString(R.string.mediumSize), context.getString(R.string.largeSize), context.getString(R.string.extraLargeSize)};
 
         Size[] sizes = {new Size(0, sizesResources[0]), new Size(1, sizesResources[1]), new Size(2, sizesResources[2]),
-                new Size(3, sizesResources[3]), new Size(4, sizesResources[4])};
+                new Size(3, sizesResources[3]), new Size(4, sizesResources[4])}; // Creates an array of object of type size.
 
         for (Size theSizes : sizes) { // For each of the sizes in the array
             listOfSizesOne.add(theSizes);
@@ -371,7 +371,8 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         new Thread(new Runnable() { // Create a new thread
 
             @Override
-            public void run() {
+            public void run() { // Routine that runs the thread.
+
                 try {
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
