@@ -236,7 +236,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                 new TechActivity.Colours(3, clothingResources[3]), new TechActivity.Colours(4, clothingResources[4])};
 
         for (TechActivity.Colours theColours : colours) {
-            listOfClothingColoursTwo.add(theColours);
+            listOfClothingColoursOne.add(theColours);
             coloursAdded = true;
         }
 
