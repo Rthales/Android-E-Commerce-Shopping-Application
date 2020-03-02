@@ -108,8 +108,10 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         this.clothingSecondProductQuantityLbl = findViewById(R.id.clothingSecondProductQuantityLbl);
         this.clothingSecondProductQuantityMenu = findViewById(R.id.clothingSecondProductQuantityMenu);
-
         this.clothingSecondProductAddToBasketBtn = findViewById(R.id.clothingSecondProductAddToBasketBtn);
+
+        this.nextPageBtn = findViewById(R.id.clothingNextPageBtn);
+
 
         this.listOfClothingColoursOne = new ArrayList<>();
         this.listOfClothingSizesOne = new ArrayList<>();
@@ -169,12 +171,27 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         this.clothingSecondProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View secondButton) {
+                if (secondButton.getId() == R.id.clothingSecondProductAddToBasketBtn) {
 
+                    if (clothingSecondProductColourMenu.getSelectedItemPosition() == 0 || clothingSecondProductSizeMenu.getSelectedItemPosition() == 0 || clothingSecondProductQuantityMenu.getSelectedItemPosition() == 0) {
+                        AlertDialog.Builder error = new AlertDialog.Builder(ClothingCategory.this)
+                                .setTitle(R.string.error)
+                                .setMessage(R.string.errorMsg)
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (dialog != null) {
+                                            dialog.dismiss();
+                                        }
+                                    }
+                                });
+
+                        error.show();
+                        error.setCancelable(true);
+                    }
+                }
             }
         });
-
-
-        this.nextPageBtn = findViewById(R.id.clothingNextPageBtn);
 
         this.nextPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
