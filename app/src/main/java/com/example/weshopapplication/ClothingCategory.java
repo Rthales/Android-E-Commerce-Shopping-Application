@@ -123,9 +123,33 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         // Set-up Adapters.
         this.coloursAdapter = new ColourArrayAdapter(ClothingCategory.this, listOfClothingColoursOne);
         coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
         clothingFirstProductColourMenu.setAdapter(coloursAdapter);
         clothingFirstProductColourMenu.setOnItemSelectedListener(ClothingCategory.this);
+
+        this.sizeArrayAdapter = new SizeArrayAdapter(ClothingCategory.this, listOfClothingSizesOne);
+        sizeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        clothingFirstProductSizeMenu.setAdapter(sizeArrayAdapter);
+        clothingFirstProductSizeMenu.setOnItemSelectedListener(this);
+
+        this.quantitiesAdapter = new CustomArrayAdapter(ClothingCategory.this, listOfClothingQuantitiesOne);
+        quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        clothingFirstProductQuantityMenu.setAdapter(quantitiesAdapter);
+        clothingFirstProductQuantityMenu.setOnItemSelectedListener(this);
+
+        this.clothingFirstProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() { // Add action listener to the first clothing add to product button
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        this.clothingSecondProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
 
         this.nextPageBtn = findViewById(R.id.clothingNextPageBtn);
 
