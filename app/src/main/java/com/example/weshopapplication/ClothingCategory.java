@@ -112,7 +112,6 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         this.nextPageBtn = findViewById(R.id.clothingNextPageBtn);
 
-
         this.listOfClothingColoursOne = new ArrayList<>();
         this.listOfClothingSizesOne = new ArrayList<>();
         this.listOfClothingQuantitiesOne = new ArrayList<>();
@@ -128,11 +127,13 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         // Set-up Adapters.
         this.coloursAdapter = new ColourArrayAdapter(ClothingCategory.this, listOfClothingColoursOne);
         coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         clothingFirstProductColourMenu.setAdapter(coloursAdapter);
         clothingFirstProductColourMenu.setOnItemSelectedListener(ClothingCategory.this);
 
         this.sizeArrayAdapter = new SizeArrayAdapter(ClothingCategory.this, listOfClothingSizesOne);
         sizeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         clothingFirstProductSizeMenu.setAdapter(sizeArrayAdapter);
         clothingFirstProductSizeMenu.setOnItemSelectedListener(this);
 

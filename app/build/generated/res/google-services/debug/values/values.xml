@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">271359503714-2593n3v7op50v7mu4hnq6fineh4khrvi.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://weshopapplication-74eec.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">271359503714</string>
+    <string name="google_api_key" translatable="false">AIzaSyBBr4GUvhbd-Ew2GAX0tJWhIz6OBykmr9s</string>
+    <string name="google_app_id" translatable="false">1:271359503714:android:d2f46f869dac5ea9f4d03b</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBBr4GUvhbd-Ew2GAX0tJWhIz6OBykmr9s</string>
+    <string name="google_storage_bucket" translatable="false">weshopapplication-74eec.appspot.com</string>
+    <string name="project_id" translatable="false">weshopapplication-74eec</string>
+</resources>
