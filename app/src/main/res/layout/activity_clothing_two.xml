@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:layout_marginBottom="8dp"
-        android:text="Long Sleeve Top Women's"
+        android:text="@string/long_sleeve_top_women_s"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -28,6 +28,7 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/clothingThirdProductCost"
         app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="TODO"
         app:srcCompat="@drawable/clothing_women_top" />
 
     <TextView
@@ -92,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="7dp"
         android:layout_marginBottom="406dp"
-        android:text="Quantity"
+        android:text="@string/quantity"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
