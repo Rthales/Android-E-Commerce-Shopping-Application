@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 // Author of Application/Class: Sabin Constantin Lungu
@@ -59,7 +60,12 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     private ColourArrayAdapter coloursAdapter;
     private SizeArrayAdapter sizesAdapter;
 
+    private ArrayList<TechActivity.Colours> listOfClothingColoursOne = null;
+    private ArrayList<Size> listOfClothingSizesOne = null;
+    private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesOne = null;
 
+    private ArrayList<TechActivity.Colours> listOfClothingColoursTwo = null;
+    private ArrayList<Size> listOfClothingSizesTwo = null;
 
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
 
