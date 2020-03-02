@@ -92,7 +92,11 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         this.clothingThirdProductSizeMenu = findViewById(R.id.clothingThirdProductSizeMenu);
         this.clothingThirdAddToBasketBtn = findViewById(R.id.clothingThirdProductAddToBasketBtn);
 
+        this.clothingFourthProductTxt = findViewById(R.id.clothingFourthProductTxt);
+        this.clothingFourthProductImageView = findViewById(R.id.clothingFourthProductImg);
 
+        this.clothingFourthProductColourLbl = findViewById(R.id.clothingFourthProductColourLbl);
+        this.clothingFourthProductColourMenu = findViewById(R.id.clothingFourthProductColourMenu);
 
 
 
