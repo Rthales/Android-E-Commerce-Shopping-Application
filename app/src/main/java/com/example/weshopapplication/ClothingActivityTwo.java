@@ -1,6 +1,7 @@
 package com.example.weshopapplication;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -193,7 +194,28 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         this.clothingFourthProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View fourthBtn) {
+                if (fourthBtn.getId() == R.id.clothingFourthProductAddToBasketBtn) {
 
+                    if (clothingFourthProductColourMenu.getSelectedItemPosition() == 0 || clothingFourthProductSizeMenu.getSelectedItemPosition() == 0 || clothingFourthProductQuantityMenu.getSelectedItemPosition() == 0) {
+                        AlertDialog.Builder error = new AlertDialog.Builder(ClothingActivityTwo.this)
+                                .setTitle(R.string.error)
+                                .setMessage(R.string.errorMsg)
+
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (dialog != null) {
+                                            dialog.dismiss();
+                                        }
+                                    }
+                                });
+
+                        error.show();
+                        error.setCancelable(true);
+                    } else {
+                        clothingAddToBasketFour();
+                    }
+                }
             }
         });
 
@@ -263,6 +285,22 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     }
 
     private boolean addToColoursList() {
+
+        Context context = getApplicationContext();
+
+        String[] clothingResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.salmonPink), context.getString(R.string.skyBlue),
+                context.getString(R.string.rubyRed), context.getString(R.string.cityGray)};
+
+        TechActivity.Colours[] colours = new TechActivity.Colours[]{new TechActivity.Colours(0, clothingResources[0]), new TechActivity.Colours(1, clothingResources[1]), new TechActivity.Colours(2, clothingResources[2]),
+                new TechActivity.Colours(3, clothingResources[3]), new TechActivity.Colours(4, clothingResources[4])};
+
+        for (TechActivity.Colours theColours : colours) {
+            listOfClothingColoursOne.add(theColours);
+            listOfClothingColoursTwo.add(theColours);
+
+            coloursAdded = true;
+        }
+
         return true;
     }
 
