@@ -45,6 +45,20 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     private TextView clothingFourthProductColourLbl;
     private Spinner clothingFourthProductColourMenu;
 
+    private TextView clothingFourthProductSizeLbl;
+    private Spinner clothingFourthProductSizeMenu;
+
+    private TextView clothingFourthProductQuantityLbl;
+    private Spinner clothingFourthProductQuantityMenu;
+    private Button clothingFourthProductAddToBasketBtn;
+
+    private double[] clothingThirdProductCosts = new double[]{0.00, 30.00, 60.00, 120.00, 240.00, 480.00};
+    private double[] clothingFourthProductCosts = new double[]{0.00, 40.00, 80.00, 160.00, 320.00, 640.00};
+
+    private CustomArrayAdapter quantitiesAdapter;
+    private ColourArrayAdapter coloursAdapter;
+    private SizeArrayAdapter sizesAdapter;
+
 
 
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
