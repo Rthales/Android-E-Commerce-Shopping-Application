@@ -368,7 +368,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         boolean addedSizes = false;
 
         Context context = getApplicationContext();
-
         String[] watchResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.fourtyMM), context.getString(R.string.fourtyTwoMM)};
 
 
