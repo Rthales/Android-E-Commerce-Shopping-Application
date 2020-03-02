@@ -441,7 +441,58 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        boolean valueAppended = false;
 
+        int[] indexes = new int[]{0, 1, 2, 3, 4};
+
+        Context context = getApplicationContext();
+        String[] productResources = new String[]{context.getString(R.string.productCost)};
+
+        if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[0]))) {
+            clothingThirdProductCostLbl.setText(null);
+            clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[0]);
+            valueAppended = true;
+
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[1]))) {
+            clothingThirdProductCostLbl.setText(null);
+            clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[1]);
+            valueAppended = true; // Value is appended
+
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[2]))) {
+            clothingThirdProductCostLbl.setText(null);
+            clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[2]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[3]))) {
+            clothingThirdProductCostLbl.setText(null);
+            clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[3]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[4]))) {
+            clothingThirdProductCostLbl.setText(null);
+            clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[4]);
+            valueAppended = true;
+        }
+
+        if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[0]))) {
+            clothingFourthProductCostLbl.setText(null);
+            clothingFourthProductCostLbl.append(productResources[0] + clothingFourthProductCosts[0]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[1]))) {
+            clothingFourthProductCostLbl.setText(null);
+            clothingFourthProductCostLbl.append(productResources[0] + clothingFourthProductCosts[1]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[2]))) {
+            clothingFourthProductCostLbl.setText(null);
+            clothingFourthProductCostLbl.append(productResources[0] + clothingFourthProductCosts[2]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[3]))) {
+            clothingFourthProductCostLbl.setText(null);
+            clothingFourthProductCostLbl.append(productResources[0] + clothingFourthProductCosts[3]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[4]))) {
+            clothingFourthProductCostLbl.setText(null);
+            clothingFourthProductCostLbl.append(productResources[0] + clothingFourthProductCosts[4]);
+            valueAppended = true;
+        }
     }
 
     @Override
