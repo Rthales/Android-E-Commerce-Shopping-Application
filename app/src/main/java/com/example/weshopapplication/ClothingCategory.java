@@ -75,8 +75,6 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     private ArrayList<Size> listOfClothingSizesTwo = null;
     private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesTwo = null;
 
-    private Context context = getApplicationContext();
-
     private ImageView cartIcon;
     boolean coloursAdded = false;
 
@@ -230,6 +228,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     }
 
     private boolean addToColoursList() {
+        Context context = getApplicationContext();
 
         String[] clothingResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.brown), context.getString(R.string.navyBlue),
                 context.getString(R.string.darkRed), context.getString(R.string.checkeredBlack)};
@@ -251,6 +250,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
     private boolean addToQuantitiesList() {
         boolean quantitiesAdded = false;
+        Context context = getApplicationContext();
 
         String[] quantitiesResources = new String[]{context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two),
                 context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
