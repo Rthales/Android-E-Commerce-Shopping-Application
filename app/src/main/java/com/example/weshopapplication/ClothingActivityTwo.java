@@ -1,6 +1,7 @@
 package com.example.weshopapplication;
 
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -27,6 +29,7 @@ import java.util.HashMap;
 public class ClothingActivityTwo extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private int current_product_id = 1;
     private ImageView cartIcon;
+
     private TextView clothingThirdProductTxt;
     private ImageView clothingThirdProductImg;
 
@@ -159,6 +162,41 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         clothingFourthProductQuantityMenu.setAdapter(quantitiesAdapter);
         clothingFourthProductQuantityMenu.setOnItemSelectedListener(this);
 
+        this.clothingThirdAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View thirdBtn) {
+                if (thirdBtn.getId() == R.id.clothingThirdProductAddToBasketBtn) {
+
+                    if (clothingThirdProductColourMenu.getSelectedItemPosition() == 0 || clothingThirdProductSizeMenu.getSelectedItemPosition() == 0 || clothingThirdProductQuantityMenu.getSelectedItemPosition() == 0) {
+                        AlertDialog.Builder error = new AlertDialog.Builder(ClothingActivityTwo.this)
+                                .setTitle(R.string.error)
+                                .setMessage(R.string.errorMsg)
+
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (dialog != null) {
+                                            dialog.dismiss();
+                                        }
+                                    }
+                                });
+
+                        error.show();
+                        error.setCancelable(true);
+                    } else {
+                        clothingAddToBasketThree();
+                    }
+                }
+            }
+        });
+
+        this.clothingFourthProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View fourthBtn) {
+
+            }
+        });
+
     }
 
     @Override
@@ -237,6 +275,14 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     }
 
     private boolean addToQuantitiesListTwo() {
+        return true;
+    }
+
+    private boolean clothingAddToBasketThree() {
+        return true;
+    }
+
+    private boolean clothingAddToBasketFour() {
         return true;
     }
 
