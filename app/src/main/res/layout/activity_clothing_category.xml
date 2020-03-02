@@ -79,7 +79,7 @@
         app:layout_constraintStart_toEndOf="@+id/clothingFirstProductSizeLbl" />
 
     <Spinner
-        android:id="@+id/firstProductQuantityMenu"
+        android:id="@+id/clothingFirstProductQuantityMenu"
         android:layout_width="82dp"
         android:layout_height="21dp"
         android:layout_marginBottom="11dp"

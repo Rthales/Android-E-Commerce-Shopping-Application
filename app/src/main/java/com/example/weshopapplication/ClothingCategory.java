@@ -37,7 +37,7 @@ public class ClothingCategory extends AppCompatActivity {
     private Spinner clothingFirstProductSizeMenu; // The size menu of the clothing activity.
 
     private TextView clothingFirstProductQuantityLbl;
-    private Spinner clothingFirstProdcutQuantityMenu;
+    private Spinner clothingFirstProductQuantityMenu;
 
     private Button clothingFirstProductAddToBasketBtn;
 
@@ -87,6 +87,12 @@ public class ClothingCategory extends AppCompatActivity {
 
         this.clothingFirstProductSizeLbl = findViewById(R.id.clothingFirstProductSizeLbl);
         this.clothingFirstProductSizeMenu = findViewById(R.id.clothingFirstProductSizeMenu);
+
+        this.clothingFirstProductQuantityLbl = findViewById(R.id.clothingFirstProductQuantityLbl);
+        this.clothingFirstProductQuantityMenu = findViewById(R.id.clothingFirstProductQuantityMenu);
+
+        this.clothingSecondProductTxt = findViewById(R.id.clothingSecondProductTxt);
+        this.clothingSecondProductImg = findViewById(R.id.clothingSecondProductImg);
 
 
         this.nextPageBtn = findViewById(R.id.clothingNextPageBtn);
