@@ -436,7 +436,6 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         Products clothingThirdProduct = new Products(current_product_id++, clothingFourthProductTxt.getText().toString(), clothingFourthProductColourMenu.getSelectedItem().toString(), (int) clothingFourthProductQuantityMenu.getSelectedItemId(), clothingFourthProductCostLbl.getText().toString(), clothingThirdProductSizeMenu.getSelectedItem().toString());
         listOfProductsToAddToBasket.put(current_product_id++, clothingThirdProduct);
 
-
         return true;
     }
 
