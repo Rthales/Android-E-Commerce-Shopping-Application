@@ -82,6 +82,16 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         this.clothingThirdProductTxt = findViewById(R.id.clothingThirdProductTxt); // Set up the clothing third product text view.
         this.clothingThirdProductImg = findViewById(R.id.clothingThirdProductImg); // Set-up the image component
 
+        this.clothingThirdProductColourLbl = findViewById(R.id.clothingThirdProductColourLbl);
+        this.clothingThirdProductColourMenu = findViewById(R.id.clothingThirdProductColourMenu);
+
+        this.clothingThirdProductQuantityLbl = findViewById(R.id.clothingThirdProductQuantityLbl);
+        this.clothingThirdProductQuantityMenu = findViewById(R.id.clothingThirdProductQuantityMenu);
+
+        this.clothingThirdProductSizeLbl = findViewById(R.id.clothingThirdProductSizeLbl);
+        this.clothingThirdProductSizeMenu = findViewById(R.id.clothingThirdProductSizeMenu);
+        this.clothingThirdAddToBasketBtn = findViewById(R.id.clothingThirdProductAddToBasketBtn);
+
 
 
 
