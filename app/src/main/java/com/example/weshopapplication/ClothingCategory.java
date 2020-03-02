@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -23,7 +24,7 @@ import java.util.HashMap;
 // Date of Last Modification: 02/03/2020
 // Any Errors? None Yet.
 
-public class ClothingCategory extends AppCompatActivity {
+public class ClothingCategory extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private int current_product_id = 1;
 
     private TextView clothingFirstProductTxt;
@@ -120,7 +121,11 @@ public class ClothingCategory extends AppCompatActivity {
         addToQuantitiesList();
 
         // Set-up Adapters.
+        this.coloursAdapter = new ColourArrayAdapter(ClothingCategory.this, listOfClothingColoursOne);
+        coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
+        clothingFirstProductColourMenu.setAdapter(coloursAdapter);
+        clothingFirstProductColourMenu.setOnItemSelectedListener(ClothingCategory.this);
 
         this.nextPageBtn = findViewById(R.id.clothingNextPageBtn);
 
@@ -215,4 +220,18 @@ public class ClothingCategory extends AppCompatActivity {
         return true;
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
 }
