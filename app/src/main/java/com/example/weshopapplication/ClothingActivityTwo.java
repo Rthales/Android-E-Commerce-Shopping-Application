@@ -8,14 +8,44 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
 
+// Author of Application/Class: Sabin Constantin Lungu
+// Purpose of Application / Class: To show customers the clothing category two activity.
+// Date of Last Modification: 02/03/2020
+// Any Errors? None
+
 public class ClothingActivityTwo extends AppCompatActivity {
+    private int current_product_id = 1;
     private ImageView cartIcon;
+    private TextView clothingThirdProductTxt;
+    private ImageView clothingThirdProductImg;
+
+    private TextView clothingThirdProductColourLbl;
+    private Spinner clothingThirdProductColourMenu;
+
+    private TextView clothingThirdProductSizeLbl;
+    private Spinner clothingThirdProductSizeMenu;
+
+    private TextView clothingThirdProductQuantityLbl;
+    private Spinner clothingThirdProductQuantityMenu;
+    private Button clothingThirdAddToBasketBtn;
+
+    private TextView clothingFourthProductTxt;
+    private ImageView clothingFourthProductImageView;
+
+    private TextView clothingFourthProductColourLbl;
+    private Spinner clothingFourthProductColourMenu;
+
+
+
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
 
     @Override
@@ -37,7 +67,7 @@ public class ClothingActivityTwo extends AppCompatActivity {
 
         cartIcon = view.findViewById(R.id.cart_icon);
 
-        cartIcon.setOnClickListener(new View.OnClickListener() {
+        cartIcon.setOnClickListener(new View.OnClickListener() { // Add an action listener to the cart icon
             @Override
             public void onClick(View v) {
 
@@ -50,7 +80,7 @@ public class ClothingActivityTwo extends AppCompatActivity {
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) { // Routine that determines which item has been selected from the menu
 
         try {
             switch (item.getItemId()) {
