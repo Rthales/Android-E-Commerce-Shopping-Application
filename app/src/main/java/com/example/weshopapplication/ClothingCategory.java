@@ -95,6 +95,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         this.clothingFirstProductQuantityLbl = findViewById(R.id.clothingFirstProductQuantityLbl);
         this.clothingFirstProductQuantityMenu = findViewById(R.id.clothingFirstProductQuantityMenu);
+        this.clothingFirstProductAddToBasketBtn = findViewById(R.id.clothingFirstProductAddToBasketBtn);
 
         this.clothingSecondProductTxt = findViewById(R.id.clothingSecondProductTxt);
         this.clothingSecondProductImg = findViewById(R.id.clothingSecondProductImg);
@@ -140,21 +141,20 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         this.clothingFirstProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() { // Add action listener to the first clothing add to product button
             @Override
+
             public void onClick(View firstButton) {
                 if (firstButton.getId() == R.id.clothingFirstProductAddToBasketBtn) {
 
                     if (clothingFirstProductColourMenu.getSelectedItemPosition() == 0 || clothingFirstProductSizeMenu.getSelectedItemPosition() == 0 || clothingFirstProductQuantityMenu.getSelectedItemPosition() == 0) {
                         AlertDialog.Builder error = new AlertDialog.Builder(ClothingCategory.this)
-
                                 .setTitle(R.string.error)
-
                                 .setMessage(R.string.errorMsg)
 
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         if (dialog != null) {
-                                            dialog.cancel();
+                                            dialog.dismiss();
                                         }
                                     }
                                 });
