@@ -1,5 +1,6 @@
 package com.example.weshopapplication;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -220,9 +221,61 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         });
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        boolean valueAppended = false;
 
+        int[] indexes = new int[]{0, 1, 2, 3, 4};
+
+        Context context = getApplicationContext();
+        String[] productResources = new String[]{context.getString(R.string.productCost)};
+
+        if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[0]))) {
+            clothingFirstProductCostLbl.setText(null);
+            clothingFirstProductCostLbl.setText(productResources[0] + clothingProductOneCosts[0]);
+            valueAppended = true;
+
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[1]))) {
+            clothingFirstProductCostLbl.setText(productResources[0] + (clothingProductOneCosts[1]));
+            valueAppended = true; // Value is appended
+
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[2]))) {
+            clothingFirstProductCostLbl.setText(null);
+            clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[2]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[3]))) {
+            clothingFirstProductCostLbl.setText(null);
+            clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[3]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[4]))) {
+            clothingFirstProductCostLbl.setText(null);
+            clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[4]);
+            valueAppended = true;
+        }
+
+
+        if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[0]))) {
+            clothingSecondProductCostLbl.setText(null);
+            clothingSecondProductCostLbl.append(productResources[0] + clothingProductTwoCosts[0]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[1]))) {
+            clothingSecondProductCostLbl.setText(null);
+            clothingSecondProductCostLbl.append(productResources[0] + clothingProductTwoCosts[1]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[2]))) {
+            clothingSecondProductCostLbl.setText(null);
+            clothingSecondProductCostLbl.append(productResources[0] + clothingProductTwoCosts[2]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[3]))) {
+            clothingSecondProductCostLbl.setText(null);
+            clothingSecondProductCostLbl.append(productResources[0] + clothingProductTwoCosts[3]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[4]))) {
+            clothingSecondProductCostLbl.setText(null);
+            clothingSecondProductCostLbl.append(productResources[0] + clothingProductTwoCosts[4]);
+            valueAppended = true;
+        }
     }
 
     @Override
@@ -323,7 +376,6 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         // Create an instance for the first product and adds it to the hash map.
         Products clothingFirstProduct = new Products(current_product_id, clothingFirstProductTxt.getText().toString(), clothingFirstProductColourMenu.getSelectedItem().toString(), (int) clothingFirstProductQuantityMenu.getSelectedItemId(), clothingFirstProductCostLbl.getText().toString(), clothingFirstProductSizeMenu.getSelectedItem().toString());
         listOfProductsToAddToBasket.put(current_product_id, clothingFirstProduct);
-
 
         return true;
     }
