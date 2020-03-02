@@ -245,6 +245,21 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     }
 
     private boolean addToSizesList() {
+        boolean sizes_added = false;
+        Context context = getApplicationContext();
+
+        String[] clothingSizes = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.thirtyFourRegular), context.getString(R.string.thirtyEightRegular)
+                , context.getString(R.string.forty), context.getString(R.string.fortyTwo)};
+
+        Size[] sizes = new Size[]{new Size(0, clothingSizes[0]), new Size(1, clothingSizes[1]), new Size(2, clothingSizes[2]), new Size(3, clothingSizes[3]), new Size(4, clothingSizes[4])};
+
+        for (Size theSizes : sizes) {
+            listOfClothingSizesOne.add(theSizes);
+            listOfClothingSizesTwo.add(theSizes);
+            sizes_added = true;
+
+        }
+
         return true;
     }
 
