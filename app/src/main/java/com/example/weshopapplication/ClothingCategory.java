@@ -85,8 +85,8 @@ public class ClothingCategory extends AppCompatActivity {
         this.clothingFirstProductColourLbl = findViewById(R.id.clothingFirstProductColourLbl);
         this.clothingFirstProductColourMenu = findViewById(R.id.clothingFirstProductColourMenu);
 
-
-
+        this.clothingFirstProductSizeLbl = findViewById(R.id.clothingFirstProductSizeLbl);
+        this.clothingFirstProductSizeMenu = findViewById(R.id.clothingFirstProductSizeMenu);
 
 
         this.nextPageBtn = findViewById(R.id.clothingNextPageBtn);
