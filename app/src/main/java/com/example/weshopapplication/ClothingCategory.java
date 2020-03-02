@@ -75,8 +75,11 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     private ArrayList<Size> listOfClothingSizesTwo = null;
     private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesTwo = null;
 
+    private Context context = getApplicationContext();
+
     private ImageView cartIcon;
     boolean coloursAdded = false;
+
     private Button nextPageBtn;
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
 
@@ -227,7 +230,6 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     }
 
     private boolean addToColoursList() {
-        Context context = getApplicationContext();
 
         String[] clothingResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.brown), context.getString(R.string.navyBlue),
                 context.getString(R.string.darkRed), context.getString(R.string.checkeredBlack)};
@@ -248,6 +250,21 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     }
 
     private boolean addToQuantitiesList() {
+        boolean quantitiesAdded = false;
+
+        String[] quantitiesResources = new String[]{context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two),
+                context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+        TechActivity.Quantities[] quantities = new TechActivity.Quantities[]{new TechActivity.Quantities(quantitiesResources[0]), new TechActivity.Quantities(quantitiesResources[1]), new TechActivity.Quantities(quantitiesResources[2]),
+                new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
+
+        for (TechActivity.Quantities theQuantities : quantities) {
+
+            listOfClothingQuantitiesOne.add(theQuantities); // Add the quantities to the first array list
+            listOfClothingQuantitiesTwo.add(theQuantities);
+            quantitiesAdded = true; // Quantities have been added.
+        }
+
         return true;
     }
 
