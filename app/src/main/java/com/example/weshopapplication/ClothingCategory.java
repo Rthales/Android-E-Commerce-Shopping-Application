@@ -1,6 +1,7 @@
 package com.example.weshopapplication;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -75,6 +76,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesTwo = null;
 
     private ImageView cartIcon;
+    boolean coloursAdded = false;
     private Button nextPageBtn;
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
 
@@ -225,6 +227,18 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     }
 
     private boolean addToColoursList() {
+        Context context = getApplicationContext();
+
+        String[] clothingResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.brown), context.getString(R.string.navyBlue),
+                context.getString(R.string.darkRed), context.getString(R.string.checkeredBlack)};
+
+        TechActivity.Colours[] colours = new TechActivity.Colours[]{new TechActivity.Colours(0, clothingResources[0]), new TechActivity.Colours(1, clothingResources[1]), new TechActivity.Colours(2, clothingResources[2]),
+                new TechActivity.Colours(3, clothingResources[3]), new TechActivity.Colours(4, clothingResources[4])};
+
+        for (TechActivity.Colours theColours : colours) {
+            listOfClothingColoursTwo.add(theColours);
+            coloursAdded = true;
+        }
 
         return true;
     }
