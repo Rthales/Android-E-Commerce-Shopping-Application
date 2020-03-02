@@ -66,6 +66,11 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
     private ArrayList<TechActivity.Colours> listOfClothingColoursTwo = null;
     private ArrayList<Size> listOfClothingSizesTwo = null;
+    private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesTwo = null;
+
+    private boolean coloursAdded = false; // Boolean variable that stores either true or false if the colours have been added to the array list
+    private boolean quantitiesAdded = false;
+    private boolean sizesAdded = false;
 
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
 
@@ -73,6 +78,14 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clothing_two);
+
+        this.clothingThirdProductTxt = findViewById(R.id.clothingThirdProductTxt); // Set up the clothing third product text view.
+        this.clothingThirdProductImg = findViewById(R.id.clothingThirdProductImg); // Set-up the image component
+
+
+
+
+
     }
 
     @Override
