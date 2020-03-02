@@ -305,6 +305,21 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     }
 
     private boolean addToSizesList() {
+
+        boolean sizes_added = false;
+        Context context = getApplicationContext();
+
+        String[] clothingSizes = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.smallSize), context.getString(R.string.mediumSize)
+                , context.getString(R.string.largeSize), context.getString(R.string.extraLargeSize)};
+
+        Size[] sizes = new Size[]{new Size(0, clothingSizes[0]), new Size(1, clothingSizes[1]), new Size(2, clothingSizes[2]), new Size(3, clothingSizes[3]), new Size(4, clothingSizes[4])};
+
+        for (Size theSizes : sizes) {
+            listOfClothingSizesOne.add(theSizes);
+            listOfClothingSizesTwo.add(theSizes);
+            sizes_added = true;
+        }
+
         return true;
     }
 
