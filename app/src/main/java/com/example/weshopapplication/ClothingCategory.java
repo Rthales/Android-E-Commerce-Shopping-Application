@@ -158,6 +158,16 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         clothingSecondProductColourMenu.setOnItemSelectedListener(ClothingCategory.this);
 
         this.sizeArrayAdapter = new SizeArrayAdapter(ClothingCategory.this, listOfClothingSizesTwo);
+        sizeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        clothingSecondProductSizeMenu.setAdapter(sizeArrayAdapter);
+        clothingSecondProductSizeMenu.setOnItemSelectedListener(this);
+
+        this.quantitiesAdapter = new CustomArrayAdapter(ClothingCategory.this, listOfClothingQuantitiesTwo);
+        quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        clothingSecondProductQuantityMenu.setAdapter(quantitiesAdapter);
+        clothingSecondProductQuantityMenu.setOnItemSelectedListener(this);
 
         this.clothingFirstProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() { // Add action listener to the first clothing add to product button
             @Override
@@ -307,7 +317,10 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                 new TechActivity.Colours(3, clothingResources[3]), new TechActivity.Colours(4, clothingResources[4])};
 
         for (TechActivity.Colours theColours : colours) {
+
             listOfClothingColoursOne.add(theColours);
+            listOfClothingColoursTwo.add(theColours);
+
             coloursAdded = true;
         }
 
