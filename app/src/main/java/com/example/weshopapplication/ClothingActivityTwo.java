@@ -1,5 +1,6 @@
 package com.example.weshopapplication;
 
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -35,10 +36,12 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     private ImageView clothingThirdProductImg;
 
     private TextView clothingThirdProductColourLbl;
+    private TextView clothingThirdProductCostLbl;
     private Spinner clothingThirdProductColourMenu;
 
     private TextView clothingThirdProductSizeLbl;
     private Spinner clothingThirdProductSizeMenu;
+    private TextView clothingFourthProductCostLbl;
 
     private TextView clothingThirdProductQuantityLbl;
     private Spinner clothingThirdProductQuantityMenu;
@@ -88,6 +91,7 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
         this.clothingThirdProductColourLbl = findViewById(R.id.clothingThirdProductColourLbl);
         this.clothingThirdProductColourMenu = findViewById(R.id.clothingThirdProductColourMenu);
+        this.clothingThirdProductCostLbl = findViewById(R.id.clothingThirdProductCost);
 
         this.clothingThirdProductQuantityLbl = findViewById(R.id.clothingThirdProductQuantityLbl);
         this.clothingThirdProductQuantityMenu = findViewById(R.id.clothingThirdProductQuantityMenu);
@@ -97,6 +101,7 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         this.clothingThirdAddToBasketBtn = findViewById(R.id.clothingThirdProductAddToBasketBtn);
 
         this.clothingFourthProductTxt = findViewById(R.id.clothingFourthProductTxt);
+        this.clothingFourthProductCostLbl = findViewById(R.id.clothingFourthProductCost);
         this.clothingFourthProductImageView = findViewById(R.id.clothingFourthProductImg);
 
         this.clothingFourthProductColourLbl = findViewById(R.id.clothingFourthProductColourLbl);
@@ -324,18 +329,114 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     }
 
     private boolean addToQuantitiesListOne() {
+
+        boolean quantitiesAdded = false;
+        Context context = getApplicationContext();
+
+        String[] quantitiesResources = new String[]{context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two),
+                context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+        TechActivity.Quantities[] quantities = new TechActivity.Quantities[]{new TechActivity.Quantities(quantitiesResources[0]), new TechActivity.Quantities(quantitiesResources[1]), new TechActivity.Quantities(quantitiesResources[2]),
+                new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
+
+        for (TechActivity.Quantities theQuantities : quantities) {
+            listOfClothingQuantitiesOne.add(theQuantities); // Add the quantities to the first array list
+            quantitiesAdded = true;
+        }
+
         return true;
     }
 
     private boolean addToQuantitiesListTwo() {
+
+        boolean quantitiesAdded = false;
+        Context context = getApplicationContext();
+
+        String[] quantitiesResources = new String[]{context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two),
+                context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+        TechActivity.Quantities[] quantities = new TechActivity.Quantities[]{new TechActivity.Quantities(quantitiesResources[0]), new TechActivity.Quantities(quantitiesResources[1]), new TechActivity.Quantities(quantitiesResources[2]),
+                new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
+
+        for (TechActivity.Quantities theQuantities : quantities) {
+            listOfClothingQuantitiesTwo.add(theQuantities); // Add the quantities to the first array list
+            quantitiesAdded = true;
+        }
+
         return true;
     }
 
     private boolean clothingAddToBasketThree() {
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
+
+        final ProgressDialog dialog = new ProgressDialog(ClothingActivityTwo.this); // Spinning progress dialog
+        dialog.setTitle(temp[0]); // Set the title of the dialog
+        dialog.setMessage(temp[1]);
+
+        dialog.setCancelable(false);
+
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
+
+        new Thread(new Runnable() { // Create a new thread
+
+            @Override
+            public void run() {
+                try {
+
+                    Thread.sleep(1900); // Sleep for 1.9 seconds.
+                } catch (InterruptedException exc) {
+                    Log.d(String.valueOf(R.string.error), exc.toString());
+                }
+
+                dialog.dismiss();
+            }
+        }).start(); // Starts the thread
+
+        dialog.show();
+
+        // Create an instance for the first product and adds it to the hash map.
+        Products clothingThirdProduct = new Products(current_product_id, clothingThirdProductTxt.getText().toString(), clothingThirdProductColourMenu.getSelectedItem().toString(), (int) clothingThirdProductQuantityMenu.getSelectedItemId(), clothingThirdProductCostLbl.getText().toString(), clothingThirdProductSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id, clothingThirdProduct);
+
         return true;
     }
 
     private boolean clothingAddToBasketFour() {
+
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
+
+        final ProgressDialog dialog = new ProgressDialog(ClothingActivityTwo.this); // Spinning progress dialog
+        dialog.setTitle(temp[0]); // Set the title of the dialog
+        dialog.setMessage(temp[1]);
+
+        dialog.setCancelable(false);
+
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
+
+        new Thread(new Runnable() { // Create a new thread
+
+            @Override
+            public void run() {
+                try {
+
+                    Thread.sleep(1900); // Sleep for 1.9 seconds.
+                } catch (InterruptedException exc) {
+                    Log.d(String.valueOf(R.string.error), exc.toString());
+                }
+
+                dialog.dismiss();
+            }
+        }).start(); // Starts the thread
+
+        dialog.show();
+
+        // Create an instance for the first product and adds it to the hash map.
+        Products clothingThirdProduct = new Products(current_product_id++, clothingFourthProductTxt.getText().toString(), clothingFourthProductColourMenu.getSelectedItem().toString(), (int) clothingFourthProductQuantityMenu.getSelectedItemId(), clothingFourthProductCostLbl.getText().toString(), clothingThirdProductSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id++, clothingThirdProduct);
+
+
         return true;
     }
 
