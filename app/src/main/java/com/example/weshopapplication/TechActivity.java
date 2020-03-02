@@ -295,7 +295,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         Context context = getApplicationContext();
         String[] temp = new String[]{context.getString(R.string.wait), context.getString(R.string.addingBasket)};
 
-
         final ProgressDialog dialog = new ProgressDialog(TechActivity.this);
         dialog.setTitle(temp[0]);
         dialog.setMessage(temp[1]);
