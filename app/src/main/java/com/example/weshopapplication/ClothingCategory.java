@@ -151,6 +151,14 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         clothingFirstProductQuantityMenu.setAdapter(quantitiesAdapter);
         clothingFirstProductQuantityMenu.setOnItemSelectedListener(this);
 
+        this.coloursAdapter = new ColourArrayAdapter(ClothingCategory.this, listOfClothingColoursTwo);
+        coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        clothingSecondProductColourMenu.setAdapter(coloursAdapter);
+        clothingSecondProductColourMenu.setOnItemSelectedListener(ClothingCategory.this);
+
+        this.sizeArrayAdapter = new SizeArrayAdapter(ClothingCategory.this, listOfClothingSizesTwo);
+
         this.clothingFirstProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() { // Add action listener to the first clothing add to product button
             @Override
 
