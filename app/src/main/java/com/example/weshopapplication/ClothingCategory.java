@@ -10,10 +10,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 // Author of Application: Sabin Constantin Lungu
@@ -23,18 +25,45 @@ import java.util.HashMap;
 
 public class ClothingCategory extends AppCompatActivity {
     private int current_product_id = 1;
+
     private TextView clothingFirstProductTxt;
     private ImageView clothingFirstProductImg;
     private TextView clothingFirstProductCostLbl;
 
     private TextView clothingFirstProductColourLbl;
-    private TextView clothingFirstProductColourMenu;
+    private Spinner clothingFirstProductColourMenu;
 
     private TextView clothingFirstProductSizeLbl; // The size label of the first clothing product.
-    private TextView clothingFirstProductSizeMenu; // The size menu of the clothing activity
+    private Spinner clothingFirstProductSizeMenu; // The size menu of the clothing activity.
 
+    private TextView clothingFirstProductQuantityLbl;
+    private Spinner clothingFirstProdcutQuantityMenu;
 
+    private Button clothingFirstProductAddToBasketBtn;
 
+    private TextView clothingSecondProductTxt;
+    private ImageView clothingSecondProductImg;
+    private TextView clothingSecondProductCostLbl;
+
+    private TextView clothingSecondProductColourLbl;
+    private Spinner clothingSecondProductColourMenu;
+
+    private TextView clothingSecondProductSizeLbl;
+    private Spinner clothingSecondProductSizeMenu;
+
+    private TextView clothingSecondProductQuantityLbl;
+    private Spinner clothingSecondProductQuantityMenu;
+
+    private double[] clothingProductOneCosts = new double[]{0.00, 25.00, 50.00, 150.00, 450.00, 1350.00};
+    private double[] clothingProductTwoCosts = new double[]{0.00, 30.00, 60.00, 120.00, 240.00, 480.00};
+
+    private ArrayList<TechActivity.Colours> listOfColoursOne = null;
+    private ArrayList<Size> listOfSizesOne = null;
+    private ArrayList<TechActivity.Quantities> listOfQuantitiesOne = null;
+
+    private ArrayList<TechActivity.Colours> listOfColoursTwo = null;
+    private ArrayList<Size> listOfSizesTwo = null;
+    private ArrayList<TechActivity.Quantities> listOfQuantitiesTwo = null;
 
 
     private ImageView cartIcon;
