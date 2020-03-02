@@ -104,6 +104,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         this.clothingSecondProductTxt = findViewById(R.id.clothingSecondProductTxt);
         this.clothingSecondProductImg = findViewById(R.id.clothingSecondProductImg);
+        this.clothingSecondProductCostLbl = findViewById(R.id.clothingSecondProductCostLbl);
 
         this.clothingSecondProductColourLbl = findViewById(R.id.clothingSecondProductColourLbl);
         this.clothingSecondProductColourMenu = findViewById(R.id.clothingSecondProductColourMenu);
