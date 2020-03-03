@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 // Author of Application: Sabin Constantin Lungu.
@@ -26,6 +27,7 @@ import java.util.HashMap;
 public class DIYActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private int current_product_id = 1;
     private TextView diyFirstProductTxt;
+
     private ImageView diyFirstProductImg;
     private TextView diyFirstProductCost;
 
@@ -43,7 +45,14 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private ImageView diySecondProductImg;
 
     private TextView diySecondProductCost;
+    private TextView diySecondProductColourLbl;
 
+    private Spinner diySecondProductColourMenu;
+
+
+    private ArrayList<TechActivity.Colours> diyListOfColoursOne = null;
+    private ArrayList<Size> diyListOfSizesOne = null;
+    private ArrayList<TechActivity.Quantities> diyListOfQuantitiesOne = null; // An Array list of quantities for the first diy product
 
     private ImageView cartIcon;
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
