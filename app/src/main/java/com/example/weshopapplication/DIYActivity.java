@@ -45,9 +45,15 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private ImageView diySecondProductImg;
 
     private TextView diySecondProductCost;
-    private TextView diySecondProductColourLbl;
 
+    private TextView diySecondProductColourLbl;
     private Spinner diySecondProductColourMenu;
+
+    private TextView diySecondProductQuantityLbl;
+    private Spinner diySecondProductQuantityMenu;
+
+    private double[] diyFirstProductCosts = new double[]{0.00, 40.00, 80.00, 160.00, 320.00, 640.00};
+    private double[] diySecondProductCosts = new double[]{0.00, 20.00, 40.00, 80.00, 160.00, 320.00};
 
 
     private ArrayList<TechActivity.Colours> diyListOfColoursOne = null;
