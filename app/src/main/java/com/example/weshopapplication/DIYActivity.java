@@ -10,12 +10,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
 
 public class DIYActivity extends AppCompatActivity {
+    private TextView diyFirstProductTxt;
+    private ImageView diyFirstProductImg;
+    private TextView diyFirstProductCost;
+
+    private TextView diyFirstProductColourLbl;
+    private Spinner diyFirstProductColourMenu;
+
+
     private ImageView cartIcon;
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
     private Button nextPageBtn;
