@@ -120,13 +120,25 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         addToDIYQuantitiesListOne();
         addToDIYQuantitiesListTwo();
 
-        // Set-up adapters.
+        // Set-up adapters for the firsts Array List
 
         this.coloursAdapter = new ColourArrayAdapter(DIYActivity.this, diyListOfColoursOne);
         coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         diyFirstProductColourMenu.setAdapter(coloursAdapter);
         diyFirstProductColourMenu.setOnItemSelectedListener(DIYActivity.this);
+
+        this.quantitiesAdapter = new CustomArrayAdapter(DIYActivity.this, diyListOfQuantitiesOne); // Creates the quantities adapter for the first list of quantities.
+        quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        diyFirstProductQuantityMenu.setAdapter(quantitiesAdapter);
+        diyFirstProductQuantityMenu.setOnItemSelectedListener(DIYActivity.this);
+
+        this.sizeArrayAdapter = new SizeArrayAdapter(DIYActivity.this, diyListOfSizesOne);
+        diyFirstProductSizeMenu.setAdapter(sizeArrayAdapter);
+        diyFirstProductSizeMenu.setOnItemSelectedListener(DIYActivity.this);
+
+        // Set-up adapters for the second ArrayList
 
         this.nextPageBtn = findViewById(R.id.diyNextPageBtn);
 
@@ -188,7 +200,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) { // Routine that determines which item has been selected.
 
         try {
             switch (item.getItemId()) {
