@@ -75,7 +75,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private ArrayList<TechActivity.Quantities> diyListOfQuantitiesTwo = null;
 
     private ImageView cartIcon;
-    private HashMap<Integer, Products> listOfProductsToAddToBasket;
+    private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<Integer, Products>(); // Creates a new hash map of products with an associated ID
     private Button nextPageBtn;
 
     @Override
@@ -91,6 +91,17 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         this.diyFirstProductCost = findViewById(R.id.diyFirstProductCostTxt);
         this.diyFirstProductColourLbl = findViewById(R.id.diyFirstProductColourLbl);
         this.diyFirstProductColourMenu = findViewById(R.id.diyFirstProductColourMenu);
+
+        this.diyFirstProductSizeLbl = findViewById(R.id.diyFirstProductSizeLbl);
+        this.diyFirstProductSizeMenu = findViewById(R.id.diyFirstProductSizeMenu);
+
+        this.diyFirstProductQuantityLbl = findViewById(R.id.diyFirstProductQuantityLbl);
+        this.diyFirstProductQuantityMenu = findViewById(R.id.diyFirstProductQuantityMenu);
+
+        this.diySecondProductTxt = findViewById(R.id.diySecondProductTxt);
+        this.diySecondProductImg = findViewById(R.id.diySecondProductImg);
+
+        this.diySecondProductCost = findViewById(R.id.diySecondProductCostLbl);
 
 
         this.nextPageBtn = findViewById(R.id.diyNextPageBtn);
