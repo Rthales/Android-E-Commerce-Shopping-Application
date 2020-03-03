@@ -1,6 +1,7 @@
 package com.example.weshopapplication;
 
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -146,6 +148,47 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         diySecondProductColourMenu.setAdapter(coloursAdapter);
         diySecondProductColourMenu.setOnItemSelectedListener(this);
 
+        this.quantitiesAdapter = new CustomArrayAdapter(DIYActivity.this, diyListOfQuantitiesTwo);
+        quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        diySecondProductQuantityMenu.setAdapter(quantitiesAdapter);
+        diySecondProductQuantityMenu.setOnItemSelectedListener(this);
+
+
+        this.diyFirstProductToAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (diyFirstProductToAddToBasketBtn.getId() == R.id.clothingSecondProductAddToBasketBtn) {
+
+                    if (diyFirstProductColourMenu.getSelectedItemPosition() == 0 || diyFirstProductSizeMenu.getSelectedItemPosition() == 0 || diyFirstProductQuantityMenu.getSelectedItemPosition() == 0) {
+                        AlertDialog.Builder error = new AlertDialog.Builder(DIYActivity.this)
+                                .setTitle(R.string.error)
+                                .setMessage(R.string.errorMsg)
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (dialog != null) {
+                                            dialog.dismiss();
+                                        }
+                                    }
+                                });
+
+                        error.show();
+                        error.setCancelable(true);
+                    } else {
+                        diyAddToBasketOne();
+                    }
+                }
+            }
+        });
+
+        this.diySecondProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         this.nextPageBtn = findViewById(R.id.diyNextPageBtn);
 
         this.nextPageBtn.setOnClickListener(new View.OnClickListener() {
@@ -177,6 +220,12 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     }
 
     private boolean addToDIYQuantitiesListTwo() {
+        return true;
+    }
+
+
+    private boolean diyAddToBasketOne() { // Routine that adds the first DIY product to the basket list view.
+
         return true;
     }
 
