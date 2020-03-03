@@ -122,6 +122,12 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
         // Set-up adapters.
 
+        this.coloursAdapter = new ColourArrayAdapter(DIYActivity.this, diyListOfColoursOne);
+        coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        diyFirstProductColourMenu.setAdapter(coloursAdapter);
+        diyFirstProductColourMenu.setOnItemSelectedListener(DIYActivity.this);
+
         this.nextPageBtn = findViewById(R.id.diyNextPageBtn);
 
         this.nextPageBtn.setOnClickListener(new View.OnClickListener() {
