@@ -36,6 +36,10 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
     private TextView diyFirstProductQuantityLbl;
     private Spinner diyFirstProductQuantityMenu;
+    private Button diyFirstProductToAddToBasketBtn;
+
+    private TextView diySecondProductTxt;
+    private ImageView diySecondProductImg;
 
 
     private ImageView cartIcon;
