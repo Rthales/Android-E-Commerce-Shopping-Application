@@ -49,6 +49,9 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private TextView diySecondProductColourLbl;
     private Spinner diySecondProductColourMenu;
 
+    private TextView diySecondProductSizeLbl;
+    private Spinner diySecondProductSizeMenu;
+
     private TextView diySecondProductQuantityLbl;
     private Spinner diySecondProductQuantityMenu;
 
@@ -97,11 +100,17 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
         this.diyFirstProductQuantityLbl = findViewById(R.id.diyFirstProductQuantityLbl);
         this.diyFirstProductQuantityMenu = findViewById(R.id.diyFirstProductQuantityMenu);
+        this.diyFirstProductToAddToBasketBtn = findViewById(R.id.diyFirstProductAddToBasketBtn);
 
         this.diySecondProductTxt = findViewById(R.id.diySecondProductTxt);
         this.diySecondProductImg = findViewById(R.id.diySecondProductImg);
 
         this.diySecondProductCost = findViewById(R.id.diySecondProductCostLbl);
+        this.diySecondProductColourLbl = findViewById(R.id.diySecondProductColourLbl);
+        this.diySecondProductColourMenu = findViewById(R.id.diySecondProductColourMenu);
+
+        this.diySecondProductSizeLbl = findViewById(R.id.diySecondProductSizeLbl);
+        this.diySecondProductSizeMenu = findViewById(R.id.diySecondProductSizeMenu);
 
 
         this.nextPageBtn = findViewById(R.id.diyNextPageBtn);
