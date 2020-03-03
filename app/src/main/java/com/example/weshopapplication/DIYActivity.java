@@ -140,6 +140,12 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
         // Set-up adapters for the second ArrayList
 
+        this.coloursAdapter = new ColourArrayAdapter(DIYActivity.this, diyListOfColoursTwo);
+        coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        diySecondProductColourMenu.setAdapter(coloursAdapter);
+        diySecondProductColourMenu.setOnItemSelectedListener(this);
+
         this.nextPageBtn = findViewById(R.id.diyNextPageBtn);
 
         this.nextPageBtn.setOnClickListener(new View.OnClickListener() {
