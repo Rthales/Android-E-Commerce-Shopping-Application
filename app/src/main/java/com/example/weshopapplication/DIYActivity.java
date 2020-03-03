@@ -57,6 +57,10 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private double[] diyFirstProductCosts = new double[]{0.00, 40.00, 80.00, 160.00, 320.00, 640.00};
     private double[] diySecondProductCosts = new double[]{0.00, 20.00, 40.00, 80.00, 160.00, 320.00};
 
+    private boolean coloursAdded = false;
+    private boolean sizesAdded = false;
+    private boolean quantitiesAdded = false;
+
     private CustomArrayAdapter quantitiesAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
     private ColourArrayAdapter coloursAdapter;
@@ -78,6 +82,16 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diy);
+
+        // Initialise components
+
+        this.diyFirstProductTxt = findViewById(R.id.diyFirstProductTxt);
+        this.diyFirstProductImg = findViewById(R.id.diyFirstProductImg);
+
+        this.diyFirstProductCost = findViewById(R.id.diyFirstProductCostTxt);
+        this.diyFirstProductColourLbl = findViewById(R.id.diyFirstProductColourLbl);
+        this.diyFirstProductColourMenu = findViewById(R.id.diyFirstProductColourMenu);
+
 
         this.nextPageBtn = findViewById(R.id.diyNextPageBtn);
 
