@@ -112,6 +112,15 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         this.diySecondProductSizeLbl = findViewById(R.id.diySecondProductSizeLbl);
         this.diySecondProductSizeMenu = findViewById(R.id.diySecondProductSizeMenu);
 
+        this.diySecondProductAddToBasketBtn = findViewById(R.id.secondAddToBasketBtn);
+
+        addToDIYColourList();
+        addToDIYSizesList();
+
+        addToDIYQuantitiesListOne();
+        addToDIYQuantitiesListTwo();
+
+        // Set-up adapters.
 
         this.nextPageBtn = findViewById(R.id.diyNextPageBtn);
 
@@ -129,6 +138,22 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
                 }
             }
         });
+    }
+
+    private boolean addToDIYColourList() {
+        return true;
+    }
+
+    private boolean addToDIYSizesList() {
+        return true;
+    }
+
+    private boolean addToDIYQuantitiesListOne() {
+        return true;
+    }
+
+    private boolean addToDIYQuantitiesListTwo() {
+        return true;
     }
 
     @Override
