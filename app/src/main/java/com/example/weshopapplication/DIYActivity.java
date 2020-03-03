@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -17,13 +18,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
 
-public class DIYActivity extends AppCompatActivity {
+// Author of Application: Sabin Constantin Lungu.
+// Purpose of Application / Class: Contains the Java code for the DIY activity that corresponds to the DIY XML code.
+// Date of Last Modification: 03/02/2020
+// Any errors? None
+
+public class DIYActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private TextView diyFirstProductTxt;
     private ImageView diyFirstProductImg;
     private TextView diyFirstProductCost;
 
     private TextView diyFirstProductColourLbl;
     private Spinner diyFirstProductColourMenu;
+
+    private TextView diyFirstProductSizeLbl;
+    private Spinner diyFirstProductSizeMenu;
+
+    private TextView diyFirstProductQuantityLbl;
+    private Spinner diyFirstProductQuantityMenu;
 
 
     private ImageView cartIcon;
@@ -113,5 +125,20 @@ public class DIYActivity extends AppCompatActivity {
         }
 
         return true;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
