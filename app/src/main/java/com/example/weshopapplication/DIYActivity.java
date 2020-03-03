@@ -52,13 +52,23 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private TextView diySecondProductQuantityLbl;
     private Spinner diySecondProductQuantityMenu;
 
+    private Button diySecondProductAddToBasketBtn;
+
     private double[] diyFirstProductCosts = new double[]{0.00, 40.00, 80.00, 160.00, 320.00, 640.00};
     private double[] diySecondProductCosts = new double[]{0.00, 20.00, 40.00, 80.00, 160.00, 320.00};
 
+    private CustomArrayAdapter quantitiesAdapter;
+    private SizeArrayAdapter sizeArrayAdapter;
+    private ColourArrayAdapter coloursAdapter;
 
     private ArrayList<TechActivity.Colours> diyListOfColoursOne = null;
     private ArrayList<Size> diyListOfSizesOne = null;
     private ArrayList<TechActivity.Quantities> diyListOfQuantitiesOne = null; // An Array list of quantities for the first diy product
+
+    // Creates the array lists for the second DIY product.
+    private ArrayList<TechActivity.Colours> diyListOfColoursTwo = null;
+    private ArrayList<Size> diyListOfSizesTwo = null;
+    private ArrayList<TechActivity.Quantities> diyListOfQuantitiesTwo = null;
 
     private ImageView cartIcon;
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
