@@ -24,6 +24,7 @@ import java.util.HashMap;
 // Any errors? None
 
 public class DIYActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private int current_product_id = 1;
     private TextView diyFirstProductTxt;
     private ImageView diyFirstProductImg;
     private TextView diyFirstProductCost;
@@ -41,6 +42,8 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private TextView diySecondProductTxt;
     private ImageView diySecondProductImg;
 
+    private TextView diySecondProductCost;
+
 
     private ImageView cartIcon;
     private HashMap<Integer, Products> listOfProductsToAddToBasket;
@@ -57,6 +60,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
             @Override
             public void onClick(View v) {
                 try {
+
                     if (v.getId() == R.id.diyNextPageBtn) {
                         Intent nextDiyIntent = new Intent(DIYActivity.this, DIYActivityTwo.class);
                         startActivity(nextDiyIntent);
