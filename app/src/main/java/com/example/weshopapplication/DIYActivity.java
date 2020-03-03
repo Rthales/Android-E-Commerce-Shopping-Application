@@ -59,7 +59,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
     private Button diySecondProductAddToBasketBtn;
 
-    private double[] diyFirstProductCosts = new double[]{0.00, 40.00, 80.00, 160.00, 320.00, 640.00};
+    private double[] diyFirstProductCosts = new double[]{0.00, 40.00, 80.00, 160.00, 320.00, 640.00}; // A double array of product costs for the first DIY product
     private double[] diySecondProductCosts = new double[]{0.00, 20.00, 40.00, 80.00, 160.00, 320.00};
 
     private boolean coloursAdded = false;
