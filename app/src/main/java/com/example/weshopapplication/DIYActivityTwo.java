@@ -1,6 +1,8 @@
 package com.example.weshopapplication;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -172,34 +175,131 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
         this.diyThirdProductToAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View thirdBtn) {
+                if (diyThirdProductToAddToBasketBtn.getId() == R.id.diyThirdAddToBasketBtn) {
 
+                    if (diyThirdProductColourMenu.getSelectedItemPosition() == 0 || diyThirdProductSizeMenu.getSelectedItemPosition() == 0 || diyThirdProductQuantityMenu.getSelectedItemPosition() == 0) {
+                        AlertDialog.Builder error = new AlertDialog.Builder(DIYActivityTwo.this)
+                                .setTitle(R.string.error)
+                                .setMessage(R.string.errorMsg)
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (dialog != null) {
+                                            dialog.dismiss();
+                                        }
+                                    }
+                                });
+
+                        error.show();
+                        error.setCancelable(true);
+                    } else {
+                        diyAddToBasketThree();
+                    }
+                }
             }
         });
 
         this.diyFourthProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View fourthBtn) {
+                if (diyFourthProductAddToBasketBtn.getId() == R.id.diyFourthProductAddToBasketBtn) {
 
+                    if (diyFourthProductColourMenu.getSelectedItemPosition() == 0 || diyFourthProductSizeMenu.getSelectedItemPosition() == 0 || diyFourthProductQuantityMenu.getSelectedItemPosition() == 0) {
+                        AlertDialog.Builder error = new AlertDialog.Builder(DIYActivityTwo.this)
+                                .setTitle(R.string.error)
+                                .setMessage(R.string.errorMsg)
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (dialog != null) {
+                                            dialog.dismiss();
+                                        }
+                                    }
+                                });
+
+                        error.show();
+                        error.setCancelable(true);
+                    } else {
+                        diyAddToBasketFour();
+                    }
+                }
             }
         });
 
     }
 
     private boolean addToDIYColourListThree() {
+        Context context = getApplicationContext();
+        String[] diyColoursResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.gallantGray), context.getString(R.string.darkBlack), context.getString(R.string.strawberryRed), context.getString(R.string.gardenGreen)};
 
+        TechActivity.Colours[] colours = new TechActivity.Colours[]{new TechActivity.Colours(0, diyColoursResources[0]), new TechActivity.Colours(1, diyColoursResources[1]), new TechActivity.Colours(2, diyColoursResources[2]), new TechActivity.Colours(3, diyColoursResources[3]),
+                new TechActivity.Colours(4, diyColoursResources[4])};
+
+        for (TechActivity.Colours theColours : colours) {
+            diyListOfColoursOne.add(theColours);
+            diyListOfColoursTwo.add(theColours);
+            coloursAdded = true;
+        }
 
         return true;
     }
 
     private boolean addToDIYSizesListThree() {
+        Context context = getApplicationContext();
+        String[] diySizesResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.smallSize), context.getString(R.string.mediumSize), context.getString(R.string.largeSize), context.getString(R.string.extraLargeSize)};
+
+        Size[] sizes = new Size[]{new Size(0, diySizesResources[0]), new Size(1, diySizesResources[1]), new Size(2, diySizesResources[2]), new Size(3, diySizesResources[3]), new Size(4, diySizesResources[4])};
+
+        for (Size theSizes : sizes) {
+            diyListOfSizesOne.add(theSizes);
+            diyListOfSizesTwo.add(theSizes);
+
+            sizesAdded = true;
+        }
+
         return true;
     }
 
     private boolean addToDIYQuantitiesListThree() {
+
+        Context context = getApplicationContext();
+        String[] quantityResources = new String[]{context.getString(R.string.quantitiesPrompt), context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two), context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+        TechActivity.Quantities[] quantities = new TechActivity.Quantities[]{new TechActivity.Quantities(quantityResources[0]), new TechActivity.Quantities(quantityResources[1]), new TechActivity.Quantities(quantityResources[2]), new TechActivity.Quantities(quantityResources[3]), new TechActivity.Quantities(quantityResources[4]),
+                new TechActivity.Quantities(quantityResources[5])};
+
+        for (TechActivity.Quantities theQuantities : quantities) {
+            diyListOfQuantitiesOne.add(theQuantities);
+
+            sizesAdded = true;
+        }
+
+
         return true;
     }
 
     private boolean addToDIYQuantitiesListFour() {
+        Context context = getApplicationContext();
+        String[] quantityResources = new String[]{context.getString(R.string.quantitiesPrompt), context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two), context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+        TechActivity.Quantities[] quantities = new TechActivity.Quantities[]{new TechActivity.Quantities(quantityResources[0]), new TechActivity.Quantities(quantityResources[1]), new TechActivity.Quantities(quantityResources[2]), new TechActivity.Quantities(quantityResources[3]), new TechActivity.Quantities(quantityResources[4]),
+                new TechActivity.Quantities(quantityResources[5])};
+
+        for (TechActivity.Quantities theQuantities : quantities) {
+            diyListOfQuantitiesTwo.add(theQuantities);
+
+            sizesAdded = true;
+        }
+
+
+        return true;
+    }
+
+    private boolean diyAddToBasketThree() {
+        return true;
+    }
+
+    private boolean diyAddToBasketFour() {
         return true;
     }
 
