@@ -302,7 +302,6 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
 
     private boolean diyAddToBasketOne() { // Routine that adds the first DIY product to the basket list view.
-
         Context context = getApplicationContext();
         String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
 
@@ -339,6 +338,40 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     }
 
     private boolean diyAddToBasketTwo() {
+
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
+
+        final ProgressDialog dialog = new ProgressDialog(DIYActivity.this); // Spinning progress dialog
+        dialog.setTitle(temp[0]); // Set the title of the dialog
+        dialog.setMessage(temp[1]);
+
+        dialog.setCancelable(false);
+
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
+
+        new Thread(new Runnable() { // Create a new thread
+
+            @Override
+            public void run() {
+                try {
+
+                    Thread.sleep(1900); // Sleep for 1.9 seconds.
+                } catch (InterruptedException exc) {
+                    Log.d(String.valueOf(R.string.error), exc.toString());
+                }
+
+                dialog.dismiss();
+            }
+        }).start(); // Starts the thread
+
+        dialog.show();
+
+        // Create an instance for the first product and adds it to the hash map.
+        Products diySecondProduct = new Products(current_product_id, diySecondProductTxt.getText().toString(), diySecondProductColourMenu.getSelectedItem().toString(), (int) diySecondProductQuantityMenu.getSelectedItemId(), diySecondProductCost.getText().toString(), diySecondProductSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id, diySecondProduct);
+
+
         return true;
     }
 
@@ -407,7 +440,59 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        boolean valueAppended = false;
 
+        int[] indexes = new int[]{0, 1, 2, 3, 4};
+
+        Context context = getApplicationContext();
+        String[] productResources = new String[]{context.getString(R.string.productCost)};
+
+        if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[0]))) {
+            diyFirstProductCost.setText(null);
+            diyFirstProductCost.append(productResources[0] + diyFirstProductCosts[0]);
+            valueAppended = true;
+
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[1]))) {
+            diyFirstProductCost.setText(null);
+            diyFirstProductCost.append(productResources[0] + diyFirstProductCosts[1]);
+            valueAppended = true; // Value is appended
+
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[2]))) {
+            diyFirstProductCost.setText(null);
+            diyFirstProductCost.append(productResources[0] + diyFirstProductCosts[2]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[3]))) {
+            diyFirstProductCost.setText(null);
+            diyFirstProductCost.append(productResources[0] + diyFirstProductCosts[3]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[4]))) {
+            diyFirstProductCost.setText(null);
+            diyFirstProductCost.append(productResources[0] + diyFirstProductCosts[4]);
+            valueAppended = true;
+        }
+
+
+        if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[0]))) {
+            diySecondProductCost.setText(null);
+            diySecondProductCost.append(productResources[0] + diySecondProductCosts[0]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[1]))) {
+            diySecondProductCost.setText(null);
+            diySecondProductCost.append(productResources[0] + diySecondProductCosts[1]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[2]))) {
+            diySecondProductCost.setText(null);
+            diySecondProductCost.append(productResources[0] + diySecondProductCosts[2]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[3]))) {
+            diySecondProductCost.setText(null);
+            diySecondProductCost.append(productResources[0] + diySecondProductCosts[3]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[4]))) {
+            diySecondProductCost.setText(null);
+            diySecondProductCost.append(productResources[0] + diySecondProductCosts[4]);
+            valueAppended = true;
+        }
     }
 
     @Override
