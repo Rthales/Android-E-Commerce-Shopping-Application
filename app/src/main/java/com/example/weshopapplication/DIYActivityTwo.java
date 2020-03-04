@@ -163,11 +163,26 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
         diyFourthProductSizeMenu.setAdapter(sizeArrayAdapter);
         diyFourthProductSizeMenu.setOnItemSelectedListener(this);
 
+        this.diyThirdProductToAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View thirdBtn) {
+
+            }
+        });
+
+        this.diyFourthProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View fourthBtn) {
+
+            }
+        });
+
     }
 
     private boolean addToDIYColourListThree() {
-        return true;
 
+
+        return true;
     }
 
     private boolean addToDIYSizesListThree() {
