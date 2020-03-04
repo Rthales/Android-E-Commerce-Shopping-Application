@@ -1,20 +1,11 @@
 package com.example.weshopapplication;
 
 public class Months {
-    private int monthID;
     private String month;
 
-    public Months(int monthID, String month) {
-        this.monthID = monthID;
+    public Months(String month) {
+
         this.month = month;
-    }
-
-    public int getMonthID() {
-        return monthID;
-    }
-
-    public void setMonthID(int monthID) {
-        this.monthID = monthID;
     }
 
     public String getMonth() {
