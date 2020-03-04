@@ -1,5 +1,6 @@
 package com.example.weshopapplication;
 
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -184,6 +185,7 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
+
                                         if (dialog != null) {
                                             dialog.dismiss();
                                         }
@@ -296,10 +298,78 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
     }
 
     private boolean diyAddToBasketThree() {
+
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
+
+        final ProgressDialog dialog = new ProgressDialog(DIYActivityTwo.this); // Spinning progress dialog
+        dialog.setTitle(temp[0]); // Set the title of the dialog
+        dialog.setMessage(temp[1]);
+
+        dialog.setCancelable(false);
+
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
+
+        new Thread(new Runnable() { // Create a new thread
+
+            @Override
+            public void run() {
+                try {
+
+                    Thread.sleep(1900); // Sleep for 1.9 seconds.
+                } catch (InterruptedException exc) {
+                    Log.d(String.valueOf(R.string.error), exc.toString());
+                }
+
+                dialog.dismiss();
+            }
+        }).start(); // Starts the thread
+
+        dialog.show();
+
+        // Create an instance for the first product and adds it to the hash map.
+        Products diyThirdProduct = new Products(current_product_id, diyThirdProductTxt.getText().toString(), diyThirdProductColourMenu.getSelectedItem().toString(), (int) diyThirdProductQuantityMenu.getSelectedItemId(), diyThirdProductCost.getText().toString(), diyThirdProductSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id, diyThirdProduct);
+
         return true;
     }
 
     private boolean diyAddToBasketFour() {
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
+
+        final ProgressDialog dialog = new ProgressDialog(DIYActivityTwo.this); // Spinning progress dialog
+        dialog.setTitle(temp[0]); // Set the title of the dialog
+        dialog.setMessage(temp[1]);
+
+        dialog.setCancelable(false);
+
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
+
+        new Thread(new Runnable() { // Create a new thread
+
+            @Override
+            public void run() {
+                try {
+
+                    Thread.sleep(1900); // Sleep for 1.9 seconds.
+                } catch (InterruptedException exc) {
+                    Log.d(String.valueOf(R.string.error), exc.toString());
+                }
+
+                dialog.dismiss();
+            }
+        }).start(); // Starts the thread
+
+        dialog.show();
+
+        // Create an instance for the first product and adds it to the hash map.
+        Products diyFourthProduct = new Products(current_product_id++, diyFourthProductTxt.getText().toString(), diyFourthProductColourMenu.getSelectedItem().toString(), (int) diyFourthProductQuantityMenu.getSelectedItemId(), diyFourthProductCost.getText().toString(), diyFourthProductSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id++, diyFourthProduct);
+
+
+
+
         return true;
     }
 
