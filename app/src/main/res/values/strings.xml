@@ -86,4 +86,9 @@
     <string name="tech">Tech</string>
     <string name="clothing">Clothing</string>
     <string name="diy">DIY</string>
+    <string name="payment_below">Payment Below</string>
+    <string name="visa">VISA</string>
+    <string name="paypal">PayPal</string>
+    <string name="mastercard">MasterCard</string>
+    <string name="order_summary">Order Summary</string>
 </resources>

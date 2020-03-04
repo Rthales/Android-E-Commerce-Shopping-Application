@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="116dp"
         android:layout_marginBottom="680dp"
-        android:text="Payment Below"
+        android:text="@string/payment_below"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -21,13 +21,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioButton
-        android:id="@+id/radioButton6"
+        android:id="@+id/visaOption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginBottom="628dp"
         android:buttonTint="@color/white"
-        android:text="VISA"
+        android:text="@string/visa"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -35,35 +35,35 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <RadioButton
-        android:id="@+id/radioButton7"
+        android:id="@+id/paypalOption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginBottom="628dp"
         android:buttonTint="@color/white"
-        android:text="PayPal"
+        android:text="@string/paypal"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/radioButton6" />
+        app:layout_constraintStart_toEndOf="@+id/visaOption" />
 
     <RadioButton
-        android:id="@+id/radioButton8"
+        android:id="@+id/masterCardOption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="628dp"
         android:buttonTint="@color/white"
-        android:text="MasterCard"
+        android:text="@string/mastercard"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/radioButton7" />
+        app:layout_constraintStart_toEndOf="@+id/paypalOption" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/creditCardNumberField"
         android:layout_width="226dp"
         android:layout_height="39dp"
         android:layout_marginStart="100dp"
@@ -78,10 +78,11 @@
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:autofillHints=""
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/cardCVVField"
         android:layout_width="226dp"
         android:layout_height="39dp"
         android:layout_marginStart="100dp"
@@ -96,10 +97,11 @@
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:importantForAutofill="no"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/cardNameField"
         android:layout_width="226dp"
         android:layout_height="39dp"
         android:layout_marginStart="100dp"
@@ -117,7 +119,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView23"
+        android:id="@+id/monthLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
@@ -130,16 +132,16 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner5"
+        android:id="@+id/monthMenu"
         android:layout_width="77dp"
         android:layout_height="25dp"
         android:layout_marginStart="12dp"
         android:layout_marginBottom="368dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView23" />
+        app:layout_constraintStart_toEndOf="@+id/monthLbl" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/yearLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -149,19 +151,19 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spinner5" />
+        app:layout_constraintStart_toEndOf="@+id/monthMenu" />
 
     <Spinner
-        android:id="@+id/spinner14"
+        android:id="@+id/yearMenu"
         android:layout_width="76dp"
         android:layout_height="29dp"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="364dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView24" />
+        app:layout_constraintStart_toEndOf="@+id/yearLbl" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/confirmPaymentBtn"
         android:layout_width="419dp"
         android:layout_height="47dp"
         android:layout_marginEnd="1dp"
@@ -175,26 +177,30 @@
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="409dp"
-        android:layout_height="205dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/orderSummaryLbl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="115dp"
-        android:layout_marginBottom="26dp"
-        android:text="Order Summary"
+        android:layout_marginEnd="97dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/order_summary"
         android:textColor="@color/white"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/orderSummaryListView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ListView
+        android:id="@+id/orderSummaryListView"
+        android:layout_width="409dp"
+        android:layout_height="230dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

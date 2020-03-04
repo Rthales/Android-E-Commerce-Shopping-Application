@@ -374,7 +374,7 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         boolean valueAppended = false;
 
-        int[] indexes = new int[]{0, 1, 2, 3, 4};
+        int[] indexes = new int[]{0, 1, 2, 3, 4, 5};
 
         Context context = getApplicationContext();
         String[] productResources = new String[]{context.getString(R.string.productCost)};
@@ -401,6 +401,9 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
             diyThirdProductCost.setText(null);
             diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[4]);
             valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[5]))) {
+            diyThirdProductCost.setText(null);
+            diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[5]);
         }
 
         if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[0]))) {
@@ -423,6 +426,9 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
             diyFourthProductCost.setText(null);
             diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[4]);
             valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[5]))) {
+            diyFourthProductCost.setText(null);
+            diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[5]);
         }
     }
 
