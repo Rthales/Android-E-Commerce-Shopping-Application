@@ -8,6 +8,11 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/mainActivity"
+        android:title="Home"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/techCategory"
         android:title="Tech"
         app:showAsAction="never" />
@@ -24,6 +29,4 @@
 
     </item>
 
-
 </menu>
-
