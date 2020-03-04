@@ -1,6 +1,7 @@
 package com.example.weshopapplication;
 
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -154,6 +155,12 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         diySecondProductQuantityMenu.setAdapter(quantitiesAdapter);
         diySecondProductQuantityMenu.setOnItemSelectedListener(this);
 
+        this.sizeArrayAdapter = new SizeArrayAdapter(DIYActivity.this, diyListOfSizesTwo);
+        sizeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        diySecondProductSizeMenu.setAdapter(sizeArrayAdapter);
+        diySecondProductSizeMenu.setOnItemSelectedListener(this);
+
 
         this.diyFirstProductToAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,6 +193,24 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
             @Override
             public void onClick(View v) {
 
+                if (diySecondProductColourMenu.getSelectedItemPosition() == 0 || diySecondProductSizeMenu.getSelectedItemPosition() == 0 || diySecondProductQuantityMenu.getSelectedItemPosition() == 0) {
+                    AlertDialog.Builder error = new AlertDialog.Builder(DIYActivity.this)
+                            .setTitle(R.string.error)
+                            .setMessage(R.string.errorMsg)
+                            .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    if (dialog != null) {
+                                        dialog.dismiss();
+                                    }
+                                }
+                            });
+
+                    error.show();
+                    error.setCancelable(true);
+                } else {
+                    diyAddToBasketTwo();
+                }
             }
         });
 
@@ -208,6 +233,12 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     }
 
     private boolean addToDIYColourList() {
+        Context context = getApplicationContext();
+        String[] diyColoursResources = new String[]{context.getString(R.string.gallantGray), context.getString(R.string.darkBlack), context.getString(R.string.strawberryRed), context.getString(R.string.gardenGreen)};
+
+
+
+
         return true;
     }
 
@@ -226,6 +257,10 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
     private boolean diyAddToBasketOne() { // Routine that adds the first DIY product to the basket list view.
 
+        return true;
+    }
+
+    private boolean diyAddToBasketTwo() {
         return true;
     }
 
