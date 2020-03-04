@@ -104,9 +104,9 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
         this.diyFourthProductQuantityMenu = findViewById(R.id.diyFourthProductQuantityMenu);
 
         this.diyFourthProductSizeLbl = findViewById(R.id.fourthProductSizeLbl);
-        this.diyFourthProductSizeMenu = findViewById(R.id.fourthProductSizeMenu);
+        this.diyFourthProductSizeMenu = findViewById(R.id.diyFourthProductSizeMenu);
 
-        this.diyFourthProductAddToBasketBtn = findViewById(R.id.diyForuthProductAddToBasketBtn);
+        this.diyFourthProductAddToBasketBtn = findViewById(R.id.diyFourthProductAddToBasketBtn);
 
         this.diyListOfColoursOne = new ArrayList<>();
         this.diyListOfColoursTwo = new ArrayList<>();
