@@ -62,7 +62,7 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
     private Button diyFourthProductAddToBasketBtn;
 
     private double[] diyThirdProductCosts = new double[]{0.00, 50.00, 100.00, 200.00, 400.00, 800.00}; // A double array of product costs for the first DIY product
-    private double[] diySecondProductCosts = new double[]{0.00, 15.00, 30.00, 45.00, 60.00, 75.00};
+    private double[] diyFourthProductCosts = new double[]{0.00, 15.00, 30.00, 45.00, 60.00, 75.00};
 
     private boolean coloursAdded = false;
     private boolean sizesAdded = false;
@@ -367,15 +367,63 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
         Products diyFourthProduct = new Products(current_product_id++, diyFourthProductTxt.getText().toString(), diyFourthProductColourMenu.getSelectedItem().toString(), (int) diyFourthProductQuantityMenu.getSelectedItemId(), diyFourthProductCost.getText().toString(), diyFourthProductSizeMenu.getSelectedItem().toString());
         listOfProductsToAddToBasket.put(current_product_id++, diyFourthProduct);
 
-
-
-
         return true;
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        boolean valueAppended = false;
 
+        int[] indexes = new int[]{0, 1, 2, 3, 4};
+
+        Context context = getApplicationContext();
+        String[] productResources = new String[]{context.getString(R.string.productCost)};
+
+        if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[0]))) {
+            diyThirdProductCost.setText(null);
+            diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[0]);
+            valueAppended = true;
+
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[1]))) {
+            diyThirdProductCost.setText(null);
+            diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[1]);
+            valueAppended = true; // Value is appended
+
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[2]))) {
+            diyThirdProductCost.setText(null);
+            diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[2]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[3]))) {
+            diyThirdProductCost.setText(null);
+            diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[3]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[4]))) {
+            diyThirdProductCost.setText(null);
+            diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[4]);
+            valueAppended = true;
+        }
+
+        if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[0]))) {
+            diyFourthProductCost.setText(null);
+            diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[0]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[1]))) {
+            diyFourthProductCost.setText(null);
+            diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[1]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[2]))) {
+            diyFourthProductCost.setText(null);
+            diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[2]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[3]))) {
+            diyFourthProductCost.setText(null);
+            diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[3]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[4]))) {
+            diyFourthProductCost.setText(null);
+            diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[4]);
+            valueAppended = true;
+        }
     }
 
     @Override
