@@ -1,5 +1,6 @@
 package com.example.weshopapplication;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -81,6 +82,25 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     }
 
     private boolean addToMonthsList() {
+        boolean month_added = false;
+        Context context = getApplicationContext();
+
+        String[] monthsResources = new String[]{context.getString(R.string.monthPrompt), context.getString(R.string.januaryMonth),
+                context.getString(R.string.februaryMonth),
+                context.getString(R.string.marchMonth),
+                context.getString(R.string.aprilMonth), context.getString(R.string.mayMonth), context.getString(R.string.juneMonth), context.getString(R.string.julyMonth),
+                context.getString(R.string.augustMonth), context.getString(R.string.septemberMonth), context.getString(R.string.octoberMonth), context.getString(R.string.novemberMonth), context.getString(R.string.decemberMonth)};
+
+
+        Months[] theMonths = new Months[]{new Months(monthsResources[0]), new Months(monthsResources[1]), new Months(monthsResources[2]), new Months(monthsResources[3]), new Months(monthsResources[4]),
+                new Months(monthsResources[5]), new Months(monthsResources[6]), new Months(monthsResources[7]), new Months(monthsResources[8]), new Months(monthsResources[9]), new Months(monthsResources[10]), new Months(monthsResources[11]),
+                new Months(monthsResources[12])};
+
+        for (Months month : theMonths) {
+            months.add(month);
+            month_added = true;
+        }
+
         return true;
     }
 

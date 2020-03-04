@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
+    <string name="monthPrompt">Please Choose A Month</string>
     <string name="januaryMonth">January</string>
     <string name="februaryMonth">February</string>
     <string name="marchMonth">March</string>
