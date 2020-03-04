@@ -32,6 +32,12 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
 
         View backButton = findViewById(R.id.btnBack);
         backButton.setOnClickListener(this);
+
+        this.usernameField = findViewById(R.id.add_usernameField);
+        this.emailAddressField = findViewById(R.id.add_complaintEmailField);
+
+        this.phoneNumberField = findViewById(R.id.add_complaint_phoneNumberField);
+        this.problemField = findViewById(R.id.add_complaint_fieldProblem);
     }
 
     @Override
@@ -64,9 +70,13 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
     }
 
     private boolean validateUsernameField() {
+        boolean isValidated = false;
+
         if (usernameField.getText().toString().isEmpty()) {
             usernameField.setText("");
             usernameField.setError("Field Cannot Be Left Empty");
+
+            isValidated = true;
         }
 
         return true;
