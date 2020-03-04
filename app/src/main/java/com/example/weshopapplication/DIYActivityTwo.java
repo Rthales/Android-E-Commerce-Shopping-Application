@@ -4,6 +4,8 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -214,6 +216,32 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) { // Add the toolbar menu
+        // Inflate the activities menu
+        MenuInflater activityInflater = getMenuInflater(); // Get the activity inflater
+        activityInflater.inflate(R.menu.homepagemenu, menu);
+
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.basket_action_button, menu);
+
+        View view = menu.findItem(R.id.cart_menu).getActionView();
+
+        cartIcon = view.findViewById(R.id.cart_icon);
+
+        cartIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent basketIntent = new Intent(DIYActivityTwo.this, BasketActivity.class); // Create a basket intent
+                basketIntent.putExtra("map", listOfProductsToAddToBasket); // Transit over the hash map data to the basket
+                startActivity(basketIntent); // Start the intent
+            }
+        });
+
+        return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem item) { // Routine that determines which item has been selected.
