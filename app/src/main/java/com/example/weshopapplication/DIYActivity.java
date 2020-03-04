@@ -148,6 +148,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         diyFirstProductQuantityMenu.setOnItemSelectedListener(DIYActivity.this);
 
         this.sizeArrayAdapter = new SizeArrayAdapter(DIYActivity.this, diyListOfSizesOne);
+        sizeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         diyFirstProductSizeMenu.setAdapter(sizeArrayAdapter);
         diyFirstProductSizeMenu.setOnItemSelectedListener(DIYActivity.this);
 
@@ -174,7 +175,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         this.diyFirstProductToAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (diyFirstProductToAddToBasketBtn.getId() == R.id.clothingSecondProductAddToBasketBtn) {
+                if (diyFirstProductToAddToBasketBtn.getId() == R.id.diyFirstProductAddToBasketBtn) {
 
                     if (diyFirstProductColourMenu.getSelectedItemPosition() == 0 || diyFirstProductSizeMenu.getSelectedItemPosition() == 0 || diyFirstProductQuantityMenu.getSelectedItemPosition() == 0) {
                         AlertDialog.Builder error = new AlertDialog.Builder(DIYActivity.this)
@@ -267,7 +268,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         Size[] sizes = new Size[]{new Size(0, diySizesResources[0]), new Size(1, diySizesResources[1]), new Size(2, diySizesResources[2]), new Size(3, diySizesResources[3]), new Size(4, diySizesResources[4])};
 
         for (Size theSizes : sizes) {
-            diyListOfSizesTwo.add(theSizes);
+            diyListOfSizesOne.add(theSizes);
             diyListOfSizesTwo.add(theSizes);
 
             sizesAdded = true;
@@ -281,8 +282,8 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         Context context = getApplicationContext();
         String[] quantityResources = new String[]{context.getString(R.string.quantitiesPrompt), context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two), context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
 
-        TechActivity.Quantities[] quantities = new TechActivity.Quantities[]{new TechActivity.Quantities(quantityResources[0]), new TechActivity.Quantities(quantityResources[1]), new TechActivity.Quantities(quantityResources[2]), new TechActivity.Quantities(quantityResources[3]), new TechActivity.Quantities(quantityResources[3]),
-                new TechActivity.Quantities(quantityResources[4]), new TechActivity.Quantities(quantityResources[5])};
+        TechActivity.Quantities[] quantities = new TechActivity.Quantities[]{new TechActivity.Quantities(quantityResources[0]), new TechActivity.Quantities(quantityResources[1]), new TechActivity.Quantities(quantityResources[2]), new TechActivity.Quantities(quantityResources[3]), new TechActivity.Quantities(quantityResources[4]),
+                new TechActivity.Quantities(quantityResources[5])};
 
         for (TechActivity.Quantities theQuantities : quantities) {
             diyListOfQuantitiesOne.add(theQuantities);
