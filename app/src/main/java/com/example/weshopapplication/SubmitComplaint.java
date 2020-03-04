@@ -104,10 +104,35 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
     }
 
     private boolean validatePhoneNumberField() {
+
+        if (phoneNumberField.getText().toString().isEmpty()) {
+            phoneNumberField.setText("");
+            phoneNumberField.setError("Field Can't Be Empty");
+
+            isValidated = true;
+        }
+
+        if (!phoneNumberField.getText().toString().isEmpty()) {
+            isValidated = false;
+        }
+
         return true;
     }
 
     private boolean validateProblemField() {
+
+        if (problemField.getText().toString().isEmpty()) {
+            problemField.setText("");
+            problemField.setError("Field Can't Be Empty");
+
+            isValidated = true;
+        }
+
+        if (!problemField.getText().toString().isEmpty()) {
+            isValidated = false;
+        }
+
+
         return true;
     }
 

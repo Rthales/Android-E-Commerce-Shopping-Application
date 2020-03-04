@@ -72,8 +72,8 @@
     <string name="todo">TODO</string>
 
     <string name="productCost">Product Cost £: </string>
-
-
+    <string name="channel">Channel</string>
+    <string name="description">Registration Notification</string>
     <string name="addingBasket">Adding To Basket..</string>
     <string name="wait">Please Wait</string>
     <string name="chooseOption">You must choose an option before adding to the basket</string>
