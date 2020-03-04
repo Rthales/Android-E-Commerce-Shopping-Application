@@ -1,6 +1,10 @@
 package com.example.weshopapplication;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -210,5 +214,42 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) { // Routine that determines which item has been selected.
+
+        try {
+            switch (item.getItemId()) {
+                case R.id.sportsAndOutdoorsCategory:
+                    Intent sportsCategory = new Intent(DIYActivityTwo.this, SportsAndOutdoorsActivity.class);
+                    startActivity(sportsCategory);
+
+                    break;
+
+                case R.id.techCategory:
+                    Intent techActivity = new Intent(DIYActivityTwo.this, TechActivity.class);
+                    startActivity(techActivity);
+                    break;
+
+                case R.id.clothingCategory:
+                    Intent clothingActivity = new Intent(DIYActivityTwo.this, ClothingCategory.class);
+                    startActivity(clothingActivity);
+                    break;
+
+                case R.id.diyCategory:
+                    Intent diyActivity = new Intent(DIYActivityTwo.this, DIYActivity.class);
+                    startActivity(diyActivity);
+                    break;
+
+                default:
+                    super.onOptionsItemSelected(item);
+
+            }
+
+        } catch (ActivityNotFoundException exc) {
+            Log.d(String.valueOf(R.string.error), exc.toString());
+        }
+
+        return true;
     }
 }
