@@ -111,11 +111,12 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         this.diySecondProductCost = findViewById(R.id.diySecondProductCostLbl);
         this.diySecondProductColourLbl = findViewById(R.id.diySecondProductColourLbl);
         this.diySecondProductColourMenu = findViewById(R.id.diySecondProductColourMenu);
+        this.diySecondProductQuantityMenu = findViewById(R.id.diySecondProductQuantityMenu);
 
         this.diySecondProductSizeLbl = findViewById(R.id.diySecondProductSizeLbl);
         this.diySecondProductSizeMenu = findViewById(R.id.diySecondProductSizeMenu);
 
-        this.diySecondProductAddToBasketBtn = findViewById(R.id.secondAddToBasketBtn);
+        this.diySecondProductAddToBasketBtn = findViewById(R.id.diySecondProductAddToBasketBtn);
 
         this.diyListOfColoursOne = new ArrayList<>();
         this.diyListOfColoursTwo = new ArrayList<>();
@@ -170,7 +171,6 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         diySecondProductSizeMenu.setAdapter(sizeArrayAdapter);
         diySecondProductSizeMenu.setOnItemSelectedListener(this);
 
-
         this.diyFirstProductToAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -200,27 +200,28 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
         this.diySecondProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View secondButton) {
+                if (secondButton.getId() == R.id.diySecondProductAddToBasketBtn) {
+                    if (diySecondProductColourMenu.getSelectedItemPosition() == 0 || diySecondProductSizeMenu.getSelectedItemPosition() == 0 || diySecondProductQuantityMenu.getSelectedItemPosition() == 0) {
+                        AlertDialog.Builder error = new AlertDialog.Builder(DIYActivity.this)
+                                .setTitle(R.string.error)
+                                .setMessage(R.string.errorMsg)
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
 
-                if (diySecondProductColourMenu.getSelectedItemPosition() == 0 || diySecondProductSizeMenu.getSelectedItemPosition() == 0 || diySecondProductQuantityMenu.getSelectedItemPosition() == 0) {
-                    AlertDialog.Builder error = new AlertDialog.Builder(DIYActivity.this)
-                            .setTitle(R.string.error)
-                            .setMessage(R.string.errorMsg)
-                            .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
+                                        if (dialog != null) {
 
-                                    if (dialog != null) {
-
-                                        dialog.dismiss();
+                                            dialog.dismiss();
+                                        }
                                     }
-                                }
-                            });
+                                });
 
-                    error.show();
-                    error.setCancelable(true);
-                } else {
-                    diyAddToBasketTwo();
+                        error.show();
+                        error.setCancelable(true);
+                    } else {
+                        diyAddToBasketTwo();
+                    }
                 }
             }
         });
@@ -260,6 +261,18 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     }
 
     private boolean addToDIYSizesList() {
+        Context context = getApplicationContext();
+        String[] diySizesResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.smallSize), context.getString(R.string.mediumSize), context.getString(R.string.largeSize), context.getString(R.string.extraLargeSize)};
+
+        Size[] sizes = new Size[]{new Size(0, diySizesResources[0]), new Size(1, diySizesResources[1]), new Size(2, diySizesResources[2]), new Size(3, diySizesResources[3]), new Size(4, diySizesResources[4])};
+
+        for (Size theSizes : sizes) {
+            diyListOfSizesTwo.add(theSizes);
+            diyListOfSizesTwo.add(theSizes);
+
+            sizesAdded = true;
+        }
+
         return true;
     }
 
