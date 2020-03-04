@@ -1,5 +1,6 @@
 package com.example.weshopapplication;
 
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -301,6 +302,38 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
 
     private boolean diyAddToBasketOne() { // Routine that adds the first DIY product to the basket list view.
+
+        Context context = getApplicationContext();
+        String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
+
+        final ProgressDialog dialog = new ProgressDialog(DIYActivity.this); // Spinning progress dialog
+        dialog.setTitle(temp[0]); // Set the title of the dialog
+        dialog.setMessage(temp[1]);
+
+        dialog.setCancelable(false);
+
+        dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
+
+        new Thread(new Runnable() { // Create a new thread
+
+            @Override
+            public void run() {
+                try {
+
+                    Thread.sleep(1900); // Sleep for 1.9 seconds.
+                } catch (InterruptedException exc) {
+                    Log.d(String.valueOf(R.string.error), exc.toString());
+                }
+
+                dialog.dismiss();
+            }
+        }).start(); // Starts the thread
+
+        dialog.show();
+
+        // Create an instance for the first product and adds it to the hash map.
+        Products diyFirstProduct = new Products(current_product_id, diyFirstProductTxt.getText().toString(), diyFirstProductColourMenu.getSelectedItem().toString(), (int) diyFirstProductQuantityMenu.getSelectedItemId(), diyFirstProductCost.getText().toString(), diyFirstProductSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id, diyFirstProduct);
 
         return true;
     }
