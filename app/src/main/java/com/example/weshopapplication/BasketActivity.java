@@ -41,9 +41,9 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
 
         Intent intent = getIntent();
         HashMap<Integer, Products> hashMap = (HashMap<Integer, Products>) intent.getSerializableExtra("map"); // Get the hash map from the tech activity
-        ArrayList<String> prod = new ArrayList<>();
+        ArrayList<String> products = new ArrayList<>();
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(BasketActivity.this, android.R.layout.simple_list_item_1, prod) {
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(BasketActivity.this, android.R.layout.simple_list_item_1, products) {
 
             public View getView(int position, View convertView, @NotNull ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
@@ -59,7 +59,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
         ListView view = findViewById(R.id.listViewBasket); // Find the list view component
         view.setAdapter(arrayAdapter); // Set its adapter
 
-        assert hashMap != null;
+        assert hashMap != null; // Checks that the hash map is not empty
 
         for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // Loop over the hash map of products
             arrayAdapter.add(entry.toString()); // Add the entries to the adapter list

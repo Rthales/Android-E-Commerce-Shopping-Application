@@ -318,7 +318,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         TechActivity.Colours[] colours = new TechActivity.Colours[]{new TechActivity.Colours(0, clothingResources[0]), new TechActivity.Colours(1, clothingResources[1]), new TechActivity.Colours(2, clothingResources[2]),
                 new TechActivity.Colours(3, clothingResources[3]), new TechActivity.Colours(4, clothingResources[4])};
 
-        for (TechActivity.Colours theColours : colours) {
+        for (TechActivity.Colours theColours : colours) { // For every colour in the object array
 
             listOfClothingColoursOne.add(theColours);
             listOfClothingColoursTwo.add(theColours);
@@ -436,7 +436,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         new Thread(new Runnable() { // Create a new thread
 
             @Override
-            public void run() {
+            public void run() { // Run the thread
                 try {
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
@@ -471,13 +471,12 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         cartIcon = view.findViewById(R.id.cart_icon);
 
-        cartIcon.setOnClickListener(new View.OnClickListener() {
+        cartIcon.setOnClickListener(new View.OnClickListener() { // Add a listener to the cart icon when clicked
             @Override
             public void onClick(View v) {
-
                 Intent basketIntent = new Intent(ClothingCategory.this, BasketActivity.class); // Create a basket intent
                 basketIntent.putExtra("map", listOfProductsToAddToBasket); // Transit over the hash map data to the basket
-                startActivity(basketIntent); // Start the intent
+                startActivity(basketIntent); // Start the intent.
             }
         });
 
@@ -488,9 +487,9 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         try {
             switch (item.getItemId()) {
-                case R.id.sportsAndOutdoorsCategory:
+                case R.id.sportsAndOutdoorsCategory: // If the sports and outdoors category is chosen
                     Intent sportsCategory = new Intent(ClothingCategory.this, SportsAndOutdoorsActivity.class);
-                    startActivity(sportsCategory);
+                    startActivity(sportsCategory); // Start that activity.
 
                     break;
 

@@ -29,10 +29,10 @@ import java.util.HashMap;
 // Any errors? None
 
 public class DIYActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    private int current_product_id = 1;
-    private TextView diyFirstProductTxt;
+    private int current_product_id = 1; // The current product id to add to basket (will be incremented)
+    private TextView diyFirstProductTxt; // The first product text
 
-    private ImageView diyFirstProductImg;
+    private ImageView diyFirstProductImg; // Image of the first DIY product
     private TextView diyFirstProductCost;
 
     private TextView diyFirstProductColourLbl;
@@ -68,11 +68,12 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private boolean sizesAdded = false;
     private boolean quantitiesAdded = false;
 
+    // Adapters for the objects to add to the list
     private CustomArrayAdapter quantitiesAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
     private ColourArrayAdapter coloursAdapter;
 
-    private ArrayList<TechActivity.Colours> diyListOfColoursOne = null;
+    private ArrayList<TechActivity.Colours> diyListOfColoursOne = null; // An array list of colours
     private ArrayList<Size> diyListOfSizesOne = null;
     private ArrayList<TechActivity.Quantities> diyListOfQuantitiesOne = null; // An Array list of quantities for the first diy product
 
@@ -204,8 +205,10 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
             @Override
             public void onClick(View secondButton) {
                 if (secondButton.getId() == R.id.diySecondProductAddToBasketBtn) {
+
                     if (diySecondProductColourMenu.getSelectedItemPosition() == 0 || diySecondProductSizeMenu.getSelectedItemPosition() == 0 || diySecondProductQuantityMenu.getSelectedItemPosition() == 0) {
                         AlertDialog.Builder error = new AlertDialog.Builder(DIYActivity.this)
+
                                 .setTitle(R.string.error)
                                 .setMessage(R.string.errorMsg)
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
@@ -379,9 +382,8 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         dialog.show();
 
         // Create an instance for the first product and adds it to the hash map.
-        Products diySecondProduct = new Products(current_product_id, diySecondProductTxt.getText().toString(), diySecondProductColourMenu.getSelectedItem().toString(), (int) diySecondProductQuantityMenu.getSelectedItemId(), diySecondProductCost.getText().toString(), diySecondProductSizeMenu.getSelectedItem().toString());
-        listOfProductsToAddToBasket.put(current_product_id, diySecondProduct);
-
+        Products diySecondProduct = new Products(current_product_id++, diySecondProductTxt.getText().toString(), diySecondProductColourMenu.getSelectedItem().toString(), (int) diySecondProductQuantityMenu.getSelectedItemId(), diySecondProductCost.getText().toString(), diySecondProductSizeMenu.getSelectedItem().toString());
+        listOfProductsToAddToBasket.put(current_product_id++, diySecondProduct);
 
         return true;
     }
