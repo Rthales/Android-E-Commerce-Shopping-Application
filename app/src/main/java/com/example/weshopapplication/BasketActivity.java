@@ -109,6 +109,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
                             public void onClick(DialogInterface dialog, int which) {
 
                                 Intent checkOutActivity = new Intent(BasketActivity.this, PaymentActivity.class);
+
                                 startActivity(checkOutActivity);
                             }
                         });
