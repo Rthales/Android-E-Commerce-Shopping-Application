@@ -21,6 +21,7 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
     private EditText phoneNumberField;
 
     private EditText problemField;
+    private boolean isValidated = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,26 +64,36 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
                 this.databaseManipulator = new DatabaseManipulator(this);
                 this.databaseManipulator.insert(username, email, phone_number, problem);
 
-                showSavedComplaintsDialog();
-
                 break;
         }
     }
 
     private boolean validateUsernameField() {
-        boolean isValidated = false;
 
         if (usernameField.getText().toString().isEmpty()) {
             usernameField.setText("");
-            usernameField.setError("Field Cannot Be Left Empty");
+            usernameField.setError("Field Can't Be Empty");
 
             isValidated = true;
+        } else {
+            showSavedComplaintsDialog();
         }
 
         return true;
     }
 
     private boolean validateEmailAddressField() {
+
+        if (emailAddressField.getText().toString().isEmpty()) {
+            emailAddressField.setText("");
+            emailAddressField.setError("Field Can't Be Empty");
+
+            isValidated = true;
+        } else {
+            showSavedComplaintsDialog();
+        }
+
+
         return true;
     }
 
