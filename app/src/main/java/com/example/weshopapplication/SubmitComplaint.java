@@ -75,8 +75,10 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
             usernameField.setError("Field Can't Be Empty");
 
             isValidated = true;
-        } else {
-            showSavedComplaintsDialog();
+        }
+
+        if (!usernameField.getText().toString().isEmpty()) {
+            isValidated = false;
         }
 
         return true;
@@ -89,6 +91,10 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
             emailAddressField.setError("Field Can't Be Empty");
 
             isValidated = true;
+        }
+
+        if (!emailAddressField.getText().toString().isEmpty()) {
+            isValidated = false;
         } else {
             showSavedComplaintsDialog();
         }
