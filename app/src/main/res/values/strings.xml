@@ -81,4 +81,9 @@
     <string name="product_cost">Product Cost £:</string>
     <string name="long_sleeve_checkered_shirt">Long Sleeve Checkered Shirt</string>
     <string name="long_sleeve_top_women_s">Long Sleeve Top Women\'s</string>
+    <string name="home">Home</string>
+    <string name="sports_and_outdoors">Sports And Outdoors</string>
+    <string name="tech">Tech</string>
+    <string name="clothing">Clothing</string>
+    <string name="diy">DIY</string>
 </resources>

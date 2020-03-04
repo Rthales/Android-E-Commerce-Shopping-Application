@@ -3,28 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/sportsAndOutdoorsCategory"
-        android:title="Sports And Outdoors"
+        android:id="@+id/mainActivity"
+        android:title="@string/home"
         app:showAsAction="never" />
 
     <item
-        android:id="@+id/mainActivity"
-        android:title="Home"
+        android:id="@+id/sportsAndOutdoorsCategory"
+        android:title="@string/sports_and_outdoors"
         app:showAsAction="never" />
+
 
     <item
         android:id="@+id/techCategory"
-        android:title="Tech"
+        android:title="@string/tech"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/clothingCategory"
-        android:title="Clothing"
+        android:title="@string/clothing"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/diyCategory"
-        android:title="DIY"
+        android:title="@string/diy"
         app:showAsAction="never">
 
     </item>
