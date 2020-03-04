@@ -32,7 +32,9 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private Spinner monthMenu;
     private Spinner yearsMenu;
 
-    private ArrayList<String> months = null;
+    private MonthsArrayAdapter monthsArrayAdapter;
+
+    private ArrayList<Months> months = null;
     private ArrayList<String> years = null;
 
     private Button confirmPaymentBtn;
@@ -60,6 +62,15 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         this.expiryMonthLbl = findViewById(R.id.monthLbl);
         this.confirmPaymentBtn = findViewById(R.id.confirmPaymentBtn);
 
+        addToMonthsList();
+        addToYearsList();
+
+        this.monthsArrayAdapter = new MonthsArrayAdapter(PaymentActivity.this, months);
+        monthsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        monthMenu.setAdapter(monthsArrayAdapter);
+        monthMenu.setOnItemSelectedListener(this);
+
 
         this.confirmPaymentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +78,14 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
             }
         });
+    }
+
+    private boolean addToMonthsList() {
+        return true;
+    }
+
+    private boolean addToYearsList() {
+        return true;
     }
 
     @Override
