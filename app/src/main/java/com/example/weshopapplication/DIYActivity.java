@@ -418,6 +418,11 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         try {
             switch (item.getItemId()) {
 
+                case R.id.mainActivity:
+                    Intent mainActivity = new Intent(DIYActivity.this, MainActivity.class);
+                    startActivity(mainActivity);
+                    break;
+
                 case R.id.sportsAndOutdoorsCategory:
                     Intent sportsCategory = new Intent(DIYActivity.this, SportsAndOutdoorsActivity.class);
                     startActivity(sportsCategory);
