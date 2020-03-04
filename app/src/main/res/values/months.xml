@@ -8,4 +8,10 @@
     <string name="mayMonth">May</string>
     <string name="juneMonth">June</string>
     <string name="julyMonth">July</string>
+
+    <string name="augustMonth">August</string>
+    <string name="septemberMonth">September</string>
+    <string name="octoberMonth">October</string>
+    <string name="novemberMonth">November</string>
+    <string name="decemberMonth">December</string>
 </resources>
