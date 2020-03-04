@@ -16,6 +16,12 @@ import androidx.appcompat.app.AppCompatActivity;
 public class SubmitComplaint extends AppCompatActivity implements View.OnClickListener {
     private DatabaseManipulator databaseManipulator;
 
+    private EditText usernameField;
+    private EditText emailAddressField;
+    private EditText phoneNumberField;
+
+    private EditText problemField;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +32,6 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
 
         View backButton = findViewById(R.id.btnBack);
         backButton.setOnClickListener(this);
-
     }
 
     @Override
@@ -38,7 +43,11 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.btnSubmit:
+                validateUsernameField();
+                validateEmailAddressField();
 
+                validatePhoneNumberField();
+                validateProblemField();
                 String username = ((EditText) findViewById(R.id.add_usernameField)).getText().toString();
                 String email = ((EditText) findViewById(R.id.add_complaintEmailField)).getText().toString();
 
@@ -52,6 +61,27 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
 
                 break;
         }
+    }
+
+    private boolean validateUsernameField() {
+        if (usernameField.getText().toString().isEmpty()) {
+            usernameField.setText("");
+            usernameField.setError("Field Cannot Be Left Empty");
+        }
+
+        return true;
+    }
+
+    private boolean validateEmailAddressField() {
+        return true;
+    }
+
+    private boolean validatePhoneNumberField() {
+        return true;
+    }
+
+    private boolean validateProblemField() {
+        return true;
     }
 
     protected void showSavedComplaintsDialog() {
