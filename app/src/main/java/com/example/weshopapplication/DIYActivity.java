@@ -117,6 +117,15 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
         this.diySecondProductAddToBasketBtn = findViewById(R.id.secondAddToBasketBtn);
 
+        this.diyListOfColoursOne = new ArrayList<>();
+        this.diyListOfColoursTwo = new ArrayList<>();
+
+        this.diyListOfSizesOne = new ArrayList<>();
+        this.diyListOfSizesTwo = new ArrayList<>();
+
+        this.diyListOfQuantitiesOne = new ArrayList<>();
+        this.diyListOfQuantitiesTwo = new ArrayList<>();
+
         addToDIYColourList();
         addToDIYSizesList();
 
@@ -200,7 +209,9 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
                             .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
+
                                     if (dialog != null) {
+
                                         dialog.dismiss();
                                     }
                                 }
