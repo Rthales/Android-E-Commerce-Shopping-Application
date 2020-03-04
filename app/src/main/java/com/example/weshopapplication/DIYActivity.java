@@ -234,10 +234,16 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
     private boolean addToDIYColourList() {
         Context context = getApplicationContext();
-        String[] diyColoursResources = new String[]{context.getString(R.string.gallantGray), context.getString(R.string.darkBlack), context.getString(R.string.strawberryRed), context.getString(R.string.gardenGreen)};
+        String[] diyColoursResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.gallantGray), context.getString(R.string.darkBlack), context.getString(R.string.strawberryRed), context.getString(R.string.gardenGreen)};
 
+        TechActivity.Colours[] colours = new TechActivity.Colours[]{new TechActivity.Colours(0, diyColoursResources[0]), new TechActivity.Colours(1, diyColoursResources[1]), new TechActivity.Colours(2, diyColoursResources[2]), new TechActivity.Colours(3, diyColoursResources[3]),
+                new TechActivity.Colours(4, diyColoursResources[4])};
 
-
+        for (TechActivity.Colours theColours : colours) {
+            diyListOfColoursOne.add(theColours);
+            diyListOfColoursTwo.add(theColours);
+            coloursAdded = true;
+        }
 
         return true;
     }
