@@ -277,6 +277,20 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     }
 
     private boolean addToDIYQuantitiesListOne() {
+
+        Context context = getApplicationContext();
+        String[] quantityResources = new String[]{context.getString(R.string.quantitiesPrompt), context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two), context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+        TechActivity.Quantities[] quantities = new TechActivity.Quantities[]{new TechActivity.Quantities(quantityResources[0]), new TechActivity.Quantities(quantityResources[1]), new TechActivity.Quantities(quantityResources[2]), new TechActivity.Quantities(quantityResources[3]), new TechActivity.Quantities(quantityResources[3]),
+                new TechActivity.Quantities(quantityResources[4]), new TechActivity.Quantities(quantityResources[5])};
+
+        for (TechActivity.Quantities theQuantities : quantities) {
+            diyListOfQuantitiesOne.add(theQuantities);
+            diyListOfQuantitiesTwo.add(theQuantities);
+
+            sizesAdded = true;
+        }
+
         return true;
     }
 
