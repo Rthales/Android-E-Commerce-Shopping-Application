@@ -92,7 +92,6 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         setContentView(R.layout.activity_diy);
 
         // Initialise components
-
         this.diyFirstProductTxt = findViewById(R.id.diyFirstProductTxt);
         this.diyFirstProductImg = findViewById(R.id.diyFirstProductImg);
 

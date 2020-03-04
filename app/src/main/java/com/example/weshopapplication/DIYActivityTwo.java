@@ -1,6 +1,8 @@
 package com.example.weshopapplication;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -16,7 +18,7 @@ import java.util.HashMap;
 // Date of Last Modification : 04/03/2020
 // Any Errors? None
 
-public class DIYActivityTwo extends AppCompatActivity {
+public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private int current_product_id = 1; // The current product id to add to basket (will be incremented)
     private TextView diyThirdProductTxt; // The first product text
 
@@ -72,12 +74,126 @@ public class DIYActivityTwo extends AppCompatActivity {
 
     private ImageView cartIcon;
     private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<Integer, Products>(); // Creates a new hash map of products with an associated ID
-    private Button nextPageBtn;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_d_i_y_two);
+
+        this.diyThirdProductTxt = findViewById(R.id.diyThirdProductTxt);
+        this.diyThirdProductImg = findViewById(R.id.diyThirdProductImg);
+
+        this.diyThirdProductCost = findViewById(R.id.diyThirdProductCostTxt);
+        this.diyThirdProductColourLbl = findViewById(R.id.diyThirdColourLbl);
+        this.diyThirdProductColourMenu = findViewById(R.id.diyThirdColourMenu);
+
+        this.diyThirdProductSizeLbl = findViewById(R.id.diyThirdSizeLbl);
+        this.diyThirdProductSizeMenu = findViewById(R.id.diyThirdSizeMenu);
+
+        this.diyThirdProductQuantityLbl = findViewById(R.id.diyThirdQuantityLbl);
+        this.diyThirdProductQuantityMenu = findViewById(R.id.diyThirdQuantityMenu);
+        this.diyThirdProductToAddToBasketBtn = findViewById(R.id.diyThirdAddToBasketBtn);
+
+        this.diyFourthProductTxt = findViewById(R.id.diyFourthProductTxt);
+        this.diyFourthProductImg = findViewById(R.id.diyFourthProductImg);
+
+        this.diyFourthProductCost = findViewById(R.id.diyFourthProductCostTxt);
+        this.diyFourthProductColourLbl = findViewById(R.id.diyFourthProductColourLbl);
+
+        this.diyFourthProductColourMenu = findViewById(R.id.diyFourthColourMenu);
+        this.diyFourthProductQuantityMenu = findViewById(R.id.diyFourthProductQuantityMenu);
+
+        this.diyFourthProductSizeLbl = findViewById(R.id.fourthProductSizeLbl);
+        this.diyFourthProductSizeMenu = findViewById(R.id.fourthProductSizeMenu);
+
+        this.diyFourthProductAddToBasketBtn = findViewById(R.id.diyForuthProductAddToBasketBtn);
+
+        this.diyListOfColoursOne = new ArrayList<>();
+        this.diyListOfColoursTwo = new ArrayList<>();
+
+        this.diyListOfSizesOne = new ArrayList<>();
+        this.diyListOfSizesTwo = new ArrayList<>();
+
+        this.diyListOfQuantitiesOne = new ArrayList<>();
+        this.diyListOfQuantitiesTwo = new ArrayList<>();
+
+        addToDIYColourListThree();
+        addToDIYSizesListThree();
+
+        addToDIYQuantitiesListThree();
+        addToDIYQuantitiesListFour();
+
+        // Set-up adapters for the firsts Array List
+
+        this.coloursAdapter = new ColourArrayAdapter(DIYActivityTwo.this, diyListOfColoursOne);
+        coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        diyThirdProductColourMenu.setAdapter(coloursAdapter);
+        diyThirdProductColourMenu.setOnItemSelectedListener(DIYActivityTwo.this);
+
+        this.quantitiesAdapter = new CustomArrayAdapter(DIYActivityTwo.this, diyListOfQuantitiesOne); // Creates the quantities adapter for the first list of quantities.
+        quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        diyThirdProductQuantityMenu.setAdapter(quantitiesAdapter);
+        diyThirdProductQuantityMenu.setOnItemSelectedListener(DIYActivityTwo.this);
+
+        this.sizeArrayAdapter = new SizeArrayAdapter(DIYActivityTwo.this, diyListOfSizesOne);
+        sizeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        diyThirdProductSizeMenu.setAdapter(sizeArrayAdapter);
+        diyThirdProductSizeMenu.setOnItemSelectedListener(DIYActivityTwo.this);
+
+        // Set-up adapters for the second ArrayList
+
+        this.coloursAdapter = new ColourArrayAdapter(DIYActivityTwo.this, diyListOfColoursTwo);
+        coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        diyFourthProductColourMenu.setAdapter(coloursAdapter);
+        diyFourthProductColourMenu.setOnItemSelectedListener(this);
+
+        this.quantitiesAdapter = new CustomArrayAdapter(DIYActivityTwo.this, diyListOfQuantitiesTwo);
+        quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        diyFourthProductQuantityMenu.setAdapter(quantitiesAdapter);
+        diyFourthProductQuantityMenu.setOnItemSelectedListener(this);
+
+        this.sizeArrayAdapter = new SizeArrayAdapter(DIYActivityTwo.this, diyListOfSizesTwo);
+        sizeArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        diyFourthProductSizeMenu.setAdapter(sizeArrayAdapter);
+        diyFourthProductSizeMenu.setOnItemSelectedListener(this);
+
+    }
+
+    private boolean addToDIYColourListThree() {
+        return true;
+
+    }
+
+    private boolean addToDIYSizesListThree() {
+        return true;
+    }
+
+    private boolean addToDIYQuantitiesListThree() {
+        return true;
+    }
+
+    private boolean addToDIYQuantitiesListFour() {
+        return true;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
