@@ -1,6 +1,7 @@
 package com.example.weshopapplication;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -64,7 +65,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         this.expiryMonthLbl = findViewById(R.id.monthLbl);
         this.confirmPaymentBtn = findViewById(R.id.confirmPaymentBtn);
 
-        addToMonthsList();
+        addToMonthsList(); // Routine to add to the months list
         addToYearsList();
 
         this.monthsArrayAdapter = new MonthsArrayAdapter(PaymentActivity.this, months);
@@ -80,7 +81,22 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                 if (confirmPaymentBtn.getId() == R.id.confirmPaymentBtn) {
 
                     if (monthMenu.getSelectedItemId() == 0 || yearsMenu.getSelectedItemId() == 0) {
-                        AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this);
+
+                        AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this)
+                                .setTitle(R.string.paymentErrorTitle)
+
+                                .setMessage(R.string.paymentErrorMsg)
+                                .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (dialog != null) {
+                                            dialog.dismiss();
+                                        }
+                                    }
+                                });
+
+                        paymentError.show();
+                        paymentError.setCancelable(true);
                     }
                 }
             }
@@ -111,6 +127,15 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     }
 
     private boolean addToYearsList() {
+        boolean years_added = false;
+        Context context = getApplicationContext();
+
+        String[] yearsResources = new String[]{context.getString(R.string.firstYear), context.getString(R.string.secondYear),
+                context.getString(R.string.thirdYear), context.getString(R.string.fourthYear), context.getString(R.string.fifthYear),
+                context.getString(R.string.sixthYear), context.getString(R.string.seventhYear), context.getString(R.string.eighthYear)};
+
+
+
         return true;
     }
 

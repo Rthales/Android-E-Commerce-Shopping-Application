@@ -509,6 +509,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                         .setSmallIcon(R.drawable.ic_message_black_24dp)
                         .setContentTitle(getString(R.string.app_name))
                         .setContentText("Register Success")
+                        .setTicker("Success")
                         .setAutoCancel(true)
                         //.setSound(defaultSoundUri)
                         .setContentIntent(pendingIntent);
