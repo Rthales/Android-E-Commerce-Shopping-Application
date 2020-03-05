@@ -278,6 +278,13 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     }
 
     private boolean validateCardHolderName() {
+        Context context = getApplicationContext();
+
+        String[] cardHolderNameResources = new String[]{};
+
+        String cardHolderNameInput = cardholdersName.getText().toString(); // Get the user input
+
+
         return true;
     }
 
