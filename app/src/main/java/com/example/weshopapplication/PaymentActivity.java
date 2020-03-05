@@ -147,7 +147,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
     private boolean validatePaymentOptions() {
 
-        if (!visaPayment.isEnabled() || !paypalPayment.isEnabled() || !masterCardPayment.isEnabled()) { // If the visa payment or paypal or the mastercard payment is not checked.
+        if (paymentGroup.getCheckedRadioButtonId() == -1) { // If the visa payment or paypal or the mastercard payment are not checked.
             AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this)
 
                     .setTitle("Payment Option Error")
