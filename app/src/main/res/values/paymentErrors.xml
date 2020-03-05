@@ -7,8 +7,7 @@
     <string name="paymentErrorMsg">Re-Enter Card Number Field Please</string>
     <string name="cardLength">Card Number Must Not Exceed 16 Digits. Re-Enter</string>
 
-    <string name="monthError">You Must Choose A Month</string>
-    <string name="yearError">You Must Choose A Year</string>
+    <string name="expiryDateError">You Must Choose A Month And Year</string>
 
     <string name="cardCVVError">CVV Field Cannot Be Left Empty. Re-Enter Please</string>
 

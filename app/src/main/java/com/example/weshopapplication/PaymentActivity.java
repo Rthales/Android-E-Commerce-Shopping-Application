@@ -107,7 +107,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                 boolean isMonthChosen;
                 boolean isYearChosen;
 
-                validateCardNumber();
                 validateCardCVV();
                 validateCardHolderName();
 
@@ -118,7 +117,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                         AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this)
                                 .setTitle(R.string.paymentErrorTitle)
 
-                                .setMessage(R.string.paymentErrorMsg)
+                                .setMessage(R.string.expiryDateError)
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
@@ -130,6 +129,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
                         paymentError.show();
                         paymentError.setCancelable(true);
+
                         isMonthChosen = false;
                         isYearChosen = false;
                     } else {
@@ -147,7 +147,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
     private boolean validatePaymentOptions() {
 
-        if (!visaPayment.isChecked() || !paypalPayment.isChecked() || !masterCardPayment.isChecked()) { // If the visa payment or paypal or the mastercard payment is not checked.
+        if (!visaPayment.isEnabled() || !paypalPayment.isEnabled() || !masterCardPayment.isEnabled()) { // If the visa payment or paypal or the mastercard payment is not checked.
             AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this)
 
                     .setTitle("Payment Option Error")
@@ -163,12 +163,19 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
             paymentError.show();
             paymentError.setCancelable(true);
+
             paymentOptionChosen = false;
+            isValid = false;
 
             return true;
         } else {
             isValid = true;
             paymentOptionChosen = true;
+        }
+
+        if (isValid && paymentOptionChosen) {
+            Toast.makeText(PaymentActivity.this, "ALL GOOD", Toast.LENGTH_LONG).show();
+            // validateCardNumber();
         }
 
         return true;
