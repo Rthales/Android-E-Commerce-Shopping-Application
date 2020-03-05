@@ -18,7 +18,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -156,7 +155,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         if (paymentGroup.getCheckedRadioButtonId() == -1) { // If the visa payment or paypal or the mastercard payment are not checked.
             AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this)
 
-                    .setTitle("Payment Option Error")
+                    .setTitle(R.string.paymentErrorTitle)
                     .setMessage("You must choose a payment option before proceeding")
                     .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
@@ -188,16 +187,17 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     }
 
     private boolean validateCardNumber() {
-        int cardLength = 19;
+        int cardLength = 20;
         String cardInput = cardNumber.getText().toString();
         Context context = getApplicationContext();
 
-        String[] paymentErrors = new String[]{context.getString(R.string.paymentErrorMsg), context.getString(R.string.paymentErrorTitle), context.getString(R.string.cardEmpty)
-                , context.getString(R.string.cardLength)};
+        String[] paymentErrors = new String[]{context.getString(R.string.cardEmpty)
+                , context.getString(R.string.cardLength), context.getString(R.string.flushPaymentField), context.getString(R.string.cardDigitsOnly),
+        };
 
         if (cardInput.isEmpty()) {
-            cardNumber.setError("Card Number Field Should Not Be Left Empty");
-            cardNumber.setText("");
+            cardNumber.setError(paymentErrors[0]);
+            cardNumber.setText(paymentErrors[2]);
 
             isEmpty = true;
             isValid = false;
@@ -218,7 +218,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                 break;
             }
 
-            if (cardInput.length() > 20) {
+            if (cardInput.length() > cardLength) {
 
                 cardNumber.setError("Card Number Should Not Exceed 16 Digits"); // Show the error message
                 cardNumber.setText(""); // Set the field to empty
@@ -235,7 +235,8 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
             }
 
             if (hasDigits && isValid && !isEmpty && !exceedsLength) {
-                Toast.makeText(PaymentActivity.this, "ALL GOOD", Toast.LENGTH_LONG).show();
+                validateCardCVV();
+                break;
             }
         }
 
@@ -244,6 +245,8 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
 
     private boolean validateCardCVV() {
+
+
         return true;
     }
 
