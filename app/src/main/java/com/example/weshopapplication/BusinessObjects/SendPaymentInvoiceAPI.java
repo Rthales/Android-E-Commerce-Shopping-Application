@@ -20,7 +20,7 @@ import javax.mail.internet.MimeMessage;
 // Date of Last Modification: 19/02/2020
 // Any Bugs? None
 
-public class SendInvoiceAPI extends AsyncTask<Void, Void, Void> { // The class inherits from an Asynchronous Task with 3 parameters initially Void
+public class SendPaymentInvoiceAPI extends AsyncTask<Void, Void, Void> { // The class inherits from an Asynchronous Task with 3 parameters initially Void
     private Context context; // The context
     private Session session;
 
@@ -37,7 +37,7 @@ public class SendInvoiceAPI extends AsyncTask<Void, Void, Void> { // The class i
 
     private ProgressDialog dialog;
 
-    public SendInvoiceAPI(Context context, Session session, String email, String subject, String emailContent, String cardNumber, String cardCVV, String cardHolderName, String expiryMonth, String expiryYear, ProgressDialog dialog) {
+    public SendPaymentInvoiceAPI(Context context, Session session, String email, String subject, String emailContent, String cardNumber, String cardCVV, String cardHolderName, String expiryMonth, String expiryYear, ProgressDialog dialog) {
         this.context = context;
         this.session = session;
         this.email = email;
