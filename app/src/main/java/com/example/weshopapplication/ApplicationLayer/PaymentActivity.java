@@ -50,6 +50,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
     private EditText cardholdersName;
     private ImageView cartIcon;
+    private Button paypalBtn;
 
     private TextView expiryMonthLbl;
     private Spinner monthMenu;
@@ -89,6 +90,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         this.visaPayment = findViewById(R.id.visaOption);
         this.masterCardPayment = findViewById(R.id.masterCardOption);
+        this.paypalBtn = findViewById(R.id.paypalBtn);
 
         this.cardNumber = findViewById(R.id.creditCardNumberField);
         this.cardCVV = findViewById(R.id.cardCVVField);
@@ -115,6 +117,20 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         yearsMenu.setAdapter(yearsArrayAdapter);
         yearsMenu.setOnItemSelectedListener(this);
+
+        this.paypalBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+
+                    Intent paypalGateway = new Intent(PaymentActivity.this, PaypalPaymentGateway.class);
+                    startActivity(paypalGateway);
+
+                } catch (ActivityNotFoundException exc) {
+                    Log.d(String.valueOf(R.string.error), exc.toString());
+                }
+            }
+        });
 
         this.confirmPaymentBtn.setOnClickListener(new View.OnClickListener() {
             @Override

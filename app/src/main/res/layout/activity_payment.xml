@@ -168,7 +168,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/paypalBtn"
         android:layout_width="168dp"
         android:layout_height="44dp"
         android:layout_marginStart="136dp"
