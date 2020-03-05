@@ -225,7 +225,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
                 hasDigits = true;
                 exceedsLength = true;
-
                 isValid = false;
                 break;
             } else {
@@ -245,7 +244,15 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
 
     private boolean validateCardCVV() {
+        Context context = getApplicationContext();
 
+        String[] cardCVVResources = new String[]{context.getString(R.string.cardCVVError), context.getString(R.string.flushPaymentField)};
+        String cardCVVInput = cardCVV.getText().toString();
+
+        if (cardCVVInput.isEmpty()) {
+            cardCVV.setError(cardCVVResources[1]);
+            cardCVV.setError(cardCVVResources[0]);
+        }
 
         return true;
     }
