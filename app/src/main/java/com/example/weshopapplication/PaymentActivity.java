@@ -18,6 +18,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +35,7 @@ import java.util.regex.Pattern;
 public class PaymentActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private RadioGroup paymentGroup;
     private RadioButton visaPayment;
+    private int cardCVVLength = 3;
 
     private RadioButton paypalPayment;
     private RadioButton masterCardPayment;
@@ -246,12 +248,27 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private boolean validateCardCVV() {
         Context context = getApplicationContext();
 
-        String[] cardCVVResources = new String[]{context.getString(R.string.cardCVVError), context.getString(R.string.flushPaymentField)};
+        String[] cardCVVResources = new String[]{context.getString(R.string.cardCVVError), context.getString(R.string.flushPaymentField), context.getString(R.string.cardCVVError)};
         String cardCVVInput = cardCVV.getText().toString();
 
         if (cardCVVInput.isEmpty()) {
-            cardCVV.setError(cardCVVResources[1]);
+            cardCVV.setText(cardCVVResources[1]);
             cardCVV.setError(cardCVVResources[0]);
+
+            isEmpty = true;
+            isValid = false;
+        }
+
+        if (cardCVVInput.length() > cardCVVLength) {
+            cardCVV.setText(cardCVVResources[1]);
+            cardCVV.setError(cardCVVResources[2]);
+
+            exceedsLength = true;
+            isValid = false;
+        }
+
+        if (!isEmpty && isValid && !exceedsLength) {
+            Toast.makeText(PaymentActivity.this, "ALL GOOD", Toast.LENGTH_SHORT).show();
         }
 
         return true;
