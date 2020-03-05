@@ -195,61 +195,46 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         String[] paymentErrors = new String[]{context.getString(R.string.paymentErrorMsg), context.getString(R.string.paymentErrorTitle), context.getString(R.string.cardEmpty)
                 , context.getString(R.string.cardLength)};
 
+        if (cardInput.isEmpty()) {
+            cardNumber.setError("Card Number Field Should Not Be Left Empty");
+            cardNumber.setText("");
+
+            isEmpty = true;
+            isValid = false;
+        } else {
+            isEmpty = false;
+            isValid = true;
+        }
+
         for (int i = 0; i < cardInput.length(); i++) {
 
             if (!Character.isDigit(cardInput.charAt(i))) { // If there are no digits or there is no space in between the digits
 
-                AlertDialog.Builder cardError = new AlertDialog.Builder(PaymentActivity.this)
-                        .setTitle("Card Digit Error")
-                        .setMessage("The Card Number Field Must Only Contains Digits and should not exceed 19 digits.")
-                        .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                if (dialog != null) {
-                                    dialog.dismiss();
-                                }
-                            }
-                        });
-
+                cardNumber.setText("");
                 cardNumber.setError("Card Number Must Only Contain Digits");
-                cardError.show();
-                cardError.setCancelable(true);
 
                 hasDigits = false;
                 isValid = false;
                 break;
-            } else if (cardInput.length() > 20) {
+            }
 
-                AlertDialog.Builder lengthError = new AlertDialog.Builder(PaymentActivity.this)
-                        .setTitle("Card Length Error")
-                        .setMessage("Card Number Should Not Exceed 16 Digits")
-                        .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                if (dialog != null) {
-                                    dialog.dismiss();
-                                }
-                            }
-                        });
+            if (cardInput.length() > 20) {
 
                 cardNumber.setError("Card Number Should Not Exceed 16 Digits"); // Show the error message
                 cardNumber.setText(""); // Set the field to empty
-
-                lengthError.show();
-                lengthError.setCancelable(true);
 
                 hasDigits = true;
                 exceedsLength = true;
 
                 isValid = false;
-                return true;
+                break;
             } else {
                 hasDigits = true;
                 exceedsLength = false;
                 isValid = true;
             }
 
-            if (hasDigits && isValid) {
+            if (hasDigits && isValid && !isEmpty && !exceedsLength) {
                 Toast.makeText(PaymentActivity.this, "ALL GOOD", Toast.LENGTH_LONG).show();
             }
         }
