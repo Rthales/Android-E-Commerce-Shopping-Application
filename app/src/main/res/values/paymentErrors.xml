@@ -5,6 +5,7 @@
     <string name="paymentErrorTitle">Payment Error</string>
     <string name="cardEmpty">Credit Card Field Cannot Be Left Empty</string>
     <string name="paymentErrorMsg">Re-Enter Card Number Field Please</string>
+    <string name="cardLength">Card Number Must Not Exceed 16 Digits. Re-Enter</string>
 
     <string name="cardCVVError">CVV Field Cannot Be Left Empty. Re-Enter Please</string>
 

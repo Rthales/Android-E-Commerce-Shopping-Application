@@ -135,9 +135,10 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         String cardInput = cardNumber.getText().toString();
         Context context = getApplicationContext();
 
-        String[] paymentErrors = new String[]{context.getString(R.string.paymentErrorMsg), context.getString(R.string.paymentErrorTitle), context.getString(R.string.cardEmpty)};
+        String[] paymentErrors = new String[]{context.getString(R.string.paymentErrorMsg), context.getString(R.string.paymentErrorTitle), context.getString(R.string.cardEmpty)
+                , context.getString(R.string.cardLength)};
 
-        if (cardInput.isEmpty()) {
+        if (cardInput.isEmpty()) { // If the card input is empty or it contains regex characters.
 
             AlertDialog.Builder error = new AlertDialog.Builder(PaymentActivity.this)
                     .setTitle(paymentErrors[1])
@@ -160,8 +161,34 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
             isValid = false;
             isEmpty = true;
 
+            return false;
+        } else {
+            isValid = true;
+            isEmpty = false;
         }
 
+        if (cardInput.length() > 16) {
+            AlertDialog.Builder error = new AlertDialog.Builder(PaymentActivity.this)
+                    .setTitle("Card Number Error.")
+                    .setMessage("Card Number Should Not Be Bigger than 16 and contain special characters. Re-Enter Please.")
+                    .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+
+                        public void onClick(DialogInterface dialog, int which) {
+                            if (dialog != null) {
+                                dialog.dismiss();
+                            }
+                        }
+                    });
+
+            error.show();
+            error.setCancelable(true);
+
+            isValid = false;
+        } else {
+            isValid = true;
+            return true;
+        }
         return true;
     }
 
