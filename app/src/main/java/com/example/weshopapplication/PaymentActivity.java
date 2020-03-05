@@ -58,6 +58,15 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private boolean isValid = false;
     private boolean paymentOptionChosen = false;
 
+    private boolean isMonthChosen;
+    private boolean isYearChosen;
+
+    private boolean exceedsLength;
+    private boolean hasRegex;
+    private boolean hasSpace;
+
+    private boolean hasDigits;
+
     private Button confirmPaymentBtn;
     private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns
     private HashMap<Integer, Products> orderSummary = new HashMap<>();
@@ -104,10 +113,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         this.confirmPaymentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View confirmPaymentBtn) {
-                boolean isMonthChosen;
-                boolean isYearChosen;
 
-                validateCardCVV();
                 validateCardHolderName();
 
                 if (confirmPaymentBtn.getId() == R.id.confirmPaymentBtn) {
@@ -174,55 +180,59 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         }
 
         if (isValid && paymentOptionChosen) {
-            Toast.makeText(PaymentActivity.this, "ALL GOOD", Toast.LENGTH_LONG).show();
-            // validateCardNumber();
+
+            validateCardNumber();
         }
 
         return true;
     }
 
     private boolean validateCardNumber() {
+        int cardLength = 19;
         String cardInput = cardNumber.getText().toString();
         Context context = getApplicationContext();
 
         String[] paymentErrors = new String[]{context.getString(R.string.paymentErrorMsg), context.getString(R.string.paymentErrorTitle), context.getString(R.string.cardEmpty)
                 , context.getString(R.string.cardLength)};
 
-        if (cardInput.length() > 16) {
+        for (int i = 0; i < cardInput.length(); i++) {
 
-            AlertDialog.Builder error = new AlertDialog.Builder(PaymentActivity.this)
-                    .setTitle("Card Number Error.")
-                    .setMessage("Card Number Should Not Be Bigger than 16 and contain special characters. Re-Enter Please.")
-                    .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
-                        @Override
+            if (!Character.isDigit(cardInput.charAt(i))) { // If there are no digits or there is no space in between the digits
 
-                        public void onClick(DialogInterface dialog, int which) {
-                            if (dialog != null) {
-                                dialog.dismiss();
+                AlertDialog.Builder cardError = new AlertDialog.Builder(PaymentActivity.this)
+                        .setTitle("Card Digit Error")
+                        .setMessage("The Card Number Field Must Only Contains Digits.")
+                        .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (dialog != null) {
+                                    dialog.dismiss();
+                                }
                             }
-                        }
-                    });
+                        });
 
-            error.show();
-            error.setCancelable(true);
+                cardError.show();
+                cardError.setCancelable(true);
 
-            cardNumber.setError("Card Length Should Not Exceed 16 Digits.");
-            isValid = false;
+                hasDigits = false;
+                isValid = false;
+                break;
+            } else if (Character.isSpaceChar(cardInput.charAt(i))) {
+                hasSpace = true;
+            } else {
+                hasSpace = false;
+                hasDigits = true;
+                isValid = true;
+            }
 
-            return true;
-        }
-
-
-        if (isValid && paymentOptionChosen && !isEmpty) {
-            Toast.makeText(PaymentActivity.this, "ALL GOOD", Toast.LENGTH_LONG).show();
-        } else {
-            boolean paymentValidated = false;
-            return true;
+            if (hasDigits && isValid && hasSpace) {
+                Toast.makeText(PaymentActivity.this, "ALL GOOD", Toast.LENGTH_LONG).show();
+            }
         }
 
         return true;
-
     }
+
 
     private boolean validateCardCVV() {
         return true;
@@ -332,7 +342,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
                     return true;
 
-
                 case R.id.techCategory:
                     Intent techActivity = new Intent(PaymentActivity.this, TechActivity.class);
                     startActivity(techActivity);
@@ -355,7 +364,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
                     return super.onOptionsItemSelected(item); // Return the base item selected
             }
-
         } catch (ActivityNotFoundException act) {
             Log.d(String.valueOf(R.string.error), act.toString()); // Get the cause of the error.
         }
