@@ -21,7 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:theme">
-        <activity android:name=".ApplicationLayer.DIYActivityTwo"></activity>
+        <activity android:name=".ApplicationLayer.PaypalPaymentGateway"></activity>
+        <activity android:name=".ApplicationLayer.DIYActivityTwo" />
         <activity android:name=".ApplicationLayer.ClothingActivityTwo" />
         <activity android:name=".ApplicationLayer.PaymentActivity" />
         <activity android:name=".ApplicationLayer.CheckComplaints" />

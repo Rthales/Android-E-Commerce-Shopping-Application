@@ -43,7 +43,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private RadioButton visaPayment;
     private int cardCVVLength = 3;
 
-    private RadioButton paypalPayment;
     private RadioButton masterCardPayment;
 
     private EditText cardNumber;
@@ -89,7 +88,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         this.listOfYears = new ArrayList<>();
 
         this.visaPayment = findViewById(R.id.visaOption);
-        this.paypalPayment = findViewById(R.id.paypalOption);
         this.masterCardPayment = findViewById(R.id.masterCardOption);
 
         this.cardNumber = findViewById(R.id.creditCardNumberField);
@@ -282,7 +280,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private boolean validateCardHolderName() {
         Context context = getApplicationContext();
 
-        String[] cardHolderNameResources = new String[]{context.getString(R.string.cardHolderNameEmpty), context.getString(R.string.flushPaymentField)};
+        String[] cardHolderNameResources = new String[]{context.getString(R.string.cardHolderNameEmpty), context.getString(R.string.flushPaymentField), context.getString(R.string.cardHolderRegex)};
 
         String cardHolderNameInput = cardholdersName.getText().toString(); // Get the user input.
 
@@ -295,6 +293,8 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         }
 
         if (regexPatterns.matcher(cardHolderNameInput).find()) {
+            cardholdersName.setText(cardHolderNameResources[1]);
+            cardholdersName.setError(cardHolderNameResources[2]);
 
             hasRegex = true;
             isValid = false;
