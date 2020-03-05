@@ -18,6 +18,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,8 +54,9 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private ArrayList<Months> listOfMonths = null;
     private ArrayList<Years> listOfYears = null;
 
-    private boolean isEmpty;
-    private boolean isValid;
+    private boolean isEmpty = false;
+    private boolean isValid = false;
+    private boolean paymentOptionChosen = false;
 
     private Button confirmPaymentBtn;
     private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns
@@ -102,6 +104,9 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         this.confirmPaymentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View confirmPaymentBtn) {
+                boolean isMonthChosen;
+                boolean isYearChosen;
+
                 validateCardNumber();
                 validateCardCVV();
                 validateCardHolderName();
@@ -125,24 +130,28 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
                         paymentError.show();
                         paymentError.setCancelable(true);
+                        isMonthChosen = false;
+                        isYearChosen = false;
+                    } else {
+                        isMonthChosen = true;
+                        isYearChosen = true;
+                    }
+
+                    if (isMonthChosen && isYearChosen) {
+                        validatePaymentOptions();
                     }
                 }
             }
         });
     }
 
-    private boolean validateCardNumber() {
-        String cardInput = cardNumber.getText().toString();
-        Context context = getApplicationContext();
+    private boolean validatePaymentOptions() {
 
-        String[] paymentErrors = new String[]{context.getString(R.string.paymentErrorMsg), context.getString(R.string.paymentErrorTitle), context.getString(R.string.cardEmpty)
-                , context.getString(R.string.cardLength)};
+        if (!visaPayment.isChecked() || !paypalPayment.isChecked() || !masterCardPayment.isChecked()) { // If the visa payment or paypal or the mastercard payment is not checked.
+            AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this)
 
-        if (cardInput.isEmpty()) { // If the card input is empty or it contains regex characters.
-
-            AlertDialog.Builder error = new AlertDialog.Builder(PaymentActivity.this)
-                    .setTitle(paymentErrors[1])
-                    .setMessage(paymentErrors[0])
+                    .setTitle("Payment Option Error")
+                    .setMessage("You must choose a payment option before proceeding")
                     .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -152,22 +161,28 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                         }
                     });
 
-            error.show();
-            error.setCancelable(true);
+            paymentError.show();
+            paymentError.setCancelable(true);
+            paymentOptionChosen = false;
 
-            cardNumber.setError(paymentErrors[2]);
-            cardNumber.setText("");
-
-            isValid = false;
-            isEmpty = true;
-
-            return false;
+            return true;
         } else {
             isValid = true;
-            isEmpty = false;
+            paymentOptionChosen = true;
         }
 
+        return true;
+    }
+
+    private boolean validateCardNumber() {
+        String cardInput = cardNumber.getText().toString();
+        Context context = getApplicationContext();
+
+        String[] paymentErrors = new String[]{context.getString(R.string.paymentErrorMsg), context.getString(R.string.paymentErrorTitle), context.getString(R.string.cardEmpty)
+                , context.getString(R.string.cardLength)};
+
         if (cardInput.length() > 16) {
+
             AlertDialog.Builder error = new AlertDialog.Builder(PaymentActivity.this)
                     .setTitle("Card Number Error.")
                     .setMessage("Card Number Should Not Be Bigger than 16 and contain special characters. Re-Enter Please.")
@@ -184,12 +199,22 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
             error.show();
             error.setCancelable(true);
 
+            cardNumber.setError("Card Length Should Not Exceed 16 Digits.");
             isValid = false;
-        } else {
-            isValid = true;
+
             return true;
         }
+
+
+        if (isValid && paymentOptionChosen && !isEmpty) {
+            Toast.makeText(PaymentActivity.this, "ALL GOOD", Toast.LENGTH_LONG).show();
+        } else {
+            boolean paymentValidated = false;
+            return true;
+        }
+
         return true;
+
     }
 
     private boolean validateCardCVV() {
