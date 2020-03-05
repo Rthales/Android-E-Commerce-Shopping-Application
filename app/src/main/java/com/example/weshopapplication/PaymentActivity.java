@@ -53,6 +53,9 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private ArrayList<Months> listOfMonths = null;
     private ArrayList<Years> listOfYears = null;
 
+    private boolean isEmpty;
+    private boolean isValid;
+
     private Button confirmPaymentBtn;
     private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns
     private HashMap<Integer, Products> orderSummary = new HashMap<>();
@@ -99,6 +102,9 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         this.confirmPaymentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View confirmPaymentBtn) {
+                validateCardNumber();
+                validateCardCVV();
+                validateCardHolderName();
 
                 if (confirmPaymentBtn.getId() == R.id.confirmPaymentBtn) {
 
@@ -123,6 +129,48 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                 }
             }
         });
+    }
+
+    private boolean validateCardNumber() {
+        String cardInput = cardNumber.getText().toString();
+        Context context = getApplicationContext();
+
+        String[] paymentErrors = new String[]{context.getString(R.string.paymentErrorMsg), context.getString(R.string.paymentErrorTitle), context.getString(R.string.cardEmpty)};
+
+        if (cardInput.isEmpty()) {
+
+            AlertDialog.Builder error = new AlertDialog.Builder(PaymentActivity.this)
+                    .setTitle(paymentErrors[1])
+                    .setMessage(paymentErrors[0])
+                    .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            if (dialog != null) {
+                                dialog.dismiss();
+                            }
+                        }
+                    });
+
+            error.show();
+            error.setCancelable(true);
+
+            cardNumber.setError(paymentErrors[2]);
+            cardNumber.setText("");
+
+            isValid = false;
+            isEmpty = true;
+
+        }
+
+        return true;
+    }
+
+    private boolean validateCardCVV() {
+        return true;
+    }
+
+    private boolean validateCardHolderName() {
+        return true;
     }
 
     public void checkButton(View view) {

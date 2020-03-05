@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-
-    <string name="paymentErrorTitle">Payment Error</string>
-    <string name="paymentErrorMsg">You must choose a Month and Year before completing the payment</string>
-
     <string name="monthPrompt">Please Choose A Month</string>
     <string name="januaryMonth">January</string>
     <string name="februaryMonth">February</string>
