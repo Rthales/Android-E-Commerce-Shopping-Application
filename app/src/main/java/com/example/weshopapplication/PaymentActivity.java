@@ -1,11 +1,14 @@
 package com.example.weshopapplication;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -21,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 // Author of Application/Class: Sabin Constantin Lungu
 // Purpose of Application/Class: Allows Customers to pay for the products chosen
@@ -50,6 +54,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private ArrayList<Years> listOfYears = null;
 
     private Button confirmPaymentBtn;
+    private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns
     private HashMap<Integer, Products> orderSummary = new HashMap<>();
 
     @Override
@@ -194,7 +199,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         return true;
     }
 
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -208,5 +212,46 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) { // Routine that determines which menu item is chosen
+
+        try {
+            switch (item.getItemId()) {
+
+                case R.id.sportsAndOutdoorsCategory: // If the sports and outdoors category is clicked on
+                    Intent sportsActivity = new Intent(PaymentActivity.this, SportsAndOutdoorsActivity.class); // Create intent for sports activity
+                    startActivity(sportsActivity);
+
+                    return true;
+
+
+                case R.id.techCategory:
+                    Intent techActivity = new Intent(PaymentActivity.this, TechActivity.class);
+                    startActivity(techActivity);
+
+                    return true;
+
+                case R.id.clothingCategory:
+                    Intent clothingCategory = new Intent(PaymentActivity.this, ClothingCategory.class);
+                    startActivity(clothingCategory);
+
+                    return true;
+
+                case R.id.diyCategory:
+                    Intent diyCategory = new Intent(PaymentActivity.this, DIYActivity.class);
+                    startActivity(diyCategory);
+
+                    return true;
+
+                default:
+
+                    return super.onOptionsItemSelected(item); // Return the base item selected
+            }
+
+        } catch (ActivityNotFoundException act) {
+            Log.d(String.valueOf(R.string.error), act.toString()); // Get the cause of the error.
+        }
+        return true;
     }
 }
