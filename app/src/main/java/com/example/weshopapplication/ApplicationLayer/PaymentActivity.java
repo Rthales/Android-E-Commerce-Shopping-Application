@@ -59,7 +59,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private MonthsArrayAdapter monthsArrayAdapter;
     private YearsArrayAdapter yearsArrayAdapter;
 
-    private ArrayList<Months> listOfMonths = null;
+    private ArrayList<Months> listOfMonths = null; // An array list of months to add to the spinner
     private ArrayList<Years> listOfYears = null;
 
     private boolean isEmpty = false;
@@ -77,7 +77,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
     private Button confirmPaymentBtn;
     private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns
-    private HashMap<Integer, Products> orderSummary = new HashMap<>();
+    private HashMap<Integer, Products> orderSummary = new HashMap<>(); // A Hash Map data structure that stores the order summary.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,7 +104,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         this.confirmPaymentBtn = findViewById(R.id.confirmPaymentBtn);
 
         addToMonthsList(); // Routine to add to the months list
-        addToYearsList();
+        addToYearsList(); // Routine to add to the years array list.
 
         this.monthsArrayAdapter = new MonthsArrayAdapter(PaymentActivity.this, listOfMonths);
         monthsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -124,7 +124,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
                 if (confirmPaymentBtn.getId() == R.id.confirmPaymentBtn) {
 
-                    if (monthMenu.getSelectedItemId() == 0 || yearsMenu.getSelectedItemId() == 0) {
+                    if (monthMenu.getSelectedItemId() == 0 || yearsMenu.getSelectedItemId() == 0) { // If the index is 0 for the month menu or the years menu
 
                         AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this)
                                 .setTitle(R.string.paymentErrorTitle)
@@ -138,7 +138,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                                     }
                                 });
 
-                        paymentError.show();
+                        paymentError.show(); // Show the payment error
                         paymentError.setCancelable(true);
 
                         isMonthChosen = false;
@@ -148,15 +148,15 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                         isYearChosen = true;
                     }
 
-                    if (isMonthChosen && isYearChosen) {
-                        validatePaymentOptions();
+                    if (isMonthChosen && isYearChosen) { // If the month is chosen and the year is chosen by the customer
+                        validatePaymentOptions(); // Call method to validate the payment options
                     }
                 }
             }
         });
     }
 
-    private boolean validatePaymentOptions() {
+    private boolean validatePaymentOptions() { // Routine to validate the payment options Radio Buttons
 
         if (paymentGroup.getCheckedRadioButtonId() == -1) { // If the visa payment or paypal or the mastercard payment are not checked.
             AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this)

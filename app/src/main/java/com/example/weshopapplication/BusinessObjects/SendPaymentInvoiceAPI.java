@@ -148,7 +148,7 @@ public class SendPaymentInvoiceAPI extends AsyncTask<Void, Void, Void> { // The 
         super.onPostExecute(aVoid);
 
         dialog.dismiss();
-        Toast.makeText(context, "Invoice Sent Successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Payment Invoice Sent Successfully", Toast.LENGTH_SHORT).show();
     }
 
     protected Void doInBackground(Void... params) {
