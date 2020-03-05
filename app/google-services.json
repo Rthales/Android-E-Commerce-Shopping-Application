@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "271359503714-qlfjn8a8pa04l560qpc2aqup9j91g7qr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.weshopapplication",
+            "certificate_hash": "b4caad7d003385e9e44f75ca1155d7f76d9ebdcb"
+          }
+        },
+        {
           "client_id": "271359503714-2593n3v7op50v7mu4hnq6fineh4khrvi.apps.googleusercontent.com",
           "client_type": 3
         }

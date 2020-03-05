@@ -10,6 +10,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
@@ -72,11 +73,16 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         monthMenu.setAdapter(monthsArrayAdapter);
         monthMenu.setOnItemSelectedListener(this);
 
-
         this.confirmPaymentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View confirmPaymentBtn) {
 
+                if (confirmPaymentBtn.getId() == R.id.confirmPaymentBtn) {
+
+                    if (monthMenu.getSelectedItemId() == 0 || yearsMenu.getSelectedItemId() == 0) {
+                        AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this);
+                    }
+                }
             }
         });
     }

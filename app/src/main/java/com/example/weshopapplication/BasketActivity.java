@@ -30,6 +30,7 @@ import java.util.Map;
 
 public class BasketActivity extends AppCompatActivity implements View.OnClickListener {
     private Button placeOrderBtn;
+    private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<>();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,7 +110,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
                             public void onClick(DialogInterface dialog, int which) {
 
                                 Intent checkOutActivity = new Intent(BasketActivity.this, PaymentActivity.class);
-
+                                checkOutActivity.putExtra("map", listOfProductsToAddToBasket);
                                 startActivity(checkOutActivity);
                             }
                         });

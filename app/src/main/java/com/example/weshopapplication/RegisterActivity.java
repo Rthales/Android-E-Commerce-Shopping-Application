@@ -1,12 +1,17 @@
 package com.example.weshopapplication;
 
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -478,20 +483,39 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
 
     private void sendNotification() { // Routine to send notification after registration
+        int channelID = 12345;
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID); // Create the notification builder by passing the context to display it in and the channel id
+        // create channel in new versions of android
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_LOW;
+            NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_ID, importance);
+            notificationChannel.enableLights(true);
+            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.enableVibration(true);
+            notificationChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+            notificationManager.createNotificationChannel(notificationChannel);
+        }
 
-            builder.setChannelId(CHANNEL_ID)
-                    .setSmallIcon(R.drawable.ic_message_black_24dp) // Give the notification an icon
-                    .setContentTitle("Registration Status") // Set the content title of it
-                    .setContentText("You have registered Success!") // Give the message to be displayed
-                    .setPriority(NotificationCompat.PRIORITY_MAX) // Set the priority of the notification
-                    .setColor(Color.BLACK) // Give the notification a colour
-                    .setTicker("Registration Success")
-                    .setAutoCancel(true); // Can auto cancel it
 
-            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(RegisterActivity.this); // Create the compat notification
-            notificationManager.notify(0, builder.build()); // Build the notification
+        // show notification
+        Intent intent = new Intent(this, RegisterActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        // 0 is request code
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        NotificationCompat.Builder notificationBuilder =
+                new NotificationCompat.Builder(this, CHANNEL_ID)
+                        .setSmallIcon(R.drawable.ic_message_black_24dp)
+                        .setContentTitle(getString(R.string.app_name))
+                        .setContentText("Register Success")
+                        .setAutoCancel(true)
+                        //.setSound(defaultSoundUri)
+                        .setContentIntent(pendingIntent);
+
+        // 0 is id of notification
+        notificationManager.notify(0, notificationBuilder.build());
     }
 
     private void writeToDatabase() { // Writes to database
