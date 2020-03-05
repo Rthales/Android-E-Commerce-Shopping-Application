@@ -218,17 +218,38 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                 hasDigits = false;
                 isValid = false;
                 break;
-            }
+            } else if (cardInput.length() > 20) {
 
-            if (cardInput.length() > 19) {
+                AlertDialog.Builder lengthError = new AlertDialog.Builder(PaymentActivity.this)
+                        .setTitle("Card Length Error")
+                        .setMessage("Card Number Should Not Exceed 16 Digits")
+                        .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (dialog != null) {
+                                    dialog.dismiss();
+                                }
+                            }
+                        });
+
+                cardNumber.setError("Card Number Should Not Exceed 16 Digits"); // Show the error message
+                cardNumber.setText(""); // Set the field to empty
+
+                lengthError.show();
+                lengthError.setCancelable(true);
+
+                hasDigits = true;
                 exceedsLength = true;
+
+                isValid = false;
+                return true;
             } else {
                 hasDigits = true;
                 exceedsLength = false;
                 isValid = true;
             }
 
-            if (hasDigits && isValid && exceedsLength) {
+            if (hasDigits && isValid) {
                 Toast.makeText(PaymentActivity.this, "ALL GOOD", Toast.LENGTH_LONG).show();
             }
         }
