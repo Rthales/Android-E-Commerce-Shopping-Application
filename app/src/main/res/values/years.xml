@@ -2,6 +2,7 @@
 
 
 <resources>
+    <string name="yearsPrompt">Please choose a Year</string>
     <string name="firstYear">2021</string>
     <string name="secondYear">2022</string>
 

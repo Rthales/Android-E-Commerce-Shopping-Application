@@ -36,9 +36,10 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private Spinner yearsMenu;
 
     private MonthsArrayAdapter monthsArrayAdapter;
+    private YearsArrayAdapter yearsArrayAdapter;
 
-    private ArrayList<Months> months = null;
-    private ArrayList<String> years = null;
+    private ArrayList<Months> listOfMonths = null;
+    private ArrayList<Years> listOfYears = null;
 
     private Button confirmPaymentBtn;
     private HashMap<Integer, Products> orderSummary = new HashMap<>();
@@ -48,8 +49,8 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        this.months = new ArrayList<>();
-        this.years = new ArrayList<>();
+        this.listOfMonths = new ArrayList<>();
+        this.listOfYears = new ArrayList<>();
 
         this.visaPayment = findViewById(R.id.visaOption);
         this.paypalPayment = findViewById(R.id.paypalOption);
@@ -68,11 +69,18 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         addToMonthsList(); // Routine to add to the months list
         addToYearsList();
 
-        this.monthsArrayAdapter = new MonthsArrayAdapter(PaymentActivity.this, months);
+        this.monthsArrayAdapter = new MonthsArrayAdapter(PaymentActivity.this, listOfMonths);
         monthsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         monthMenu.setAdapter(monthsArrayAdapter);
         monthMenu.setOnItemSelectedListener(this);
+
+        this.yearsArrayAdapter = new YearsArrayAdapter(PaymentActivity.this, listOfYears);
+        yearsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        yearsMenu.setAdapter(yearsArrayAdapter);
+        yearsMenu.setOnItemSelectedListener(this);
+
 
         this.confirmPaymentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,7 +127,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                 new Months(monthsResources[12])};
 
         for (Months month : theMonths) {
-            months.add(month);
+            listOfMonths.add(month);
             month_added = true;
         }
 
@@ -130,11 +138,17 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         boolean years_added = false;
         Context context = getApplicationContext();
 
-        String[] yearsResources = new String[]{context.getString(R.string.firstYear), context.getString(R.string.secondYear),
+        String[] yearsResources = new String[]{context.getString(R.string.yearsPrompt), context.getString(R.string.firstYear), context.getString(R.string.secondYear),
                 context.getString(R.string.thirdYear), context.getString(R.string.fourthYear), context.getString(R.string.fifthYear),
                 context.getString(R.string.sixthYear), context.getString(R.string.seventhYear), context.getString(R.string.eighthYear)};
 
+        Years[] years = new Years[]{new Years(yearsResources[0]), new Years(yearsResources[1]), new Years(yearsResources[2]), new Years(yearsResources[3]),
+                new Years(yearsResources[4]), new Years(yearsResources[5]), new Years(yearsResources[6]), new Years(yearsResources[7]), new Years(yearsResources[8])};
 
+        for (Years theYears : years) {
+            listOfYears.add(theYears);
+            years_added = true;
+        }
 
         return true;
     }

@@ -1,17 +1,17 @@
 package com.example.weshopapplication;
 
 public class Years {
-    private int year;
+    private String year;
 
-    public Years(int year) {
+    public Years(String year) {
         this.year = year;
     }
 
-    public int getYear() {
-        return year;
+    public String getYear() {
+        return this.year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
