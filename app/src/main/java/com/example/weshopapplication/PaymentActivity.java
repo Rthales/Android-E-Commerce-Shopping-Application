@@ -2,12 +2,17 @@ package com.example.weshopapplication;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -23,13 +28,16 @@ import java.util.HashMap;
 // Any Bugs? None
 
 public class PaymentActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private RadioGroup paymentGroup;
     private RadioButton visaPayment;
+
     private RadioButton paypalPayment;
     private RadioButton masterCardPayment;
 
     private EditText cardNumber;
     private EditText cardCVV;
     private EditText cardholdersName;
+    private ImageView cartIcon;
 
     private TextView expiryMonthLbl;
     private Spinner monthMenu;
@@ -48,6 +56,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+        this.paymentGroup = findViewById(R.id.paymentGroup);
 
         this.listOfMonths = new ArrayList<>();
         this.listOfYears = new ArrayList<>();
@@ -62,6 +71,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         this.monthMenu = findViewById(R.id.monthMenu);
         this.yearsMenu = findViewById(R.id.yearMenu);
+        this.cartIcon = findViewById(R.id.cart_icon);
 
         this.expiryMonthLbl = findViewById(R.id.monthLbl);
         this.confirmPaymentBtn = findViewById(R.id.confirmPaymentBtn);
@@ -80,7 +90,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         yearsMenu.setAdapter(yearsArrayAdapter);
         yearsMenu.setOnItemSelectedListener(this);
-
 
         this.confirmPaymentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +118,12 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                 }
             }
         });
+    }
+
+    public void checkButton(View view) {
+        int optionChecked = paymentGroup.getCheckedRadioButtonId();
+
+        visaPayment = findViewById(optionChecked);
     }
 
     private boolean addToMonthsList() {
@@ -152,6 +167,33 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         return true;
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) { // Add the toolbar menu
+        // Inflate the activities menu
+        MenuInflater activityInflater = getMenuInflater(); // Get the activity inflater
+        activityInflater.inflate(R.menu.homepagemenu, menu);
+
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.basket_action_button, menu);
+
+        View view = menu.findItem(R.id.cart_menu).getActionView();
+
+        cartIcon = view.findViewById(R.id.cart_icon);
+
+        cartIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent basketIntent = new Intent(PaymentActivity.this, BasketActivity.class); // Create a basket intent
+                basketIntent.putExtra("map", orderSummary); // Transit over the hash map data to the basket
+                startActivity(basketIntent); // Start the intent
+            }
+        });
+
+        return true;
+    }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

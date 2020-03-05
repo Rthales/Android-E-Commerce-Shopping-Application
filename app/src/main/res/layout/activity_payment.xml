@@ -12,55 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="124dp"
-        android:layout_marginBottom="620dp"
+        android:layout_marginBottom="644dp"
         android:text="@string/payment_below"
         android:textColor="@color/white"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <RadioButton
-        android:id="@+id/visaOption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="560dp"
-        android:buttonTint="@color/white"
-        android:text="@string/visa"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <RadioButton
-        android:id="@+id/paypalOption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="560dp"
-        android:buttonTint="@color/white"
-        android:text="@string/paypal"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/visaOption" />
-
-    <RadioButton
-        android:id="@+id/masterCardOption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="560dp"
-        android:buttonTint="@color/white"
-        android:text="@string/mastercard"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/paypalOption" />
 
     <EditText
         android:id="@+id/creditCardNumberField"
@@ -174,7 +132,50 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/paymentGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="46dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/creditCardNumberField"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/visaOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="30dp"
+            android:buttonTint="@color/white"
+            android:onClick="checkButton"
+            android:text="@string/visa"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/paypalOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:buttonTint="@color/white"
+            android:onClick="checkButton"
+            android:text="@string/paypal"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/masterCardOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white"
+            android:onClick="checkButton"
+            android:text="@string/mastercard"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
