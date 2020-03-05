@@ -469,7 +469,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             public void run() {
 
                 try {
-                    Thread.sleep(2100);
+                    Thread.sleep(2500);
                 } catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
@@ -488,17 +488,16 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
         // create channel in new versions of android
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            int importance = NotificationManager.IMPORTANCE_LOW;
+            int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_ID, importance);
-            notificationChannel.enableLights(true);
+            notificationChannel.enableLights(true); // Enable the lights
             notificationChannel.setLightColor(Color.RED);
             notificationChannel.enableVibration(true);
             notificationChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
             notificationManager.createNotificationChannel(notificationChannel);
         }
 
-
-        // show notification
+        // Code below shows the notification
         Intent intent = new Intent(this, RegisterActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         // 0 is request code
@@ -514,7 +513,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                         //.setSound(defaultSoundUri)
                         .setContentIntent(pendingIntent);
 
-        // 0 is id of notification
         notificationManager.notify(0, notificationBuilder.build());
     }
 
@@ -530,7 +528,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
                 if (task.isSuccessful()) { // If the register task is successful
 
-                    Toast.makeText(RegisterActivity.this, "Data written to DB", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "Data written to DB", Toast.LENGTH_LONG).show(); // Debug code.
 
                 } else {
 
