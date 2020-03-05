@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.DataLayer;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -14,7 +14,7 @@ import java.util.List;
 // Date of Last Modification: 15/02/2020
 // Any Bugs? No. Will be tested with JUnit
 
-public class DatabaseManipulator {
+public class ContactUsDatabaseManipulator {
 
     private static final String DATABASE_NAME = "complaints.db"; // The Database name to create
     private static int DB_VERSION = 1; // Database version
@@ -28,12 +28,12 @@ public class DatabaseManipulator {
 
     private static SQLiteDatabase db; // The SQL database
 
-    public DatabaseManipulator(Context context) { // Constructor for the database manipulator
-        DatabaseManipulator.context = context;
-        OpenHelper helper = new OpenHelper(DatabaseManipulator.context);
-        DatabaseManipulator.db = helper.getWritableDatabase();
+    public ContactUsDatabaseManipulator(Context context) { // Constructor for the database manipulator
+        ContactUsDatabaseManipulator.context = context;
+        OpenHelper helper = new OpenHelper(ContactUsDatabaseManipulator.context);
+        ContactUsDatabaseManipulator.db = helper.getWritableDatabase();
 
-        this.sqlStatement = DatabaseManipulator.db.compileStatement(INSERT_DATA);
+        this.sqlStatement = ContactUsDatabaseManipulator.db.compileStatement(INSERT_DATA);
 
     }
 

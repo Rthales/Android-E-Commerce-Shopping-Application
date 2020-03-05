@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.BusinessObjects;
 
 // Author of Application: Sabin Constantin Lungu 40397517
 // Purpose of Application: To store data regarding the products when they are added to basket, the data will get displayed in a list view

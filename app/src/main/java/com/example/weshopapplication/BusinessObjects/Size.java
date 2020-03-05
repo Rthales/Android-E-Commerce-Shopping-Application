@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.BusinessObjects;
 
 public class Size {
     private int index;

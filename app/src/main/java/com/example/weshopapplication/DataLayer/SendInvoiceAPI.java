@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.DataLayer;
 
 import android.app.ProgressDialog;
 import android.content.Context;

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/woods"
     android:orientation="vertical"
-    tools:context=".SubmitComplaint">
+    tools:context=".ApplicationLayer.SubmitComplaint">
 
     <TextView
         android:id="@+id/add_complaint_txt"

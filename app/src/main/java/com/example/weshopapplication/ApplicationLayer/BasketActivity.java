@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.ApplicationLayer;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -16,6 +16,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.weshopapplication.BusinessObjects.Products;
+import com.example.weshopapplication.R;
 
 import org.jetbrains.annotations.NotNull;
 

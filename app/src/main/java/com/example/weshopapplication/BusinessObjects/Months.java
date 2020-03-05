@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.BusinessObjects;
 
 public class Months {
     private String month;

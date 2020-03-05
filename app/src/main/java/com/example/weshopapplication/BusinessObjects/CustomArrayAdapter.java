@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.BusinessObjects;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import androidx.annotation.NonNull;
+
+import com.example.weshopapplication.ApplicationLayer.TechActivity;
 
 import java.util.ArrayList;
 

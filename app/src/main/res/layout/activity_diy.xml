@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/woods"
-    tools:context=".DIYActivity">
+    tools:context=".ApplicationLayer.DIYActivity">
 
     <TextView
         android:id="@+id/diyFirstProductTxt"

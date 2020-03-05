@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.BusinessObjects;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,11 +10,11 @@ import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 
-public class SizesAdapter extends ArrayAdapter<TechActivity.Size> {
+public class SizeArrayAdapter extends ArrayAdapter<Size> {
     private Context context;
-    private ArrayList<TechActivity.Size> listOfSizes;
+    private ArrayList<Size> listOfSizes = null;
 
-    public SizesAdapter(Context context, ArrayList<TechActivity.Size> listOfSizes) {
+    public SizeArrayAdapter(Context context, ArrayList<Size> listOfSizes) {
         super(context, 0, listOfSizes);
         this.context = context;
         this.listOfSizes = listOfSizes;
@@ -28,9 +28,10 @@ public class SizesAdapter extends ArrayAdapter<TechActivity.Size> {
         if (listOfItems == null) {
             listOfItems = LayoutInflater.from(context).inflate(android.R.layout.simple_spinner_dropdown_item, parent, false);
 
-            TechActivity.Size size = listOfSizes.get(position);
+            Size sizes = listOfSizes.get(position);
         }
 
         return listOfItems;
     }
+
 }

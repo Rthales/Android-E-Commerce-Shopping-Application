@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.ApplicationLayer;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -7,6 +7,8 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.weshopapplication.R;
 
 // Author of Application: Sabin Constantin Lungu
 // Purpose of Class: To allow user's to fill out a contact us form if they are having issues with the app

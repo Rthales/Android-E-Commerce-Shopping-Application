@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.ApplicationLayer;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.weshopapplication.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 // Author of Application: Sabin Constantin Lungu

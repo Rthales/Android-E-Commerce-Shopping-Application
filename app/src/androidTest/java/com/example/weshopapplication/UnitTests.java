@@ -7,6 +7,15 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
 
+import com.example.weshopapplication.ApplicationLayer.BasketActivity;
+import com.example.weshopapplication.ApplicationLayer.ClothingCategory;
+import com.example.weshopapplication.ApplicationLayer.DIYActivity;
+import com.example.weshopapplication.ApplicationLayer.LoginActivity;
+import com.example.weshopapplication.ApplicationLayer.MainActivity;
+import com.example.weshopapplication.ApplicationLayer.RegisterActivity;
+import com.example.weshopapplication.ApplicationLayer.SportsAndOutdoorsActivity;
+import com.example.weshopapplication.ApplicationLayer.TechActivity;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

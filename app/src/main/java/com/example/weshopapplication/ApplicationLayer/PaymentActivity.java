@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.ApplicationLayer;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -22,6 +22,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.weshopapplication.BusinessObjects.Months;
+import com.example.weshopapplication.BusinessObjects.MonthsArrayAdapter;
+import com.example.weshopapplication.BusinessObjects.Products;
+import com.example.weshopapplication.BusinessObjects.Years;
+import com.example.weshopapplication.BusinessObjects.YearsArrayAdapter;
+import com.example.weshopapplication.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

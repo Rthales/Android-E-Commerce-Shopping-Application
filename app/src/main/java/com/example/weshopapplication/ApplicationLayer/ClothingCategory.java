@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.ApplicationLayer;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -20,6 +20,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
+import com.example.weshopapplication.BusinessObjects.CustomArrayAdapter;
+import com.example.weshopapplication.BusinessObjects.Products;
+import com.example.weshopapplication.BusinessObjects.Size;
+import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
+import com.example.weshopapplication.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

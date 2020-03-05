@@ -1,4 +1,4 @@
-package com.example.weshopapplication;
+package com.example.weshopapplication.BusinessObjects;
 
 import android.content.Context;
 import android.view.LayoutInflater;
