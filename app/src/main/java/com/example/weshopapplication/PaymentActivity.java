@@ -201,7 +201,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
                 AlertDialog.Builder cardError = new AlertDialog.Builder(PaymentActivity.this)
                         .setTitle("Card Digit Error")
-                        .setMessage("The Card Number Field Must Only Contains Digits.")
+                        .setMessage("The Card Number Field Must Only Contains Digits and should not exceed 19 digits.")
                         .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -211,21 +211,24 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                             }
                         });
 
+                cardNumber.setError("Card Number Must Only Contain Digits");
                 cardError.show();
                 cardError.setCancelable(true);
 
                 hasDigits = false;
                 isValid = false;
                 break;
-            } else if (Character.isSpaceChar(cardInput.charAt(i))) {
-                hasSpace = true;
+            }
+
+            if (cardInput.length() > 19) {
+                exceedsLength = true;
             } else {
-                hasSpace = false;
                 hasDigits = true;
+                exceedsLength = false;
                 isValid = true;
             }
 
-            if (hasDigits && isValid && hasSpace) {
+            if (hasDigits && isValid && exceedsLength) {
                 Toast.makeText(PaymentActivity.this, "ALL GOOD", Toast.LENGTH_LONG).show();
             }
         }
