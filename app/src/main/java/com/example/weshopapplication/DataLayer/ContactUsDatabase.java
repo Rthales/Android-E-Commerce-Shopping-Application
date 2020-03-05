@@ -14,7 +14,7 @@ import java.util.List;
 // Date of Last Modification: 15/02/2020
 // Any Bugs? No. Will be tested with JUnit
 
-public class ContactUsDatabaseManipulator {
+public class ContactUsDatabase {
 
     private static final String DATABASE_NAME = "complaints.db"; // The Database name to create
     private static int DB_VERSION = 1; // Database version
@@ -28,12 +28,12 @@ public class ContactUsDatabaseManipulator {
 
     private static SQLiteDatabase db; // The SQL database
 
-    public ContactUsDatabaseManipulator(Context context) { // Constructor for the database manipulator
-        ContactUsDatabaseManipulator.context = context;
-        OpenHelper helper = new OpenHelper(ContactUsDatabaseManipulator.context);
-        ContactUsDatabaseManipulator.db = helper.getWritableDatabase();
+    public ContactUsDatabase(Context context) { // Constructor for the database manipulator
+        ContactUsDatabase.context = context;
+        OpenHelper helper = new OpenHelper(ContactUsDatabase.context);
+        ContactUsDatabase.db = helper.getWritableDatabase();
 
-        this.sqlStatement = ContactUsDatabaseManipulator.db.compileStatement(INSERT_DATA);
+        this.sqlStatement = ContactUsDatabase.db.compileStatement(INSERT_DATA);
 
     }
 

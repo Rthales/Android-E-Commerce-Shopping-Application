@@ -7,7 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.weshopapplication.DataLayer.ContactUsDatabaseManipulator;
+import com.example.weshopapplication.DataLayer.ContactUsDatabase;
 import com.example.weshopapplication.R;
 
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.List;
 public class CheckComplaints extends ListActivity {
     public int idToModify;
     TextView selection;
-    ContactUsDatabaseManipulator manipulator;
+    ContactUsDatabase manipulator;
 
     List<String[]> listOfComplaints = new ArrayList<>();
     List<String[]> listOfUsernames = null;
@@ -29,7 +29,7 @@ public class CheckComplaints extends ListActivity {
         setContentView(R.layout.activity_check_complaints);
 
 
-        manipulator = new ContactUsDatabaseManipulator(this);
+        manipulator = new ContactUsDatabase(this);
         listOfUsernames = manipulator.selectAllData();
 
         displayDataStrings = new String[listOfUsernames.size()];

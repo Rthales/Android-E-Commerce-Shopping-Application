@@ -1,4 +1,4 @@
-package com.example.weshopapplication.DataLayer;
+package com.example.weshopapplication.BusinessObjects;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -52,7 +52,7 @@ public class SendInvoiceAPI extends AsyncTask<Void, Void, Void> { // The class i
     }
 
     public Context getContext() {
-        return context;
+        return this.context;
     }
 
     public void setContext(Context context) {
@@ -167,7 +167,6 @@ public class SendInvoiceAPI extends AsyncTask<Void, Void, Void> { // The class i
         });
 
         try {
-
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(MailCredentialsAPI.EMAIL_ADDRESS));
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(emailContent));
@@ -176,7 +175,6 @@ public class SendInvoiceAPI extends AsyncTask<Void, Void, Void> { // The class i
             message.setText(emailContent);
 
             Transport.send(message);
-
         } catch (MessagingException exc) {
             exc.printStackTrace();
         }

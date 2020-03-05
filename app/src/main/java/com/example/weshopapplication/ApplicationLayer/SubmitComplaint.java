@@ -8,7 +8,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.weshopapplication.DataLayer.ContactUsDatabaseManipulator;
+import com.example.weshopapplication.DataLayer.ContactUsDatabase;
 import com.example.weshopapplication.R;
 
 // Author of Application: Sabin Constantin Lungu
@@ -17,7 +17,7 @@ import com.example.weshopapplication.R;
 // Any Bugs? None.
 
 public class SubmitComplaint extends AppCompatActivity implements View.OnClickListener {
-    private ContactUsDatabaseManipulator databaseManipulator;
+    private ContactUsDatabase databaseManipulator;
 
     private EditText usernameField;
     private EditText emailAddressField;
@@ -65,7 +65,7 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
                 String phone_number = ((EditText) findViewById(R.id.add_complaint_phoneNumberField)).getText().toString();
                 String problem = ((EditText) findViewById(R.id.add_complaint_fieldProblem)).getText().toString();
 
-                this.databaseManipulator = new ContactUsDatabaseManipulator(this);
+                this.databaseManipulator = new ContactUsDatabase(this);
                 this.databaseManipulator.insert(username, email, phone_number, problem);
 
                 break;

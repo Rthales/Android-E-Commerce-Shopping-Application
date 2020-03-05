@@ -48,6 +48,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
     private EditText cardNumber;
     private EditText cardCVV;
+
     private EditText cardholdersName;
     private ImageView cartIcon;
 
@@ -295,16 +296,14 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         if (regexPatterns.matcher(cardHolderNameInput).find()) {
 
-
             hasRegex = true;
             isValid = false;
         }
 
-
         return true;
     }
 
-    public void checkButton(View view) {
+    public void checkButton(View view) { // Routine attached to the radio group to determine which radio button has been selected.
         int optionChecked = paymentGroup.getCheckedRadioButtonId();
 
         visaPayment = findViewById(optionChecked);
