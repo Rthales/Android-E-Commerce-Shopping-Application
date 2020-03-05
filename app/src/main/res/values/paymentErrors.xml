@@ -16,4 +16,7 @@
 
     <string name="CVVLength">Card CVV Should Not Exceed 3 Digits</string>
 
+
+    <string name="cardHolderNameEmpty">CardHolder Name Cannot Be Left Empty</string>
+
 </resources>

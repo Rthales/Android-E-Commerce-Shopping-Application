@@ -220,16 +220,17 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
                 hasDigits = false;
                 isValid = false;
-                break;
+                break; // Break out the loop
             }
 
-            if (cardInput.length() > cardLength) {
+            if (cardInput.length() > cardLength) { // If the card input length exceeds 20 digits
 
                 cardNumber.setError("Card Number Should Not Exceed 16 Digits"); // Show the error message
                 cardNumber.setText(""); // Set the field to empty
 
-                hasDigits = true;
-                exceedsLength = true;
+                hasDigits = true; // Has digits is true
+                exceedsLength = true; // Exceeds length is true
+
                 isValid = false;
                 break;
             } else {
@@ -280,9 +281,24 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private boolean validateCardHolderName() {
         Context context = getApplicationContext();
 
-        String[] cardHolderNameResources = new String[]{};
+        String[] cardHolderNameResources = new String[]{context.getString(R.string.cardHolderNameEmpty), context.getString(R.string.flushPaymentField)};
 
-        String cardHolderNameInput = cardholdersName.getText().toString(); // Get the user input
+        String cardHolderNameInput = cardholdersName.getText().toString(); // Get the user input.
+
+        if (cardHolderNameInput.isEmpty()) {
+            cardholdersName.setText(cardHolderNameResources[1]);
+            cardholdersName.setError(cardHolderNameResources[0]);
+
+            isEmpty = true;
+            isValid = false;
+        }
+
+        if (regexPatterns.matcher(cardHolderNameInput).find()) {
+
+
+            hasRegex = true;
+            isValid = false;
+        }
 
 
         return true;
