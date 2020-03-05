@@ -49,12 +49,13 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
                 this.finish();
                 break;
 
-            case R.id.btnSubmit:
-                validateUsernameField();
-                validateEmailAddressField();
+            case R.id.btnSubmit: // When the submit button is clicked
+                validateUsernameField(); // Validate to ensure that the username field is not left empty
+                validateEmailAddressField(); // Validate to ensure the e-mail address is not left empty
 
                 validatePhoneNumberField();
                 validateProblemField();
+
                 String username = ((EditText) findViewById(R.id.add_usernameField)).getText().toString();
                 String email = ((EditText) findViewById(R.id.add_complaintEmailField)).getText().toString();
 
@@ -68,7 +69,7 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    private boolean validateUsernameField() {
+    private boolean validateUsernameField() { // Routine to validate the username field.
 
         if (usernameField.getText().toString().isEmpty()) {
             usernameField.setText("");

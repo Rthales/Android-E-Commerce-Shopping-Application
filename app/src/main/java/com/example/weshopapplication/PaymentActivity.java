@@ -403,6 +403,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         } catch (ActivityNotFoundException act) {
             Log.d(String.valueOf(R.string.error), act.toString()); // Get the cause of the error.
         }
+
         return true;
     }
 }
