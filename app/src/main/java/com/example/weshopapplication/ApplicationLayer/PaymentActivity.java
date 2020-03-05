@@ -18,7 +18,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -122,15 +121,12 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
             @Override
             public void onClick(View confirmPaymentBtn) {
 
-                validateCardHolderName();
-
                 if (confirmPaymentBtn.getId() == R.id.confirmPaymentBtn) {
 
                     if (monthMenu.getSelectedItemId() == 0 || yearsMenu.getSelectedItemId() == 0) {
 
                         AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this)
                                 .setTitle(R.string.paymentErrorTitle)
-
                                 .setMessage(R.string.expiryDateError)
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
@@ -165,7 +161,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
             AlertDialog.Builder paymentError = new AlertDialog.Builder(PaymentActivity.this)
 
                     .setTitle(R.string.paymentErrorTitle)
-                    .setMessage("You must choose a payment option before proceeding")
+                    .setMessage(R.string.paymentChoose)
                     .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -275,7 +271,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         }
 
         if (!isEmpty && isValid && !exceedsLength) {
-            Toast.makeText(PaymentActivity.this, "ALL GOOD", Toast.LENGTH_SHORT).show();
+            validateCardHolderName();
         }
 
         return true;
