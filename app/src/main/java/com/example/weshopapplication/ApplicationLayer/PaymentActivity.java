@@ -45,8 +45,8 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private int cardCVVLength = 3;
 
     private RadioButton masterCardPayment;
-    private EditText emailAddressField;
 
+    private EditText emailAddressField;
     private EditText cardNumber;
     private EditText cardCVV;
 
@@ -350,21 +350,19 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         if (!hasRegex && isValid && !isEmpty) { // If the field does not have special characters, has no digits and is not empty
             sendPaymentInvoice();
-            sendProductInvoice();
+            //sendProductInvoice();
         }
 
         return true;
     }
 
-    private boolean sendPaymentInvoice() {
-        String cardInputInvoice = cardNumber.getText().toString().trim();
-        String cardCVVInvoice = cardCVV.getText().toString().trim();
-        String cardHolderName = cardholdersName.getText().toString().trim();
+    private void sendPaymentInvoice() {
+        String mail = emailAddressField.getText().toString().trim();
+        String subject = "Your Invoice";
+        String message = "Your Order Has Been Confirmed";
 
-        SendPaymentInvoiceAPI paymentInvoiceAPI = new SendPaymentInvoiceAPI(PaymentActivity.this, cardInputInvoice, cardCVVInvoice, cardHolderName);
-        paymentInvoiceAPI.execute();
-
-        return true;
+        SendPaymentInvoiceAPI sendPaymentInvoiceAPI = new SendPaymentInvoiceAPI(PaymentActivity.this, mail, subject, message);
+        sendPaymentInvoiceAPI.execute();
     }
 
     private boolean sendProductInvoice() {

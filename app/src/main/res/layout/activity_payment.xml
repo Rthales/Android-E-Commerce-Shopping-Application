@@ -195,9 +195,9 @@
         android:drawablePadding="15dp"
         android:ems="10"
         android:hint="E-mail Address"
+        android:paddingStart="15dp"
         android:inputType="textEmailAddress"
-        android:paddingLeft="15dp"
-        android:text="E-mail Address"
+        android:textColorHint="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/creditCardNumberField"
         app:layout_constraintStart_toStartOf="parent" />
 

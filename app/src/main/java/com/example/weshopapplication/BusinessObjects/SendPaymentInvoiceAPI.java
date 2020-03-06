@@ -24,112 +24,17 @@ public class SendPaymentInvoiceAPI extends AsyncTask<Void, Void, Void> { // The 
     private Context context; // The context
     private Session session;
 
-    private String email; // The e-mail to send to
-    private String subject; // The subject
-    private String emailContent; // The content of the e-mail to send (The product order)
-
-    private String cardNumber;
-    private String cardCVV;
-    private String cardHolderName;
-
-    private String expiryMonth;
-    private String expiryYear;
+    private String mail;
+    private String subject;
+    private String theMessage;
 
     private ProgressDialog dialog;
 
-    public SendPaymentInvoiceAPI(Context context, String email, String subject, String emailContent) {
+    public SendPaymentInvoiceAPI(Context context, String mail, String subject, String theMessage) {
         this.context = context;
-        this.email = email;
+        this.mail = mail;
         this.subject = subject;
-        this.emailContent = emailContent;
-    }
-
-    public Context getContext() {
-        return this.context;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
-    }
-
-    public Session getSession() {
-        return session;
-    }
-
-    public void setSession(Session session) {
-        this.session = session;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
-
-    public String getEmailContent() {
-        return emailContent;
-    }
-
-    public void setEmailContent(String emailContent) {
-        this.emailContent = emailContent;
-    }
-
-    public String getCardNumber() {
-        return cardNumber;
-    }
-
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
-    public String getCardCVV() {
-        return cardCVV;
-    }
-
-    public void setCardCVV(String cardCVV) {
-        this.cardCVV = cardCVV;
-    }
-
-    public String getCardHolderName() {
-        return cardHolderName;
-    }
-
-    public void setCardHolderName(String cardHolderName) {
-        this.cardHolderName = cardHolderName;
-    }
-
-    public String getExpiryMonth() {
-        return expiryMonth;
-    }
-
-    public void setExpiryMonth(String expiryMonth) {
-        this.expiryMonth = expiryMonth;
-    }
-
-    public String getExpiryYear() {
-        return expiryYear;
-    }
-
-    public void setExpiryYear(String expiryYear) {
-        this.expiryYear = expiryYear;
-    }
-
-    public ProgressDialog getDialog() {
-        return dialog;
-    }
-
-    public void setDialog(ProgressDialog dialog) {
-        this.dialog = dialog;
+        this.theMessage = theMessage;
     }
 
     protected void onPreExecute() {
@@ -162,10 +67,10 @@ public class SendPaymentInvoiceAPI extends AsyncTask<Void, Void, Void> { // The 
         try {
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(MailCredentialsAPI.EMAIL_ADDRESS));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(emailContent));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(mail));
 
             message.setSubject(subject);
-            message.setText(emailContent);
+            message.setText(theMessage);
 
             Transport.send(message);
         } catch (MessagingException exc) {
