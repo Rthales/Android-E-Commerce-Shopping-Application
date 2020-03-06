@@ -45,6 +45,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private int cardCVVLength = 3;
 
     private RadioButton masterCardPayment;
+    private EditText emailAddressField;
 
     private EditText cardNumber;
     private EditText cardCVV;
@@ -92,6 +93,8 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         this.visaPayment = findViewById(R.id.visaOption);
         this.masterCardPayment = findViewById(R.id.masterCardOption);
         this.paypalBtn = findViewById(R.id.paypalBtn);
+
+        this.emailAddressField = findViewById(R.id.emailAddressPaymentField);
 
         this.cardNumber = findViewById(R.id.creditCardNumberField);
         this.cardCVV = findViewById(R.id.cardCVVField);
@@ -200,11 +203,35 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         }
 
         if (isValid && paymentOptionChosen) {
+            validateEmailAddress();
+        }
 
+        return true;
+    }
+
+    private boolean validateEmailAddress() {
+        Context context = getApplicationContext();
+        String[] emailResources = new String[]{context.getString(R.string.emailError), context.getString(R.string.flushPaymentField)};
+
+        String emailInput = emailAddressField.getText().toString();
+
+        if (emailInput.isEmpty()) {
+            emailAddressField.setText(emailResources[1]);
+            emailAddressField.setError(emailResources[0]);
+
+            isEmpty = true;
+            isValid = false;
+        } else {
+            isEmpty = false;
+            isValid = true;
+        }
+
+        if (!isEmpty && isValid) {
             validateCardNumber();
         }
 
         return true;
+
     }
 
     private boolean validateCardNumber() {
