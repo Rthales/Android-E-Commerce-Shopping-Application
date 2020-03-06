@@ -25,7 +25,7 @@
         android:layout_width="226dp"
         android:layout_height="39dp"
         android:layout_marginStart="100dp"
-        android:layout_marginBottom="37dp"
+        android:layout_marginBottom="36dp"
         android:autofillHints=""
         android:background="@drawable/edit_round"
         android:drawableLeft="@drawable/ic_credit_card_black_24dp"
@@ -44,7 +44,7 @@
         android:layout_width="226dp"
         android:layout_height="39dp"
         android:layout_marginStart="100dp"
-        android:layout_marginBottom="312dp"
+        android:layout_marginBottom="332dp"
         android:background="@drawable/edit_round"
         android:drawableLeft="@drawable/ic_credit_card_black_24dp"
         android:drawablePadding="15dp"
@@ -63,7 +63,7 @@
         android:layout_width="226dp"
         android:layout_height="39dp"
         android:layout_marginStart="100dp"
-        android:layout_marginBottom="232dp"
+        android:layout_marginBottom="256dp"
         android:background="@drawable/edit_round"
         android:drawableLeft="@drawable/ic_person_black_24dp"
         android:drawablePadding="15dp"
@@ -116,13 +116,13 @@
         android:layout_width="76dp"
         android:layout_height="29dp"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="152dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/yearLbl" />
 
     <Button
         android:id="@+id/confirmPaymentBtn"
-        android:layout_width="419dp"
+        android:layout_width="414dp"
         android:layout_height="47dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="92dp"
@@ -139,7 +139,7 @@
         android:id="@+id/paymentGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="196dp"
+        android:layout_marginBottom="172dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/creditCardNumberField"
         app:layout_constraintStart_toStartOf="parent">
@@ -173,7 +173,7 @@
         android:layout_height="44dp"
         android:layout_marginStart="136dp"
         android:layout_marginEnd="129dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="108dp"
         android:background="@drawable/button_round"
         android:text="Pay With Paypal"
         android:textColor="@color/white"
@@ -181,15 +181,15 @@
 
         app:layout_constraintBottom_toTopOf="@+id/creditCardNumberField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.681"
+        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/emailAddressPaymentField"
         android:layout_width="217dp"
         android:layout_height="39dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/edit_round"
         android:drawableLeft="@drawable/ic_email_black_24dp"
         android:drawablePadding="15dp"
@@ -199,6 +199,19 @@
         android:paddingLeft="15dp"
         android:text="E-mail Address"
         app:layout_constraintBottom_toTopOf="@+id/creditCardNumberField"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="24dp"
+        android:text="Expiry Date"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/yearLbl"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
