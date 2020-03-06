@@ -37,18 +37,11 @@ public class SendPaymentInvoiceAPI extends AsyncTask<Void, Void, Void> { // The 
 
     private ProgressDialog dialog;
 
-    public SendPaymentInvoiceAPI(Context context, Session session, String email, String subject, String emailContent, String cardNumber, String cardCVV, String cardHolderName, String expiryMonth, String expiryYear, ProgressDialog dialog) {
+    public SendPaymentInvoiceAPI(Context context, String email, String subject, String emailContent) {
         this.context = context;
-        this.session = session;
         this.email = email;
         this.subject = subject;
         this.emailContent = emailContent;
-        this.cardNumber = cardNumber;
-        this.cardCVV = cardCVV;
-        this.cardHolderName = cardHolderName;
-        this.expiryMonth = expiryMonth;
-        this.expiryYear = expiryYear;
-        this.dialog = dialog;
     }
 
     public Context getContext() {
@@ -161,7 +154,7 @@ public class SendPaymentInvoiceAPI extends AsyncTask<Void, Void, Void> { // The 
         properties.put("mail.smtp.port", "465");
 
         session = Session.getDefaultInstance(properties, new javax.mail.Authenticator() {
-            protected PasswordAuthentication getPasswordAuthenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(MailCredentialsAPI.EMAIL_ADDRESS, MailCredentialsAPI.PASSWORD);
             }
         });

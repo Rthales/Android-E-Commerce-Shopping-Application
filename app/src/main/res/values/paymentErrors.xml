@@ -20,5 +20,6 @@
 
     <string name="cardHolderNameEmpty">CardHolder Name Cannot Be Left Empty</string>
     <string name="cardHolderRegex">CardHolder Name Field Cannot Contain Regex Characters.</string>
+    <string name="cardHolderDigits">CardHolder Name Field Cannot Contain Digits</string>
 
 </resources>

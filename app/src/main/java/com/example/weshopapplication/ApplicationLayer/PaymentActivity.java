@@ -25,6 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.weshopapplication.BusinessObjects.Months;
 import com.example.weshopapplication.BusinessObjects.MonthsArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
+import com.example.weshopapplication.BusinessObjects.SendPaymentInvoiceAPI;
 import com.example.weshopapplication.BusinessObjects.Years;
 import com.example.weshopapplication.BusinessObjects.YearsArrayAdapter;
 import com.example.weshopapplication.R;
@@ -296,7 +297,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private boolean validateCardHolderName() {
         Context context = getApplicationContext();
 
-        String[] cardHolderNameResources = new String[]{context.getString(R.string.cardHolderNameEmpty), context.getString(R.string.flushPaymentField), context.getString(R.string.cardHolderRegex)};
+        String[] cardHolderNameResources = new String[]{context.getString(R.string.cardHolderNameEmpty), context.getString(R.string.flushPaymentField), context.getString(R.string.cardHolderRegex), context.getString(R.string.cardHolderDigits)};
 
         String cardHolderNameInput = cardholdersName.getText().toString(); // Get the user input.
 
@@ -314,7 +315,32 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
             hasRegex = true;
             isValid = false;
+        } else {
+            isEmpty = false;
+            isValid = true;
+            hasRegex = false;
         }
+
+        if (!hasRegex && isValid && !isEmpty) { // If the field does not have special characters, has no digits and is not empty
+            sendPaymentInvoice();
+            sendProductInvoice();
+        }
+
+        return true;
+    }
+
+    private boolean sendPaymentInvoice() {
+        String cardInputInvoice = cardNumber.getText().toString().trim();
+        String cardCVVInvoice = cardCVV.getText().toString().trim();
+        String cardHolderName = cardholdersName.getText().toString().trim();
+
+        SendPaymentInvoiceAPI paymentInvoiceAPI = new SendPaymentInvoiceAPI(PaymentActivity.this, cardInputInvoice, cardCVVInvoice, cardHolderName);
+        paymentInvoiceAPI.execute();
+
+        return true;
+    }
+
+    private boolean sendProductInvoice() {
 
         return true;
     }
