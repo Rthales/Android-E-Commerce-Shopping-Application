@@ -470,7 +470,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             public void run() {
 
                 try {
-                    Thread.sleep(2500);
+                    Thread.sleep(4000);
                 } catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
@@ -490,10 +490,13 @@ public class RegisterActivity extends AppCompatActivity { // Register class
         // create channel in new versions of android
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             int importance = NotificationManager.IMPORTANCE_HIGH;
+
             NotificationChannel notificationChannel = new NotificationChannel(CHANNEL_ID, CHANNEL_ID, importance);
             notificationChannel.enableLights(true); // Enable the lights
-            notificationChannel.setLightColor(Color.RED);
+            notificationChannel.setLightColor(Color.RED); // Sets the light colour
+
             notificationChannel.enableVibration(true);
+
             notificationChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
             notificationManager.createNotificationChannel(notificationChannel);
         }
