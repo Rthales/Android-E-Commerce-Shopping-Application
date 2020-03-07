@@ -62,11 +62,9 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
         ListView view = findViewById(R.id.listViewBasket); // Find the list view component
         view.setAdapter(arrayAdapter); // Set its adapter
 
-        assert hashMap != null; // Checks that the hash map is not empty
-
-        //for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // Loop over the hash map of products
-        //  arrayAdapter.add(entry.toString()); // Add the entries to the adapter list
-        // }
+//        for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // Loop over the hash map of products
+        // arrayAdapter.add(entry.toString()); // Add the entries to the adapter list
+        //}
     }
 
     protected void onDestroy() {
