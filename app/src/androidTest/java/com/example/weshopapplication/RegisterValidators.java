@@ -33,12 +33,16 @@ public class RegisterValidators implements TextWatcher {
         return passwordEntryField != null && !PATTERN.matcher(passwordEntryField).matches() && Character.isUpperCase(passwordEntryField.charAt(0));
     }
 
-    protected static boolean isValidCardNumber(CharSequence cardNumberEntryField) {
-        return cardNumberEntryField != null && cardNumberEntryField.length() > 20;
+    public static boolean isValidCardNumber(CharSequence cardNumberEntryField) {
+        return cardNumberEntryField != null && !(cardNumberEntryField.length() > 20);
     }
 
     protected static boolean isValidCardCVV(CharSequence cardCVVEntry) {
         return cardCVVEntry != null && cardCVVEntry.length() > 3 && !PATTERN.matcher(cardCVVEntry).matches();
+    }
+
+    protected static boolean isValidCardHolderName(CharSequence cardHolderNameEntry) {
+        return cardHolderNameEntry != null && cardHolderNameEntry.equals("[0-9]+");
     }
 
     boolean isValid() {

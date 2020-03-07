@@ -183,6 +183,16 @@ public class UnitTests {
     }
 
     @Test
+    public void testValidCardNumber() { // Test routine to check if the card number entry is valid or not.
+        assertTrue(cardNumberFieldTest.getText().toString(), RegisterValidators.isValidCardNumber("1234000090991234"));
+    }
+
+    @Test
+    public void testCardNumberLength() { // Test routine to check if the card number of the payment activity is > 20. Test fails as length is bigger than 20
+        assertTrue(cardNumberFieldTest.getText().toString(), RegisterValidators.isValidCardNumber("943274837429384638746237468723482734723764"));
+    }
+
+    @Test
     public void testRegisterActivityLauncher() {
         View registerView = registerActivity.findViewById(R.id.registerTxt);
         assertNotNull(registerView);
