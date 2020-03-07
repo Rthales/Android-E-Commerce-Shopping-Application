@@ -224,6 +224,12 @@ public class UnitTests {
         assertNotNull(loginView); // Check condition
     }
 
+    @Test
+    public void testPaymentActivityLauncher() {
+        View paymentView = paymentActivity.findViewById(R.id.paymentTxt);
+        assertNotNull(paymentView);
+    }
+
     @After
     public void tearDown() { // After testing
         // Empty activities after testing
