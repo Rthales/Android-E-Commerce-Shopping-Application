@@ -53,11 +53,6 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
                 break;
 
             case R.id.btnSubmit: // When the submit button is clicked
-                validateUsernameField(); // Validate to ensure that the username field is not left empty
-                validateEmailAddressField(); // Validate to ensure the e-mail address is not left empty
-
-                validatePhoneNumberField();
-                validateProblemField();
 
                 String username = ((EditText) findViewById(R.id.add_usernameField)).getText().toString();
                 String email = ((EditText) findViewById(R.id.add_complaintEmailField)).getText().toString();
@@ -68,77 +63,12 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
                 this.databaseManipulator = new ContactUsDatabase(this);
                 this.databaseManipulator.insert(username, email, phone_number, problem);
 
+                showSavedComplaintsDialog();
+
                 break;
         }
     }
 
-    private boolean validateUsernameField() { // Routine to validate the username field.
-
-        if (usernameField.getText().toString().isEmpty()) {
-            usernameField.setText("");
-            usernameField.setError("Field Can't Be Empty");
-
-            isValidated = true;
-        }
-
-        if (!usernameField.getText().toString().isEmpty()) {
-            isValidated = false;
-        }
-
-        return true;
-    }
-
-    private boolean validateEmailAddressField() {
-
-        if (emailAddressField.getText().toString().isEmpty()) {
-            emailAddressField.setText("");
-            emailAddressField.setError("Field Can't Be Empty");
-
-            isValidated = true;
-        }
-
-        if (!emailAddressField.getText().toString().isEmpty()) {
-            isValidated = false;
-        } else {
-            showSavedComplaintsDialog();
-        }
-
-
-        return true;
-    }
-
-    private boolean validatePhoneNumberField() {
-
-        if (phoneNumberField.getText().toString().isEmpty()) {
-            phoneNumberField.setText("");
-            phoneNumberField.setError("Field Can't Be Empty");
-
-            isValidated = true;
-        }
-
-        if (!phoneNumberField.getText().toString().isEmpty()) {
-            isValidated = false;
-        }
-
-        return true;
-    }
-
-    private boolean validateProblemField() {
-
-        if (problemField.getText().toString().isEmpty()) {
-            problemField.setText("");
-            problemField.setError("Field Can't Be Empty");
-
-            isValidated = true;
-        }
-
-        if (!problemField.getText().toString().isEmpty()) {
-            isValidated = false;
-        }
-
-
-        return true;
-    }
 
     protected void showSavedComplaintsDialog() {
         AlertDialog.Builder builder;
