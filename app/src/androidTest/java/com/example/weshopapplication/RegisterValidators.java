@@ -20,8 +20,7 @@ public class RegisterValidators implements TextWatcher {
 
     public static boolean isValidUsername(CharSequence usernameField) {
 
-        assert usernameField != null;
-        return !PATTERN.matcher(usernameField).matches() && !(usernameField.length() > 20);
+        return usernameField != null && PATTERN.matcher(usernameField).matches() && !(usernameField.length() > 20);
     }
 
     public static boolean isValidEmailAddress(CharSequence emailAddress) {

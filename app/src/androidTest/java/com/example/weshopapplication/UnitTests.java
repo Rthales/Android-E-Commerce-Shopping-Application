@@ -143,8 +143,13 @@ public class UnitTests {
     }
 
     @Test
+    public void testEmptyUsernameEntry() { // Test routine to test if a Username is empty. Test should fail because it has special characters.
+        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("&£*&"));
+    }
+
+    @Test
     public void testInvalidUsername() { // Test Routine to test if a Username entry exceeds 20 characters. Test should fail because it exceeds 20.
-        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabinOafjdfhiusdfhsdiufhuAIUFhiufsf;lsdkl"));
+        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabinOafjdfhiusdfhsdiufhuAIUFhiufsflsdkl"));
     }
 
     @Test
@@ -163,7 +168,7 @@ public class UnitTests {
     }
 
     @Test
-    public void testEmailAddressRegex() { // Test Routine to test if the E-mail Address contains an @ symbol. Test will fail because it doesn't.
+    public void testEmailAddressRegex() { // Test Routine to test if the E-mail Address contains an @ symbol. Test will fail because it doesn't have an @ symbol
         assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("sabinlungu293gmail.com"));
     }
 
