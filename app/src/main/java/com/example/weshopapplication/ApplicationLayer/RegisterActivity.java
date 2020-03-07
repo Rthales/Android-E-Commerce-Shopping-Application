@@ -69,6 +69,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     private boolean isValid;
     private boolean isRegistered;
 
+
     private NotificationManagerCompat notificationManager; // Notification manager variable
     private FirebaseAuth authentication = FirebaseAuth.getInstance();
     private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns
@@ -93,6 +94,8 @@ public class RegisterActivity extends AppCompatActivity { // Register class
         this.registerButton.setOnClickListener(new View.OnClickListener() { // Add listener to the button
             @Override
             public void onClick(View buttonView) {
+
+
                 validateUsername(); // Call method to validate username
                 validateEmailAddress();
 

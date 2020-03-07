@@ -15,6 +15,7 @@ import com.example.weshopapplication.ApplicationLayer.LoginActivity;
 import com.example.weshopapplication.ApplicationLayer.MainActivity;
 import com.example.weshopapplication.ApplicationLayer.PaymentActivity;
 import com.example.weshopapplication.ApplicationLayer.RegisterActivity;
+import com.example.weshopapplication.ApplicationLayer.RegisterEmailValidator;
 import com.example.weshopapplication.ApplicationLayer.SportsAndOutdoorsActivity;
 import com.example.weshopapplication.ApplicationLayer.TechActivity;
 
@@ -27,6 +28,7 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 // Purpose of Test: To test if the MainActivity loads
 // Author of Test: Sabin Constantin Lungu
@@ -182,6 +184,11 @@ public class UnitTests {
     @Test
     public void testCardCVVLengthInputTwo() {
         assertEquals(cardCVVFieldTest.getText().toString(), cardCVVFieldTest.getText().toString());
+    }
+
+    @Test
+    public void emailValidator_CorrectEmailSimple_ReturnsTrue() {
+        assertTrue(emailAddressTest.getText().toString(), RegisterEmailValidator.isValidEmailAddress("sabinlungu293@gmail.com"));
     }
 
     @Test
