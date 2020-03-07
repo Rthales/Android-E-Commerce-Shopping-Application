@@ -69,7 +69,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     private Spinner fourthSportsOutdoorsQuantityMenu;
     private Button fourthAddToBasketBtn;
 
-    private double[] thirdProductCosts = {R.string.costIndexOne, R.string.costIndexTwo, 120.00, 240.00, 480.00, 1020.00}; // The costs for the third product
+    private double[] thirdProductCosts = {0.00, 60.00, 120.00, 240.00, 480.00, 1020.00}; // The costs for the third product
     private double[] fourthProductCosts = {0.00, 100.00, 200.00, 400.00, 800.00, 1600.00}; // Costs for the fourth product
 
     private boolean coloursAdded; // Determines if the colours have been added to the array list successfully.
@@ -145,6 +145,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         addToColoursListTwo();
 
         addToQuantitiesList();
+        addToQuantitiesListTwo();
         addToSizesListOne();
 
         this.quantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivityTwo.this, listOfQuantitiesOne);
@@ -286,7 +287,6 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     }
 
     private boolean addToQuantitiesList() {
-
         Context context = getApplicationContext();
 
         String[] quantitiesResources = new String[]{context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two), context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
@@ -297,7 +297,24 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
         for (TechActivity.Quantities theQuantities : quantities) {
             listOfQuantitiesOne.add(theQuantities);
+            quantitiesAdded = true;
+        }
+
+        return true;
+    }
+
+    private boolean addToQuantitiesListTwo() {
+        Context context = getApplicationContext();
+
+        String[] quantitiesResources = new String[]{context.getString(R.string.zero), context.getString(R.string.one), context.getString(R.string.two), context.getString(R.string.three), context.getString(R.string.four), context.getString(R.string.five)};
+
+
+        TechActivity.Quantities[] quantities = {new TechActivity.Quantities(quantitiesResources[0]), new TechActivity.Quantities(quantitiesResources[1]), new TechActivity.Quantities(quantitiesResources[2]),
+                new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
+
+        for (TechActivity.Quantities theQuantities : quantities) {
             listOfQuantitiesTwo.add(theQuantities);
+            quantitiesAdded = true;
         }
 
         return true;
@@ -430,7 +447,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
         if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[0]))) {
             thirdSportsOutdoorsCostLbl.setText(null);
-            thirdSportsOutdoorsCostLbl.setText(productResources[0] + (thirdProductCosts[0]));
+            thirdSportsOutdoorsCostLbl.append(productResources[0] + (thirdProductCosts[0]));
             valueAppended = true;
         } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[1]))) {
             thirdSportsOutdoorsCostLbl.setText(null);
