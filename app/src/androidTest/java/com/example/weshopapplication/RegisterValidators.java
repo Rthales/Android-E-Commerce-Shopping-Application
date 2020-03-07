@@ -16,11 +16,10 @@ public class RegisterValidators implements TextWatcher {
                     ")+"
     );
 
-
     private boolean isValid = false;
 
     public static boolean isValidEmailAddress(CharSequence emailAddress) {
-        return emailAddress != null && EMAIL_PATTERN.matcher(emailAddress).matches();
+        return emailAddress != null && EMAIL_PATTERN.matcher(emailAddress).matches() && !(emailAddress.length() > 30);
     }
 
     public static boolean isValidPassword(CharSequence pass) {

@@ -308,7 +308,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             return true;
         }
 
-        if (emailAddressInputField.length() > 25) { // If the e-mail length is bigger than 25 characters
+        if (emailAddressInputField.length() > 30) { // If the e-mail length is bigger than 25 characters
             emailAddressField.setError(emailAddressResources[3]); // Display error
 
             isValid = false; // Not valid

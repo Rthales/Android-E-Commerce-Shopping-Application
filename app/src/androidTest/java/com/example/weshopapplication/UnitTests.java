@@ -138,8 +138,13 @@ public class UnitTests {
     }
 
     @Test
-    public void emailAddressTestOne() { // Test stub to test if the E-mail Address entered is the one to expect. Test should pass
+    public void testValidEmailAddress() { // Test stub to test if the E-mail Address entered is the one to expect. Test should pass
         assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("sabinlungu293@gmail.com"));
+    }
+
+    @Test
+    public void testEmailAddressLength() { // Test Method to test if the E-mail Address length is > 20. Test Should Fail.
+        assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("bobmichaeltesemailaddressparkinsonapplescarstobuy@yahoo.com"));
     }
 
     @Test
