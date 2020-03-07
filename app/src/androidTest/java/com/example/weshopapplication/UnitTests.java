@@ -143,7 +143,7 @@ public class UnitTests {
     }
 
     @Test
-    public void testRegexUsernameEntry() { // Test routine to test if a Username is empty. Test should fail because it has special characters.
+    public void testEmptyUsernameEntry() { // Test routine to test if a Username is empty. Test should fail because it has special characters.
         assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername(" "));
     }
 
@@ -163,7 +163,7 @@ public class UnitTests {
     }
 
     @Test
-    public void emailAddressTestTwo() { // Test Stub to test if the email address entered is an empty string. This test should fail as the entry field is empty
+    public void testEmptyEmailAddress() { // Test Stub to test if the email address entered is an empty string. This test should fail as the entry field is empty
         assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress(" "));
     }
 
