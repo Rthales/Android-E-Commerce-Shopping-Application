@@ -247,9 +247,13 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     private boolean addToColoursListOne() { // Adds the colours for the third product to the array list
         boolean coloursAdded = false;
 
-        TechActivity.Colours[] colours = {new TechActivity.Colours(0, String.valueOf(R.string.firstColour)),
-                new TechActivity.Colours(1, String.valueOf(R.string.red)), new TechActivity.Colours(2, String.valueOf(R.string.skyBlue))
-                , new TechActivity.Colours(3, String.valueOf(R.string.darkYellow)), new TechActivity.Colours(4, String.valueOf(R.string.bloodOrange))};
+        Context context = getApplicationContext();
+        String[] colourResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.colourPrompt), context.getString(R.string.darkRed),
+                context.getString(R.string.skyBlue), context.getString(R.string.darkYellow), context.getString(R.string.bloodOrange)};
+
+        TechActivity.Colours[] colours = {new TechActivity.Colours(0, colourResources[0]),
+                new TechActivity.Colours(1, colourResources[1]), new TechActivity.Colours(2, colourResources[2])
+                , new TechActivity.Colours(3, colourResources[3]), new TechActivity.Colours(4, colourResources[4])};
 
         for(TechActivity.Colours theColours : colours) {
             listOfColoursOne.add(theColours);
@@ -260,11 +264,16 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     }
 
     private boolean addToColoursListTwo() { // Adds the colours for the fourth product to the array list
+
+        Context context = getApplicationContext();
+        String[] resources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.spaceGray), context.getString(R.string.black),
+                context.getString(R.string.darkRed), context.getString(R.string.bloodOrange), context.getString(R.string.white)};
+
         boolean coloursAdded = false;
 
-        TechActivity.Colours[] colours = {new TechActivity.Colours(0, String.valueOf(R.string.firstColour)),
-                new TechActivity.Colours(1, getString(R.string.black)), new TechActivity.Colours(2, String.valueOf(R.string.red))
-                , new TechActivity.Colours(3, String.valueOf(R.string.sportsFourthColour)), new TechActivity.Colours(4, String.valueOf(R.string.white))};
+        TechActivity.Colours[] colours = {new TechActivity.Colours(0, resources[0]),
+                new TechActivity.Colours(1, resources[1]), new TechActivity.Colours(2, resources[2])
+                , new TechActivity.Colours(3, resources[3]), new TechActivity.Colours(4, resources[4])};
 
         for(TechActivity.Colours theColours : colours) {
             listOfColoursTwo.add(theColours);
@@ -293,9 +302,14 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     }
 
     private boolean addToSizesListOne() { // Adds the sizes for the third product to the array list
+        Context context = getApplicationContext();
+
+        String[] sizesResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.smallSize), context.getString(R.string.mediumSize), context.getString(R.string.largeSize),
+                context.getString(R.string.extraLargeSize)};
+
         boolean sizesAdded = false;
-        Size[] sizes = {new Size(0, "Choose a Size Please"), new Size(1, "S"), new Size(2, "M"),
-                new Size(3, "L"), new Size(4, "XL")};
+        Size[] sizes = {new Size(0, sizesResources[0]), new Size(1, sizesResources[1]), new Size(2, sizesResources[2]),
+                new Size(3, sizesResources[3]), new Size(4, sizesResources[4])};
 
         for (Size theSize : sizes) {
 
@@ -308,9 +322,14 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     }
 
     private void addToBasketThree() {
+
+        Context context = getApplicationContext();
+
+        String[] resources = new String[]{context.getString(R.string.wait)};
+
         final ProgressDialog dialog = new ProgressDialog(SportsAndOutdoorsActivityTwo.this); // Spinning progress dialog
-        dialog.setTitle("Adding to Basket.."); // Set the title of the dialog
-        dialog.setMessage("Please Wait");
+        dialog.setTitle(R.string.addingBasket); // Set the title of the dialog
+        dialog.setMessage(resources[0]);
 
         dialog.setCancelable(false);
 

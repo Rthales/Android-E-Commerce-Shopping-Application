@@ -300,7 +300,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     private boolean addToColoursListTwo() {
         Context context = getApplicationContext();
-        String[] coloursResources = new String[]{context.getString(R.string.firstColour), context.getString(R.string.blue), context.getString(R.string.red), context.getString(R.string.limeGreen)};
+        String[] coloursResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.blue), context.getString(R.string.red), context.getString(R.string.limeGreen)};
 
         TechActivity.Colours[] colours = {new TechActivity.Colours(0, coloursResources[0]), new TechActivity.Colours(1, coloursResources[1]),
                 new TechActivity.Colours(2, coloursResources[2]), new TechActivity.Colours(3, coloursResources[3])};

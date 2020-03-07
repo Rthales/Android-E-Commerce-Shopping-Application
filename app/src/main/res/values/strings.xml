@@ -6,7 +6,7 @@
 
 
     <string name="colour">Choose Colour</string>
-    <string name="firstColour">Space Gray</string>
+    <string name="spaceGray">Space Gray</string>
     <string name="secondColour">Silver</string>
     <string name="thirdColour">Gold</string>
 

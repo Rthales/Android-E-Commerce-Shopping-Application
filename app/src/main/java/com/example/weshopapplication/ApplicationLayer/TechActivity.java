@@ -335,7 +335,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         Context context = getApplicationContext();
 
-        String[] colourResources = new String[]{context.getString(R.string.colour), context.getString(R.string.firstColour), context.getString(R.string.secondColour), context.getString(R.string.thirdColour)};
+        String[] colourResources = new String[]{context.getString(R.string.colour), context.getString(R.string.colourPrompt), context.getString(R.string.secondColour), context.getString(R.string.thirdColour)};
 
         Colours[] coloursArray = {new Colours(0, colourResources[0]), new Colours(1, colourResources[1]), new Colours(2, colourResources[2]), new Colours(3, colourResources[3])};
 

@@ -140,82 +140,82 @@ public class UnitTests {
 
     @Test
     public void testValidUsername() { // Test Routine to test a valid Username Entry field.
-        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabin2000")); // Test should pass because username is valid
+        assertTrue(usernameTest.getText().toString(), Validators.isValidUsername("sabin2000")); // Test should pass because username is valid
     }
 
     @Test
     public void testEmptyUsernameEntry() { // Test routine to test if a Username is empty. Test should fail because it has special characters.
-        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername(" "));
+        assertTrue(usernameTest.getText().toString(), Validators.isValidUsername(" "));
     }
 
     @Test
     public void testUsernameLengthExceeds() { // Test Routine to test if a Username entry exceeds 20 characters. Test should fail because it exceeds 20.
-        assertFalse(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabinOafjdfhiusdfhsdiufhuAIUFhiufsflsdkl"));
+        assertFalse(usernameTest.getText().toString(), Validators.isValidUsername("sabinOafjdfhiusdfhsdiufhuAIUFhiufsflsdkl"));
     }
 
     @Test
     public void testValidEmailAddress() { // Test stub to test if the E-mail Address entered is the one to expect. Test should pass
-        assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("sabinlungu293@gmail.com"));
+        assertTrue(emailAddressTest.getText().toString(), Validators.isValidEmailAddress("sabinlungu293@gmail.com"));
     }
 
     @Test
     public void testEmailAddressLengthExceeds() { // Test Method to test if the E-mail Address length is > 30. Test Should Pass.
-        assertFalse(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("bobmichaeltesemailaddressparkinsonapplescarstobuy@yahoo.com"));
+        assertFalse(emailAddressTest.getText().toString(), Validators.isValidEmailAddress("bobmichaeltesemailaddressparkinsonapplescarstobuy@yahoo.com"));
     }
 
     @Test
     public void testEmptyEmailAddress() { // Test Stub to test if the email address entered is an empty string. This test should pass as the entry field is empty
-        assertFalse(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress(" "));
+        assertFalse(emailAddressTest.getText().toString(), Validators.isValidEmailAddress(" "));
     }
 
     @Test
     public void testEmailAddressRegex() { // Test Routine to test if the E-mail Address contains an @ symbol. Test will pass.
-        assertFalse(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("sabinlungu293gmail.com"));
+        assertFalse(emailAddressTest.getText().toString(), Validators.isValidEmailAddress("sabinlungu293gmail.com"));
     }
 
     @Test
     public void testValidPassword() { // Test Routine to test if the Password entry field is valid: Starts with Uppercase, has regex characters and not empty. This test should pass
-        assertTrue(passwordTest.getText().toString(), RegisterValidators.isValidPassword("Sabin2000*@("));
+        assertTrue(passwordTest.getText().toString(), Validators.isValidPassword("Sabin2000*@("));
     }
 
     @Test
     public void testNoRegexPassword() { // Test routine to check if the password entry has special characters.
-        assertTrue(passwordTest.getText().toString(), RegisterValidators.isValidPassword("Sabin2000"));
+        assertTrue(passwordTest.getText().toString(), Validators.isValidPassword("Sabin2000"));
     }
 
     @Test
     public void testValidCardNumber() { // Test routine to check if the card number entry is valid or not.
-        assertTrue(cardNumberFieldTest.getText().toString(), RegisterValidators.isValidCardNumber("1234000090991234"));
+        assertTrue(cardNumberFieldTest.getText().toString(), Validators.isValidCardNumber("1234000090991234"));
     }
 
     @Test
     public void testCardNumberLength() { // Test routine to check if the card number of the payment activity is > 20. Test fails as length is bigger than 20
-        assertFalse(cardNumberFieldTest.getText().toString(), RegisterValidators.isValidCardNumber("943274837429384638746237468723482734723764"));
+        assertFalse(cardNumberFieldTest.getText().toString(), Validators.isValidCardNumber("943274837429384638746237468723482734723764"));
     }
 
     @Test
     public void testEmptyCardNumberField() {
-        assertTrue(cardNumberFieldTest.getText().toString(), RegisterValidators.isValidCardNumber(" "));
+        assertTrue(cardNumberFieldTest.getText().toString(), Validators.isValidCardNumber(" "));
     }
 
     @Test
     public void testValidCardCVV() {
-        assertTrue(cardCVVFieldTest.getText().toString(), RegisterValidators.isValidCardCVV("218"));
+        assertTrue(cardCVVFieldTest.getText().toString(), Validators.isValidCardCVV("218"));
     }
 
     @Test
     public void testCVVLength() {
-        assertTrue(cardCVVFieldTest.getText().toString(), RegisterValidators.isValidCardCVV("1234"));
+        assertTrue(cardCVVFieldTest.getText().toString(), Validators.isValidCardCVV("1234"));
     }
 
     @Test
     public void testValidCardHolderName() {
-        assertFalse(cardHolderNameTest.getText().toString(), RegisterValidators.isValidCardHolderName("Sabin Lungu"));
+        assertFalse(cardHolderNameTest.getText().toString(), Validators.isValidCardHolderName("Sabin Lungu"));
     }
 
     @Test
     public void testEmptyCardHolderName() {
-        assertFalse(cardHolderNameTest.getText().toString(), RegisterValidators.isValidCardHolderName(" "));
+        assertFalse(cardHolderNameTest.getText().toString(), Validators.isValidCardHolderName(" "));
     }
 
     @Test

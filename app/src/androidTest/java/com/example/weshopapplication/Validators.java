@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 
 import java.util.regex.Pattern;
 
-public class RegisterValidators implements TextWatcher {
+public class Validators implements TextWatcher {
 
     public static final Pattern PATTERN = Pattern.compile(
             "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
