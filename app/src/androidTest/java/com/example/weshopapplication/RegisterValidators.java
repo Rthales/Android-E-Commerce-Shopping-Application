@@ -1,11 +1,11 @@
-package com.example.weshopapplication.ApplicationLayer;
+package com.example.weshopapplication;
 
 import android.text.Editable;
 import android.text.TextWatcher;
 
 import java.util.regex.Pattern;
 
-public class RegisterEmailValidator implements TextWatcher {
+public class RegisterValidators implements TextWatcher {
     public static final Pattern EMAIL_PATTERN = Pattern.compile(
             "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
                     "\\@" +
@@ -20,7 +20,7 @@ public class RegisterEmailValidator implements TextWatcher {
     private boolean isValid = false;
 
     public static boolean isValidEmailAddress(CharSequence emailAddress) {
-        return emailAddress != null && !EMAIL_PATTERN.matcher(emailAddress).matches();
+        return emailAddress != null && EMAIL_PATTERN.matcher(emailAddress).matches();
     }
 
     public static boolean isValidPassword(CharSequence pass) {
