@@ -159,8 +159,8 @@ public class UnitTests {
     }
 
     @Test
-    public void testEmailAddressLengthExceeds() { // Test Method to test if the E-mail Address length is > 30. Test Should Fail as it exceeds 30 characters
-        assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("bobmichaeltesemailaddressparkinsonapplescarstobuy@yahoo.com"));
+    public void testEmailAddressLengthExceeds() { // Test Method to test if the E-mail Address length is > 30. Test Should Pass.
+        assertFalse(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("bobmichaeltesemailaddressparkinsonapplescarstobuy@yahoo.com"));
     }
 
     @Test
@@ -191,6 +191,16 @@ public class UnitTests {
     @Test
     public void testCardNumberLength() { // Test routine to check if the card number of the payment activity is > 20. Test fails as length is bigger than 20
         assertFalse(cardNumberFieldTest.getText().toString(), RegisterValidators.isValidCardNumber("943274837429384638746237468723482734723764"));
+    }
+
+    @Test
+    public void testEmptyCardNumberField() {
+        assertTrue(cardNumberFieldTest.getText().toString(), RegisterValidators.isValidCardNumber(" "));
+    }
+
+    @Test
+    public void testValidCardCVV() {
+        assertTrue(cardCVVFieldTest.getText().toString(), RegisterValidators.isValidCardCVV());
     }
 
     @Test
