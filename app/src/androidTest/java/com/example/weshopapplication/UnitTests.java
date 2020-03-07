@@ -138,13 +138,13 @@ public class UnitTests {
     }
 
     @Test
-    public void testValidUsername() {
+    public void testValidUsername() { // Test Routine to test a valid Username Entry field.
         assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabin2000")); // Test should pass because username is valid
     }
 
     @Test
-    public void testInvalidUsername() {
-        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabin@(£("));
+    public void testInvalidUsername() { // Test Routine to test if a Username entry exceeds 20 characters. Test should fail because it exceeds 20.
+        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabinOafjdfhiusdfhsdiufhuAIUFhiufsf;lsdkl"));
     }
 
     @Test
