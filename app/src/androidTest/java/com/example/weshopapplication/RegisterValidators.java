@@ -20,12 +20,16 @@ public class RegisterValidators implements TextWatcher {
 
     public static boolean isValidUsername(CharSequence usernameField) {
 
-        return usernameField != null && PATTERN.matcher(usernameField).matches() && !(usernameField.length() > 20);
+        return usernameField != null && !PATTERN.matcher(usernameField).matches() && !(usernameField.length() > 20);
     }
 
-    public static boolean isValidEmailAddress(CharSequence emailAddress) {
+    public static boolean isValidEmailAddress(CharSequence emailAddress) { // Helper method that determines if the E-mail Address input is valid or not.
         assert emailAddress != null;
         return PATTERN.matcher(emailAddress).matches() && !(emailAddress.length() > 30);
+    }
+
+    public static boolean isValidPassword(CharSequence passwordEntryField) {
+        return passwordEntryField != null && !PATTERN.matcher(passwordEntryField).matches() && Character.isUpperCase(passwordEntryField.charAt(0));
     }
 
     boolean isValid() {
@@ -46,5 +50,6 @@ public class RegisterValidators implements TextWatcher {
     public void afterTextChanged(Editable textEntry) {
         isValid = isValidEmailAddress(textEntry);
         isValid = isValidUsername(textEntry);
+        isValid = isValidPassword(textEntry);
     }
 }

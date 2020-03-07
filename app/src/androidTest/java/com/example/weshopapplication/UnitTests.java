@@ -143,12 +143,12 @@ public class UnitTests {
     }
 
     @Test
-    public void testEmptyUsernameEntry() { // Test routine to test if a Username is empty. Test should fail because it has special characters.
-        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("&£*&"));
+    public void testRegexUsernameEntry() { // Test routine to test if a Username is empty. Test should fail because it has special characters.
+        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername(" "));
     }
 
     @Test
-    public void testInvalidUsername() { // Test Routine to test if a Username entry exceeds 20 characters. Test should fail because it exceeds 20.
+    public void testUsernameLengthExceeds() { // Test Routine to test if a Username entry exceeds 20 characters. Test should fail because it exceeds 20.
         assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabinOafjdfhiusdfhsdiufhuAIUFhiufsflsdkl"));
     }
 
@@ -158,7 +158,7 @@ public class UnitTests {
     }
 
     @Test
-    public void testEmailAddressLength() { // Test Method to test if the E-mail Address length is > 30. Test Should Fail as it exceeds 30 characters
+    public void testEmailAddressLengthExceeds() { // Test Method to test if the E-mail Address length is > 30. Test Should Fail as it exceeds 30 characters
         assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("bobmichaeltesemailaddressparkinsonapplescarstobuy@yahoo.com"));
     }
 
@@ -170,6 +170,16 @@ public class UnitTests {
     @Test
     public void testEmailAddressRegex() { // Test Routine to test if the E-mail Address contains an @ symbol. Test will fail because it doesn't have an @ symbol
         assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("sabinlungu293gmail.com"));
+    }
+
+    @Test
+    public void testValidPassword() { // Test Routine to test if the Password entry field is valid: Starts with Uppercase, has regex characters and not empty. This test should pass
+        assertTrue(passwordTest.getText().toString(), RegisterValidators.isValidPassword("Sabin2000*@("));
+    }
+
+    @Test
+    public void testNoRegexPassword() { // Test routine to check if the password entry has special characters.
+        assertTrue(passwordTest.getText().toString(), RegisterValidators.isValidPassword("Sabin2000"));
     }
 
     @Test
