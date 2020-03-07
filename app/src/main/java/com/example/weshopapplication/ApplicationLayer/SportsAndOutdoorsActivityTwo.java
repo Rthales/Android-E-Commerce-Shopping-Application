@@ -1,5 +1,6 @@
 package com.example.weshopapplication.ApplicationLayer;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -233,6 +234,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
                                     }
                                 }
                             });
+
                     chooseError.show();
                     chooseError.setCancelable(false);
                 }
@@ -343,7 +345,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
                 } catch (InterruptedException exc) {
-                    Log.d("Error : ", exc.toString());
+                    Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
                 dialog.dismiss();
@@ -358,9 +360,12 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     }
 
     private void addToBasketFour() {
+        Context context = getApplicationContext();
+        String[] resources = new String[]{context.getString(R.string.wait)};
+
         final ProgressDialog dialog = new ProgressDialog(SportsAndOutdoorsActivityTwo.this); // Spinning progress dialog
-        dialog.setTitle("Adding to Basket.."); // Set the title of the dialog
-        dialog.setMessage("Please Wait");
+        dialog.setTitle(R.string.addingBasket); // Set the title of the dialog
+        dialog.setMessage(resources[0]);
 
         dialog.setCancelable(false);
 
@@ -374,7 +379,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
                 } catch (InterruptedException exc) {
-                    Log.d("Error : ", exc.toString());
+                    Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
                 dialog.dismiss();
@@ -387,7 +392,6 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         Products fourthProduct = new Products(current_product_id, fourthSportsOutdoorsTxt.getText().toString(), fourthSportsOutdoorsColourMenu.getSelectedItem().toString(), (int) fourthSportsOutdoorsQuantityMenu.getSelectedItemId(), fourthSportsOutdoorsCostLbl.getText().toString(), fourthSportsOutdoorsSizeMenu.getSelectedItem().toString());
         listOfProductsToAddToBasket.put(current_product_id, fourthProduct);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) { // Add the toolbar menu
@@ -415,9 +419,61 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         return true;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // Routine to determine which item has been selected
+        int[] indexes = {0, 1, 2, 3, 4};
+        boolean valueAppended = false;
 
+        Context context = getApplicationContext();
+        String[] productResources = new String[]{context.getString(R.string.productCost)};
+
+        if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[0]))) {
+            thirdSportsOutdoorsCostLbl.setText(null);
+            thirdSportsOutdoorsCostLbl.setText(productResources[0] + (thirdProductCosts[0]));
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[1]))) {
+            thirdSportsOutdoorsCostLbl.setText(null);
+
+            thirdSportsOutdoorsCostLbl.setText(productResources[0] + (thirdProductCosts[1]));
+            valueAppended = true; // Value is appended
+
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[2]))) {
+            thirdSportsOutdoorsCostLbl.setText(null);
+            thirdSportsOutdoorsCostLbl.append(productResources[0] + thirdProductCosts[2]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[3]))) {
+            thirdSportsOutdoorsCostLbl.setText(null);
+            thirdSportsOutdoorsCostLbl.append(productResources[0] + thirdProductCosts[3]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[4]))) {
+            thirdSportsOutdoorsCostLbl.setText(null);
+            thirdSportsOutdoorsCostLbl.append(productResources[0] + thirdProductCosts[4]);
+            valueAppended = true;
+        }
+
+
+        if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[0]))) {
+            fourthSportsOutdoorsCostLbl.setText(null);
+            fourthSportsOutdoorsCostLbl.append(productResources[0] + fourthProductCosts[0]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[1]))) {
+            fourthSportsOutdoorsCostLbl.setText(null);
+            fourthSportsOutdoorsCostLbl.append(productResources[0] + fourthProductCosts[1]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[2]))) {
+            fourthSportsOutdoorsCostLbl.setText(null);
+            fourthSportsOutdoorsCostLbl.append(productResources[0] + fourthProductCosts[2]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[3]))) {
+            fourthSportsOutdoorsCostLbl.setText(null);
+            fourthSportsOutdoorsCostLbl.append(productResources[0] + fourthProductCosts[3]);
+            valueAppended = true;
+        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[4]))) {
+            fourthSportsOutdoorsCostLbl.setText(null);
+            fourthSportsOutdoorsCostLbl.append(productResources[0] + fourthProductCosts[4]);
+            valueAppended = true;
+        }
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -450,7 +506,6 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
                     super.onOptionsItemSelected(item);
 
             }
-
         } catch (ActivityNotFoundException exc) {
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
