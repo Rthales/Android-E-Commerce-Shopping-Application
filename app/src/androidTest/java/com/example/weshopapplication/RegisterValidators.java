@@ -33,7 +33,7 @@ public class RegisterValidators implements TextWatcher {
         return passwordEntryField != null && !PATTERN.matcher(passwordEntryField).matches() && Character.isUpperCase(passwordEntryField.charAt(0));
     }
 
-    public static boolean isValidCardNumber(CharSequence cardNumberEntryField) {
+    protected static boolean isValidCardNumber(CharSequence cardNumberEntryField) {
         return cardNumberEntryField != null && !(cardNumberEntryField.length() > 20);
     }
 

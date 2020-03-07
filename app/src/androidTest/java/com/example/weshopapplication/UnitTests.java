@@ -24,6 +24,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -149,7 +150,7 @@ public class UnitTests {
 
     @Test
     public void testUsernameLengthExceeds() { // Test Routine to test if a Username entry exceeds 20 characters. Test should fail because it exceeds 20.
-        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabinOafjdfhiusdfhsdiufhuAIUFhiufsflsdkl"));
+        assertFalse(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabinOafjdfhiusdfhsdiufhuAIUFhiufsflsdkl"));
     }
 
     @Test
@@ -163,13 +164,13 @@ public class UnitTests {
     }
 
     @Test
-    public void testEmptyEmailAddress() { // Test Stub to test if the email address entered is an empty string. This test should fail as the entry field is empty
-        assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress(" "));
+    public void testEmptyEmailAddress() { // Test Stub to test if the email address entered is an empty string. This test should pass as the entry field is empty
+        assertFalse(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress(" "));
     }
 
     @Test
-    public void testEmailAddressRegex() { // Test Routine to test if the E-mail Address contains an @ symbol. Test will fail because it doesn't have an @ symbol
-        assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("sabinlungu293gmail.com"));
+    public void testEmailAddressRegex() { // Test Routine to test if the E-mail Address contains an @ symbol. Test will pass because it doesn't have an @ symbol.
+        assertFalse(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("sabinlungu293gmail.com"));
     }
 
     @Test
@@ -189,7 +190,7 @@ public class UnitTests {
 
     @Test
     public void testCardNumberLength() { // Test routine to check if the card number of the payment activity is > 20. Test fails as length is bigger than 20
-        assertTrue(cardNumberFieldTest.getText().toString(), RegisterValidators.isValidCardNumber("943274837429384638746237468723482734723764"));
+        assertFalse(cardNumberFieldTest.getText().toString(), RegisterValidators.isValidCardNumber("943274837429384638746237468723482734723764"));
     }
 
     @Test
