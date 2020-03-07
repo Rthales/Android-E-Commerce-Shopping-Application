@@ -28,6 +28,7 @@ import com.example.weshopapplication.BusinessObjects.Products;
 import com.example.weshopapplication.BusinessObjects.SendPaymentInvoiceAPI;
 import com.example.weshopapplication.BusinessObjects.Years;
 import com.example.weshopapplication.BusinessObjects.YearsArrayAdapter;
+import com.example.weshopapplication.DataLayer.PaymentDatabase;
 import com.example.weshopapplication.R;
 
 import java.util.ArrayList;
@@ -43,6 +44,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private RadioGroup paymentGroup;
     private RadioButton visaPayment;
     private int cardCVVLength = 3;
+    private PaymentDatabase paymentDatabase;
 
     private RadioButton masterCardPayment;
 
@@ -362,11 +364,23 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         SendPaymentInvoiceAPI sendPaymentInvoiceAPI = new SendPaymentInvoiceAPI(PaymentActivity.this, mail, subject, message);
         sendPaymentInvoiceAPI.execute();
+
+        writeToDatabase();
+    }
+
+    private void writeToDatabase() {
+        String email_address = ((EditText) findViewById(R.id.emailAddressPaymentField)).getText().toString();
+        String card_number = ((EditText) findViewById(R.id.creditCardNumberField)).getText().toString();
+        String cardCVV = ((EditText) findViewById(R.id.cardCVVField)).getText().toString();
+
+        String cardHolderName = ((EditText) findViewById(R.id.cardNameField)).getText().toString();
+
+        this.paymentDatabase = new PaymentDatabase(this);
+        this.paymentDatabase.insert(email_address, card_number, cardCVV, cardHolderName);
     }
 
     public void checkButton(View view) { // Routine attached to the radio group to determine which radio button has been selected.
         int optionChecked = paymentGroup.getCheckedRadioButtonId();
-
         visaPayment = findViewById(optionChecked);
     }
 
@@ -492,4 +506,5 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         return true;
     }
+
 }

@@ -1,7 +1,57 @@
 package com.example.weshopapplication.DataLayer;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
+
 public class PaymentDatabase {
-    private final String DATABASE_NAME = "payments.db";
-    private final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "payments.db";
+    private static final String TABLE_NAME = "payments";
+    private static final String INSERT_DATA = "INSERT INTO " + TABLE_NAME
+            + " (email_address, card_number, card_cvv) VALUES (?,?,?)"; // Insert Query (DML) that inserts data into the contacts DB
+    private static int DATABASE_VERSION = 1;
+    private static Context context;
+    private static SQLiteDatabase db; // The SQL database
+    private SQLiteStatement sqlStatement; // The SQL statement
+
+    public PaymentDatabase(Context context) { // Constructor for the database manipulator
+        PaymentDatabase.context = context;
+        PaymentDatabase.OpenHelper helper = new OpenHelper(PaymentDatabase.context);
+        PaymentDatabase.db = helper.getWritableDatabase();
+
+        this.sqlStatement = PaymentDatabase.db.compileStatement(INSERT_DATA);
+    }
+
+    // Routine that inserts data into the table
+    public long insert(String email_address, String card_number, String card_cvv, String cardHolderName) { // Routine to insert data into the table
+        this.sqlStatement.bindString(1, email_address);
+        this.sqlStatement.bindString(2, card_number);
+
+        this.sqlStatement.bindString(3, card_cvv);
+        this.sqlStatement.bindString(4, cardHolderName);
+        return this.sqlStatement.executeInsert(); // Return the execution of the statement
+    }
+
+    public void deleteData() {
+        db.delete(TABLE_NAME, null, null);
+    }
+
+    public static class OpenHelper extends SQLiteOpenHelper { // A Helper Class that inherits from SQLiteOpenHelper
+        public OpenHelper(Context context) {
+            super(context, DATABASE_NAME, null, DATABASE_VERSION); // Inherit the features using super()
+        }
+
+        public void onCreate(SQLiteDatabase db) { // Creates the DB. Method overridden
+            db.execSQL("CREATE TABLE " + TABLE_NAME + " (customer_id INTEGER PRIMARY KEY, email_address TEXT, card_number TEXT, card_cvv TEXT, cardHolderName TEXT)");
+        }
+
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+            DATABASE_VERSION = newVersion; // Set the DB version to the newest version
+
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME); // DROP The specific table if it exists
+            onCreate(db); // Execute method
+        }
+    }
 
 }
