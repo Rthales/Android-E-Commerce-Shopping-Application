@@ -143,13 +143,18 @@ public class UnitTests {
     }
 
     @Test
-    public void testEmailAddressLength() { // Test Method to test if the E-mail Address length is > 20. Test Should Fail.
+    public void testEmailAddressLength() { // Test Method to test if the E-mail Address length is > 30. Test Should Fail as it exceeds 30 characters
         assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("bobmichaeltesemailaddressparkinsonapplescarstobuy@yahoo.com"));
     }
 
     @Test
-    public void emailAddressTestTwo() { // Test Stub to test if the email address entered is an empty string. This test should fail
+    public void emailAddressTestTwo() { // Test Stub to test if the email address entered is an empty string. This test should fail as the entry field is empty
         assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress(" "));
+    }
+
+    @Test
+    public void testEmailAddressRegex() { // Test Routine to test if the E-mail Address contains an @ symbol. Test will fail because it doesn't.
+        assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("sabinlungu293gmail.com"));
     }
 
     @Test
