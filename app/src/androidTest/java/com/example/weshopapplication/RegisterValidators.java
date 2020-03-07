@@ -6,7 +6,7 @@ import android.text.TextWatcher;
 import java.util.regex.Pattern;
 
 public class RegisterValidators implements TextWatcher {
-    public static final Pattern EMAIL_PATTERN = Pattern.compile(
+    public static final Pattern PATTERN = Pattern.compile(
             "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
                     "\\@" +
                     "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
@@ -18,16 +18,13 @@ public class RegisterValidators implements TextWatcher {
 
     private boolean isValid = false;
 
+    public static boolean isValidUsername(CharSequence usernameField) {
+
+        return usernameField != null && !PATTERN.matcher(usernameField).matches() && !(usernameField.length() > 20);
+    }
+
     public static boolean isValidEmailAddress(CharSequence emailAddress) {
-        return emailAddress != null && EMAIL_PATTERN.matcher(emailAddress).matches() && !(emailAddress.length() > 30);
-    }
-
-    public static boolean isValidPassword(CharSequence pass) {
-        return isValidPassword(pass);
-    }
-
-    private boolean isValidPassword(String pass) {
-        return pass != null && pass.length() > 20;
+        return emailAddress != null && PATTERN.matcher(emailAddress).matches() && !(emailAddress.length() > 30);
     }
 
     boolean isValid() {
@@ -45,8 +42,8 @@ public class RegisterValidators implements TextWatcher {
     }
 
     @Override
-    public void afterTextChanged(Editable s) {
-        isValid = isValidEmailAddress(s);
-        isValid = isValidPassword(s);
+    public void afterTextChanged(Editable textEntry) {
+        isValid = isValidEmailAddress(textEntry);
+        isValid = isValidUsername(textEntry);
     }
 }

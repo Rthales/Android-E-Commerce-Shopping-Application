@@ -138,6 +138,16 @@ public class UnitTests {
     }
 
     @Test
+    public void testValidUsername() {
+        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabin2000")); // Test should pass because username is valid
+    }
+
+    @Test
+    public void testInvalidUsername() {
+        assertTrue(usernameTest.getText().toString(), RegisterValidators.isValidUsername("sabin@(£("));
+    }
+
+    @Test
     public void testValidEmailAddress() { // Test stub to test if the E-mail Address entered is the one to expect. Test should pass
         assertTrue(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("sabinlungu293@gmail.com"));
     }

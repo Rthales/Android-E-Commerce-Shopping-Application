@@ -243,7 +243,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                 break;
             }
 
-            if (Character.isDigit(usernameInputField.charAt(i)) && usernameInputField.length() != 20) { // If the username field contains characters and the length is not 20
+            if (Character.isDigit(usernameInputField.charAt(i)) && usernameInputField.length() > 20) { // If the username field contains characters and the length is not 20
                 isValid = true;
             }
 
