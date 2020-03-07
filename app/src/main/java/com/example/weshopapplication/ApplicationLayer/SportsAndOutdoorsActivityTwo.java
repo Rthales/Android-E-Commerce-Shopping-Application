@@ -248,7 +248,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         boolean coloursAdded = false;
 
         Context context = getApplicationContext();
-        String[] colourResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.colourPrompt), context.getString(R.string.darkRed),
+        String[] colourResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.white), context.getString(R.string.darkRed),
                 context.getString(R.string.skyBlue), context.getString(R.string.darkYellow), context.getString(R.string.bloodOrange)};
 
         TechActivity.Colours[] colours = {new TechActivity.Colours(0, colourResources[0]),
