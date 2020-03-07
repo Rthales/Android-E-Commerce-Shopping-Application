@@ -39,7 +39,7 @@ public class SendPaymentInvoiceAPI extends AsyncTask<Void, Void, Void> { // The 
 
     protected void onPreExecute() {
         super.onPreExecute();
-        dialog = ProgressDialog.show(context, "Invoice Sent", "Please wait..", false, false);
+        dialog = ProgressDialog.show(context, "Processing..", "Please wait..", false, false);
     }
 
     protected void onPostExecute(Void aVoid) {
