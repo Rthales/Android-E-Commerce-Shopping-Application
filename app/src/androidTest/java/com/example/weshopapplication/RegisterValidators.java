@@ -41,8 +41,8 @@ public class RegisterValidators implements TextWatcher {
         return !(((CharSequence) "310").length() > 3) && !PATTERN.matcher("310").matches();
     }
 
-    protected static boolean isValidCardHolderName(CharSequence cardHolderNameEntry) {
-        return cardHolderNameEntry != null && cardHolderNameEntry.equals("[0-9]+");
+    protected static boolean isValidCardHolderName(CharSequence cardHolderEntryField) {
+        return cardHolderEntryField != null && PATTERN.matcher(cardHolderEntryField).matches();
     }
 
     boolean isValid() {

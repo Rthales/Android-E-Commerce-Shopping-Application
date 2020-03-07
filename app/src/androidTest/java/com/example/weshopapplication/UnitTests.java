@@ -204,6 +204,16 @@ public class UnitTests {
     }
 
     @Test
+    public void testValidCardHolderName() {
+        assertFalse(cardHolderNameTest.getText().toString(), RegisterValidators.isValidCardHolderName("Sabin Lungu"));
+    }
+
+    @Test
+    public void testEmptyCardHolderName() {
+        assertFalse(cardHolderNameTest.getText().toString(), RegisterValidators.isValidCardHolderName(" "));
+    }
+
+    @Test
     public void testRegisterActivityLauncher() {
         View registerView = registerActivity.findViewById(R.id.registerTxt);
         assertNotNull(registerView);
