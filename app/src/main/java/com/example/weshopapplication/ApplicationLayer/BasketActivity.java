@@ -24,7 +24,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 // Author of Application: Sabin Constantin Lungu
 // Purpose of Application & Class: To store the products added to the basket in a List View.
@@ -65,9 +64,9 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
 
         assert hashMap != null; // Checks that the hash map is not empty
 
-        for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // Loop over the hash map of products
-            arrayAdapter.add(entry.toString()); // Add the entries to the adapter list
-        }
+        //for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // Loop over the hash map of products
+        //  arrayAdapter.add(entry.toString()); // Add the entries to the adapter list
+        // }
     }
 
     protected void onDestroy() {

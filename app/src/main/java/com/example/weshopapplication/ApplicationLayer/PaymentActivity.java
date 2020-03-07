@@ -350,7 +350,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         if (!hasRegex && isValid && !isEmpty) { // If the field does not have special characters, has no digits and is not empty
             sendPaymentInvoice();
-            //sendProductInvoice();
         }
 
         return true;
@@ -358,16 +357,11 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
     private void sendPaymentInvoice() {
         String mail = emailAddressField.getText().toString().trim();
-        String subject = "Your Invoice";
+        String subject = "Order Confirmation";
         String message = "Your Order Has Been Confirmed";
 
         SendPaymentInvoiceAPI sendPaymentInvoiceAPI = new SendPaymentInvoiceAPI(PaymentActivity.this, mail, subject, message);
         sendPaymentInvoiceAPI.execute();
-    }
-
-    private boolean sendProductInvoice() {
-
-        return true;
     }
 
     public void checkButton(View view) { // Routine attached to the radio group to determine which radio button has been selected.

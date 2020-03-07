@@ -44,6 +44,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
     private TextView firstSportsOutdoorTxt;
     private ImageView firstSportsOutdoorImg;
+
     private TextView firstSportsOutdoorCostTxt;
     private TextView firstSportsOutdoorColourLbl;
     private Spinner firstSportsOutdoorsColourMenu;
