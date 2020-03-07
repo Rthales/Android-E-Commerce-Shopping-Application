@@ -169,7 +169,7 @@ public class UnitTests {
     }
 
     @Test
-    public void testEmailAddressRegex() { // Test Routine to test if the E-mail Address contains an @ symbol. Test will pass because it doesn't have an @ symbol.
+    public void testEmailAddressRegex() { // Test Routine to test if the E-mail Address contains an @ symbol. Test will pass.
         assertFalse(emailAddressTest.getText().toString(), RegisterValidators.isValidEmailAddress("sabinlungu293gmail.com"));
     }
 
@@ -200,7 +200,12 @@ public class UnitTests {
 
     @Test
     public void testValidCardCVV() {
-        assertTrue(cardCVVFieldTest.getText().toString(), RegisterValidators.isValidCardCVV());
+        assertTrue(cardCVVFieldTest.getText().toString(), RegisterValidators.isValidCardCVV("218"));
+    }
+
+    @Test
+    public void testCVVLength() {
+        assertTrue(cardCVVFieldTest.getText().toString(), RegisterValidators.isValidCardCVV("1234"));
     }
 
     @Test

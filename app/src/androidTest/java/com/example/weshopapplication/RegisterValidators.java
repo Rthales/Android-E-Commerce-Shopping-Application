@@ -37,8 +37,8 @@ public class RegisterValidators implements TextWatcher {
         return cardNumberEntryField != null && !(cardNumberEntryField.length() > 20);
     }
 
-    protected static boolean isValidCardCVV() {
-        return !(((CharSequence) "310").length() > 3) && !PATTERN.matcher("310").matches();
+    protected static boolean isValidCardCVV(CharSequence cardCVVEntry) {
+        return cardCVVEntry != null && !(cardCVVEntry.length() > 3);
     }
 
     protected static boolean isValidCardHolderName(CharSequence cardHolderEntryField) {
