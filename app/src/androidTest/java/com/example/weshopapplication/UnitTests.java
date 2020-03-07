@@ -176,7 +176,12 @@ public class UnitTests {
 
     @Test
     public void testCardCVVLengthInput() {
-        assertNotEquals(2384, cardCVVFieldTest.getText().toString());
+        assertNotEquals(219, cardCVVFieldTest.getText().toString());
+    }
+
+    @Test
+    public void testCardCVVLengthInputTwo() {
+        assertEquals(cardCVVFieldTest.getText().toString(), cardCVVFieldTest.getText().toString());
     }
 
     @Test
