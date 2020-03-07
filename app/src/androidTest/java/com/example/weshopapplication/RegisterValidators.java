@@ -6,6 +6,7 @@ import android.text.TextWatcher;
 import java.util.regex.Pattern;
 
 public class RegisterValidators implements TextWatcher {
+
     public static final Pattern PATTERN = Pattern.compile(
             "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
                     "\\@" +
@@ -18,18 +19,26 @@ public class RegisterValidators implements TextWatcher {
 
     private boolean isValid = false;
 
-    public static boolean isValidUsername(CharSequence usernameField) {
+    protected static boolean isValidUsername(CharSequence usernameField) {
 
         return usernameField != null && !PATTERN.matcher(usernameField).matches() && !(usernameField.length() > 20);
     }
 
-    public static boolean isValidEmailAddress(CharSequence emailAddress) { // Helper method that determines if the E-mail Address input is valid or not.
+    protected static boolean isValidEmailAddress(CharSequence emailAddress) { // Helper method that determines if the E-mail Address input is valid or not.
         assert emailAddress != null;
         return PATTERN.matcher(emailAddress).matches() && !(emailAddress.length() > 30);
     }
 
-    public static boolean isValidPassword(CharSequence passwordEntryField) {
+    protected static boolean isValidPassword(CharSequence passwordEntryField) {
         return passwordEntryField != null && !PATTERN.matcher(passwordEntryField).matches() && Character.isUpperCase(passwordEntryField.charAt(0));
+    }
+
+    protected static boolean isValidCardNumber(CharSequence cardNumberEntryField) {
+        return cardNumberEntryField != null && cardNumberEntryField.length() > 20;
+    }
+
+    protected static boolean isValidCardCVV(CharSequence cardCVVEntry) {
+        return cardCVVEntry != null && cardCVVEntry.length() > 3 && !PATTERN.matcher(cardCVVEntry).matches();
     }
 
     boolean isValid() {
