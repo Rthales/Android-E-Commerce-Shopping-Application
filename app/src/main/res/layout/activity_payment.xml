@@ -122,7 +122,6 @@
 
     <Button
         android:id="@+id/confirmPaymentBtn"
-        android:onClick="onClick"
         android:layout_width="414dp"
         android:layout_height="47dp"
         android:layout_marginEnd="1dp"

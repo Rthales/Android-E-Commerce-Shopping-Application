@@ -51,8 +51,9 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private EditText emailAddressField;
     private EditText cardNumber;
     private EditText cardCVV;
-
     private EditText cardholdersName;
+
+
     private ImageView cartIcon;
     private Button paypalBtn;
 
@@ -371,12 +372,15 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private void writeToDatabase() {
         String email_address = ((EditText) findViewById(R.id.emailAddressPaymentField)).getText().toString();
         String card_number = ((EditText) findViewById(R.id.creditCardNumberField)).getText().toString();
-        String cardCVV = ((EditText) findViewById(R.id.cardCVVField)).getText().toString();
 
-        String cardHolderName = ((EditText) findViewById(R.id.cardNameField)).getText().toString();
+        String cardCVV = ((EditText) findViewById(R.id.cardCVVField)).getText().toString();
+        String card_name = ((EditText) findViewById(R.id.cardNameField)).getText().toString();
+
+        String expiry_month = ((Spinner) findViewById(R.id.monthMenu)).getSelectedItem().toString();
+        String expiry_year = ((Spinner) findViewById(R.id.yearMenu)).getSelectedItem().toString();
 
         this.paymentDatabase = new PaymentDatabase(this);
-        this.paymentDatabase.insert(email_address, card_number, cardCVV, cardHolderName);
+        this.paymentDatabase.insert(email_address, card_number, cardCVV, card_name, expiry_month, expiry_year);
     }
 
     public void checkButton(View view) { // Routine attached to the radio group to determine which radio button has been selected.

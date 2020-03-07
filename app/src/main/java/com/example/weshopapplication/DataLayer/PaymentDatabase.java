@@ -8,9 +8,11 @@ import android.database.sqlite.SQLiteStatement;
 public class PaymentDatabase {
     private static final String DATABASE_NAME = "payments.db";
     private static final String TABLE_NAME = "payments";
+
     private static final String INSERT_DATA = "INSERT INTO " + TABLE_NAME
-            + " (email_address, card_number, card_cvv) VALUES (?,?,?)"; // Insert Query (DML) that inserts data into the contacts DB
+            + " (email_address, card_number, card_cvv, card_name, expiry_month, expiry_year) VALUES (?,?,?,?,?,?)"; // Insert Query (DML) that inserts data into the contacts DB
     private static int DATABASE_VERSION = 1;
+
     private static Context context;
     private static SQLiteDatabase db; // The SQL database
     private SQLiteStatement sqlStatement; // The SQL statement
@@ -24,12 +26,16 @@ public class PaymentDatabase {
     }
 
     // Routine that inserts data into the table
-    public long insert(String email_address, String card_number, String card_cvv, String cardHolderName) { // Routine to insert data into the table
+    public long insert(String email_address, String card_number, String card_cvv, String card_name, String expiry_month, String expiry_year) { // Routine to insert data into the table
         this.sqlStatement.bindString(1, email_address);
         this.sqlStatement.bindString(2, card_number);
 
         this.sqlStatement.bindString(3, card_cvv);
-        this.sqlStatement.bindString(4, cardHolderName);
+        this.sqlStatement.bindString(4, card_name);
+        
+        this.sqlStatement.bindString(5, expiry_month);
+        this.sqlStatement.bindString(6, expiry_year);
+
         return this.sqlStatement.executeInsert(); // Return the execution of the statement
     }
 
@@ -43,7 +49,7 @@ public class PaymentDatabase {
         }
 
         public void onCreate(SQLiteDatabase db) { // Creates the DB. Method overridden
-            db.execSQL("CREATE TABLE " + TABLE_NAME + " (customer_id INTEGER PRIMARY KEY, email_address TEXT, card_number TEXT, card_cvv TEXT, cardHolderName TEXT)");
+            db.execSQL("CREATE TABLE " + TABLE_NAME + " (id INTEGER PRIMARY KEY, email_address TEXT, card_number TEXT, card_cvv TEXT, card_name TEXT, expiry_month TEXT, expiry_year TEXT)");
         }
 
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
