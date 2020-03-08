@@ -31,7 +31,7 @@ public class PaymentDatabase {
     }
 
     // Routine that inserts data into the table
-    protected long insert(String email_address, String card_number, String card_cvv, String card_name, String expiry_month, String expiry_year) { // Routine to insert data into the table
+    public long insert(String email_address, String card_number, String card_cvv, String card_name, String expiry_month, String expiry_year) { // Routine to insert data into the table
         this.sqlStatement.bindString(1, email_address); // Binds the email_address string value into the database table.
         this.sqlStatement.bindString(2, card_number);
 

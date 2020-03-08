@@ -112,14 +112,14 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
-                                Intent checkOutActivity = new Intent(BasketActivity.this, PaymentActivity.class);
-                                checkOutActivity.putExtra("map", listOfProductsToAddToBasket);
-                                startActivity(checkOutActivity);
+                                Intent checkOutActivity = new Intent(BasketActivity.this, PaymentActivity.class); // Create an intent to switch from the basket activity to the payment activity if the customer is happy with their basket.
+                                checkOutActivity.putExtra("map", listOfProductsToAddToBasket); // Put the hash map in the list of products basket view.
+                                startActivity(checkOutActivity); // Starts the activity
                             }
                         });
 
-                builder.show();
-                builder.setCancelable(true);
+                builder.show(); // Show the dialogue.
+                builder.setCancelable(true); // User can click outside the alert dialogue to close it.
             }
         } catch (ActivityNotFoundException exc) { // Catch the error if there is no activity.
             Log.d(String.valueOf(R.string.error), exc.toString()); // Log the error to the console.
