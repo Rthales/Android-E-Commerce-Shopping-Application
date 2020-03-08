@@ -223,3 +223,9 @@ The images below shows a Questionnaire that I have created which asks the public
 18. Users have the option to view the products in their basket by clicking “View Basket” which will get placed in a menu on the activity.
 
 19. On each of the categories, users will have the ability to choose the color of the product that they would like.
+
+20. The application will have a Payment activity that will have the following entry fields when checking out:
+
+    -	***The type of payment the users may wish to pay with: VISA, PayPal, Mastercard.***
+    
+    -	***Card number: XXXX XXXX XXXX XXXX (will get validated to ensure that only numbers are present) and no characters are inputted.***
