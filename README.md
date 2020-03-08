@@ -128,3 +128,20 @@ The images below shows a Questionnaire that I have created which asks the public
 # Figure 3
 
 <img width="899" alt="Question 3" src="https://user-images.githubusercontent.com/29733613/76161848-262c0e00-612f-11ea-8bea-9e1af4911da0.png">
+
+# Figure 4
+
+<img width="900" alt="Question 4" src="https://user-images.githubusercontent.com/29733613/76161850-27f5d180-612f-11ea-876d-4d5771868f44.png">
+
+# Figure 5
+
+<img width="899" alt="Question 5" src="https://user-images.githubusercontent.com/29733613/76161851-2a582b80-612f-11ea-8ec7-e7044f2b060d.png">
+
+
+# Figure 6
+
+<img width="898" alt="Question 6" src="https://user-images.githubusercontent.com/29733613/76161853-2cba8580-612f-11ea-8148-35428a183ad3.png">
+
+# Figure 7
+
+<img width="903" alt="Question 7" src="https://user-images.githubusercontent.com/29733613/76161854-2f1cdf80-612f-11ea-9652-8a896939c353.png">
