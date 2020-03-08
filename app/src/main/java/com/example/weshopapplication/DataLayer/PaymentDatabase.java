@@ -37,7 +37,6 @@ public class PaymentDatabase {
 
         this.sqlStatement.bindString(3, card_cvv);
         this.sqlStatement.bindString(4, card_name);
-        
         this.sqlStatement.bindString(5, expiry_month);
         this.sqlStatement.bindString(6, expiry_year);
 

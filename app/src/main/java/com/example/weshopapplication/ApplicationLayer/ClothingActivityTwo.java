@@ -31,28 +31,29 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 // Author of Application/Class: Sabin Constantin Lungu
-// Purpose of Application / Class: To show customers the clothing category two activity.
+// Purpose of Application Layer Class: To show customers the clothing category two activity.
 // Date of Last Modification: 02/03/2020
 // Any Errors? None
 
 public class ClothingActivityTwo extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    private int current_product_id = 1;
-    private ImageView cartIcon;
+    private int current_product_id = 1; // The current product id.
+    private ImageView cartIcon; // The Basket Icon.
 
-    private TextView clothingThirdProductTxt;
+    private TextView clothingThirdProductTxt; // The text for the third Clothing Product
     private ImageView clothingThirdProductImg;
 
     private TextView clothingThirdProductColourLbl;
-    private TextView clothingThirdProductCostLbl;
-    private Spinner clothingThirdProductColourMenu;
 
-    private TextView clothingThirdProductSizeLbl;
+    private TextView clothingThirdProductCostLbl;
+    private Spinner clothingThirdProductColourMenu; // The drop-down menu for the third clothing product colour
+
+    private TextView clothingThirdProductSizeLbl; // The size for the clothing third product.
     private Spinner clothingThirdProductSizeMenu;
     private TextView clothingFourthProductCostLbl;
 
     private TextView clothingThirdProductQuantityLbl;
     private Spinner clothingThirdProductQuantityMenu;
-    private Button clothingThirdAddToBasketBtn;
+    private Button clothingThirdAddToBasketBtn; // Button for adding the third product to the basket.
 
     private TextView clothingFourthProductTxt;
     private ImageView clothingFourthProductImageView;
@@ -67,16 +68,16 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     private Spinner clothingFourthProductQuantityMenu;
     private Button clothingFourthProductAddToBasketBtn;
 
-    private double[] clothingThirdProductCosts = new double[]{0.00, 30.00, 60.00, 120.00, 240.00, 480.00};
+    private double[] clothingThirdProductCosts = new double[]{0.00, 30.00, 60.00, 120.00, 240.00, 480.00}; // This double array stores the costs for the third product
     private double[] clothingFourthProductCosts = new double[]{0.00, 40.00, 80.00, 160.00, 320.00, 640.00};
 
     private QuantitiesArrayAdapter quantitiesAdapter;
     private ColourArrayAdapter coloursAdapter;
     private SizeArrayAdapter sizesAdapter;
 
-    private ArrayList<TechActivity.Colours> listOfClothingColoursOne = null;
+    private ArrayList<TechActivity.Colours> listOfClothingColoursOne = null; // An Array lsit of colours.
     private ArrayList<Size> listOfClothingSizesOne = null;
-    private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesOne = null;
+    private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesOne = null; // An Array list of quantities.
 
     private ArrayList<TechActivity.Colours> listOfClothingColoursTwo = null;
     private ArrayList<Size> listOfClothingSizesTwo = null;
@@ -84,15 +85,16 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
     private boolean coloursAdded = false; // Boolean variable that stores either true or false if the colours have been added to the array list
     private boolean quantitiesAdded = false;
-    private boolean sizesAdded = false;
+    private boolean sizesAdded = false; // Boolean variable that stores true or false if the sizes have been added.
 
-    private HashMap<Integer, Products> listOfProductsToAddToBasket;
+    private HashMap<Integer, Products> listOfProductsToAddToBasket; // A hash map that stores the product id and the product instance.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clothing_two);
 
+        // Initialises the components
         this.clothingThirdProductTxt = findViewById(R.id.clothingThirdProductTxt); // Set up the clothing third product text view.
         this.clothingThirdProductImg = findViewById(R.id.clothingThirdProductImg); // Set-up the image component
 
