@@ -205,3 +205,15 @@ The images below shows a Questionnaire that I have created which asks the public
 9. A toast message will appear saying “You are logged in as X” when the user has logged in successfully.
 
 10. The ***Sports & Outdoors activity*** will show the images of the products that are currently in stock. There will be 2 pages of sports & outdoors products.
+
+11. The ***Tech category*** activity will show the images of the products that are currently in stock.
+
+12. The ***Clothing category*** activity will show the images of the products that are currently in stock.
+
+13. The ***DIY category** activity will show the images of the products that are currently in stock.
+
+14. The cost of each product will be displayed next to the images in GBP.
+
+15. Users have the option to choose the quantity of each product, hence that will affect the total cost of the product.
+
+16. 
