@@ -121,3 +121,81 @@ The images below shows a Questionnaire that I have created which asks the public
 <img width="884" alt="Question 1" src="https://user-images.githubusercontent.com/29733613/75634775-76bfda80-5c08-11ea-827d-820f89a1299f.png">
 
 # Figure 2
+
+<img width="894" alt="Question 2" src="https://user-images.githubusercontent.com/29733613/76161846-23c9b400-612f-11ea-9d05-060657f011f1.png">
+
+
+# Figure 3
+
+<img width="899" alt="Question 3" src="https://user-images.githubusercontent.com/29733613/76161848-262c0e00-612f-11ea-8bea-9e1af4911da0.png">
+
+# Figure 4
+
+<img width="900" alt="Question 4" src="https://user-images.githubusercontent.com/29733613/76161850-27f5d180-612f-11ea-876d-4d5771868f44.png">
+
+# Figure 5
+
+<img width="899" alt="Question 5" src="https://user-images.githubusercontent.com/29733613/76161851-2a582b80-612f-11ea-8ec7-e7044f2b060d.png">
+
+
+# Figure 6
+
+<img width="898" alt="Question 6" src="https://user-images.githubusercontent.com/29733613/76161853-2cba8580-612f-11ea-8148-35428a183ad3.png">
+
+# Figure 7
+
+<img width="903" alt="Question 7" src="https://user-images.githubusercontent.com/29733613/76161854-2f1cdf80-612f-11ea-9652-8a896939c353.png">
+
+# Figure 8
+
+<img width="901" alt="Question 8" src="https://user-images.githubusercontent.com/29733613/76161884-6be8d680-612f-11ea-9b7c-16a0ad0f2e40.png">
+
+# Figure 9
+
+<img width="899" alt="Question 9" src="https://user-images.githubusercontent.com/29733613/76161886-70ad8a80-612f-11ea-99e3-f28ec040a7bf.png">
+
+# Figure 10
+
+<img width="902" alt="Question 10" src="https://user-images.githubusercontent.com/29733613/76161887-730fe480-612f-11ea-8523-e41113c10866.png">
+
+# Functional Requirements Specification :spiral_notepad:
+
+1.	The main activity will have a Register Button and a Login Button below the text.
+
+2.	The registration activity will have entry fields for Username, E-mail Address, Password and a terms and conditions check box that must be ticked before registering successfully.
+
+3. The registration activity entry fields will get validated against:
+
+    Username ***must not be empty***.
+    
+    Username ***must contain numbers***.
+    
+    Username Length ***must not exceed 10 characters***.
+    
+    Password Data Input Field ***must contain numbers, special characters, characters and must not be left empty.***
+    
+    Password Data Input Field ***must start with an uppercase character***.
+    
+    E-mail Address Data Input Field ***must have an @ symbol and should not be left empty.***
+    
+    E-mail Address Data Input Field: ***must be within the range of [A-Z], [0-9].***
+    
+    Terms and Conditions Check Box ***must be ticked to register successfully.***
+    
+    
+4. The Main Activity will have a drop-down menu that allows users to choose which category of products they would like to choose from. The options are:
+
+    ***Sports and Outdoors.***
+ 
+    ***Tech.***
+ 
+    ***Clothing.***
+ 
+    ***DIY.***
+    
+    
+5. The main activity will have a Contact Us button that will allow users to fill out a form if they are having any issues with the application. SQLite will be used as the database to store any complaints from users.
+
+6. Users will receive a notification saying that they have registered successfully after clicking the register button.
+
+7. The login activity will allow users to login with their E-mail Address and password only.
