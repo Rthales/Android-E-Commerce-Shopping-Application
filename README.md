@@ -167,8 +167,11 @@ The images below shows a Questionnaire that I have created which asks the public
 3. The registration activity entry fields will get validated against:
 
     Username ***must not be empty***.
+    
     Username ***must contain numbers***.
+    
     Username length ***must not exceed 10 characters***.
     
-    Password field ***must contain numbers, special characters, characters and must not be left empty.
+    Password field ***must contain numbers, special characters, characters and must not be left empty.***
+    
     Password field ***must start with an uppercase character***.
