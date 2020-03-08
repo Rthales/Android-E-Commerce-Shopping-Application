@@ -10,7 +10,6 @@ import androidx.test.rule.ActivityTestRule;
 import com.example.weshopapplication.ApplicationLayer.BasketActivity;
 import com.example.weshopapplication.ApplicationLayer.ClothingCategory;
 import com.example.weshopapplication.ApplicationLayer.DIYActivity;
-import com.example.weshopapplication.ApplicationLayer.DIYActivityTwo;
 import com.example.weshopapplication.ApplicationLayer.LoginActivity;
 import com.example.weshopapplication.ApplicationLayer.MainActivity;
 import com.example.weshopapplication.ApplicationLayer.PaymentActivity;
@@ -61,9 +60,6 @@ public class UnitTests {
 
     @Rule
     public ActivityTestRule<DIYActivity> diyActivityActivityTestRule = new ActivityTestRule<>(DIYActivity.class);
-
-    @Rule
-    public ActivityTestRule<DIYActivityTwo> diyActivityTwoActivityTestRule = new ActivityTestRule<>(DIYActivityTwo.class);
 
     @Rule
     public ActivityTestRule<PaymentActivity> paymentActivityActivityTestRule = new ActivityTestRule<>(PaymentActivity.class);

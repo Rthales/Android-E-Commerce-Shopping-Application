@@ -59,5 +59,4 @@ public class PaymentDatabase {
             onCreate(db); // Execute method
         }
     }
-
 }
