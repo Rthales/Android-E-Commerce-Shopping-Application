@@ -31,30 +31,30 @@ import java.util.Map;
 // Date of Last Modification: 13/02/2020.
 // Any Errors: N/A
 
-public class BasketActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button placeOrderBtn;
+public class BasketActivity extends AppCompatActivity implements View.OnClickListener { // The basket activity inherits from the AppCompat Activity and implements the methods for the view on click listener.
+    private Button placeOrderBtn; // Variable for the place order button
     private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<>();
 
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { // Android LifeCycle method. onCreate()
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_basket);
+        setContentView(R.layout.activity_basket); // Set the content view of the android app.
 
-        this.placeOrderBtn = findViewById(R.id.placeOrderBtn);
-        this.placeOrderBtn.setOnClickListener(this);
+        this.placeOrderBtn = findViewById(R.id.placeOrderBtn); // Initialise component for the place order button
+        this.placeOrderBtn.setOnClickListener(this); // Add an on click listener for the place order button.
 
-        Intent intent = getIntent();
+        Intent intent = getIntent(); // Get the current intent.
         HashMap<Integer, Products> hashMap = (HashMap<Integer, Products>) intent.getSerializableExtra("map"); // Get the hash map from the tech activity
-        ArrayList<String> products = new ArrayList<>();
+        ArrayList<String> products = new ArrayList<>(); // Creates a temporary array list of products.
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(BasketActivity.this, android.R.layout.simple_list_item_1, products) {
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(BasketActivity.this, android.R.layout.simple_list_item_1, products) { // Create a new array adapter for the basket activity.
 
             public View getView(int position, View convertView, @NotNull ViewGroup parent) {
                 View view = super.getView(position, convertView, parent);
 
                 TextView tv = view.findViewById(android.R.id.text1);
 
-                tv.setTextColor(Color.WHITE); // Change the colour of the text
+                tv.setTextColor(Color.WHITE); // Change the colour of the list view.
 
                 return view; // Return the view
             }
@@ -62,47 +62,50 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
 
         ListView view = findViewById(R.id.listViewBasket); // Find the list view component
         view.setAdapter(arrayAdapter); // Set its adapter
-        for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // Loop over the hash map of products
-            arrayAdapter.add(entry.toString()); // Add the entries to the adapter list
+
+        for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // Loop over the hash map of products.
+            arrayAdapter.add(entry.toString()); // Add the entries to the adapter list.
         }
     }
 
-    protected void onDestroy() {
+    protected void onDestroy() { // Android LifeCycle method. onDestroy() that destroys the current activity.
         super.onDestroy();
     }
 
-    protected void onStop() {
+    protected void onStop() { // Android LifeCycle Method to stop() the current activity.
         super.onStop();
+        finish();
     }
 
-    public void onBackPressed() {
+    public void onBackPressed() { // Android LifeCycle Method that is called when the back button is clicked.
         super.onBackPressed();
+        moveTaskToBack(true);
     }
 
-    protected void onResume() {
+    protected void onResume() { // Android LifeCycle method onResume() that resumes to the current activity if another activity intervenes.
         super.onResume();
     }
 
     @Override
     public void onClick(View v) {
         Context context = getApplicationContext();
-        String[] temp = new String[]{context.getString(R.string.finish)};
+        String[] temp = new String[]{context.getString(R.string.finish)}; // Creates a string array of string values.
 
         try {
-            if (v.getId() == R.id.placeOrderBtn) {
+            if (v.getId() == R.id.placeOrderBtn) { // if the button is clicked
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(BasketActivity.this)
-                        .setTitle(R.string.checkout)
+                        .setTitle(R.string.checkout) // Sets the title of the alert dialogue.
                         .setMessage(temp[0]) // Set the message to the first index in the array
 
                         .setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
                             @Override
 
                             public void onClick(DialogInterface dialog, int which) {
-                                if (dialog != null) {
+                                if (dialog != null) { // If there is no dialogue.
 
-                                    dialog.dismiss();
-                                    finish();
+                                    dialog.dismiss(); // Close it.
+                                    finish(); // Finish the activity,
                                 }
                             }
                         }).setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
@@ -118,8 +121,8 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
                 builder.show();
                 builder.setCancelable(true);
             }
-        } catch (ActivityNotFoundException exc) {
-            Log.d(String.valueOf(R.string.error), exc.toString());
+        } catch (ActivityNotFoundException exc) { // Catch the error if there is no activity.
+            Log.d(String.valueOf(R.string.error), exc.toString()); // Log the error to the console.
         }
     }
 
