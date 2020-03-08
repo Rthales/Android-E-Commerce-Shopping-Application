@@ -15,8 +15,7 @@ public class Products implements Serializable { // Products Class
     private String cost;
     private String size;
 
-    // Products constructor
-    public Products(int productID, String productName, String colour, int quantity, String cost, String size) {
+    public Products(int productID, String productName, String colour, int quantity, String cost, String size) { // Constructor for products class that stores the data necessary to represent a product
         this.productID = productID;
         this.productName = productName;
         this.colour = colour;
@@ -25,31 +24,31 @@ public class Products implements Serializable { // Products Class
         this.size = size;
     }
 
-    public int getProductID() {
+    public int getProductID() { // Returns the product ID
         return productID;
     }
 
-    public void setProductID(int productID) {
+    public void setProductID(int productID) { // Set the product id
         this.productID = productID;
     }
 
     public String getProductName() {
-        return productName;
+        return this.productName;
     }
 
     public void setProductName(String productName) {
         this.productName = productName;
     }
 
-    public String getColour() {
-        return colour;
+    public String getColour() { // Returns the product colour if called.
+        return this.colour;
     }
 
     public void setColour(String colour) {
         this.colour = colour;
     }
 
-    public int getQuantity() {
+    public int getQuantity() { // Returns the product quantity
         return quantity;
     }
 
@@ -57,16 +56,16 @@ public class Products implements Serializable { // Products Class
         this.quantity = quantity;
     }
 
-    public String getCost() {
-        return cost;
+    public String getCost() { // Returns the product cost
+        return this.cost;
     }
 
     public void setCost(String cost) {
         this.cost = cost;
     }
 
-    public String getSize() {
-        return size;
+    public String getSize() { // Returns the product size
+        return this.size;
     }
 
     public void setSize(String size) {
