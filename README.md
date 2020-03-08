@@ -200,6 +200,8 @@ The images below shows a Questionnaire that I have created which asks the public
 
 7. The login activity will allow users to login with their E-mail Address and password only.
 
-8. After users register with their unique account, Firebase will be used to store the credentials in a back-end database.
+8. After users register with their unique account, ***Firebase*** will be used to store the credentials in a back-end database.
 
 9. A toast message will appear saying “You are logged in as X” when the user has logged in successfully.
+
+10. The ***Sports & Outdoors activity*** will show the images of the products that are currently in stock. There will be 2 pages of sports & outdoors products.
