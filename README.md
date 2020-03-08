@@ -185,10 +185,10 @@ The images below shows a Questionnaire that I have created which asks the public
     
 4. The Main Activity will have a drop-down menu that allows users to choose which category of products they would like to choose from. The options are:
 
- ***Sports and Outdoors.***
+    ***Sports and Outdoors.***
  
- ***Tech.***
+    ***Tech.***
  
- ***Clothing.***
+    ***Clothing.***
  
- ***DIY.***
+    ***DIY.***
