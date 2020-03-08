@@ -157,3 +157,9 @@ The images below shows a Questionnaire that I have created which asks the public
 # Figure 10
 
 <img width="902" alt="Question 10" src="https://user-images.githubusercontent.com/29733613/76161887-730fe480-612f-11ea-8523-e41113c10866.png">
+
+# Functional Requirements Specification
+
+1.	The main activity will have a Register Button and a Login Button below the text.
+
+2.	The registration activity will have entry fields for Username, E-mail Address, Password and a terms and conditions check box that must be ticked before registering successfully.
