@@ -200,6 +200,38 @@ The images below shows a Questionnaire that I have created which asks the public
 
 7. The login activity will allow users to login with their E-mail Address and password only.
 
-8. After users register with their unique account, Firebase will be used to store the credentials in a back-end database.
+8. After users register with their unique account, ***Firebase*** will be used to store the credentials in a back-end database.
 
 9. A toast message will appear saying “You are logged in as X” when the user has logged in successfully.
+
+10. The ***Sports & Outdoors activity*** will show the images of the products that are currently in stock. There will be 2 pages of sports & outdoors products.
+
+11. The ***Tech category*** activity will show the images of the products that are currently in stock.
+
+12. The ***Clothing category*** activity will show the images of the products that are currently in stock.
+
+13. The ***DIY category** activity will show the images of the products that are currently in stock.
+
+14. The cost of each product will be displayed next to the images in GBP.
+
+15. Users have the option to choose the quantity of each product, hence that will affect the total cost of the product.
+
+16. There will be an “Add to Basket” button underneath the products which allows the users to add the chosen product(s) to their basket (adds it to the menu items).
+
+17. The Clothing products will have an option where users can choose the size, color and quantity they would like to pick.
+
+18. Users have the option to view the products in their basket by clicking “View Basket” which will get placed in a menu on the activity.
+
+19. On each of the categories, users will have the ability to choose the color of the product that they would like.
+
+20. The application will have a Payment activity that will have the following entry fields when checking out:
+
+    -	***The type of payment the users may wish to pay with: VISA, PayPal, Mastercard.***
+    
+    -	***Card number: XXXX XXXX XXXX XXXX (will get validated to ensure that only numbers are present) and no characters are inputted.***
+
+    -	***Card CVV (* this is the 3-digit code at the back of the card), will get validated to ensure that no more than 3 numbers are entered.***
+    
+    -	***Cardholder’s Name.***
+    
+    -   ***Expiry Date (Month & Year) in the form of drop-down menus (Spinners).***
