@@ -170,8 +170,12 @@ The images below shows a Questionnaire that I have created which asks the public
     
     Username ***must contain numbers***.
     
-    Username length ***must not exceed 10 characters***.
+    Username Length ***must not exceed 10 characters***.
     
-    Password field ***must contain numbers, special characters, characters and must not be left empty.***
+    Password Data Input Field ***must contain numbers, special characters, characters and must not be left empty.***
     
-    Password field ***must start with an uppercase character***.
+    Password Data Input Field ***must start with an uppercase character***.
+    
+    E-mail Address Data Input Field ***must have an @ symbol and should not be left empty.***
+    
+    E-mail Address Data Input Field: ***must be within the range of [A-Z], [0-9].***
