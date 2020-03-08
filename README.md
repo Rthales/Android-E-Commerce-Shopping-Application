@@ -216,4 +216,10 @@ The images below shows a Questionnaire that I have created which asks the public
 
 15. Users have the option to choose the quantity of each product, hence that will affect the total cost of the product.
 
-16. 
+16. There will be an “Add to Basket” button underneath the products which allows the users to add the chosen product(s) to their basket (adds it to the menu items).
+
+17. The Clothing products will have an option where users can choose the size, color and quantity they would like to pick.
+
+18. Users have the option to view the products in their basket by clicking “View Basket” which will get placed in a menu on the activity.
+
+19. On each of the categories, users will have the ability to choose the color of the product that they would like.
