@@ -36,7 +36,7 @@ import java.util.HashMap;
 // Date of Last Modification: 02/03/2020
 // Any Errors? None Yet.
 
-public class ClothingCategory extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class ClothingCategory extends AppCompatActivity implements AdapterView.OnItemSelectedListener { // Class implements the item selected listener methods from the adapter view class.
     private int current_product_id = 1;
     private TextView clothingFirstProductTxt;
     private ImageView clothingFirstProductImg;
@@ -68,13 +68,14 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
     private Button clothingSecondProductAddToBasketBtn;
 
-    private double[] clothingProductOneCosts = new double[]{0.00, 25.00, 50.00, 150.00, 450.00, 1350.00};
+    private double[] clothingProductOneCosts = new double[]{0.00, 25.00, 50.00, 150.00, 450.00, 1350.00}; // Clothing product one costs.
     private double[] clothingProductTwoCosts = new double[]{0.00, 30.00, 60.00, 120.00, 240.00, 480.00};
 
     private QuantitiesArrayAdapter quantitiesAdapter;
     private ColourArrayAdapter coloursAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
 
+    // Array List of colours, clothing and sizes.
     private ArrayList<TechActivity.Colours> listOfClothingColoursOne = null;
     private ArrayList<Size> listOfClothingSizesOne = null;
     private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesOne = null;
@@ -83,11 +84,11 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     private ArrayList<Size> listOfClothingSizesTwo = null;
     private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesTwo = null;
 
-    private ImageView cartIcon;
-    boolean coloursAdded = false;
+    private ImageView cartIcon; // The cart icon that represents the basket
+    private transient boolean coloursAdded = false; // Determines if the colours have been added.
 
     private Button nextPageBtn;
-    private HashMap<Integer, Products> listOfProductsToAddToBasket;
+    private HashMap<Integer, Products> listOfProductsToAddToBasket; // A Hash Map that stores a list of products to add to the basket.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,7 +133,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         this.listOfClothingSizesTwo = new ArrayList<>();
         this.listOfClothingQuantitiesTwo = new ArrayList<>();
 
-        this.listOfProductsToAddToBasket = new HashMap<Integer, Products>();
+        this.listOfProductsToAddToBasket = new HashMap<Integer, Products>(); // Creates a new hash map.
 
         addToColoursList();
         addToSizesList();
@@ -197,7 +198,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                                     }
                                 });
 
-                        error.show();
+                        error.show(); // Show the error.
                         error.setCancelable(true);
                     } else {
                         clothingAddToBasketOne();
@@ -206,7 +207,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
             }
         });
 
-        this.clothingSecondProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+        this.clothingSecondProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() { // Adds an action listener to the second product add to basket button.
             @Override
             public void onClick(View secondButton) {
                 if (secondButton.getId() == R.id.clothingSecondProductAddToBasketBtn) {
@@ -227,13 +228,13 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                         error.show();
                         error.setCancelable(true);
                     } else {
-                        clothingAddToBasketTwo();
+                        clothingAddToBasketTwo(); // Otherwise if an option is selected, add the product to the basket.
                     }
                 }
             }
         });
 
-        this.nextPageBtn.setOnClickListener(new View.OnClickListener() {
+        this.nextPageBtn.setOnClickListener(new View.OnClickListener() { // Adds an action listener for the next page button.
             @Override
 
             public void onClick(View v) {
@@ -241,7 +242,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                     Intent intent = new Intent(ClothingCategory.this, ClothingActivityTwo.class);
                     startActivity(intent);
 
-                } catch (ActivityNotFoundException exc) {
+                } catch (ActivityNotFoundException exc) { // Catch the error if the activity does not exist.
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
             }
@@ -427,7 +428,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         return true;
     }
 
-    private boolean clothingAddToBasketTwo() {
+    private boolean clothingAddToBasketTwo() { // Adds the second clothing product to the basket.
 
         Context context = getApplicationContext();
         String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
@@ -443,7 +444,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         new Thread(new Runnable() { // Create a new thread
 
             @Override
-            public void run() { // Run the thread
+            public void run() { // Run the thread.
                 try {
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
@@ -509,16 +510,15 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                     startActivity(clothingActivity);
                     break;
 
-                case R.id.diyCategory:
+                case R.id.diyCategory: // If the diy category is chosen
                     Intent diyActivity = new Intent(ClothingCategory.this, DIYActivity.class);
-                    startActivity(diyActivity);
+                    startActivity(diyActivity); // Start the DIY Activity.
                     break;
 
                 default:
                     super.onOptionsItemSelected(item);
 
             }
-
         } catch (ActivityNotFoundException exc) {
             Log.d(String.valueOf(R.string.error), exc.toString());
         }

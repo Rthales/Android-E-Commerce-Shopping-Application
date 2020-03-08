@@ -48,12 +48,12 @@ import java.util.regex.Pattern;
 // Any errors? Pending testing..
 
 public class RegisterActivity extends AppCompatActivity { // Register class
-    private static final String CHANNEL_ID = "register_channel";
+    private static final String CHANNEL_ID = "register_channel"; // The channel to send the notification on
     private FirebaseFirestore db = FirebaseFirestore.getInstance(); // Get an instance of Firebase
     private EditText usernameField;
 
     private TextView registerText; // The register text
-    private EditText passwordField;
+    private EditText passwordField; // The password entry field.
     private RadioButton termsAndConditions;
 
     private Button registerButton; // Register button
@@ -72,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
     private NotificationManagerCompat notificationManager; // Notification manager variable
     private FirebaseAuth authentication = FirebaseAuth.getInstance();
-    private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns
+    private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns that will be checked.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { // Android Lifecycle method 1
@@ -95,9 +95,8 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             @Override
             public void onClick(View buttonView) {
 
-
                 validateUsername(); // Call method to validate username
-                validateEmailAddress();
+                validateEmailAddress(); // Validate the e-mail address
 
                 validatePassword(); // Call method to validate the password
                 validateTermsAndConditions();
