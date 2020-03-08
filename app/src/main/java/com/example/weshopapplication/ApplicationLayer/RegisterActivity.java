@@ -160,11 +160,13 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        finish();
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        moveTaskToBack(true); // Move back a activity
     }
 
     @Override
@@ -202,18 +204,18 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             if (dialog != null) {
-                                dialog.dismiss();
+                                dialog.dismiss(); // Dismiss the dialogue
                             }
                         }
                     });
 
             emptyDialog.show();
-            usernameField.setError(usernameValidationResource[0]);
+            usernameField.setError(usernameValidationResource[0]); // Set the error.
 
             usernameField.setText(""); // Flush the empty field out
             isEmpty = true; // The field is empty
 
-            isValid = false;
+            isValid = false; // Is valid is false.
 
         }
 
@@ -551,7 +553,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                 context.getString(R.string.collection_name)};
 
         // Get the entries
-        String usernameEntry = usernameField.getText().toString();
+        String usernameEntry = usernameField.getText().toString(); // Get the username entry
         String emailEntry = emailAddressField.getText().toString();
         String passwordEntry = passwordField.getText().toString();
 
@@ -565,7 +567,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             @Override
 
             public void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(RegisterActivity.this, "Added Data To Fire Store", Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this, "Added Data To Fire Store", Toast.LENGTH_LONG).show(); // Debug toast to make sure that the data is added to fire store.
             }
 
         }).addOnFailureListener(new OnFailureListener() {
@@ -583,9 +585,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             Intent loginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(loginIntent); // Start the login activity
 
-        } catch (ActivityNotFoundException act) {
+        } catch (ActivityNotFoundException act) { // Catch the error if the activity is not found.
 
-            Log.d(String.valueOf(R.string.error), act.toString());
+            Log.d(String.valueOf(R.string.error), act.toString()); // Log the error.
         }
     }
 }
