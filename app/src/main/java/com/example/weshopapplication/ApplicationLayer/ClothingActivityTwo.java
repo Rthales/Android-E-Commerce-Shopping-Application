@@ -265,9 +265,9 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
         try {
             switch (item.getItemId()) {
-                case R.id.sportsAndOutdoorsCategory:
+                case R.id.sportsAndOutdoorsCategory: // If the sports and outdoors activity is chosen
                     Intent sportsCategory = new Intent(ClothingActivityTwo.this, SportsAndOutdoorsActivity.class);
-                    startActivity(sportsCategory);
+                    startActivity(sportsCategory); // Start that activity
 
                     break;
 
@@ -298,27 +298,27 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         return true;
     }
 
-    private boolean addToColoursList() {
+    private boolean addToColoursList() { // Routine that adds to the colours array list
 
         Context context = getApplicationContext();
 
         String[] clothingResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.salmonPink), context.getString(R.string.skyBlue),
-                context.getString(R.string.rubyRed), context.getString(R.string.cityGray)};
+                context.getString(R.string.rubyRed), context.getString(R.string.cityGray)}; // Creates a string array of resources to add
 
         TechActivity.Colours[] colours = new TechActivity.Colours[]{new TechActivity.Colours(0, clothingResources[0]), new TechActivity.Colours(1, clothingResources[1]), new TechActivity.Colours(2, clothingResources[2]),
                 new TechActivity.Colours(3, clothingResources[3]), new TechActivity.Colours(4, clothingResources[4])};
 
-        for (TechActivity.Colours theColours : colours) {
-            listOfClothingColoursOne.add(theColours);
+        for (TechActivity.Colours theColours : colours) { // For every colour in the colours array
+            listOfClothingColoursOne.add(theColours); // Add it to the array list
             listOfClothingColoursTwo.add(theColours);
 
-            coloursAdded = true;
+            coloursAdded = true; // Colours added is now true.
         }
 
         return true;
     }
 
-    private boolean addToSizesList() {
+    private boolean addToSizesList() { // Adds to the sizes list.
 
         boolean sizes_added = false;
         Context context = getApplicationContext();
@@ -337,7 +337,7 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         return true;
     }
 
-    private boolean addToQuantitiesListOne() {
+    private boolean addToQuantitiesListOne() { // Adds to the quantities array list
 
         boolean quantitiesAdded = false;
         Context context = getApplicationContext();
@@ -375,7 +375,7 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         return true;
     }
 
-    private boolean clothingAddToBasketThree() {
+    private boolean clothingAddToBasketThree() { // Adds the third clothing product to the basket
         Context context = getApplicationContext();
         String[] temp = new String[]{context.getString(R.string.addingBasket), context.getString(R.string.wait)};
 
