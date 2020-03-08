@@ -229,3 +229,9 @@ The images below shows a Questionnaire that I have created which asks the public
     -	***The type of payment the users may wish to pay with: VISA, PayPal, Mastercard.***
     
     -	***Card number: XXXX XXXX XXXX XXXX (will get validated to ensure that only numbers are present) and no characters are inputted.***
+
+    -	***Card CVV (* this is the 3-digit code at the back of the card), will get validated to ensure that no more than 3 numbers are entered.***
+    
+    -	***Cardholder’s Name.***
+    
+    -   ***Expiry Date (Month & Year) in the form of drop-down menus (Spinners).***
