@@ -181,3 +181,14 @@ The images below shows a Questionnaire that I have created which asks the public
     E-mail Address Data Input Field: ***must be within the range of [A-Z], [0-9].***
     
     Terms and Conditions Check Box ***must be ticked to register successfully.***
+    
+    
+4. The Main Activity will have a drop-down menu that allows users to choose which category of products they would like to choose from. The options are:
+
+ ***Sports and Outdoors.***
+ 
+ ***Tech.***
+ 
+ ***Clothing.***
+ 
+ ***DIY.***
