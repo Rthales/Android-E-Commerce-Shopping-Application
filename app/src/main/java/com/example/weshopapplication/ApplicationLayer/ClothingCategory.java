@@ -22,8 +22,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
-import com.example.weshopapplication.BusinessObjects.CustomArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
+import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
@@ -71,7 +71,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     private double[] clothingProductOneCosts = new double[]{0.00, 25.00, 50.00, 150.00, 450.00, 1350.00};
     private double[] clothingProductTwoCosts = new double[]{0.00, 30.00, 60.00, 120.00, 240.00, 480.00};
 
-    private CustomArrayAdapter quantitiesAdapter;
+    private QuantitiesArrayAdapter quantitiesAdapter;
     private ColourArrayAdapter coloursAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
 
@@ -153,7 +153,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         clothingFirstProductSizeMenu.setAdapter(sizeArrayAdapter);
         clothingFirstProductSizeMenu.setOnItemSelectedListener(this);
 
-        this.quantitiesAdapter = new CustomArrayAdapter(ClothingCategory.this, listOfClothingQuantitiesOne);
+        this.quantitiesAdapter = new QuantitiesArrayAdapter(ClothingCategory.this, listOfClothingQuantitiesOne);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         clothingFirstProductQuantityMenu.setAdapter(quantitiesAdapter);
@@ -171,7 +171,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         clothingSecondProductSizeMenu.setAdapter(sizeArrayAdapter);
         clothingSecondProductSizeMenu.setOnItemSelectedListener(this);
 
-        this.quantitiesAdapter = new CustomArrayAdapter(ClothingCategory.this, listOfClothingQuantitiesTwo);
+        this.quantitiesAdapter = new QuantitiesArrayAdapter(ClothingCategory.this, listOfClothingQuantitiesTwo);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         clothingSecondProductQuantityMenu.setAdapter(quantitiesAdapter);

@@ -22,8 +22,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
-import com.example.weshopapplication.BusinessObjects.CustomArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
+import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
@@ -86,7 +86,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     private ArrayList<Size> listOfSizesTwo;
     private ArrayList<TechActivity.Quantities> listOfQuantitiesTwo;
 
-    private CustomArrayAdapter quantitiesAdapter;
+    private QuantitiesArrayAdapter quantitiesAdapter;
     private SizeArrayAdapter sizesAdapter;
     private ColourArrayAdapter coloursAdapter;
 
@@ -148,7 +148,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         addToQuantitiesListTwo();
         addToSizesListOne();
 
-        this.quantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivityTwo.this, listOfQuantitiesOne);
+        this.quantitiesAdapter = new QuantitiesArrayAdapter(SportsAndOutdoorsActivityTwo.this, listOfQuantitiesOne);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         thirdSportsOutdoorsQuantityMenu.setAdapter(quantitiesAdapter);
@@ -166,7 +166,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
         thirdSportsOutdoorsColoursMenu.setAdapter(coloursAdapter);
         thirdSportsOutdoorsColoursMenu.setOnItemSelectedListener(this);
 
-        this.quantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivityTwo.this, listOfQuantitiesTwo);
+        this.quantitiesAdapter = new QuantitiesArrayAdapter(SportsAndOutdoorsActivityTwo.this, listOfQuantitiesTwo);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         fourthSportsOutdoorsQuantityMenu.setAdapter(quantitiesAdapter);

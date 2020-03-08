@@ -21,8 +21,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
-import com.example.weshopapplication.BusinessObjects.CustomArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
+import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
@@ -76,7 +76,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private boolean quantitiesAdded = false;
 
     // Adapters for the objects to add to the list
-    private CustomArrayAdapter quantitiesAdapter;
+    private QuantitiesArrayAdapter quantitiesAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
     private ColourArrayAdapter coloursAdapter;
 
@@ -149,7 +149,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         diyFirstProductColourMenu.setAdapter(coloursAdapter);
         diyFirstProductColourMenu.setOnItemSelectedListener(DIYActivity.this);
 
-        this.quantitiesAdapter = new CustomArrayAdapter(DIYActivity.this, diyListOfQuantitiesOne); // Creates the quantities adapter for the first list of quantities.
+        this.quantitiesAdapter = new QuantitiesArrayAdapter(DIYActivity.this, diyListOfQuantitiesOne); // Creates the quantities adapter for the first list of quantities.
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         diyFirstProductQuantityMenu.setAdapter(quantitiesAdapter);
@@ -168,7 +168,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         diySecondProductColourMenu.setAdapter(coloursAdapter);
         diySecondProductColourMenu.setOnItemSelectedListener(this);
 
-        this.quantitiesAdapter = new CustomArrayAdapter(DIYActivity.this, diyListOfQuantitiesTwo);
+        this.quantitiesAdapter = new QuantitiesArrayAdapter(DIYActivity.this, diyListOfQuantitiesTwo);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         diySecondProductQuantityMenu.setAdapter(quantitiesAdapter);

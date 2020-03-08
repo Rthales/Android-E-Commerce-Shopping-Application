@@ -22,8 +22,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
-import com.example.weshopapplication.BusinessObjects.CustomArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
+import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
@@ -85,9 +85,9 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     private ArrayList<Size> listOfSizesTwo;
 
     private ColourArrayAdapter coloursAdapter; // A colours adapter is needed to store objects in a drop-down menu (spinner)
-    private CustomArrayAdapter quantitiesAdapter;
+    private QuantitiesArrayAdapter quantitiesAdapter;
 
-    private CustomArrayAdapter secondQuantitiesAdapter;
+    private QuantitiesArrayAdapter secondQuantitiesAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
 
     private boolean coloursAdded; // Flag to determine if the colours have been added to the drop-down list
@@ -159,7 +159,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         firstSportsOutdoorsColourMenu.setOnItemSelectedListener(this);
 
         // Create array adapter for the quantities for product 1
-        this.quantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivity.this, listOfQuantitiesOne);
+        this.quantitiesAdapter = new QuantitiesArrayAdapter(SportsAndOutdoorsActivity.this, listOfQuantitiesOne);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         firstSportsOutdoorQuantityMenu.setAdapter(quantitiesAdapter);
@@ -179,7 +179,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         secondSportsOutdoorsColourMenu.setOnItemSelectedListener(this);
 
         // Create the Array Adapter for the quantities for the second product
-        this.secondQuantitiesAdapter = new CustomArrayAdapter(SportsAndOutdoorsActivity.this, listOfQuantitiesTwo);
+        this.secondQuantitiesAdapter = new QuantitiesArrayAdapter(SportsAndOutdoorsActivity.this, listOfQuantitiesTwo);
         secondQuantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         secondSportsOutdoorQuantityMenu.setAdapter(secondQuantitiesAdapter);

@@ -21,8 +21,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
-import com.example.weshopapplication.BusinessObjects.CustomArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
+import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.SizesAdapter;
 import com.example.weshopapplication.R;
 
@@ -68,7 +68,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     private ArrayList<Quantities> listOfQuantities = null;
     private ArrayList<Size> listOfSizes = null;
 
-    private CustomArrayAdapter quantitiesCustomAdapter = null;
+    private QuantitiesArrayAdapter quantitiesCustomAdapter = null;
     private ColourArrayAdapter colourArrayAdapter = null;
     private SizesAdapter sizesAdapter = null;
 
@@ -128,7 +128,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         colourArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         firstProductColourOptions.setAdapter(colourArrayAdapter); // Set its adapter
 
-        this.quantitiesCustomAdapter = new CustomArrayAdapter(TechActivity.this, listOfQuantities);
+        this.quantitiesCustomAdapter = new QuantitiesArrayAdapter(TechActivity.this, listOfQuantities);
         quantitiesCustomAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         firstProductQuantityOptions.setAdapter(quantitiesCustomAdapter);
 
@@ -159,7 +159,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         this.secondAddToBasketButton = findViewById(R.id.secondAddToBasketBtn);
 
         // Create adapters for the 2nd product
-        this.quantitiesCustomAdapter = new CustomArrayAdapter(TechActivity.this, secondListOfQuantities);
+        this.quantitiesCustomAdapter = new QuantitiesArrayAdapter(TechActivity.this, secondListOfQuantities);
         this.colourArrayAdapter = new ColourArrayAdapter(TechActivity.this, secondListOfColours);
 
         quantitiesCustomAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

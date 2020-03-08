@@ -22,8 +22,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
-import com.example.weshopapplication.BusinessObjects.CustomArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
+import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
@@ -92,7 +92,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     private double product_four_four_cost = 4 * product_four_one_cost;
 
     // Array adapters to aid the addition of colours, capacity and colours to the array list
-    private CustomArrayAdapter quantitiesAdapter;
+    private QuantitiesArrayAdapter quantitiesAdapter;
     private ColourArrayAdapter colourArrayAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
 
@@ -159,7 +159,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         addFourthProductSizes();
 
         // SET UP THE THIRD PRODUCT QUANTITIES DROP DOWN MENU TO SHOW
-        this.quantitiesAdapter = new CustomArrayAdapter(TechActivityTwo.this, listOfQuantities);
+        this.quantitiesAdapter = new QuantitiesArrayAdapter(TechActivityTwo.this, listOfQuantities);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         thirdQuantityDropDown.setAdapter(quantitiesAdapter);
         thirdQuantityDropDown.setOnItemSelectedListener(TechActivityTwo.this);
@@ -179,7 +179,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         fourthProductColourSpinner.setOnItemSelectedListener(TechActivityTwo.this);
 
         // SET UP QUANTITY FOR FOURTH PRODUCT
-        this.quantitiesAdapter = new CustomArrayAdapter(TechActivityTwo.this, secondListOfQuantities);
+        this.quantitiesAdapter = new QuantitiesArrayAdapter(TechActivityTwo.this, secondListOfQuantities);
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         fourthProductQuantityDropDown.setAdapter(quantitiesAdapter);
