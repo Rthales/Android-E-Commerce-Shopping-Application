@@ -1,15 +1,20 @@
 package com.example.weshopapplication.BusinessObjects;
 
-public class Months {
-    private String month;
+// Author of Application: Sabin Constantin Lungu
+// Purpose of Business Layer Class: To store the data for the Expiry Date Month that will be used in the Payment Activity Class.
+// Date of Last Modification: 08/03/2020
+// Any Bugs? None
 
-    public Months(String month) {
+public class Months { // Months Class
+    private String month; // The month variable
+
+    public Months(String month) { // Constructor for the months that will set the data for the instantiated object
 
         this.month = month;
     }
 
-    public String getMonth() {
-        return month;
+    public String getMonth() { // Returns the month
+        return this.month;
     }
 
     public void setMonth(String month) {
@@ -17,7 +22,7 @@ public class Months {
     }
 
     @Override
-    public String toString() {
+    public String toString() { // Method that returns the month data.
         return " " + this.month + " ";
     }
 }
