@@ -192,9 +192,10 @@ The images below shows a Questionnaire that I have created which asks the public
     ***Clothing.***
  
     ***DIY.***
+    
+    
+5. The main activity will have a Contact Us button that will allow users to fill out a form if they are having any issues with the application. SQLite will be used as the database to store any complaints from users.
 
+6. Users will receive a notification saying that they have registered successfully after clicking the register button.
 
-
-Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+7. The login activity will allow users to login with their E-mail Address and password only.
