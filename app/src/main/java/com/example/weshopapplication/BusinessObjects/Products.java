@@ -11,6 +11,7 @@ public class Products implements Serializable { // Products Class
     private int productID; // The Product ID
     private String productName; // The Product Name
     private String colour; // Product Colour
+
     private int quantity;
     private String cost;
     private String size;
@@ -20,7 +21,7 @@ public class Products implements Serializable { // Products Class
         this.productName = productName;
         this.colour = colour;
         this.quantity = quantity;
-        this.cost = cost;
+        this.cost = cost; // Set the cost.
         this.size = size;
     }
 
@@ -32,7 +33,7 @@ public class Products implements Serializable { // Products Class
         this.productID = productID;
     }
 
-    public String getProductName() {
+    public String getProductName() { // Returns the product name.
         return this.productName;
     }
 
@@ -49,10 +50,10 @@ public class Products implements Serializable { // Products Class
     }
 
     public int getQuantity() { // Returns the product quantity
-        return quantity;
+        return this.quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(int quantity) { // Routine that will set the quantity of a product
         this.quantity = quantity;
     }
 
@@ -60,7 +61,7 @@ public class Products implements Serializable { // Products Class
         return this.cost;
     }
 
-    public void setCost(String cost) {
+    public void setCost(String cost) { // Sets the cost of a product.
         this.cost = cost;
     }
 
@@ -68,7 +69,7 @@ public class Products implements Serializable { // Products Class
         return this.size;
     }
 
-    public void setSize(String size) {
+    public void setSize(String size) { // Routine that sets the size of a product.
         this.size = size;
     }
 

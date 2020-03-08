@@ -73,7 +73,7 @@ public class SendPaymentInvoiceAPI extends AsyncTask<Void, Void, Void> { // The 
             message.setSubject(subject); // Sets the subject of the e-mail
             message.setText(theMessage); // Sets the text to be sent
 
-            Transport.send(message);
+            Transport.send(message); // Send the e-mail through the transport layer.
         } catch (MessagingException exc) { // Catch the exception if there is no recipient.
             exc.printStackTrace(); // Print the stack trace.
         }
