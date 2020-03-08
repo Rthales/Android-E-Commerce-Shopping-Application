@@ -523,5 +523,4 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         return true;
     }
-
 }
