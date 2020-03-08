@@ -104,7 +104,6 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     public int current_product_id = 1;
     private HashMap<Integer, Products> listOfProductsToAdd = new HashMap<>();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) { // On create method
         super.onCreate(savedInstanceState);
@@ -235,7 +234,6 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
             public void onClick(View view) {
                 if (view.getId() == R.id.fourthAddToBasketButton) {
-
 
                     if (fourthProductColourSpinner.getSelectedItemPosition() == 0 || fourthProductQuantityDropDown.getSelectedItemPosition() == 0 || fourthProductMenu.getSelectedItemPosition() == 0) {
                         AlertDialog.Builder error = new AlertDialog.Builder(TechActivityTwo.this).setTitle(R.string.error)
@@ -454,7 +452,6 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(quantityIndexes[1]))) {
             thirdProductCostTxt.setText(null);
             thirdProductCostTxt.append(productResource[0] + quantity_one_cost);
-
             valueAppended = true; // Value is appended
 
         } else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(quantityIndexes[2]))) {
@@ -587,7 +584,6 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
                     return super.onOptionsItemSelected(item);
 
             }
-
 
         } catch (ActivityNotFoundException exc) {
 

@@ -38,5 +38,4 @@ public class MonthsArrayAdapter extends ArrayAdapter<Months> { // Array adapter 
 
         return listOfItems; // Return back the list of items
     }
-
 }

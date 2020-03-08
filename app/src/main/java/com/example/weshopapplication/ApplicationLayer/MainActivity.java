@@ -23,7 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     // Encapsulated variables
-    private TextView text; //
+    private TextView text;
 
     private Button registerButton; // Variable Button to register
     private Button loginButton; // Variable to store the login button

@@ -30,8 +30,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.regex.Pattern;
 
 // Author of Application: Sabin Constantin Lungu
+// Matriculation Number: 40397517
 // Purpose of Activity: To login a registered user
-// Date of last modified: 28th January 2020
+// Date of last modified: 08/03/2020
 // Any Bugs?: N/A
 
 public class LoginActivity extends AppCompatActivity {
@@ -114,7 +115,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     return true;
 
-
                 default:
 
                     return super.onOptionsItemSelected(item);
@@ -167,7 +167,6 @@ public class LoginActivity extends AppCompatActivity {
 
         if (passwordEntry.isEmpty()) { // If the password field is left empty
             AlertDialog.Builder passwordError = new AlertDialog.Builder(LoginActivity.this).setTitle("Password Error")
-
                     .setMessage("Password should not be left empty")
                     .setNegativeButton("OK", new DialogInterface.OnClickListener() {
                         @Override

@@ -69,7 +69,6 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-
     protected void showSavedComplaintsDialog() {
         AlertDialog.Builder builder;
 

@@ -33,7 +33,6 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         try {
-
             switch (v.getId()) {
                 case R.id.submitComplaintBtn:
                     Intent submitComplaintIntent = new Intent(ContactUsActivity.this, SubmitComplaint.class);
@@ -49,7 +48,7 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
 
         } catch (ActivityNotFoundException exc) {
 
-            Log.d("Error ", exc.toString());
+            Log.d(String.valueOf(R.string.error), exc.toString());
         }
     }
 

@@ -53,7 +53,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private EditText cardCVV;
     private EditText cardholdersName;
 
-
     private ImageView cartIcon;
     private Button paypalBtn;
 
@@ -309,16 +308,16 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
             isValid = false;
         }
 
-        if (cardCVVInput.length() > cardCVVLength) {
-            cardCVV.setText(cardCVVResources[1]);
+        if (cardCVVInput.length() > cardCVVLength) { // If the length of the Card CVV is > 20
+            cardCVV.setText(cardCVVResources[1]); // Set the error
             cardCVV.setError(cardCVVResources[2]);
 
-            exceedsLength = true;
+            exceedsLength = true; // Exceeds length condition is no true
             isValid = false;
         }
 
-        if (!isEmpty && isValid && !exceedsLength) {
-            validateCardHolderName();
+        if (!isEmpty && isValid && !exceedsLength) { // If the field is not empty, if it's valid and does not exceed the length
+            validateCardHolderName(); // Call method to validate the card holder's name entry
         }
 
         return true;
@@ -339,11 +338,11 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
             isValid = false;
         }
 
-        if (regexPatterns.matcher(cardHolderNameInput).find()) {
+        if (regexPatterns.matcher(cardHolderNameInput).find()) { // If there is a special character found in the card holder name input
             cardholdersName.setText(cardHolderNameResources[1]);
             cardholdersName.setError(cardHolderNameResources[2]);
 
-            hasRegex = true;
+            hasRegex = true; // Has regex flag is true.
             isValid = false;
         } else {
             isEmpty = false;

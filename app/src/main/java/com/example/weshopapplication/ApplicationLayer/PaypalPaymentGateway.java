@@ -12,6 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.weshopapplication.R;
 
+// Author of Application/Class: Sabin Constantin Lungu
+// Purpose of Application/Class: Allows customers to pay with PayPal
+// Date of Last Modification: 08/03/2020
+// Any Bugs? None
+
 public class PaypalPaymentGateway extends AppCompatActivity {
     private WebView paypalView;
     private ProgressBar progressBar;

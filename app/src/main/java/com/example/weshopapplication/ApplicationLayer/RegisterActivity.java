@@ -43,7 +43,8 @@ import java.util.HashMap;
 import java.util.regex.Pattern;
 
 // Author: Sabin Constantin Lungu.
-// Matriculation Number: 40397517
+// Matriculation Number: 40397517.
+// Date of Last Modification: 08/03/2020
 // Purpose of Activity: To allow users to register an account and write their registration data to a Firebase database.
 // Any errors? Pending testing..
 
@@ -122,7 +123,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
                     return true;
 
-
                 case R.id.techCategory:
                     Intent techActivity = new Intent(RegisterActivity.this, TechActivity.class);
                     startActivity(techActivity);
@@ -145,7 +145,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
                     return super.onOptionsItemSelected(item); // Return the base item selected
             }
-
         } catch (ActivityNotFoundException act) {
             Log.d(String.valueOf(R.string.error), act.toString()); // Get the cause of the error.
         }

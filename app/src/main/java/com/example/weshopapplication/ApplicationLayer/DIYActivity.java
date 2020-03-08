@@ -338,7 +338,6 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
             @Override
             public void run() {
                 try {
-
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
                 } catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());

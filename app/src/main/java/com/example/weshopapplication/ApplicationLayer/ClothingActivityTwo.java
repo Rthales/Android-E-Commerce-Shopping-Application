@@ -290,7 +290,6 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
                     super.onOptionsItemSelected(item);
 
             }
-
         } catch (ActivityNotFoundException exc) {
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
