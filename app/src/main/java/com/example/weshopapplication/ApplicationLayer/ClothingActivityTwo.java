@@ -134,15 +134,15 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
         this.listOfProductsToAddToBasket = new HashMap<>();
 
-        addToColoursList();
-        addToSizesList();
+        addToColoursList(); // Routine that adds the colours to the array list
+        addToSizesList(); // Adds the sizes to the array list
 
         addToQuantitiesListOne();
         addToQuantitiesListTwo();
 
         // Set-up Adapters.
         this.coloursAdapter = new ColourArrayAdapter(ClothingActivityTwo.this, listOfClothingColoursOne);
-        coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        coloursAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // Set the drop down view for the colours.
 
         clothingThirdProductColourMenu.setAdapter(coloursAdapter);
         clothingThirdProductColourMenu.setOnItemSelectedListener(ClothingActivityTwo.this);
@@ -175,17 +175,17 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         quantitiesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         clothingFourthProductQuantityMenu.setAdapter(quantitiesAdapter);
-        clothingFourthProductQuantityMenu.setOnItemSelectedListener(this);
+        clothingFourthProductQuantityMenu.setOnItemSelectedListener(this); // Add an on click listener for the clothing product.
 
         this.clothingThirdAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View thirdBtn) {
-                if (thirdBtn.getId() == R.id.clothingThirdProductAddToBasketBtn) {
+                if (thirdBtn.getId() == R.id.clothingThirdProductAddToBasketBtn) { // If the third button is clicked
 
-                    if (clothingThirdProductColourMenu.getSelectedItemPosition() == 0 || clothingThirdProductSizeMenu.getSelectedItemPosition() == 0 || clothingThirdProductQuantityMenu.getSelectedItemPosition() == 0) {
-                        AlertDialog.Builder error = new AlertDialog.Builder(ClothingActivityTwo.this)
-                                .setTitle(R.string.error)
-                                .setMessage(R.string.errorMsg)
+                    if (clothingThirdProductColourMenu.getSelectedItemPosition() == 0 || clothingThirdProductSizeMenu.getSelectedItemPosition() == 0 || clothingThirdProductQuantityMenu.getSelectedItemPosition() == 0) { // If no colour, size and quantity is chosen
+                        AlertDialog.Builder error = new AlertDialog.Builder(ClothingActivityTwo.this) // Create an alert dialogue to display an error.
+                                .setTitle(R.string.error) // Sets the title of the alert dialogue.
+                                .setMessage(R.string.errorMsg) // Shows the message.
 
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
@@ -196,16 +196,16 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
                                     }
                                 });
 
-                        error.show();
+                        error.show(); // Show the error.
                         error.setCancelable(true);
                     } else {
-                        clothingAddToBasketThree();
+                        clothingAddToBasketThree(); // Otherwise add the product to the basket.
                     }
                 }
             }
         });
 
-        this.clothingFourthProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
+        this.clothingFourthProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() { // Adds an on click listener for the fourth product.
             @Override
             public void onClick(View fourthBtn) {
                 if (fourthBtn.getId() == R.id.clothingFourthProductAddToBasketBtn) {
