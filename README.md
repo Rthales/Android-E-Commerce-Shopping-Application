@@ -121,3 +121,10 @@ The images below shows a Questionnaire that I have created which asks the public
 <img width="884" alt="Question 1" src="https://user-images.githubusercontent.com/29733613/75634775-76bfda80-5c08-11ea-827d-820f89a1299f.png">
 
 # Figure 2
+
+<img width="894" alt="Question 2" src="https://user-images.githubusercontent.com/29733613/76161846-23c9b400-612f-11ea-9d05-060657f011f1.png">
+
+
+# Figure 3
+
+<img width="899" alt="Question 3" src="https://user-images.githubusercontent.com/29733613/76161848-262c0e00-612f-11ea-8bea-9e1af4911da0.png">
