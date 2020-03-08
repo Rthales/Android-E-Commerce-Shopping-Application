@@ -373,7 +373,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         return true;
     }
 
-    private boolean addToQuantitiesListTwo() {
+    private boolean addToQuantitiesListTwo() { // Adds to the quantitites list.
         boolean quantitiesAdded = false;
         Context context = getApplicationContext();
 
@@ -459,8 +459,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         // Create an instance for the first product and adds it to the hash map.
         Products clothingSecondProduct = new Products(current_product_id++, clothingSecondProductTxt.getText().toString(), clothingSecondProductColourMenu.getSelectedItem().toString(), (int) clothingSecondProductQuantityMenu.getSelectedItemId(), clothingSecondProductCostLbl.getText().toString(), clothingSecondProductSizeMenu.getSelectedItem().toString());
-        listOfProductsToAddToBasket.put(current_product_id++, clothingSecondProduct);
-
+        listOfProductsToAddToBasket.put(current_product_id++, clothingSecondProduct); // Add the product instance to the hash map
 
         return true;
     }
@@ -471,10 +470,10 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         MenuInflater activityInflater = getMenuInflater(); // Get the activity inflater
         activityInflater.inflate(R.menu.homepagemenu, menu);
 
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.basket_action_button, menu);
+        MenuInflater menuInflater = getMenuInflater(); // Get the menu inflater to inflate the menu.
+        menuInflater.inflate(R.menu.basket_action_button, menu); // Inflates the menu.
 
-        View view = menu.findItem(R.id.cart_menu).getActionView();
+        View view = menu.findItem(R.id.cart_menu).getActionView(); // Get the action view for the cart menu
 
         cartIcon = view.findViewById(R.id.cart_icon);
 
@@ -490,7 +489,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) { // Routine that determines which menu item has been selected.
 
         try {
             switch (item.getItemId()) {
@@ -500,9 +499,9 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
                     break;
 
-                case R.id.techCategory:
+                case R.id.techCategory: // If the tech activity is chosen
                     Intent techActivity = new Intent(ClothingCategory.this, TechActivity.class);
-                    startActivity(techActivity);
+                    startActivity(techActivity); // Start that activity
                     break;
 
                 case R.id.clothingCategory:
