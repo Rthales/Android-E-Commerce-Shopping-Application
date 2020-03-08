@@ -449,18 +449,18 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     }
 
     @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // Routine that will determine which item has been selected in the spinner.
         boolean valueAppended = false;
 
-        int[] indexes = new int[]{0, 1, 2, 3, 4};
+        int[] indexes = new int[]{0, 1, 2, 3, 4}; // An array of indexes
 
         Context context = getApplicationContext();
         String[] productResources = new String[]{context.getString(R.string.productCost)};
 
-        if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[0]))) {
-            clothingThirdProductCostLbl.setText(null);
-            clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[0]);
-            valueAppended = true;
+        if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[0]))) { // If the first index is chosen in the drop-down list of quantities.
+            clothingThirdProductCostLbl.setText(null); // Empty the text by default.
+            clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[0]); // Append the product cost. Product Cost £: 0.00
+            valueAppended = true; // Value has been appended.
 
         } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[1]))) {
             clothingThirdProductCostLbl.setText(null);
@@ -505,7 +505,7 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> parent) {
+    public void onNothingSelected(AdapterView<?> parent) { // Routine that determines if nothing is selected.
 
     }
 
