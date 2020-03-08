@@ -457,8 +457,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
     private void showSpinningDialogue() { // Routine that shows the spinning dialogue when register button is clicked
         // Create the progress dialogue
-        final ProgressDialog dialog = new ProgressDialog(RegisterActivity.this);
-
+        final ProgressDialog dialog = new ProgressDialog(RegisterActivity.this); // The progress dialogue that will be shown.
         Context context = getApplicationContext();
 
         String[] temp = new String[]{context.getString(R.string.creatingAccount), context.getString(R.string.wait)};
@@ -474,7 +473,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             public void run() {
 
                 try {
-                    Thread.sleep(4000);
+                    Thread.sleep(4000); // Sleep for 4 seconds.
                 } catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
@@ -488,7 +487,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
 
     private void sendNotification() { // Routine to send notification after registration
-        int channelID = 12345;
+        int channelID = 12345; // The channel ID to send the notification on.
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         // create channel in new versions of android
@@ -506,32 +505,33 @@ public class RegisterActivity extends AppCompatActivity { // Register class
         }
 
         // Code below shows the notification
-        Intent intent = new Intent(this, RegisterActivity.class);
+        Intent intent = new Intent(this, RegisterActivity.class); // Get the intent
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         // 0 is request code
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT); // Get the pending intent activity
 
-        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION); // Creates a uniform resource identifier for the sound.
         NotificationCompat.Builder notificationBuilder =
-                new NotificationCompat.Builder(this, CHANNEL_ID)
+                new NotificationCompat.Builder(this, CHANNEL_ID) // Creates a new channel.
                         .setSmallIcon(R.drawable.ic_message_black_24dp)
+
                         .setContentTitle(getString(R.string.app_name))
-                        .setContentText("Register Success")
+                        .setContentText("Register Success") // Sets the content of the notification.
                         .setTicker("Success")
-                        .setAutoCancel(true)
+                        .setAutoCancel(true) // Auto cancels itself.
                         //.setSound(defaultSoundUri)
                         .setContentIntent(pendingIntent);
 
-        notificationManager.notify(0, notificationBuilder.build());
+        notificationManager.notify(0, notificationBuilder.build()); // Shows the notification
     }
 
-    private void writeToDatabase() { // Writes to database
+    private void writeToDatabase() { // Writes to database.
 
         // Get the user inputs
         String emailEntry = emailAddressField.getText().toString();
         String passwordEntry = passwordField.getText().toString();
 
-        authentication.createUserWithEmailAndPassword(emailEntry, passwordEntry).addOnCompleteListener(new OnCompleteListener<AuthResult>() { // Create user account with e-mail and password
+        authentication.createUserWithEmailAndPassword(emailEntry, passwordEntry).addOnCompleteListener(new OnCompleteListener<AuthResult>() { // Create user account with e-mail and password.
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
