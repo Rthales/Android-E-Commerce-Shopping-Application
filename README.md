@@ -145,3 +145,15 @@ The images below shows a Questionnaire that I have created which asks the public
 # Figure 7
 
 <img width="903" alt="Question 7" src="https://user-images.githubusercontent.com/29733613/76161854-2f1cdf80-612f-11ea-9652-8a896939c353.png">
+
+# Figure 8
+
+<img width="901" alt="Question 8" src="https://user-images.githubusercontent.com/29733613/76161884-6be8d680-612f-11ea-9b7c-16a0ad0f2e40.png">
+
+# Figure 9
+
+<img width="899" alt="Question 9" src="https://user-images.githubusercontent.com/29733613/76161886-70ad8a80-612f-11ea-99e3-f28ec040a7bf.png">
+
+# Figure 10
+
+<img width="902" alt="Question 10" src="https://user-images.githubusercontent.com/29733613/76161887-730fe480-612f-11ea-8523-e41113c10866.png">
