@@ -91,4 +91,8 @@
     <string name="paypal">PayPal</string>
     <string name="mastercard">MasterCard</string>
     <string name="order_summary">Order Summary</string>
+
+
+    <string name="orderConfirmation">Order Confirmation</string>
+    <string name="orderConfirmed">Your order has been confirmed.</string>
 </resources>

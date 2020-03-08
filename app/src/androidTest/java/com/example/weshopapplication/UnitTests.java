@@ -28,9 +28,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 // Purpose of Test: To test if the MainActivity loads
+// Matriculation Number: 40397517
 // Author of Test: Sabin Constantin Lungu
 // Date of Last Modification: 4/2/2020
-// Tests Pass? : Yes
+// Tests Pass? : Yes. 25/25 Tests Pass.
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest

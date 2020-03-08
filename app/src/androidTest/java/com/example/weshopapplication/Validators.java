@@ -6,9 +6,10 @@ import android.text.TextWatcher;
 import java.util.regex.Pattern;
 
 // Author of Validators Unit Testing Class: Sabin Constantin Lungu
+// Matriculation Number: 40397517
 // Purpose of Validators Unit Testing Class: To provide helper methods that will be used in the UnitTests class to test certain aspects of the software.
 // Date of Last Modification: 08/03/2020
-// Any bugs? No
+// Any bugs? No. 25/25 Tests Passed.
 
 public class Validators implements TextWatcher { // Validator class implements the Android Text Watcher methods
 

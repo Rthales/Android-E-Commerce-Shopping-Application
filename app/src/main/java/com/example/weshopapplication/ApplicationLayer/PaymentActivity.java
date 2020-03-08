@@ -36,6 +36,7 @@ import java.util.HashMap;
 import java.util.regex.Pattern;
 
 // Author of Application/Class: Sabin Constantin Lungu
+// Matriculation Number: 40397517
 // Purpose of Application/Class: Allows Customers to pay for the products chosen
 // Date of Last Modification: 22/02/2020
 // Any Bugs? None
@@ -233,7 +234,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         }
 
         return true;
-
     }
 
     private boolean validateCardNumber() {
@@ -357,15 +357,16 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         return true;
     }
 
-    private void sendPaymentInvoice() {
+    private void sendPaymentInvoice() { // Routine that sends the invoice to the user.
+        Context context = getApplicationContext();
+        String[] resources = new String[]{context.getString(R.string.orderConfirmation), context.getString(R.string.orderConfirmed)};
+
         String mail = emailAddressField.getText().toString().trim();
-        String subject = "Order Confirmation";
-        String message = "Your Order Has Been Confirmed";
 
-        SendPaymentInvoiceAPI sendPaymentInvoiceAPI = new SendPaymentInvoiceAPI(PaymentActivity.this, mail, subject, message);
-        sendPaymentInvoiceAPI.execute();
+        SendPaymentInvoiceAPI sendPaymentInvoiceAPI = new SendPaymentInvoiceAPI(PaymentActivity.this, mail, resources[0], resources[1]);
+        sendPaymentInvoiceAPI.execute(); // Execute the method
 
-        writeToDatabase();
+        writeToDatabase(); // Write to database method call.
     }
 
     private void writeToDatabase() {
@@ -494,9 +495,9 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
                     return true;
 
-                case R.id.techCategory:
+                case R.id.techCategory: // If the tech activity is chosen.
                     Intent techActivity = new Intent(PaymentActivity.this, TechActivity.class);
-                    startActivity(techActivity);
+                    startActivity(techActivity); // Start that activity
 
                     return true;
 
