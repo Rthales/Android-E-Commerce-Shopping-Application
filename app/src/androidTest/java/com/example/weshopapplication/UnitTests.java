@@ -65,7 +65,7 @@ public class UnitTests {
     public ActivityTestRule<PaymentActivity> paymentActivityActivityTestRule = new ActivityTestRule<>(PaymentActivity.class);
 
     // Activities to be tested
-    private MainActivity mainActivity = null;
+    private MainActivity mainActivity = null; // The main activity is null by default.
     private RegisterActivity registerActivity = null;
     private LoginActivity loginActivity = null;
 
@@ -84,8 +84,7 @@ public class UnitTests {
     private EditText passwordTest;
 
     // Test Payment Input Fields
-
-    private EditText cardNumberFieldTest;
+    private EditText cardNumberFieldTest; // The card number input field to be tested against certain conditions.
     private EditText cardCVVFieldTest;
     private EditText cardHolderNameTest;
 
@@ -201,12 +200,12 @@ public class UnitTests {
 
     @Test
     public void testCVVLength() {
-        assertTrue(cardCVVFieldTest.getText().toString(), Validators.isValidCardCVV("1234"));
+        assertFalse(cardCVVFieldTest.getText().toString(), Validators.isValidCardCVV("1234"));
     }
 
     @Test
-    public void testValidCardHolderName() {
-        assertFalse(cardHolderNameTest.getText().toString(), Validators.isValidCardHolderName("Sabin Lungu"));
+    public void testValidCardHolderName() { // Tests to see if the card holder name is valid.
+        assertFalse(cardHolderNameTest.getText().toString(), Validators.isValidCardHolderName("Sabin Lungu")); // Test will pass because the name is valid.
     }
 
     @Test
