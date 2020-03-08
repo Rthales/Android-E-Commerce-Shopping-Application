@@ -5,9 +5,14 @@ import android.text.TextWatcher;
 
 import java.util.regex.Pattern;
 
-public class Validators implements TextWatcher {
+// Author of Validators Unit Testing Class: Sabin Constantin Lungu
+// Purpose of Validators Unit Testing Class: To provide helper methods that will be used in the UnitTests class to test certain aspects of the software.
+// Date of Last Modification: 08/03/2020
+// Any bugs? No
 
-    public static final Pattern PATTERN = Pattern.compile(
+public class Validators implements TextWatcher { // Validator class implements the Android Text Watcher methods
+
+    public static final Pattern PATTERN = Pattern.compile( // Regex patterns to use.
             "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
                     "\\@" +
                     "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
@@ -17,11 +22,11 @@ public class Validators implements TextWatcher {
                     ")+"
     );
 
-    private boolean isValid = false;
+    private boolean isValid = false; // Valid field is false by default
 
-    protected static boolean isValidUsername(CharSequence usernameField) {
+    protected static boolean isValidUsername(CharSequence usernameField) { // Routine to determine if the username is valid
 
-        return usernameField != null && !PATTERN.matcher(usernameField).matches() && !(usernameField.length() > 20);
+        return usernameField != null && !PATTERN.matcher(usernameField).matches() && !(usernameField.length() > 20); // Is valid when the username field is not empty and does not have regex characters and also the length is not bigger than 20
     }
 
     protected static boolean isValidEmailAddress(CharSequence emailAddress) { // Helper method that determines if the E-mail Address input is valid or not.
@@ -29,11 +34,11 @@ public class Validators implements TextWatcher {
         return PATTERN.matcher(emailAddress).matches() && !(emailAddress.length() > 30);
     }
 
-    protected static boolean isValidPassword(CharSequence passwordEntryField) {
+    protected static boolean isValidPassword(CharSequence passwordEntryField) { // Determines if the password is valid.
         return passwordEntryField != null && !PATTERN.matcher(passwordEntryField).matches() && Character.isUpperCase(passwordEntryField.charAt(0));
     }
 
-    protected static boolean isValidCardNumber(CharSequence cardNumberEntryField) {
+    protected static boolean isValidCardNumber(CharSequence cardNumberEntryField) { // Determines if the card number entry is valid.
         return cardNumberEntryField != null && !(cardNumberEntryField.length() > 20);
     }
 
