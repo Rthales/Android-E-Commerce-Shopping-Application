@@ -367,8 +367,6 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         sendPaymentInvoiceAPI.execute();
 
         writeToDatabase();
-
-        transitionToHomePage();
     }
 
     private void writeToDatabase() {
@@ -383,6 +381,8 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
         this.paymentDatabase = new PaymentDatabase(this);
         this.paymentDatabase.insert(email_address, card_number, cardCVV, card_name, expiry_month, expiry_year);
+
+        transitionToHomePage();
     }
 
     public void checkButton(View view) { // Routine attached to the radio group to determine which radio button has been selected.
