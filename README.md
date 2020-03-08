@@ -158,7 +158,7 @@ The images below shows a Questionnaire that I have created which asks the public
 
 <img width="902" alt="Question 10" src="https://user-images.githubusercontent.com/29733613/76161887-730fe480-612f-11ea-8523-e41113c10866.png">
 
-# Functional Requirements Specification
+# Functional Requirements Specification :spiral_notepad:
 
 1.	The main activity will have a Register Button and a Login Button below the text.
 
@@ -179,3 +179,5 @@ The images below shows a Questionnaire that I have created which asks the public
     E-mail Address Data Input Field ***must have an @ symbol and should not be left empty.***
     
     E-mail Address Data Input Field: ***must be within the range of [A-Z], [0-9].***
+    
+    Terms and Conditions Check Box ***must be ticked to register successfully.***
