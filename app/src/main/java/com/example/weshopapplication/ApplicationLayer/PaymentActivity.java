@@ -212,25 +212,25 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         return true;
     }
 
-    private boolean validateEmailAddress() {
+    private boolean validateEmailAddress() { // Routine that will validate the e-mail address input
         Context context = getApplicationContext();
         String[] emailResources = new String[]{context.getString(R.string.emailError), context.getString(R.string.flushPaymentField)};
 
         String emailInput = emailAddressField.getText().toString();
 
-        if (emailInput.isEmpty()) {
-            emailAddressField.setText(emailResources[1]);
+        if (emailInput.isEmpty()) { // If the e-mail address is empty
+            emailAddressField.setText(emailResources[1]); // Set an error message.
             emailAddressField.setError(emailResources[0]);
 
-            isEmpty = true;
+            isEmpty = true; // Is empty is true.
             isValid = false;
         } else {
             isEmpty = false;
             isValid = true;
         }
 
-        if (!isEmpty && isValid) {
-            validateCardNumber();
+        if (!isEmpty && isValid) { // If the field is not empty has is valid
+            validateCardNumber(); // Move on to validating the card number
         }
 
         return true;
@@ -367,6 +367,8 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         sendPaymentInvoiceAPI.execute();
 
         writeToDatabase();
+
+        transitionToHomePage();
     }
 
     private void writeToDatabase() {
@@ -386,6 +388,17 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     public void checkButton(View view) { // Routine attached to the radio group to determine which radio button has been selected.
         int optionChecked = paymentGroup.getCheckedRadioButtonId();
         visaPayment = findViewById(optionChecked);
+    }
+
+    private void transitionToHomePage() { // Routine to transition the customer to the home page after the payment has been successful.
+        try {
+
+            Intent homeActivity = new Intent(PaymentActivity.this, MainActivity.class);
+            startActivity(homeActivity);
+
+        } catch (ActivityNotFoundException exc) { // Catch the error if the activity does not exist.
+            Log.d(String.valueOf(R.string.error), exc.toString());
+        }
     }
 
     private boolean addToMonthsList() {
