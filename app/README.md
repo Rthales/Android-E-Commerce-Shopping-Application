@@ -105,68 +105,39 @@ Survey Monkey: Used to gather data from end-users by creating a survey of 10 que
 Survey Data Gathering - Analysis
 The images below shows a Questionnaire that I have created which asks the public what they would like to see from the application.
 
-# Figure 1
-Question 1
 
-Figure 2
-Question 2
-
-Figure 3
-Question 3
-
-Figure 4
-Question 4
-
-Figure 5
-Question 5
-
-Figure 6
-Question 6
-
-Figure 7
-Question 7
-
-Figure 8
-Question 8
-
-Figure 9
-Question 9
-
-Figure 10
-Question 10
-
-Functional Requirements Specification 🗒
+# Functional Requirements Specification 🗒
 The main activity will have a Register Button and a Login Button below the text.
 
 The registration activity will have entry fields for Username, E-mail Address, Password and a terms and conditions check box that must be ticked before registering successfully.
 
 The registration activity entry fields will get validated against:
 
-Username must not be empty.
+  ***Username must not be empty.***
 
-Username must contain numbers.
+  ***Username must contain numbers.***
 
-Username Length must not exceed 10 characters.
+  ***Username Length must not exceed 10 characters.***
 
-Password Data Input Field must contain numbers, special characters, characters and must not be left empty.
+  ***Password Data Input Field must contain numbers, special characters, characters and must not be left empty.***
 
-Password Data Input Field must start with an uppercase character.
+  ***Password Data Input Field must start with an uppercase character.***
 
-E-mail Address Data Input Field must have an @ symbol and should not be left empty.
+  ***E-mail Address Data Input Field must have an @ symbol and should not be left empty.***
 
-E-mail Address Data Input Field: must be within the range of [A-Z], [0-9].
+  ***E-mail Address Data Input Field: must be within the range of [A-Z], [0-9].***
 
-Terms and Conditions Check Box must be ticked to register successfully.
+  ***Terms and Conditions Check Box must be ticked to register successfully.***
 
 The Main Activity will have a drop-down menu that allows users to choose which category of products they would like to choose from. The options are:
 
-Sports and Outdoors.
+***Sports and Outdoors.***
 
-Tech.
+***Tech.***
 
-Clothing.
+***Clothing.***
 
-DIY.
+***DIY.***
 
 The main activity will have a Contact Us button that will allow users to fill out a form if they are having any issues with the application. SQLite will be used as the database to store any complaints from users.
 
@@ -202,13 +173,13 @@ The application will have a Payment activity that will have the following entry 
 
 The type of payment the users may wish to pay with: VISA, PayPal, Mastercard.
 
-Card number: XXXX XXXX XXXX XXXX (will get validated to ensure that only numbers are present) and no characters are inputted.
+  ***Card number: XXXX XXXX XXXX XXXX (will get validated to ensure that only numbers are present) and no characters are inputted.***
 
-Card CVV ( this is the 3-digit code at the back of the card), will get validated to ensure that no more than 3 numbers are entered.*
+  ***Card CVV ( this is the 3-digit code at the back of the card), will get validated to ensure that no more than 3 numbers are entered.***
 
-Cardholder’s Name.
+  ***Cardholder’s Name.***
 
-Expiry Date (Month & Year) in the form of drop-down menus (Spinners).
+  ***Expiry Date (Month & Year) in the form of drop-down menus (Spinners).***
 
 The payment activity will have a “Confirm Payment” button that the users will click when they are ready to pay for the products.
 
