@@ -58,7 +58,7 @@ Tuesday 28th January 2020: Finished designing the application. I made a start on
 
 I also made a start on writing some Junit tests that tests if the activities load correctly. I also supplied some sample tests for validating the inputs, however I don’t get the results required. I will ask for some help regarding this.
 
-# Project Proposal - Version 1.0 :blue_book:
+# Project Proposal
 
 I am planning on designing and implementing an e-Commerce shopping application in Android that will allow end-users to register, login to the app and browse for products in different category sections. 
 
@@ -91,13 +91,13 @@ Under the Data Protection Act all of the registration data will get stored in a 
 
 Under the Computer Misuse Act, I will not any malware that will harm and render other people’s computer unavailable.
 
-# Schedule Feasibility :anchor:
+# Schedule Feasibility
 The total time taken for each task will be stated in a Gantt Chart and also the start and end dates for that task. The Gantt Chart will also show whether or not that task has been completed or if it’s still pending.
 
-# Economic Feasibility :bank:
+# Economic Feasibility
 I will not be purchasing any software in order to achieve project completion, all of the software and tools that I will be using to develop this project will be free to use. No costs will be incurred.
 
-# Technical Feasibility :carousel_horse:
+# Technical Feasibility
 I will be making use of my MacBook Pro to develop my project. The software that will be used are:
 
 -	Android Studio: Where I will implement the User Interface 
@@ -112,7 +112,7 @@ I will be making use of my MacBook Pro to develop my project. The software that 
 
 -	Survey Monkey: Used to gather data from end-users by creating a survey of 10 questions.
 
-# Survey Data Gathering - Analysis
+# Data Gathering - Questionnaire
 
 The images below shows a Questionnaire that I have created which asks the public what they would like to see from the application.
 
@@ -137,7 +137,6 @@ The images below shows a Questionnaire that I have created which asks the public
 
 <img width="899" alt="Question 5" src="https://user-images.githubusercontent.com/29733613/76161851-2a582b80-612f-11ea-8ec7-e7044f2b060d.png">
 
-
 # Figure 6
 
 <img width="898" alt="Question 6" src="https://user-images.githubusercontent.com/29733613/76161853-2cba8580-612f-11ea-8148-35428a183ad3.png">
@@ -158,7 +157,7 @@ The images below shows a Questionnaire that I have created which asks the public
 
 <img width="902" alt="Question 10" src="https://user-images.githubusercontent.com/29733613/76161887-730fe480-612f-11ea-8523-e41113c10866.png">
 
-# Functional Requirements Specification :spiral_notepad:
+# Requirements Specification (Product Backlog)
 
 1.	The main activity will have a Register Button and a Login Button below the text.
 
