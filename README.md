@@ -165,28 +165,27 @@ The images below shows a Questionnaire that I have created which asks the public
 
 > **3. The registration activity entry fields will get validated against:**
 
->   **Username ***must not be empty**.
+>   **4. Username ***must not be empty**.
     
->   **Username ***must contain numbers**.
+>   **5. Username ***must contain numbers**.
     
->   **Username Length ***must not exceed 10 characters**.
+>   **6. Username Length ***must not exceed 10 characters**.
     
->   **Password Data Input Field ***must contain numbers, special characters, characters and must not be left empty.***
+>   **7. Password Data Input Field ***must contain numbers, special characters, characters and must not be left empty.**
     
->   **Password Data Input Field: Must start with an uppercase character**
+>   **8. Password Data Input Field: Must start with an uppercase character**
     
 >   **E-mail Address Data Input Field: Must have an @ symbol and should not be left empty.**
     
 >   **E-mail Address Data Input Field: Must be within the range of [A-Z], [0-9].**
     
 >   **Terms and Conditions Check Box ***must be ticked to register successfully.**
-    
-    
+      
 >   **4. The Main Activity will have a drop-down menu that allows users to choose which category of products they would like to choose from. The options are:**
 
  >  **Sports and Outdoors.**
  
-    ***Tech.***
+ >  **Tech.**
  
     ***Clothing.***
  
