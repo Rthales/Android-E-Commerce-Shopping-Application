@@ -40,17 +40,17 @@ I will not be purchasing any software in order to achieve project completion, al
 # Technical Feasibility
 I will be making use of my MacBook Pro to develop my project. The software that will be used are:
 
--	Android Studio: Where I will implement the User Interface 
+>	Android Studio: Where I will implement the User Interface 
 
--	Draw.io: Used to design the class diagrams using UML.
+>	Draw.io: Used to design the class diagrams using UML.
 
--	Zube: Used to implement Kanban Boards & implement the sprints for the project.
+>	Zube: Used to implement Kanban Boards & implement the sprints for the project.
 
--	Firebase: Used to store the registration details of the customers.
+>	Firebase: Used to store the registration details of the customers.
 
--	Adobe XD CC: Used to design the User Interface of the application.
+>	Adobe XD CC: Used to design the User Interface of the application.
 
--	Survey Monkey: Used to gather data from end-users by creating a survey of 10 questions.
+>	Survey Monkey: Used to gather data from end-users by creating a survey of 10 questions.
 
 # Data Gathering - Questionnaire
 
@@ -63,7 +63,6 @@ The images below shows a Questionnaire that I have created which asks the public
 # Figure 2
 
 <img width="894" alt="Question 2" src="https://user-images.githubusercontent.com/29733613/76161846-23c9b400-612f-11ea-9d05-060657f011f1.png">
-
 
 # Figure 3
 
