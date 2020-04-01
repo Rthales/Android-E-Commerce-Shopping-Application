@@ -251,3 +251,11 @@ This is how the Homepage of the application looks like. Users who are on the app
 If users are having any issues then they can fill out a form on the Contact Us section of the app.
 
 <img width="329" alt="Homepage" src="https://user-images.githubusercontent.com/29733613/78153565-1accb980-7433-11ea-801b-217c7dd359eb.png">
+
+# Register Implementation
+
+> **How does it work?**
+
+This is the Register activity of the application. Users can create an account by choosing a Username, Password and their e-mail.
+
+<img width="332" alt="Register UI" src="https://user-images.githubusercontent.com/29733613/78153578-1e604080-7433-11ea-80ea-7b59849d0388.png">
