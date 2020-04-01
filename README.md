@@ -256,6 +256,6 @@ If users are having any issues then they can fill out a form on the Contact Us s
 
 > **How does it work?**
 
-This is the Register activity of the application. Users can create an account by choosing a Username, Password and their e-mail.
+This is the Register activity of the application. Users can create an account by choosing a Username, Password and their e-mail. Once users click the Register button, they will receive a notification saying that they have registered successfully and the details will get written to a firebase database.
 
 <img width="332" alt="Register UI" src="https://user-images.githubusercontent.com/29733613/78153578-1e604080-7433-11ea-80ea-7b59849d0388.png">
