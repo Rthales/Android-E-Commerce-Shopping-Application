@@ -240,3 +240,14 @@ The images below shows a Questionnaire that I have created which asks the public
 21. A rotating circular progress bar will be shown after the button has been clicked to indicate that the payment is being processed and after it has been complete, an alert dialogue will get displayed saying that the payment has been successful.
 
 22.	After the payment has been completed, the users will get re-directed back to the home page.
+
+
+# Homepage Implementation
+
+> **How does it work?**
+
+This is how the Homepage of the application looks like. Users who are on the application will be able to register an account by pressing the register button, then they will be taken to a form to fill out their details, after that they will be re-directed to the login page where they should login their account.
+
+If users are having any issues then they can fill out a form on the Contact Us section of the app.
+
+<img width="329" alt="Homepage" src="https://user-images.githubusercontent.com/29733613/78153565-1accb980-7433-11ea-801b-217c7dd359eb.png">
