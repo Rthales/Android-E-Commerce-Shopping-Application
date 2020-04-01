@@ -102,38 +102,37 @@ The images below shows a Questionnaire that I have created which asks the public
 
 > **2. The registration activity will have entry fields for Username, E-mail Address, Password and a terms and conditions check box that must be ticked before registering successfully.**
 
-> **3. The registration activity entry fields will get validated against:**
+>   **3.   The registration activity entry fields will get validated against:**
 
-> **4. Username must not be empty**.
+>   **4.   Username must not be empty**.
     
->   **5. Username ***must contain numbers**.
+>   **5.   Username ***must contain numbers**.
     
->   **6. Username Length ***must not exceed 10 characters**.
+>   **6.   Username Length ***must not exceed 10 characters**.
     
->   **7. Password Data Input Field ***must contain numbers, special characters, characters and must not be left empty.**
+>   **7.   Password Data Input Field ***must contain numbers, special characters, characters and must not be left empty.**
     
->   **8. Password Data Input Field: Must start with an uppercase character**
+>   **8.   Password Data Input Field: Must start with an uppercase character**
     
->   **E-mail Address Data Input Field: Must have an @ symbol and should not be left empty.**
+>   **9.   E-mail Address Data Input Field: Must have an @ symbol and should not be left empty.**
     
->   **E-mail Address Data Input Field: Must be within the range of [A-Z], [0-9].**
+>   **10.  E-mail Address Data Input Field: Must be within the range of [A-Z], [0-9].**
     
->   **Terms and Conditions Check Box ***must be ticked to register successfully.**
+>   **11.  Terms and Conditions Check Box ***must be ticked to register successfully.**
       
->   **4. The Main Activity will have a drop-down menu that allows users to choose which category of products they would like to choose from. The options are:**
+>   **12. The Main Activity will have a drop-down menu that allows users to choose which category of products they would like to choose from. The options are:**
 
  >  **Sports and Outdoors.**
  
  >  **Tech.**
  
-    ***Clothing.***
+ >  **Clothing.**
  
-    ***DIY.***
-    
-    
+  > **DIY.**
+      
 > **5. The main activity will have a Contact Us button that will allow users to fill out a form if they are having any issues with the application. SQLite will be used as the database to store any complaints from users.**
 
-6. Users will receive a notification saying that they have registered successfully after clicking the register button.
+> **6. Users will receive a notification saying that they have registered successfully after clicking the register button.**
 
 7. The login activity will allow users to login with their E-mail Address and password only.
 
