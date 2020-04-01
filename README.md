@@ -181,7 +181,7 @@ The images below shows a Questionnaire that I have created which asks the public
 
 # Homepage Implementation
 
-> **How does it work?**
+> ***How does it work?***
 
 This is how the Homepage of the application looks like. Users who are on the application will be able to register an account by pressing the register button, then they will be taken to a form to fill out their details, after that they will be re-directed to the login page where they should login their account.
 
@@ -191,7 +191,7 @@ If users are having any issues then they can fill out a form on the Contact Us s
 
 # Register Implementation
 
-> **How does it work?**
+> ***How does it work?***
 
 This is the Register activity of the application. Users can create an account by choosing a Username, Password and their e-mail. Once users click the Register button, they will receive a notification saying that they have registered successfully and the details will get written to a firebase database.
 
@@ -199,7 +199,7 @@ This is the Register activity of the application. Users can create an account by
 
 # Login Implementation
 
-> **How does it work?**
+> ***How does it work?***
 
 This is how the Login Activity looks like. Users are required to log in with their registered e-mail address and password, the details must match with the ones they have registered with, otherwise they won't be granted access.
 
@@ -207,7 +207,7 @@ This is how the Login Activity looks like. Users are required to log in with the
 
 # Tech Activity Implementation
 
-> **How does it work?**
+> ***How does it work?***
 
 This is how the Tech Category Activity looks like. Users are able to choose a quantity, colour and size for each of the product and then add the product to the basket just like Amazon's shopping application. There is however a small issue, whenever a colour, quantity or size is chosen, it doesn't show up in the drop-down menu, this will be fixed in a later update.
 
