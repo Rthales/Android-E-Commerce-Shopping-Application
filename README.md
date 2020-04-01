@@ -173,9 +173,9 @@ The images below shows a Questionnaire that I have created which asks the public
     
 >   **Password Data Input Field ***must contain numbers, special characters, characters and must not be left empty.***
     
-    Password Data Input Field ***must start with an uppercase character***.
+>   **Password Data Input Field: Must start with an uppercase character**
     
-    E-mail Address Data Input Field ***must have an @ symbol and should not be left empty.***
+>   **E-mail Address Data Input Field: Must have an @ symbol and should not be left empty.**
     
     E-mail Address Data Input Field: ***must be within the range of [A-Z], [0-9].
     
@@ -193,7 +193,7 @@ The images below shows a Questionnaire that I have created which asks the public
     ***DIY.***
     
     
-5. The main activity will have a Contact Us button that will allow users to fill out a form if they are having any issues with the application. SQLite will be used as the database to store any complaints from users.
+> **5. The main activity will have a Contact Us button that will allow users to fill out a form if they are having any issues with the application. SQLite will be used as the database to store any complaints from users.**
 
 6. Users will receive a notification saying that they have registered successfully after clicking the register button.
 
