@@ -100,11 +100,11 @@ The images below shows a Questionnaire that I have created which asks the public
 
 > **1. The main activity will have a Register Button and a Login Button below the text.**
 
->   **2. The registration activity will have entry fields for Username, E-mail Address, Password and a terms and conditions check box that must be ticked before registering successfully.**
+> **2. The registration activity will have entry fields for Username, E-mail Address, Password and a terms and conditions check box that must be ticked before registering successfully.**
 
 > **3. The registration activity entry fields will get validated against:**
 
->   **4. Username ***must not be empty**.
+> **4. Username must not be empty**.
     
 >   **5. Username ***must contain numbers**.
     
