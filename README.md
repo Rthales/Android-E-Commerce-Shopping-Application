@@ -267,3 +267,11 @@ This is the Register activity of the application. Users can create an account by
 This is how the Login Activity looks like. Users are required to log in with their registered e-mail address and password, the details must match with the ones they have registered with, otherwise they won't be granted access.
 
 <img width="331" alt="Login" src="https://user-images.githubusercontent.com/29733613/78170576-0b596a80-744b-11ea-8db3-26627685f06a.png">
+
+# Tech Activity Implementation
+
+> **How does it work?**
+
+This is how the Tech Category Activity looks like. Users are able to choose a quantity, colour and size for each of the product and then add the product to the basket just like Amazon's shopping application. There is however a small issue, whenever a colour, quantity or size is chosen, it doesn't show up in the drop-down menu, this will be fixed in a later update.
+
+<img width="336" alt="Tech Activity" src="https://user-images.githubusercontent.com/29733613/78153589-20c29a80-7433-11ea-8f24-eed4b3105e3c.png">
