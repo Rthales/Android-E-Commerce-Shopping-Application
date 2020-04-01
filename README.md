@@ -159,15 +159,15 @@ The images below shows a Questionnaire that I have created which asks the public
 
 # Requirements Specification (Product Backlog)
 
-1.	The main activity will have a Register Button and a Login Button below the text.
+> **1. The main activity will have a Register Button and a Login Button below the text.**
 
-2.	The registration activity will have entry fields for Username, E-mail Address, Password and a terms and conditions check box that must be ticked before registering successfully.
+>   **2. The registration activity will have entry fields for Username, E-mail Address, Password and a terms and conditions check box that must be ticked before registering successfully.**
 
-3. The registration activity entry fields will get validated against:
+> **3. The registration activity entry fields will get validated against:**
 
-    Username ***must not be empty***.
+>   **Username ***must not be empty**.
     
-    Username ***must contain numbers***.
+>   **Username ***must contain numbers**.
     
     Username Length ***must not exceed 10 characters***.
     
@@ -177,9 +177,9 @@ The images below shows a Questionnaire that I have created which asks the public
     
     E-mail Address Data Input Field ***must have an @ symbol and should not be left empty.***
     
-    E-mail Address Data Input Field: ***must be within the range of [A-Z], [0-9].***
+    E-mail Address Data Input Field: ***must be within the range of [A-Z], [0-9].
     
-    Terms and Conditions Check Box ***must be ticked to register successfully.***
+    Terms and Conditions Check Box ***must be ticked to register successfully.
     
     
 4. The Main Activity will have a drop-down menu that allows users to choose which category of products they would like to choose from. The options are:
