@@ -259,3 +259,11 @@ If users are having any issues then they can fill out a form on the Contact Us s
 This is the Register activity of the application. Users can create an account by choosing a Username, Password and their e-mail. Once users click the Register button, they will receive a notification saying that they have registered successfully and the details will get written to a firebase database.
 
 <img width="332" alt="Register UI" src="https://user-images.githubusercontent.com/29733613/78153578-1e604080-7433-11ea-80ea-7b59849d0388.png">
+
+# Login Implementation
+
+> **How does it work?**
+
+This is how the Login Activity looks like. Users are required to log in with their registered e-mail address and password, the details must match with the ones they have registered with, otherwise they won't be granted access.
+
+<img width="331" alt="Login" src="https://user-images.githubusercontent.com/29733613/78170576-0b596a80-744b-11ea-8db3-26627685f06a.png">
