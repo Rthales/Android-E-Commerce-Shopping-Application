@@ -169,9 +169,9 @@ The images below shows a Questionnaire that I have created which asks the public
     
 >   **Username ***must contain numbers**.
     
-    Username Length ***must not exceed 10 characters***.
+>   **Username Length ***must not exceed 10 characters**.
     
-    Password Data Input Field ***must contain numbers, special characters, characters and must not be left empty.***
+>   **Password Data Input Field ***must contain numbers, special characters, characters and must not be left empty.***
     
     Password Data Input Field ***must start with an uppercase character***.
     
