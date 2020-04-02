@@ -212,3 +212,11 @@ This is how the Login Activity looks like. Users are required to log in with the
 This is how the Tech Category Activity looks like. Users are able to choose a quantity, colour and size for each of the product and then add the product to the basket just like Amazon's shopping application. There is however a small issue, whenever a colour, quantity or size is chosen, it doesn't show up in the drop-down menu, this will be fixed in a later update.
 
 <img width="336" alt="Tech Activity" src="https://user-images.githubusercontent.com/29733613/78153589-20c29a80-7433-11ea-8f24-eed4b3105e3c.png">
+
+# Sports and Outdoors Activity Implementation
+
+> ***How does it work?***
+
+This is how the Sports and Outdoors Activity looks like. It has the same functionality as the other shopping categories, users can choose the quantity, colour and size of the product and then add it to the basket.
+
+<img width="330" alt="Sports and Outdoors" src="https://user-images.githubusercontent.com/29733613/78227391-16e97780-74c5-11ea-9b48-d15e0e2a7671.png">
