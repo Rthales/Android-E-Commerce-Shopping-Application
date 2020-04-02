@@ -279,11 +279,11 @@ In this section you will find details on what most of the functions of the appli
 
 ### Method Name ###
 
-> setOnClickListener(new View.OnClickListener())
+> onClick(View view)
 
 ### Method Parameters ###
 
-> None
+> View: This parameter refers to the view of the button.
 
 ### Purpose of Method
 
