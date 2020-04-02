@@ -274,3 +274,25 @@ In this section you will find details on what most of the functions of the appli
 >   6. Open the AVD manager to choose a emulator device to run the application on.
 
 >   7. After you have chosen the device, click the run button to run the application.
+
+# Register Button Method #
+
+### Method Name ###
+
+> setOnClickListener(new View.OnClickListener())
+
+### Method Parameters ###
+
+> None
+
+### Purpose of Method
+
+> This methods adds an action listener to the register button so that an event can be triggered.
+
+### Method Return Type ###
+
+> void
+
+### Method Implementation ###
+
+<img width="779" alt="Register Button Listener" src="https://user-images.githubusercontent.com/29733613/78253206-f1bc2f80-74eb-11ea-8d17-c26a150e849b.png">
