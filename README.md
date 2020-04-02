@@ -24,20 +24,20 @@ I will be also making use of some Agile approaches such as Kanban Boards, Produc
 # Feasibility Study - Version 1.1 :open_file_folder:
 In this section I will be writing about the different kinds of feasibility studies that will impact this project. These will determine whether this project is feasible enough to develop or not.
 
-# Legal Feasibility :office:
-Under the Copyright Design and Patents Act, all of the images and source code that I will be using throughout this project I will reference in an index at the end of the project.
+### Legal Feasibility :office: ###
+> Under the Copyright Design and Patents Act, all of the images and source code that I will be using throughout this project I will reference in an index at the end of the project.
 
-Under the Data Protection Act all of the registration data will get stored in a secure back-end database using Firebase.
+> Under the Data Protection Act all of the registration data will get stored in a secure back-end database using Firebase.
 
-Under the Computer Misuse Act, I will not any malware that will harm and render other people’s computer unavailable.
+> Under the Computer Misuse Act, I will not any malware that will harm and render other people’s computer unavailable.
 
-# Schedule Feasibility
-The total time taken for each task will be stated in a Gantt Chart and also the start and end dates for that task. The Gantt Chart will also show whether or not that task has been completed or if it’s still pending.
+### Schedule Feasibility ###
+> The total time taken for each task will be stated in a Gantt Chart and also the start and end dates for that task. The Gantt Chart will also show whether or not that task has been completed or if it’s still pending.
 
-# Economic Feasibility
+### Economic Feasibility ###
 I will not be purchasing any software in order to achieve project completion, all of the software and tools that I will be using to develop this project will be free to use. No costs will be incurred.
 
-# Technical Feasibility
+### Technical Feasibility ###
 I will be making use of my MacBook Pro to develop my project. The software that will be used are:
 
 >	Android Studio: Where I will implement the User Interface 
