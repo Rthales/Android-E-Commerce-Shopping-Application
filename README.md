@@ -31,6 +31,10 @@ In this section I will be writing about the different kinds of feasibility studi
 
 > Under the Computer Misuse Act, I will not any malware that will harm and render other people’s computer unavailable.
 
+# Prerequisites
+
+> Android Studio Installed
+
 ### Schedule Feasibility ###
 > The total time taken for each task will be stated in a Gantt Chart and also the start and end dates for that task. The Gantt Chart will also show whether or not that task has been completed or if it’s still pending.
 
@@ -178,8 +182,7 @@ The images below shows a Questionnaire that I have created which asks the public
 
 >   **22. After the payment has been completed, the users will get re-directed back to the home page.**
 
-
-## Homepage Implementation ##
+## Homepage Activity Implementation ##
 
 > ***How does it work?***
 
@@ -189,7 +192,7 @@ If users are having any issues then they can fill out a form on the Contact Us s
 
 <img width="329" alt="Homepage" src="https://user-images.githubusercontent.com/29733613/78153565-1accb980-7433-11ea-801b-217c7dd359eb.png">
 
-## Register Implementation ##
+## Register Activity Implementation ##
 
 > ***How does it work?***
 
@@ -197,7 +200,7 @@ This is the Register activity of the application. Users can create an account by
 
 <img width="332" alt="Register UI" src="https://user-images.githubusercontent.com/29733613/78153578-1e604080-7433-11ea-80ea-7b59849d0388.png">
 
-## Login Implementation ##
+## Login Activity Implementation ##
 
 > ***How does it work?***
 
