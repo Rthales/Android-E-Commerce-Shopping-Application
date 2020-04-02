@@ -252,3 +252,14 @@ This is how the Contact Us Activity looks like, the users that are experiencing 
 This is how the Payment Activity looks like. After the users have chosen which products they would like to buy, they are presented with this form where they can pay for the products, just like on any shopping application. Users also have the option of paying with **PayPal**, however I would not recommend to actually go ahead and buy anything as this is only an application for myself for improving my skills and will not be uploaded on the play store.
 
 <img width="329" alt="Payment Activity" src="https://user-images.githubusercontent.com/29733613/78227384-15b84a80-74c5-11ea-9de7-904621c2b566.png">
+
+# Software Documentation
+In this section you will find details on what most of the functions of the application does and also you will find instructions on how to build and run the application.
+
+### How to Build & Run the application ###
+
+>   1. Go to your current directory by using the command **cd <directory name>**
+
+>   2. Copy the repository URL and in the command line type the command: **git clone <URL>** to clone the repository on the desktop
+    
+>   3. Open Eclipse or IntelliJ, depending which one you have.
