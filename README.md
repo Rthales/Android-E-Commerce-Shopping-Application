@@ -220,3 +220,19 @@ This is how the Tech Category Activity looks like. Users are able to choose a qu
 This is how the Sports and Outdoors Activity looks like. It has the same functionality as the other shopping categories, users can choose the quantity, colour and size of the product and then add it to the basket.
 
 <img width="330" alt="Sports and Outdoors" src="https://user-images.githubusercontent.com/29733613/78227391-16e97780-74c5-11ea-9b48-d15e0e2a7671.png">
+
+# Clothing Activity Implementation
+
+> **How does it work?***
+
+This is how the clothing activity looks like. It is the same as the other ones above.
+
+<img width="336" alt="Clothing UI" src="https://user-images.githubusercontent.com/29733613/78227370-0f29d300-74c5-11ea-9271-005c8ca9e210.png">
+
+# DIY Activity Implementation
+
+> **How does it work?**
+
+Same as the other ones above.
+
+<img width="335" alt="DIY Activity" src="https://user-images.githubusercontent.com/29733613/78227382-14871d80-74c5-11ea-8c21-7377c4cb74f8.png">
