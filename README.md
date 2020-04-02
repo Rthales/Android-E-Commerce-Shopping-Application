@@ -262,4 +262,12 @@ In this section you will find details on what most of the functions of the appli
 
 >   2. Copy the repository URL and in the command line type the command: **git clone <URL>** to clone the repository on the desktop
     
->   3. Open Eclipse or IntelliJ, depending which one you have.
+>   3. Open **Android Studio**.
+
+>   4. Choose **Open Project**
+
+>   5. Once the project has opened and finished indexing click the green hammer next to the run button to build the project.
+
+>   6. Open the AVD manager to choose a emulator device to run the application on.
+
+>   7. After you have chosen the device, click the run button to run the application.
