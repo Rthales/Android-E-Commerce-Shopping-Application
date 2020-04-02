@@ -179,7 +179,7 @@ The images below shows a Questionnaire that I have created which asks the public
 >   **22. After the payment has been completed, the users will get re-directed back to the home page.**
 
 
-# Homepage Implementation
+## Homepage Implementation ##
 
 > ***How does it work?***
 
@@ -189,7 +189,7 @@ If users are having any issues then they can fill out a form on the Contact Us s
 
 <img width="329" alt="Homepage" src="https://user-images.githubusercontent.com/29733613/78153565-1accb980-7433-11ea-801b-217c7dd359eb.png">
 
-# Register Implementation
+## Register Implementation ##
 
 > ***How does it work?***
 
@@ -197,7 +197,7 @@ This is the Register activity of the application. Users can create an account by
 
 <img width="332" alt="Register UI" src="https://user-images.githubusercontent.com/29733613/78153578-1e604080-7433-11ea-80ea-7b59849d0388.png">
 
-# Login Implementation
+## Login Implementation ##
 
 > ***How does it work?***
 
@@ -205,7 +205,7 @@ This is how the Login Activity looks like. Users are required to log in with the
 
 <img width="331" alt="Login" src="https://user-images.githubusercontent.com/29733613/78170576-0b596a80-744b-11ea-8db3-26627685f06a.png">
 
-# Tech Activity Implementation
+## Tech Activity Implementation ##
 
 > ***How does it work?***
 
@@ -213,7 +213,7 @@ This is how the Tech Category Activity looks like. Users are able to choose a qu
 
 <img width="336" alt="Tech Activity" src="https://user-images.githubusercontent.com/29733613/78153589-20c29a80-7433-11ea-8f24-eed4b3105e3c.png">
 
-# Sports and Outdoors Activity Implementation
+## Sports and Outdoors Activity Implementation ##
 
 > ***How does it work?***
 
@@ -221,7 +221,7 @@ This is how the Sports and Outdoors Activity looks like. It has the same functio
 
 <img width="330" alt="Sports and Outdoors" src="https://user-images.githubusercontent.com/29733613/78227391-16e97780-74c5-11ea-9b48-d15e0e2a7671.png">
 
-# Clothing Activity Implementation
+## Clothing Activity Implementation ##
 
 > **How does it work?**
 
@@ -245,7 +245,7 @@ This is how the Contact Us Activity looks like, the users that are experiencing 
 
 <img width="331" alt="Contact Us" src="https://user-images.githubusercontent.com/29733613/78227378-13ee8700-74c5-11ea-8ed5-7e8914081e05.png">
 
-# Payment Activity Implementation
+## Payment Activity Implementation ##
 
 > **How does it work?**
 
@@ -253,7 +253,7 @@ This is how the Payment Activity looks like. After the users have chosen which p
 
 <img width="329" alt="Payment Activity" src="https://user-images.githubusercontent.com/29733613/78227384-15b84a80-74c5-11ea-9de7-904621c2b566.png">
 
-# Software Documentation
+## Software Documentation ##
 In this section you will find details on what most of the functions of the application does and also you will find instructions on how to build and run the application.
 
 ### How to Build & Run the application ###
