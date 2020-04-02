@@ -172,11 +172,11 @@ The images below shows a Questionnaire that I have created which asks the public
     
 >       **Expiry Date (Month & Year) in the form of drop-down menus (Spinners).**
 
-20. The payment activity will have a ***“Confirm Payment”*** button that the users will click when they are ready to pay for the products.
+>   **20. The payment activity will have a Confirm Payment button that the users will click when they are ready to pay for the products.**
 
-21. A rotating circular progress bar will be shown after the button has been clicked to indicate that the payment is being processed and after it has been complete, an alert dialogue will get displayed saying that the payment has been successful.
+>   **21. A rotating circular progress bar will be shown after the button has been clicked to indicate that the payment is being processed and after it has been complete, an alert dialogue will get displayed saying that the payment has been successful.**
 
-22.	After the payment has been completed, the users will get re-directed back to the home page.
+>   **22. After the payment has been completed, the users will get re-directed back to the home page.**
 
 
 # Homepage Implementation
