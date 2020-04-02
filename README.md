@@ -106,11 +106,11 @@ The images below shows a Questionnaire that I have created which asks the public
 
 >   **4.   Username must not be empty**.
     
->   **5.   Username ***must contain numbers**.
+>   **5.   Username must contain numbers**.
     
->   **6.   Username Length ***must not exceed 10 characters**.
+>   **6.   Username Length must not exceed 10 characters**.
     
->   **7.   Password Data Input Field ***must contain numbers, special characters, characters and must not be left empty.**
+>   **7.   Password Data Input Field must contain numbers, special characters, characters and must not be left empty.**
     
 >   **8.   Password Data Input Field: Must start with an uppercase character**
     
@@ -160,17 +160,17 @@ The images below shows a Questionnaire that I have created which asks the public
 
 >  **19. On each of the categories, users will have the ability to choose the color of the product that they would like.**
 
-20. The application will have a Payment activity that will have the following entry fields when checking out:
+>  **20. The application will have a Payment activity that will have the following entry fields when checking out:**
 
-    -	***The type of payment the users may wish to pay with: VISA, PayPal, Mastercard.***
+>       **The type of payment the users may wish to pay with: VISA, PayPal, Mastercard.**
     
-    -	***Card number: XXXX XXXX XXXX XXXX (will get validated to ensure that only numbers are present) and no characters are inputted.***
+>   	**Card number: XXXX XXXX XXXX XXXX (will get validated to ensure that only numbers are present) and no characters are inputted.**
 
-    -	***Card CVV (* this is the 3-digit code at the back of the card), will get validated to ensure that no more than 3 numbers are entered.***
+>    	**Card CVV (* this is the 3-digit code at the back of the card), will get validated to ensure that no more than 3 numbers are entered.**
     
-    -	***Cardholder’s Name.***
+>       **Cardholder’s Name.**
     
-    -   ***Expiry Date (Month & Year) in the form of drop-down menus (Spinners).***
+>       **Expiry Date (Month & Year) in the form of drop-down menus (Spinners).**
 
 20. The payment activity will have a ***“Confirm Payment”*** button that the users will click when they are ready to pay for the products.
 
