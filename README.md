@@ -256,7 +256,7 @@ This is how the Payment Activity looks like. After the users have chosen which p
 
 <img width="329" alt="Payment Activity" src="https://user-images.githubusercontent.com/29733613/78227384-15b84a80-74c5-11ea-9de7-904621c2b566.png">
 
-## Software Documentation ##
+# Software Documentation #
 In this section you will find details on what most of the functions of the application does and also you will find instructions on how to build and run the application.
 
 ### How to Build & Run the application ###
