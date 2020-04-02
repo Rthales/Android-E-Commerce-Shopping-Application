@@ -223,7 +223,7 @@ This is how the Sports and Outdoors Activity looks like. It has the same functio
 
 # Clothing Activity Implementation
 
-> **How does it work?***
+> **How does it work?**
 
 This is how the clothing activity looks like. It is the same as the other ones above.
 
