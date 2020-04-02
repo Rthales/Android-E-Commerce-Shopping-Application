@@ -152,13 +152,13 @@ The images below shows a Questionnaire that I have created which asks the public
 
 >  **15. Users have the option to choose the quantity of each product, hence that will affect the total cost of the product.**
 
-16. There will be an “Add to Basket” button underneath the products which allows the users to add the chosen product(s) to their basket (adds it to the menu items).
+>  **16. There will be an “Add to Basket” button underneath the products which allows the users to add the chosen product(s) to their basket (adds it to the menu items).**
 
-17. The Clothing products will have an option where users can choose the size, color and quantity they would like to pick.
+>  **17. The Clothing products will have an option where users can choose the size, color and quantity they would like to pick.**
 
-18. Users have the option to view the products in their basket by clicking “View Basket” which will get placed in a menu on the activity.
+>  **18. Users have the option to view the products in their basket by clicking “View Basket” which will get placed in a menu on the activity.**
 
-19. On each of the categories, users will have the ability to choose the color of the product that they would like.
+>  **19. On each of the categories, users will have the ability to choose the color of the product that they would like.**
 
 20. The application will have a Payment activity that will have the following entry fields when checking out:
 
@@ -236,3 +236,11 @@ This is how the clothing activity looks like. It is the same as the other ones a
 Same as the other ones above.
 
 <img width="335" alt="DIY Activity" src="https://user-images.githubusercontent.com/29733613/78227382-14871d80-74c5-11ea-8c21-7377c4cb74f8.png">
+
+# Contact Us Activity Implementation
+
+> **How does it work?**
+
+This is how the Contact Us Activity looks like, the users that are experiencing issues with the application can fill out the form. After they have submitted the form, the data will get written to an SQL database where the data will get analysed and will be taken into consideration in order to figure out what needs to be fixed and updated, usually this will be in the **Maintenance** phase of the software development life cycle.
+
+<img width="331" alt="Contact Us" src="https://user-images.githubusercontent.com/29733613/78227378-13ee8700-74c5-11ea-8ed5-7e8914081e05.png">
