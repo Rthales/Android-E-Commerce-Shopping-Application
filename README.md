@@ -244,3 +244,11 @@ Same as the other ones above.
 This is how the Contact Us Activity looks like, the users that are experiencing issues with the application can fill out the form. After they have submitted the form, the data will get written to an SQL database where the data will get analysed and will be taken into consideration in order to figure out what needs to be fixed and updated, usually this will be in the **Maintenance** phase of the software development life cycle.
 
 <img width="331" alt="Contact Us" src="https://user-images.githubusercontent.com/29733613/78227378-13ee8700-74c5-11ea-8ed5-7e8914081e05.png">
+
+# Payment Activity Implementation
+
+> **How does it work?**
+
+This is how the Payment Activity looks like. After the users have chosen which products they would like to buy, they are presented with this form where they can pay for the products, just like on any shopping application. Users also have the option of paying with **PayPal**, however I would not recommend to actually go ahead and buy anything as this is only an application for myself for improving my skills and will not be uploaded on the play store.
+
+<img width="329" alt="Payment Activity" src="https://user-images.githubusercontent.com/29733613/78227384-15b84a80-74c5-11ea-9de7-904621c2b566.png">
