@@ -1,4 +1,4 @@
-# Project Proposal
+# Project Proposal 🗓
 
 I am planning on designing and implementing an e-Commerce shopping application in Android that will allow end-users to register, login to the app and browse for products in different category sections. 
 
@@ -144,13 +144,13 @@ The images below shows a Questionnaire that I have created which asks the public
 
 >  **11. The Tech category activity will show the images of the products that are currently in stock.**
 
-12. The ***Clothing category*** activity will show the images of the products that are currently in stock.
+>  **12. The Clothing category activity will show the images of the products that are currently in stock.**
 
-13. The ***DIY category** activity will show the images of the products that are currently in stock.
+>  **13. The DIY category activity will show the images of the products that are currently in stock.**
 
-14. The cost of each product will be displayed next to the images in GBP.
+>  **14. The cost of each product will be displayed next to the images in GBP.**
 
-15. Users have the option to choose the quantity of each product, hence that will affect the total cost of the product.
+>  **15. Users have the option to choose the quantity of each product, hence that will affect the total cost of the product.**
 
 16. There will be an “Add to Basket” button underneath the products which allows the users to add the chosen product(s) to their basket (adds it to the menu items).
 
