@@ -19,7 +19,12 @@ Each category with products will be shown on different activity pages on the app
 I will be making use of version control using Git in order to track the changes made to the project and to also commit and push new changes when developing the application. In case I lose my work, I can revert back to previous commits to start from that checkpoint.
 
 My initial inspiration for choosing this type of application was from the Amazon application.
+
 I will be also making use of some Agile approaches such as Kanban Boards, Product Backlogs and Sprint Boards.
+
+# Prerequisites
+
+> Android Studio Installed
 
 # Feasibility Study - Version 1.1 :open_file_folder:
 In this section I will be writing about the different kinds of feasibility studies that will impact this project. These will determine whether this project is feasible enough to develop or not.
@@ -30,10 +35,6 @@ In this section I will be writing about the different kinds of feasibility studi
 > Under the Data Protection Act all of the registration data will get stored in a secure back-end database using Firebase.
 
 > Under the Computer Misuse Act, I will not any malware that will harm and render other people’s computer unavailable.
-
-# Prerequisites
-
-> Android Studio Installed
 
 ### Schedule Feasibility ###
 > The total time taken for each task will be stated in a Gantt Chart and also the start and end dates for that task. The Gantt Chart will also show whether or not that task has been completed or if it’s still pending.
@@ -232,7 +233,7 @@ This is how the clothing activity looks like. It is the same as the other ones a
 
 <img width="336" alt="Clothing UI" src="https://user-images.githubusercontent.com/29733613/78227370-0f29d300-74c5-11ea-9271-005c8ca9e210.png">
 
-# DIY Activity Implementation
+## DIY Activity Implementation ##
 
 > **How does it work?**
 
@@ -240,7 +241,7 @@ Same as the other ones above.
 
 <img width="335" alt="DIY Activity" src="https://user-images.githubusercontent.com/29733613/78227382-14871d80-74c5-11ea-8c21-7377c4cb74f8.png">
 
-# Contact Us Activity Implementation
+## Contact Us Activity Implementation #
 
 > **How does it work?**
 
@@ -296,3 +297,21 @@ In this section you will find details on what most of the functions of the appli
 ### Method Implementation ###
 
 <img width="779" alt="Register Button Listener" src="https://user-images.githubusercontent.com/29733613/78253206-f1bc2f80-74eb-11ea-8d17-c26a150e849b.png">
+
+# Login Button Method #
+
+### Method Name ###
+
+> onClick(View view)
+
+### Method Parameters ###
+
+> View: This parameter refers to the view of the button.
+
+### Method Return Type ###
+
+> void
+
+### Method Implementation ###
+
+<img width="714" alt="Login Button Listener" src="https://user-images.githubusercontent.com/29733613/78253201-f08b0280-74eb-11ea-9aca-b909d6d4b08b.png">
