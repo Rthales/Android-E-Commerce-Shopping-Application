@@ -23,12 +23,10 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
-
 import com.example.weshopapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -38,7 +36,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
@@ -69,8 +66,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     private boolean isEmpty; // Variable that determines if any of the
     private boolean isValid;
     private boolean isRegistered;
-
-
+    
     private NotificationManagerCompat notificationManager; // Notification manager variable
     private FirebaseAuth authentication = FirebaseAuth.getInstance();
     private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns that will be checked.
@@ -95,7 +91,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
         this.registerButton.setOnClickListener(new View.OnClickListener() { // Add listener to the button
             @Override
             public void onClick(View buttonView) {
-
                 validateUsername(); // Call method to validate username
                 validateEmailAddress(); // Validate the e-mail address
 
@@ -145,7 +140,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
                     return super.onOptionsItemSelected(item); // Return the base item selected
             }
-        } catch (ActivityNotFoundException act) {
+        } 
+        
+        catch (ActivityNotFoundException act) {
             Log.d(String.valueOf(R.string.error), act.toString()); // Get the cause of the error.
         }
 
@@ -584,8 +581,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             Intent loginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(loginIntent); // Start the login activity
 
-        } catch (ActivityNotFoundException act) { // Catch the error if the activity is not found.
-
+        } 
+        
+        catch (ActivityNotFoundException act) { // Catch the error if the activity is not found.
             Log.d(String.valueOf(R.string.error), act.toString()); // Log the error.
         }
     }
