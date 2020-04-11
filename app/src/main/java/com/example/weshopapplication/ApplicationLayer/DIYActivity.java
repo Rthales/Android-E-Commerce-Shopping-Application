@@ -221,16 +221,18 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
 
-                                        if (dialog != null) {
+                                        if (dialog != null) { // if there is a dialog
 
-                                            dialog.dismiss();
+                                            dialog.dismiss(); // Dismiss it.
                                         }
                                     }
                                 });
 
                         error.show();
                         error.setCancelable(true);
-                    } else {
+                    }
+                    
+                    else {
                         diyAddToBasketTwo();
                     }
                 }
@@ -243,12 +245,13 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
             @Override
             public void onClick(View v) {
                 try {
-
                     if (v.getId() == R.id.diyNextPageBtn) {
                         Intent nextDiyIntent = new Intent(DIYActivity.this, DIYActivityTwo.class);
                         startActivity(nextDiyIntent);
                     }
-                } catch (ActivityNotFoundException exc) {
+                } 
+                
+                catch (ActivityNotFoundException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
             }
@@ -263,6 +266,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
                 new TechActivity.Colours(4, diyColoursResources[4])};
 
         for (TechActivity.Colours theColours : colours) {
+            
             diyListOfColoursOne.add(theColours);
             diyListOfColoursTwo.add(theColours);
             coloursAdded = true;
@@ -311,15 +315,13 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         TechActivity.Quantities[] quantities = new TechActivity.Quantities[]{new TechActivity.Quantities(quantityResources[0]), new TechActivity.Quantities(quantityResources[1]), new TechActivity.Quantities(quantityResources[2]), new TechActivity.Quantities(quantityResources[3]), new TechActivity.Quantities(quantityResources[4]),
                 new TechActivity.Quantities(quantityResources[5])};
 
-        for (TechActivity.Quantities theQuantities : quantities) {
-            diyListOfQuantitiesTwo.add(theQuantities);
+        for (TechActivity.Quantities theQuantities : quantities) { // For each quantity in the array list
+            diyListOfQuantitiesTwo.add(theQuantities); // Add it to the array list
             sizesAdded = true;
         }
 
-
         return true;
     }
-
 
     private boolean diyAddToBasketOne() { // Routine that adds the first DIY product to the basket list view.
         Context context = getApplicationContext();
@@ -339,7 +341,9 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
             public void run() {
                 try {
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
-                } catch (InterruptedException exc) {
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -376,7 +380,9 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
                 try {
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
-                } catch (InterruptedException exc) {
+                }
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -424,9 +430,9 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         try {
             switch (item.getItemId()) {
 
-                case R.id.mainActivity:
+                case R.id.mainActivity: // If the main activity option is chosen
                     Intent mainActivity = new Intent(DIYActivity.this, MainActivity.class);
-                    startActivity(mainActivity);
+                    startActivity(mainActivity); // Start that activity
                     break;
 
                 case R.id.sportsAndOutdoorsCategory:
@@ -454,8 +460,8 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
                     super.onOptionsItemSelected(item);
 
             }
-
-        } catch (ActivityNotFoundException exc) {
+        } 
+        catch (ActivityNotFoundException exc) {
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
 
@@ -471,48 +477,63 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         Context context = getApplicationContext();
         String[] productResources = new String[]{context.getString(R.string.productCost)};
 
-        if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[0]))) {
-            diyFirstProductCost.setText(null);
-            diyFirstProductCost.append(productResources[0] + diyFirstProductCosts[0]);
+        if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[0]))) { // If the first quantity option is chosen
+            diyFirstProductCost.setText(null); // Clear the text
+            diyFirstProductCost.append(productResources[0] + diyFirstProductCosts[0]); // Append the new text
             valueAppended = true;
 
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[1]))) {
+        } 
+       
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[1]))) {
             diyFirstProductCost.setText(null);
             diyFirstProductCost.append(productResources[0] + diyFirstProductCosts[1]);
             valueAppended = true; // Value is appended
 
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[2]))) {
+        }
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[2]))) {
             diyFirstProductCost.setText(null);
             diyFirstProductCost.append(productResources[0] + diyFirstProductCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[3]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[3]))) {
             diyFirstProductCost.setText(null);
             diyFirstProductCost.append(productResources[0] + diyFirstProductCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[4]))) {
+        }
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[4]))) {
             diyFirstProductCost.setText(null);
             diyFirstProductCost.append(productResources[0] + diyFirstProductCosts[4]);
             valueAppended = true;
         }
-
-
+        
         if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[0]))) {
             diySecondProductCost.setText(null);
             diySecondProductCost.append(productResources[0] + diySecondProductCosts[0]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[1]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[1]))) {
             diySecondProductCost.setText(null);
             diySecondProductCost.append(productResources[0] + diySecondProductCosts[1]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[2]))) {
             diySecondProductCost.setText(null);
             diySecondProductCost.append(productResources[0] + diySecondProductCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[3]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[3]))) {
             diySecondProductCost.setText(null);
             diySecondProductCost.append(productResources[0] + diySecondProductCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[4]))) {
             diySecondProductCost.setText(null);
             diySecondProductCost.append(productResources[0] + diySecondProductCosts[4]);
             valueAppended = true;
