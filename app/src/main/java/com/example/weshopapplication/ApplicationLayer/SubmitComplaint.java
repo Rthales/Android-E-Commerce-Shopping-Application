@@ -4,10 +4,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.DataLayer.ContactUsDatabase;
 import com.example.weshopapplication.R;
 
@@ -19,12 +17,12 @@ import com.example.weshopapplication.R;
 public class SubmitComplaint extends AppCompatActivity implements View.OnClickListener {
     private ContactUsDatabase databaseManipulator;
 
-    private EditText usernameField;
-    private EditText emailAddressField;
+    private EditText usernameField; // The username entry field
+    private EditText emailAddressField; // The E-mail Address entry field
     private EditText phoneNumberField;
 
     private EditText problemField;
-    private boolean isValidated = false;
+    private boolean isValidated = false; // Determines if the form fields are validated.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +32,10 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
         View submitComplaintBtn = findViewById(R.id.btnSubmit);
         submitComplaintBtn.setOnClickListener(this);
 
-        View backButton = findViewById(R.id.btnBack);
+        View backButton = findViewById(R.id.btnBack); // Identifies the back button view
         backButton.setOnClickListener(this);
 
+        // Initialise components
         this.usernameField = findViewById(R.id.add_usernameField);
         this.emailAddressField = findViewById(R.id.add_complaintEmailField);
 
@@ -49,7 +48,7 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
 
             case R.id.btnBack:
-                this.finish();
+                this.finish(); // Finish the process
                 break;
 
             case R.id.btnSubmit: // When the submit button is clicked
@@ -61,10 +60,9 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
                 String problem = ((EditText) findViewById(R.id.add_complaint_fieldProblem)).getText().toString();
 
                 this.databaseManipulator = new ContactUsDatabase(this);
-                this.databaseManipulator.insert(username, email, phone_number, problem);
+                this.databaseManipulator.insert(username, email, phone_number, problem); // Insert the strings above into the DB table
 
                 showSavedComplaintsDialog();
-
                 break;
         }
     }
@@ -92,7 +90,7 @@ public class SubmitComplaint extends AppCompatActivity implements View.OnClickLi
             }
         });
 
-        AlertDialog alert = builder.create();
+        AlertDialog alert = builder.create(); // Create the new alert and show it.
         alert.show();
     }
 
