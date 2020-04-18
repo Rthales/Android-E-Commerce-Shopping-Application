@@ -16,10 +16,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
 import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
@@ -80,7 +78,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     private double[] techProductOneCosts = new double[]{0.00, 500.00, 1000.00, 2000.00, 4000.00, 8000.00};
     private double[] techProductTwoCosts = new double[]{0.00, 300.00, 600.00, 1200.00, 2400.00, 4800.00};
 
-    private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<>();
+    private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<>(); // A hashmap of products with an integer key
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -185,13 +183,13 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                     // Start the next intent
                     Intent techActivityTwo = new Intent(TechActivity.this, TechActivityTwo.class);
                     startActivity(techActivityTwo);
-
-                } catch (ActivityNotFoundException not) {
+                } 
+                
+                catch (ActivityNotFoundException not) {
                     Log.d(String.valueOf(R.string.error), not.toString());
                 }
             }
         });
-
 
         firstAddToBasketButton.setOnClickListener(new View.OnClickListener() { // Adds a listener for the first add to basket button
             @Override
@@ -208,9 +206,8 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
                                     public void onClick(DialogInterface dialog, int which) {
 
-                                        if (dialog != null) {
-
-                                            dialog.dismiss();
+                                        if (dialog != null) { // If there is a dialog
+                                            dialog.dismiss(); // Dismiss it.
                                         }
                                     }
                                 });
@@ -221,7 +218,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
                     else {
 
-                        addToBasketOne();
+                        addToBasketOne(); // Otherwise add to basket
                     }
                 }
             }
@@ -231,7 +228,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View secondButton) {
 
-                if (secondButton.getId() == R.id.secondAddToBasketBtn) {
+                if (secondButton.getId() == R.id.secondAddToBasketBtn) { // If the second add to basket button is clicked
 
                     if (secondProductColourOptions.getSelectedItemPosition() == 0 || secondProductQuantityOptions.getSelectedItemPosition() == 0 || secondProductSizesMenu.getSelectedItemPosition() == 0) {
 
@@ -250,7 +247,9 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
                         secondProductColourError.show();
                         secondProductColourError.setCancelable(true); // User can click outside the Window to cancel the dialogue
-                    } else {
+                    } 
+                    
+                    else {
                         addToBasketTwo();
                     }
                 }
@@ -278,7 +277,9 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                 try {
 
                     Thread.sleep(1900);
-                } catch (InterruptedException exc) {
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -289,7 +290,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         dialog.show();
 
         Products firstProduct = new Products(current_product_id, firstProductText.getText().toString(), firstProductColourOptions.getSelectedItem().toString(), (int) firstProductQuantityOptions.getSelectedItemId(), productCost.getText().toString(), firstProductSizesMenu.getSelectedItem().toString());
-
         listOfProductsToAddToBasket.put(current_product_id, firstProduct); // Add the product data to the hash map
 
         return true;
@@ -313,7 +313,9 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
             public void run() {
                 try {
                     Thread.sleep(1900);
-                } catch (InterruptedException exc) {
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -327,7 +329,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         listOfProductsToAddToBasket.put(current_product_id++, secondProduct);
 
         return true;
-
     }
 
     private boolean addToColoursList() { // Routine to add the first tech product colours to an array list
@@ -484,10 +485,14 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[4]))) {
             secondProductCost.setText(null);
             secondProductCost.append(productResource[0] + techProductTwoCosts[4]);
-        } else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[5]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(indexes[5]))) {
             secondProductCost.setText(null);
             secondProductCost.append(productResource[0] + techProductTwoCosts[5]);
-        } else {
+        } 
+        
+        else {
             valueAppended = false;
         }
     }
@@ -532,12 +537,16 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
             }
 
-        } catch (ActivityNotFoundException act) { // Catch error
+        } 
+        
+        catch (ActivityNotFoundException act) { // Catch error
 
             Log.d(String.valueOf(R.string.error), act.toString()); // Log error if there is a problem.
 
 
-        } catch (InterruptedException act) {
+        } 
+        
+        catch (InterruptedException act) {
 
             Log.d(String.valueOf(R.string.error), act.toString());
         }
