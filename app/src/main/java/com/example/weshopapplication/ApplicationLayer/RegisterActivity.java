@@ -61,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
     private boolean startsWithUppercase; // True or false if the inputs start with an upper case.
 
     private boolean hasCharacters; // True or false if the input has characters
-    private boolean hasRegex;
+    private boolean hasRegex; // Determines if the field contains special characters (regex)
 
     private boolean isEmpty; // Variable that determines if any of the
     private boolean isValid;
@@ -118,9 +118,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
                     return true;
 
-                case R.id.techCategory:
+                case R.id.techCategory: // If the tech category is chosen
                     Intent techActivity = new Intent(RegisterActivity.this, TechActivity.class);
-                    startActivity(techActivity);
+                    startActivity(techActivity); // Take the user to the activity
 
                     return true;
 
@@ -137,7 +137,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                     return true;
 
                 default:
-
                     return super.onOptionsItemSelected(item); // Return the base item selected
             }
         } 
@@ -263,7 +262,8 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                 usernameField.setText("");
                 isValid = false;
 
-            } else {
+            } 
+            else {
 
                 isValid = true;
                 usernameField.setError(null); // Set username error to null if no errors occur
@@ -396,7 +396,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                 isValid = false;
                 break;
 
-            } else {
+            } 
+            
+            else {
                 isValid = true;
             }
         }
@@ -440,7 +442,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
             isRegistered = true;
 
-        } else {
+        } 
+        
+        else {
 
             isRegistered = false;
             termsAndConditions.setError(null); // Otherwise set no error
@@ -470,7 +474,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
                 try {
                     Thread.sleep(4000); // Sleep for 4 seconds.
-                } catch (InterruptedException exc) {
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -535,7 +541,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
                     Toast.makeText(RegisterActivity.this, "Data written to DB", Toast.LENGTH_LONG).show(); // Debug code.
 
-                } else {
+                } 
+                
+                else {
 
                     Toast.makeText(RegisterActivity.this, "Could not write to DB", Toast.LENGTH_LONG).show();
                 }
@@ -580,7 +588,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             // Take user to login
             Intent loginIntent = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(loginIntent); // Start the login activity
-
         } 
         
         catch (ActivityNotFoundException act) { // Catch the error if the activity is not found.
