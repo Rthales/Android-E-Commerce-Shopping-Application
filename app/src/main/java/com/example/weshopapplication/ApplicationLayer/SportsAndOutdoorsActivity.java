@@ -17,26 +17,21 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
 import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-
 
 // Author of Application & Class: Sabin Constantin Lungu
 // Purpose of Class: Stores the code needed to implement the Sports and Outdoors Activity 1.
 // Date of Last Modification: 13/02/2020
 // Any Errors? Currently None.
-
 
 public class SportsAndOutdoorsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private int current_product_id = 1;
@@ -70,11 +65,12 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     private Spinner secondSportsOutdoorSizeMenu;
 
     private Button secondSportsAddToBasketBtn;
-    private Button nextPageBtn;
+    private Button nextPageBtn; // Button to take the user to the next page 
 
     // The costs of the products
     private double[] productOneCosts = {0.00, 90.00, 180.00, 360.00, 720.00, 1440.00};
     private double[] productTwoCosts = {0.00, 50.00, 100.00, 150.00, 200.00, 250.00};
+    private long sleepSeconds = 1900;
 
     private ArrayList<TechActivity.Colours> listOfColoursOne; // An array list of colours
     private ArrayList<TechActivity.Quantities> listOfQuantitiesOne; // An array list of quantities
@@ -93,7 +89,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
     private boolean coloursAdded; // Flag to determine if the colours have been added to the drop-down list
     private boolean quantitiesAdded;
 
-    private boolean sizesAdded;
+    private boolean sizesAdded; // Determines if the sizes have been added to the array list
     private boolean addedToBasket; // True or false to determine if the products have been added to the basket after adding to the hash map
 
     private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<>(); // A HashMap of products to add to the basket with a corresponding ID that each product will have.
@@ -115,7 +111,6 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
         this.firstSportsOutdoorsSizeLbl = findViewById(R.id.firstSportsOutdoorSizeLbl);
         this.firstSportsOutdoorsSizeMenu = findViewById(R.id.firstSportsOutdoorSizeMenu);
-
         this.firstSportsAddToBasketBtn = findViewById(R.id.firstAddToBasketBtn); // Button for the first product to add to the basket.
 
         this.secondSportsOutdoorTxt = findViewById(R.id.secondSportsOutdoorsProductTxt);
@@ -201,9 +196,9 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                     Intent nextSportsActivity = new Intent(SportsAndOutdoorsActivity.this, SportsAndOutdoorsActivityTwo.class);
                     startActivity(nextSportsActivity);
-
-                } catch (ActivityNotFoundException exc) { // Catch the error if the activity has not been found
-
+                } 
+                
+                catch (ActivityNotFoundException exc) { // Catch the error if the activity has not been found
                     Log.d(String.valueOf(R.string.error), exc.toString()); // Log the error to the console
                 }
             }
@@ -214,7 +209,6 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             public void onClick(View v) {
 
                 if (v.getId() == R.id.firstAddToBasketBtn) {
-
                     if (firstSportsOutdoorsColourMenu.getSelectedItemPosition() == 0 || firstSportsOutdoorsSizeMenu.getSelectedItemPosition() == 0 || firstSportsOutdoorsSizeMenu.getSelectedItemId() == 0) {
 
                         AlertDialog.Builder error = new AlertDialog.Builder(SportsAndOutdoorsActivity.this) // Create an alert dialogue for the user to see.
@@ -233,7 +227,6 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                         error.show();
                         error.setCancelable(true);
-
                     }
 
                     else {
@@ -241,7 +234,6 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                         addToBasketOne(); // Otherwise add the product to the basket one
                     }
                 }
-
             }
         });
 
@@ -257,7 +249,6 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                         AlertDialog.Builder errorMenu = new AlertDialog.Builder(SportsAndOutdoorsActivity.this)
                                 .setTitle(R.string.error)
-
                                 .setMessage(tempResources[0])
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
@@ -271,7 +262,9 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
 
                         errorMenu.show();
                         errorMenu.setCancelable(true);
-                    } else {
+                    } 
+                    
+                    else {
 
                         addToBasketTwo(); // Otherwise if the above condition is false, add to the basket two.
                     }
@@ -313,7 +306,7 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         return true;
     }
 
-    private boolean addToQuantitiesListOne() {
+    private boolean addToQuantitiesListOne() { // Routine to add the quantities to the array list
 
         Context context = getApplicationContext();
 
@@ -357,7 +350,6 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         for (Size theSizes : sizes) { // For each of the sizes in the array
             listOfSizesOne.add(theSizes);
             listOfSizesTwo.add(theSizes);
-
             sizesAdded = true;
         }
 
@@ -382,9 +374,10 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             public void run() { // Routine that runs the thread.
 
                 try {
-
-                    Thread.sleep(1900); // Sleep for 1.9 seconds.
-                } catch (InterruptedException exc) {
+                    Thread.sleep(sleepSeconds); // Sleep for 1.9 seconds.
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -419,9 +412,10 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             @Override
             public void run() {
                 try {
-
-                    Thread.sleep(1900); // Sleep for 1.9 seconds.
-                } catch (InterruptedException exc) {
+                    Thread.sleep(sleepSeconds); // Sleep for 1.9 seconds.
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -450,20 +444,30 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[0]))) {
             firstSportsOutdoorCostTxt.setText(null);
             firstSportsOutdoorCostTxt.setText(productResources[0] + (productOneCosts[0]));
+            
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[1]))) {
+        }
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[1]))) {
+            firstSportsOutdoorCostTxt.setText(null);
             firstSportsOutdoorCostTxt.setText(productResources[0] + (productOneCosts[1]));
             valueAppended = true; // Value is appended
 
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[2]))) {
             firstSportsOutdoorCostTxt.setText(null);
             firstSportsOutdoorCostTxt.append(productResources[0] + productOneCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[3]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[3]))) {
             firstSportsOutdoorCostTxt.setText(null);
             firstSportsOutdoorCostTxt.append(productResources[0] + productOneCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[4]))) {
             firstSportsOutdoorCostTxt.setText(null);
             firstSportsOutdoorCostTxt.append(productResources[0] + productOneCosts[4]);
             valueAppended = true;
@@ -474,19 +478,27 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
             secondSportsOutdoorCostLbl.setText(null);
             secondSportsOutdoorCostLbl.append(productResources[0] + productTwoCosts[0]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[1]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[1]))) {
             secondSportsOutdoorCostLbl.setText(null);
             secondSportsOutdoorCostLbl.append(productResources[0] + productTwoCosts[1]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[2]))) {
             secondSportsOutdoorCostLbl.setText(null);
             secondSportsOutdoorCostLbl.append(productResources[0] + productTwoCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[3]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[3]))) {
             secondSportsOutdoorCostLbl.setText(null);
             secondSportsOutdoorCostLbl.append(productResources[0] + productTwoCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[4]))) {
             secondSportsOutdoorCostLbl.setText(null);
             secondSportsOutdoorCostLbl.append(productResources[0] + productTwoCosts[4]);
             valueAppended = true;
@@ -512,9 +524,8 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.basket_action_button, menu);
 
-        View view = menu.findItem(R.id.cart_menu).getActionView();
-
-        cartIcon = view.findViewById(R.id.cart_icon);
+        View view = menu.findItem(R.id.cart_menu).getActionView(); // Create a view for the cart icon
+        cartIcon = view.findViewById(R.id.cart_icon); // Identify the Cart Icon by its ID
 
         cartIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -529,14 +540,13 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-
+    public boolean onOptionsItemSelected(MenuItem item) { // Determines which menu item has been selected
         try {
             switch (item.getItemId()) {
-                case R.id.sportsAndOutdoorsCategory:
+                    
+                case R.id.sportsAndOutdoorsCategory: // If the sports and outdoors category is chosen
                     Intent sportsCategory = new Intent(SportsAndOutdoorsActivity.this, SportsAndOutdoorsActivity.class);
-                    startActivity(sportsCategory);
-
+                    startActivity(sportsCategory); // Start the activity
                     break;
 
                 case R.id.techCategory:
@@ -558,8 +568,9 @@ public class SportsAndOutdoorsActivity extends AppCompatActivity implements Adap
                     super.onOptionsItemSelected(item);
 
             }
-
-        } catch (ActivityNotFoundException exc) {
+        } 
+        
+        catch (ActivityNotFoundException exc) {
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
 
