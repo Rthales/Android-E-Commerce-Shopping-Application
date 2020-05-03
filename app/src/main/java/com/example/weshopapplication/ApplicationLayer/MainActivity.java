@@ -10,9 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -53,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
                         Intent registerIntent = new Intent(MainActivity.this, RegisterActivity.class);
                         startActivity(registerIntent); // Take user to the register page
                     }
-
-                } catch (ActivityNotFoundException act) { // Catch exception if the activity is not found
+                } 
+                
+                catch (ActivityNotFoundException act) { // Catch exception if the activity is not found
                     act.printStackTrace();
                     Log.d("Cause : ", act.getMessage());
                 }
@@ -65,11 +64,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-
                     Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
                     startActivity(loginIntent);
-
-                } catch (ActivityNotFoundException exc) {
+                } 
+                
+                catch (ActivityNotFoundException exc) {
                     Log.d("Error : ", exc.getMessage());
                 }
             }
@@ -79,18 +78,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-
                     Intent contactUsIntent = new Intent(MainActivity.this, ContactUsActivity.class);
                     startActivity(contactUsIntent);
-
-                } catch (ActivityNotFoundException exc) {
+                } 
+                
+                catch (ActivityNotFoundException exc) {
                     Log.d("Error", exc.toString());
                 }
             }
         });
     }
-
-
+    
     public boolean onCreateOptionsMenu(Menu menu) { // Overidden method that creates the menu
 
         // Inflate the activities
@@ -107,8 +105,6 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
-
     public boolean onOptionsItemSelected(MenuItem item) { // Determines which item is selected from the menu
         try {
             if (item == null) { // If there is no item to choose
@@ -117,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Determines which activity is chosen
             switch (item.getItemId()) {
+                    
                 case R.id.sportsAndOutdoorsCategory: // If the sports and outdoors category is chosen
                     Intent sportsIntent = new Intent(MainActivity.this, SportsAndOutdoorsActivity.class); // Take user to the sports and outdoors activity
                     startActivity(sportsIntent);
@@ -128,8 +125,8 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(techIntent);
 
                     return true;
-
-
+                    
+                    
                 case R.id.clothingCategory: // If the clothing category is chosen
 
                     Intent clothingIntent = new Intent(MainActivity.this, ClothingCategory.class);
@@ -150,12 +147,11 @@ public class MainActivity extends AppCompatActivity {
                     return true;
 
                 default:
-
                     return super.onOptionsItemSelected(item); // Return the base item
-
             }
-
-        } catch (ActivityNotFoundException exc) { // Catch exception
+        } 
+        
+        catch (ActivityNotFoundException exc) { // Catch exception
             exc.printStackTrace();
         }
 
@@ -167,8 +163,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void logout() { // Logout the user
-        auth.signOut();
-        finish();
+        auth.signOut(); // Sign the user out from firebase
+        finish(); // finish the process
         startActivity(new Intent(MainActivity.this, LoginActivity.class)); // Take user to login activity
     }
 }
