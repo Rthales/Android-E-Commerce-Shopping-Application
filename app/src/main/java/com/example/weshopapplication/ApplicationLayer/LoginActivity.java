@@ -149,7 +149,9 @@ public class LoginActivity extends AppCompatActivity {
             emailAddressField.setText("");
             return false;
 
-        } else {
+        } 
+        
+        else {
 
             emailAddressField.setError(null); // Set no error otherwise
             login();
@@ -163,6 +165,7 @@ public class LoginActivity extends AppCompatActivity {
         String flushedString = "";
 
         if (passwordEntry.isEmpty()) { // If the password field is left empty
+            
             AlertDialog.Builder passwordError = new AlertDialog.Builder(LoginActivity.this).setTitle("Password Error")
                     .setMessage("Password should not be left empty")
                     .setNegativeButton("OK", new DialogInterface.OnClickListener() {
@@ -170,7 +173,6 @@ public class LoginActivity extends AppCompatActivity {
 
                         public void onClick(DialogInterface dialog, int which) {
                             if (dialog != null) {
-
                                 dialog.dismiss();
                             }
                         }
@@ -181,8 +183,9 @@ public class LoginActivity extends AppCompatActivity {
             passwordField.setText(flushedString);
 
             return false;
-
-        } else {
+        } 
+        
+        else {
             passwordField.setError(null);
             login();
 
@@ -192,6 +195,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void showLoginDialogue() {
+        long sleepSeconds = 2400;
+        
         Context context = getApplicationContext();
         String[] tempResources = new String[]{context.getString(R.string.loggingIn), context.getString(R.string.wait)};
         final ProgressDialog dialog = new ProgressDialog(LoginActivity.this);
@@ -205,11 +210,14 @@ public class LoginActivity extends AppCompatActivity {
         new Thread(new Runnable() { // Create a new thread
             @Override
             public void run() {
+                
                 try {
 
-                    Thread.sleep(2400);
+                    Thread.sleep(sleepSeconds);
 
-                } catch (InterruptedException exc) {
+                } 
+                
+                catch (InterruptedException exc) {
 
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
@@ -253,7 +261,9 @@ public class LoginActivity extends AppCompatActivity {
             Intent homeIntent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(homeIntent);
 
-        } catch (ActivityNotFoundException act) {
+        }
+        
+        catch (ActivityNotFoundException act) {
             Log.d(String.valueOf(R.string.error), act.toString());
         }
     }
