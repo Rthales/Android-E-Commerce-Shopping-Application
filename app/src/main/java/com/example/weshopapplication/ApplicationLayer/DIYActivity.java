@@ -16,17 +16,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
 import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -71,7 +68,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private double[] diyFirstProductCosts = new double[]{0.00, 40.00, 80.00, 160.00, 320.00, 640.00}; // A double array of product costs for the first DIY product
     private double[] diySecondProductCosts = new double[]{0.00, 20.00, 40.00, 80.00, 160.00, 320.00};
 
-    private boolean coloursAdded = false;
+    private boolean coloursAdded = false; // Stores either true or false when the colours have been added to the array list
     private boolean sizesAdded = false;
     private boolean quantitiesAdded = false;
 
@@ -89,7 +86,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private ArrayList<Size> diyListOfSizesTwo = null;
     private ArrayList<TechActivity.Quantities> diyListOfQuantitiesTwo = null;
 
-    private ImageView cartIcon;
+    private ImageView cartIcon; // Private variable for the cart icon
     private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<Integer, Products>(); // Creates a new hash map of products with an associated ID
     private Button nextPageBtn;
 
@@ -126,16 +123,16 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
         this.diySecondProductAddToBasketBtn = findViewById(R.id.diySecondProductAddToBasketBtn);
 
-        this.diyListOfColoursOne = new ArrayList<>();
+        this.diyListOfColoursOne = new ArrayList<>(); // Create a new array lsit of colours
         this.diyListOfColoursTwo = new ArrayList<>();
 
-        this.diyListOfSizesOne = new ArrayList<>();
+        this.diyListOfSizesOne = new ArrayList<>(); // Creates a new array list of sizes
         this.diyListOfSizesTwo = new ArrayList<>();
 
         this.diyListOfQuantitiesOne = new ArrayList<>();
         this.diyListOfQuantitiesTwo = new ArrayList<>();
 
-        addToDIYColourList();
+        addToDIYColourList(); // Invoke routine to add to the DIY colours list
         addToDIYSizesList();
 
         addToDIYQuantitiesListOne();
@@ -183,25 +180,29 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         this.diyFirstProductToAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (diyFirstProductToAddToBasketBtn.getId() == R.id.diyFirstProductAddToBasketBtn) {
+                
+                if (diyFirstProductToAddToBasketBtn.getId() == R.id.diyFirstProductAddToBasketBtn) { // If the first button for the DIY add to basket button is clicked
 
                     if (diyFirstProductColourMenu.getSelectedItemPosition() == 0 || diyFirstProductSizeMenu.getSelectedItemPosition() == 0 || diyFirstProductQuantityMenu.getSelectedItemPosition() == 0) {
                         AlertDialog.Builder error = new AlertDialog.Builder(DIYActivity.this)
-                                .setTitle(R.string.error)
-                                .setMessage(R.string.errorMsg)
+                                .setTitle(R.string.error) // Set the title of the alert dialogue
+                                .setMessage(R.string.errorMsg) // Set the message
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        if (dialog != null) {
-                                            dialog.dismiss();
+                                        
+                                        if (dialog != null) { // If there is a dialogue being displayed
+                                            dialog.dismiss(); // Dismiss it.
                                         }
                                     }
                                 });
 
-                        error.show();
+                        error.show(); // Show the error
                         error.setCancelable(true);
-                    } else {
-                        diyAddToBasketOne();
+                    } 
+                    
+                    else {
+                        diyAddToBasketOne(); // Otherwise add the product to the basket.
                     }
                 }
             }
@@ -210,6 +211,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         this.diySecondProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View secondButton) {
+                
                 if (secondButton.getId() == R.id.diySecondProductAddToBasketBtn) {
 
                     if (diySecondProductColourMenu.getSelectedItemPosition() == 0 || diySecondProductSizeMenu.getSelectedItemPosition() == 0 || diySecondProductQuantityMenu.getSelectedItemPosition() == 0) {
@@ -241,12 +243,13 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
         this.nextPageBtn = findViewById(R.id.diyNextPageBtn);
 
-        this.nextPageBtn.setOnClickListener(new View.OnClickListener() {
+        this.nextPageBtn.setOnClickListener(new View.OnClickListener() { // Adds an action listener for the next page button to the user to the next page
             @Override
             public void onClick(View v) {
                 try {
-                    if (v.getId() == R.id.diyNextPageBtn) {
-                        Intent nextDiyIntent = new Intent(DIYActivity.this, DIYActivityTwo.class);
+                    if (v.getId() == R.id.diyNextPageBtn) { // If the next page button is clicked
+                        
+                        Intent nextDiyIntent = new Intent(DIYActivity.this, DIYActivityTwo.class); // Create a new intent
                         startActivity(nextDiyIntent);
                     }
                 } 
@@ -265,9 +268,9 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         TechActivity.Colours[] colours = new TechActivity.Colours[]{new TechActivity.Colours(0, diyColoursResources[0]), new TechActivity.Colours(1, diyColoursResources[1]), new TechActivity.Colours(2, diyColoursResources[2]), new TechActivity.Colours(3, diyColoursResources[3]),
                 new TechActivity.Colours(4, diyColoursResources[4])};
 
-        for (TechActivity.Colours theColours : colours) {
+        for (TechActivity.Colours theColours : colours) { // For each of the colours in the colours array
             
-            diyListOfColoursOne.add(theColours);
+            diyListOfColoursOne.add(theColours); // Add it to the array list
             diyListOfColoursTwo.add(theColours);
             coloursAdded = true;
         }
@@ -441,9 +444,9 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
                     break;
 
-                case R.id.techCategory:
-                    Intent techActivity = new Intent(DIYActivity.this, TechActivity.class);
-                    startActivity(techActivity);
+                case R.id.techCategory: // Case when the tech category is chosen
+                    Intent techActivity = new Intent(DIYActivity.this, TechActivity.class); // Create a new tech activity intent
+                    startActivity(techActivity); // Start the activity
                     break;
 
                 case R.id.clothingCategory:
@@ -461,6 +464,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
             }
         } 
+        
         catch (ActivityNotFoundException exc) {
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
