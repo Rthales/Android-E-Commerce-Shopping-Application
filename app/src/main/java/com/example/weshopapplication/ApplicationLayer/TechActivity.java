@@ -23,7 +23,6 @@ import com.example.weshopapplication.BusinessObjects.Products;
 import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.SizesAdapter;
 import com.example.weshopapplication.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -33,11 +32,12 @@ import java.util.HashMap;
 // Any Bugs?: Currently none. Unit tested recently. 11/11 Tests completed
 
 public class TechActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    public int current_product_id = 1;
-
-    private TextView firstProductText;
+    public int current_product_id = 1; // The current product ID
+    private long sleepSeconds = 1900;
+    
+    private TextView firstProductText; // Text for the first product
     private Thread firstActivityThread;
-    private ImageView firstProductImg;
+    private ImageView firstProductImg; // The Image for the first product
     private TextView productCost;
 
     private TextView firstProductColour;
@@ -62,7 +62,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     private Spinner secondProductColourOptions;
     private Spinner secondProductQuantityOptions;
 
-    private ArrayList<Colours> listOfColours = null;
+    private ArrayList<Colours> listOfColours = null; // An Array List of colours to store the colours for the product
     private ArrayList<Quantities> listOfQuantities = null;
     private ArrayList<Size> listOfSizes = null;
 
@@ -74,8 +74,8 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     private ArrayList<Quantities> secondListOfQuantities = null;
     private ArrayList<Size> secondListOfSizes = null;
 
-    private Button nextPageBtn;
-    private double[] techProductOneCosts = new double[]{0.00, 500.00, 1000.00, 2000.00, 4000.00, 8000.00};
+    private Button nextPageBtn; // Button for the next page.
+    private double[] techProductOneCosts = new double[]{0.00, 500.00, 1000.00, 2000.00, 4000.00, 8000.00}; // Prices for the first product
     private double[] techProductTwoCosts = new double[]{0.00, 300.00, 600.00, 1200.00, 2400.00, 4800.00};
 
     private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<>(); // A hashmap of products with an integer key
@@ -116,7 +116,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         this.secondListOfQuantities = new ArrayList<>();
         this.secondListOfSizes = new ArrayList<>();
 
-        addToColoursList();
+        addToColoursList(); // Invoke routine to add the colours to the array list
         addToQuantitiesList();
 
         addToSizesList();
@@ -135,11 +135,11 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         firstProductQuantityOptions.setOnItemSelectedListener(this);
 
         this.sizesAdapter = new SizesAdapter(TechActivity.this, listOfSizes);
+      
+        sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        sizesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        firstProductSizesMenu.setAdapter(sizesAdapter);
+        firstProductSizesMenu.setAdapter(sizesAdapter); // Initialise the adapter
         firstProductSizesMenu.setOnItemSelectedListener(this);
 
         secondProductSizesMenu.setAdapter(sizesAdapter);
@@ -212,7 +212,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                                     }
                                 });
 
-                        colourErrorOne.show();
+                        colourErrorOne.show(); // Display the error
                         colourErrorOne.setCancelable(true);
                     }
 
@@ -250,22 +250,22 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                     } 
                     
                     else {
-                        addToBasketTwo();
+                        addToBasketTwo(); // Otherwise invoke routine to add to the second basket.
                     }
                 }
             }
         });
     }
 
-    private boolean addToBasketOne() {
+    private boolean addToBasketOne() { // Routine to add the product to the basket
 
         Context context = getApplicationContext();
         String[] temp = new String[]{context.getString(R.string.wait), context.getString(R.string.addingBasket)};
-
+        
         final ProgressDialog dialog = new ProgressDialog(TechActivity.this);
-        dialog.setTitle(temp[1]);
+        dialog.setTitle(temp[1]); // Set the title of the dialogue
+        
         dialog.setMessage(temp[0]);
-
         dialog.setCancelable(false);
 
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -276,10 +276,10 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
             public void run() {
                 try {
 
-                    Thread.sleep(1900);
+                    Thread.sleep(sleepSeconds); // Sleep for 1.9 seconds
                 } 
                 
-                catch (InterruptedException exc) {
+                catch (InterruptedException exc) { // Catch the error.
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -312,7 +312,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void run() {
                 try {
-                    Thread.sleep(1900);
+                    Thread.sleep(sleepSeconds);
                 } 
                 
                 catch (InterruptedException exc) {
@@ -333,7 +333,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private boolean addToColoursList() { // Routine to add the first tech product colours to an array list
         boolean addedColours = false;
-
         Context context = getApplicationContext();
 
         String[] colourResources = new String[]{context.getString(R.string.colour), context.getString(R.string.spaceGray), context.getString(R.string.secondColour), context.getString(R.string.thirdColour)};
@@ -350,7 +349,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         return true;
     }
 
-    private boolean addToSizesList() {
+    private boolean addToSizesList() { // Routine to add to the sizes array list
         boolean addedSizes = false;
 
         Context context = getApplicationContext();
@@ -512,6 +511,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 case R.id.techCategory: // If the tech category is chosen
                     Intent techCategory = new Intent(TechActivity.this, TechActivity.class); // Go to the tech category
+                    
                     Thread.sleep(1);
                     startActivity(techCategory); // Start that activity
 
@@ -520,10 +520,9 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                 case R.id.clothingCategory:
                     Intent clothingCategory = new Intent(TechActivity.this, ClothingCategory.class);
                     Thread.sleep(1);
+                    
                     startActivity(clothingCategory);
-
                     return true;
-
 
                 case R.id.diyCategory:
                     Intent diyCategory = new Intent(TechActivity.this, DIYActivity.class);
@@ -542,8 +541,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         catch (ActivityNotFoundException act) { // Catch error
 
             Log.d(String.valueOf(R.string.error), act.toString()); // Log error if there is a problem.
-
-
         } 
         
         catch (InterruptedException act) {
