@@ -15,18 +15,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.regex.Pattern;
 
 // Author of Application: Sabin Constantin Lungu
@@ -37,18 +34,18 @@ import java.util.regex.Pattern;
 
 public class LoginActivity extends AppCompatActivity {
     private TextView loginText; // The login text at the top of the application
-    private EditText emailAddressField;
-    private EditText passwordField;
+    private EditText emailAddressField; // The E-mail Address field.
+    private EditText passwordField; // The Password field
 
-    private Button loginButton;
+    private Button loginButton; // Variable for the login button
     private FirebaseFirestore firebaseFirestore;
 
     private FirebaseAuth auth; // Firebase authentication variable
-    private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns
+    private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns that will be used to check if the entered e-mail address and password is valid
     private final int LOGOUT_BUTTON_ID = 101;
 
     private boolean isAdded = false;
-    public boolean isLoggedIn = false;
+    public boolean isLoggedIn = false; // Determines if the user is logged in
 
     private Button logoutBtn;
 
@@ -65,11 +62,11 @@ public class LoginActivity extends AppCompatActivity {
         this.auth = FirebaseAuth.getInstance();
 
         this.logoutBtn = findViewById(R.id.logout_button);
-
+        
         this.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                validateEmailAddress();
+                validateEmailAddress(); // Invoke routine to validate the e-mail address
                 validatePassword();
             }
         });
