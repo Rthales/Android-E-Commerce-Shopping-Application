@@ -2,11 +2,9 @@ package com.example.weshopapplication;
 
 import android.view.View;
 import android.widget.EditText;
-
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
-
 import com.example.weshopapplication.ApplicationLayer.BasketActivity;
 import com.example.weshopapplication.ApplicationLayer.ClothingCategory;
 import com.example.weshopapplication.ApplicationLayer.DIYActivity;
@@ -16,13 +14,11 @@ import com.example.weshopapplication.ApplicationLayer.PaymentActivity;
 import com.example.weshopapplication.ApplicationLayer.RegisterActivity;
 import com.example.weshopapplication.ApplicationLayer.SportsAndOutdoorsActivity;
 import com.example.weshopapplication.ApplicationLayer.TechActivity;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
