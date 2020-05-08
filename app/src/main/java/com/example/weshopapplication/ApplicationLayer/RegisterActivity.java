@@ -130,9 +130,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
                     return true;
 
-                case R.id.diyCategory:
-                    Intent diyCategory = new Intent(RegisterActivity.this, DIYActivity.class);
-                    startActivity(diyCategory);
+                case R.id.diyCategory: // Case when the DIY category is chosen
+                    Intent diyCategory = new Intent(RegisterActivity.this, DIYActivity.class); // Create a new intent for the DIY category
+                    startActivity(diyCategory); // Start the activity
 
                     return true;
 
@@ -205,11 +205,11 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                     });
 
             emptyDialog.show();
+            
             usernameField.setError(usernameValidationResource[0]); // Set the error.
-
             usernameField.setText(""); // Flush the empty field out
+            
             isEmpty = true; // The field is empty
-
             isValid = false; // Is valid is false.
 
         }
@@ -261,8 +261,8 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                 regexWarning.show();
                 usernameField.setText("");
                 isValid = false;
-
             } 
+            
             else {
 
                 isValid = true;
@@ -334,7 +334,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
             return false;
 
-        } else {
+        } 
+        
+        else {
 
             isValid = true; // Otherwise the
             return true;
@@ -397,7 +399,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                 break;
 
             } 
-            
+        
             else {
                 isValid = true;
             }
@@ -457,6 +459,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
     private void showSpinningDialogue() { // Routine that shows the spinning dialogue when register button is clicked
         // Create the progress dialogue
+        long sleepSeconds = 4000;
         final ProgressDialog dialog = new ProgressDialog(RegisterActivity.this); // The progress dialogue that will be shown.
         Context context = getApplicationContext();
 
@@ -473,7 +476,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             public void run() {
 
                 try {
-                    Thread.sleep(4000); // Sleep for 4 seconds.
+                    Thread.sleep(sleepSeconds); // Sleep for 4 seconds.
                 } 
                 
                 catch (InterruptedException exc) {
