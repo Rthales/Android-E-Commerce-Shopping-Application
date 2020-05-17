@@ -37,13 +37,13 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
     private TextView diyFirstProductTxt; // The first product text
 
     private ImageView diyFirstProductImg; // Image of the first DIY product
-    private TextView diyFirstProductCost;
+    private TextView diyFirstProductCost; // The DIY first product cost
 
-    private TextView diyFirstProductColourLbl;
+    private TextView diyFirstProductColourLbl; // The label for the first product colour
     private Spinner diyFirstProductColourMenu;
 
     private TextView diyFirstProductSizeLbl;
-    private Spinner diyFirstProductSizeMenu;
+    private Spinner diyFirstProductSizeMenu; // The drop-down menu for the sizes of the first DIY product.
 
     private TextView diyFirstProductQuantityLbl;
     private Spinner diyFirstProductQuantityMenu;
@@ -70,7 +70,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
     private boolean coloursAdded = false; // Stores either true or false when the colours have been added to the array list
     private boolean sizesAdded = false;
-    private boolean quantitiesAdded = false;
+    private boolean quantitiesAdded = false; // Stores either true or false when the quantities have been added.
 
     // Adapters for the objects to add to the list
     private QuantitiesArrayAdapter quantitiesAdapter;
@@ -83,12 +83,12 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
     // Creates the array lists for the second DIY product.
     private ArrayList<TechActivity.Colours> diyListOfColoursTwo = null;
-    private ArrayList<Size> diyListOfSizesTwo = null;
-    private ArrayList<TechActivity.Quantities> diyListOfQuantitiesTwo = null;
+    private ArrayList<Size> diyListOfSizesTwo = null; // An Array list of DIY sizes
+    private ArrayList<TechActivity.Quantities> diyListOfQuantitiesTwo = null; // An Array list of quantities
 
     private ImageView cartIcon; // Private variable for the cart icon
     private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<Integer, Products>(); // Creates a new hash map of products with an associated ID
-    private Button nextPageBtn;
+    private Button nextPageBtn; // Next page button
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +115,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
 
         this.diySecondProductCost = findViewById(R.id.diySecondProductCostLbl);
         this.diySecondProductColourLbl = findViewById(R.id.diySecondProductColourLbl);
+        
         this.diySecondProductColourMenu = findViewById(R.id.diySecondProductColourMenu);
         this.diySecondProductQuantityMenu = findViewById(R.id.diySecondProductQuantityMenu);
 
@@ -246,6 +247,7 @@ public class DIYActivity extends AppCompatActivity implements AdapterView.OnItem
         this.nextPageBtn.setOnClickListener(new View.OnClickListener() { // Adds an action listener for the next page button to the user to the next page
             @Override
             public void onClick(View v) {
+                
                 try {
                     if (v.getId() == R.id.diyNextPageBtn) { // If the next page button is clicked
                         
