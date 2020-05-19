@@ -73,14 +73,14 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) { // Create the options menu
         MenuInflater categoriesMenu = getMenuInflater();
         categoriesMenu.inflate(R.menu.homepagemenu, menu);
 
         return true;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) { // Routine that determines which option from the menu item has been selected, returns either true or false.
 
         try {
 
@@ -194,7 +194,7 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void showLoginDialogue() {
+    private void showLoginDialogue() { // Routine that shows the login dialogue.
         long sleepSeconds = 2400;
         
         Context context = getApplicationContext();
