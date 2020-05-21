@@ -17,17 +17,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
 import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -200,7 +197,9 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
                         error.show(); // Show the error.
                         error.setCancelable(true);
-                    } else {
+                    } 
+                    
+                    else {
                         clothingAddToBasketOne();
                     }
                 }
@@ -219,6 +218,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
+                                        
                                         if (dialog != null) {
                                             dialog.dismiss();
                                         }
@@ -227,7 +227,9 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
                         error.show();
                         error.setCancelable(true);
-                    } else {
+                    } 
+                    
+                    else {
                         clothingAddToBasketTwo(); // Otherwise if an option is selected, add the product to the basket.
                     }
                 }
@@ -264,20 +266,28 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
             clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[0]);
             valueAppended = true;
 
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[1]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[1]))) {
             clothingFirstProductCostLbl.setText(null);
             clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[1]);
             valueAppended = true; // Value is appended
 
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[2]))) {
             clothingFirstProductCostLbl.setText(null);
             clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[3]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[3]))) {
             clothingFirstProductCostLbl.setText(null);
             clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[4]))) {
             clothingFirstProductCostLbl.setText(null);
             clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[4]);
             valueAppended = true;
@@ -288,19 +298,27 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
             clothingSecondProductCostLbl.setText(null);
             clothingSecondProductCostLbl.append(productResources[0] + clothingProductTwoCosts[0]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[1]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[1]))) {
             clothingSecondProductCostLbl.setText(null);
             clothingSecondProductCostLbl.append(productResources[0] + clothingProductTwoCosts[1]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[2]))) {
             clothingSecondProductCostLbl.setText(null);
             clothingSecondProductCostLbl.append(productResources[0] + clothingProductTwoCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[3]))) {
+        }
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[3]))) {
             clothingSecondProductCostLbl.setText(null);
             clothingSecondProductCostLbl.append(productResources[0] + clothingProductTwoCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[4]))) {
             clothingSecondProductCostLbl.setText(null);
             clothingSecondProductCostLbl.append(productResources[0] + clothingProductTwoCosts[4]);
             valueAppended = true;
@@ -411,7 +429,9 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                 try {
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
-                } catch (InterruptedException exc) {
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -519,7 +539,9 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                     super.onOptionsItemSelected(item);
 
             }
-        } catch (ActivityNotFoundException exc) {
+        } 
+        
+        catch (ActivityNotFoundException exc) {
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
 
