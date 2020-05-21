@@ -16,17 +16,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
 import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -201,7 +198,9 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
 
                         error.show();
                         error.setCancelable(true);
-                    } else {
+                    } 
+                    
+                    else {
                         diyAddToBasketThree();
                     }
                 }
@@ -228,7 +227,9 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
 
                         error.show();
                         error.setCancelable(true);
-                    } else {
+                    }
+                    
+                    else {
                         diyAddToBasketFour();
                     }
                 }
@@ -321,10 +322,13 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
 
             @Override
             public void run() {
+                long sleepSeconds = 1900;
                 try {
 
-                    Thread.sleep(1900); // Sleep for 1.9 seconds.
-                } catch (InterruptedException exc) {
+                    Thread.sleep(sleepSeconds); // Sleep for 1.9 seconds.
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -360,7 +364,9 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
                 try {
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
-                } catch (InterruptedException exc) {
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -391,24 +397,34 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
             diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[0]);
             valueAppended = true;
 
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[1]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[1]))) {
             diyThirdProductCost.setText(null);
             diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[1]);
             valueAppended = true; // Value is appended
 
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[2]))) {
             diyThirdProductCost.setText(null);
             diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[3]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[3]))) {
             diyThirdProductCost.setText(null);
             diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[4]))) {
             diyThirdProductCost.setText(null);
             diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[4]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[5]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesOne.get(indexes[5]))) {
             diyThirdProductCost.setText(null);
             diyThirdProductCost.append(productResources[0] + diyThirdProductCosts[5]);
         }
@@ -417,23 +433,33 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
             diyFourthProductCost.setText(null);
             diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[0]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[1]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[1]))) {
             diyFourthProductCost.setText(null);
             diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[1]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[2]))) {
             diyFourthProductCost.setText(null);
             diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[3]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[3]))) {
             diyFourthProductCost.setText(null);
             diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[4]))) {
             diyFourthProductCost.setText(null);
             diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[4]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[5]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(diyListOfQuantitiesTwo.get(indexes[5]))) {
             diyFourthProductCost.setText(null);
             diyFourthProductCost.append(productResources[0] + diyFourthProductCosts[5]);
         }
@@ -511,7 +537,9 @@ public class DIYActivityTwo extends AppCompatActivity implements AdapterView.OnI
 
             }
 
-        } catch (ActivityNotFoundException exc) {
+        } 
+        
+        catch (ActivityNotFoundException exc) {
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
 
