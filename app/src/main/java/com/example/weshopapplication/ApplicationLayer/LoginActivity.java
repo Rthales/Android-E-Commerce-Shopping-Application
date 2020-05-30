@@ -83,9 +83,8 @@ public class LoginActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) { // Routine that determines which option from the menu item has been selected, returns either true or false.
 
         try {
-
             switch (item.getItemId()) {
-
+                    
                 case R.id.sportsAndOutdoorsCategory: // If the sports and outdoors category is chosen
 
                     Intent sportsIntent = new Intent(LoginActivity.this, SportsAndOutdoorsActivity.class);
@@ -195,7 +194,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void showLoginDialogue() { // Routine that shows the login dialogue.
-        long sleepSeconds = 2400;
+        long sleepSeconds = 2400; // The number of seconds for the thread to sleep for.
         
         Context context = getApplicationContext();
         String[] tempResources = new String[]{context.getString(R.string.loggingIn), context.getString(R.string.wait)};
@@ -209,12 +208,10 @@ public class LoginActivity extends AppCompatActivity {
 
         new Thread(new Runnable() { // Create a new thread
             @Override
-            public void run() {
+            public void run() { // Routine to run the threaad
                 
                 try {
-
                     Thread.sleep(sleepSeconds);
-
                 } 
                 
                 catch (InterruptedException exc) {
@@ -251,11 +248,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void setVisibilityOfLogout() {
-
-    }
-
+    
     public void transitionToHomepage() { // Routine that takes user to home page
         try {
             Intent homeIntent = new Intent(LoginActivity.this, MainActivity.class);
