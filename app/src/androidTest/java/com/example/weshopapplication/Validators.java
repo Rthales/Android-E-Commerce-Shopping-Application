@@ -32,7 +32,7 @@ public class Validators implements TextWatcher { // Validator class implements t
 
     protected static boolean isValidEmailAddress(CharSequence emailAddress) { // Helper method that determines if the E-mail Address input is valid or not.
         assert emailAddress != null;
-        return PATTERN.matcher(emailAddress).matches() && !(emailAddress.length() > 30);
+        return PATTERN.matcher(emailAddress).matches() && !(emailAddress.length() > 30); // Returns true or false based on the condition that the e-mail address matches a regex character and the length of the e-mail address is not > 30.
     }
 
     protected static boolean isValidPassword(CharSequence passwordEntryField) { // Determines if the password is valid.
@@ -43,8 +43,8 @@ public class Validators implements TextWatcher { // Validator class implements t
         return cardNumberEntryField != null && !(cardNumberEntryField.length() > 20);
     }
 
-    protected static boolean isValidCardCVV(CharSequence cardCVVEntry) {
-        return cardCVVEntry != null && !(cardCVVEntry.length() > 3);
+    protected static boolean isValidCardCVV(CharSequence cardCVVEntry) { // Determines if the Card CVV is valid.
+        return cardCVVEntry != null && !(cardCVVEntry.length() > 3); // The card entry should not be left empty and the length should not exceed 3 digit.
     }
 
     protected static boolean isValidCardHolderName(CharSequence cardHolderEntryField) {
