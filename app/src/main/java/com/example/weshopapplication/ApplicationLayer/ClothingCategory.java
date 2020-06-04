@@ -34,9 +34,10 @@ import java.util.HashMap;
 // Any Errors? None Yet.
 
 public class ClothingCategory extends AppCompatActivity implements AdapterView.OnItemSelectedListener { // Class implements the item selected listener methods from the adapter view class.
-    private int current_product_id = 1;
-    private TextView clothingFirstProductTxt;
-    private ImageView clothingFirstProductImg;
+    private int current_product_id = 1; // The current product ID
+    private TextView clothingFirstProductTxt; // The text view for the first product
+    
+    private ImageView clothingFirstProductImg; // The Image for the first product
     private TextView clothingFirstProductCostLbl;
 
     private TextView clothingFirstProductColourLbl;
@@ -48,7 +49,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     private TextView clothingFirstProductQuantityLbl;
     private Spinner clothingFirstProductQuantityMenu;
 
-    private Button clothingFirstProductAddToBasketBtn;
+    private Button clothingFirstProductAddToBasketBtn; // The first clothing product add to basket button.
 
     private TextView clothingSecondProductTxt;
     private ImageView clothingSecondProductImg;
@@ -66,7 +67,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     private Button clothingSecondProductAddToBasketBtn;
 
     private double[] clothingProductOneCosts = new double[]{0.00, 25.00, 50.00, 150.00, 450.00, 1350.00}; // Clothing product one costs.
-    private double[] clothingProductTwoCosts = new double[]{0.00, 30.00, 60.00, 120.00, 240.00, 480.00};
+    private double[] clothingProductTwoCosts = new double[]{0.00, 30.00, 60.00, 120.00, 240.00, 480.00}; // Clothing product 2 costs.
 
     private QuantitiesArrayAdapter quantitiesAdapter;
     private ColourArrayAdapter coloursAdapter;
@@ -74,7 +75,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
     // Array List of colours, clothing and sizes.
     private ArrayList<TechActivity.Colours> listOfClothingColoursOne = null;
-    private ArrayList<Size> listOfClothingSizesOne = null;
+    private ArrayList<Size> listOfClothingSizesOne = null; // An Array List of clothing sizes, initially null (empty)
     private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesOne = null;
 
     private ArrayList<TechActivity.Colours> listOfClothingColoursTwo = null;
@@ -84,7 +85,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     private ImageView cartIcon; // The cart icon that represents the basket
     private transient boolean coloursAdded = false; // Determines if the colours have been added.
 
-    private Button nextPageBtn;
+    private Button nextPageBtn; // The next page button variable.
     private HashMap<Integer, Products> listOfProductsToAddToBasket; // A Hash Map that stores a list of products to add to the basket.
 
     @Override
@@ -122,7 +123,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         this.nextPageBtn = findViewById(R.id.clothingNextPageBtn);
 
-        this.listOfClothingColoursOne = new ArrayList<>();
+        this.listOfClothingColoursOne = new ArrayList<>(); // Creates a new array list of colours.
         this.listOfClothingSizesOne = new ArrayList<>();
         this.listOfClothingQuantitiesOne = new ArrayList<>();
 
@@ -132,7 +133,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         this.listOfProductsToAddToBasket = new HashMap<Integer, Products>(); // Creates a new hash map.
 
-        addToColoursList();
+        addToColoursList(); // Method invoked to add to the colours list
         addToSizesList();
 
         addToQuantitiesList();
@@ -183,14 +184,15 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
                     if (clothingFirstProductColourMenu.getSelectedItemPosition() == 0 || clothingFirstProductSizeMenu.getSelectedItemPosition() == 0 || clothingFirstProductQuantityMenu.getSelectedItemPosition() == 0) {
                         AlertDialog.Builder error = new AlertDialog.Builder(ClothingCategory.this)
-                                .setTitle(R.string.error)
-                                .setMessage(R.string.errorMsg)
+                                .setTitle(R.string.error) // Set the title of the error.
+                                .setMessage(R.string.errorMsg) // Set the error message.
 
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        if (dialog != null) {
-                                            dialog.dismiss();
+                                        
+                                        if (dialog != null) { // If there is a dialog
+                                            dialog.dismiss(); // Dismiss it.
                                         }
                                     }
                                 });
