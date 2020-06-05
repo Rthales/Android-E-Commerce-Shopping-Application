@@ -5,11 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-
 import androidx.annotation.NonNull;
-
 import com.example.weshopapplication.ApplicationLayer.TechActivity;
-
 import java.util.ArrayList;
 
 // Author: Sabin Constantin Lungu
@@ -32,12 +29,12 @@ public class SizesAdapter extends ArrayAdapter<TechActivity.Size> {
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         View listOfItems = convertView;
 
-        if (listOfItems == null) {
+        if (listOfItems == null) { // If there are no list of items
             listOfItems = LayoutInflater.from(context).inflate(android.R.layout.simple_spinner_dropdown_item, parent, false);
 
             TechActivity.Size size = listOfSizes.get(position);
         }
 
-        return listOfItems;
+        return listOfItems; // Return the list of items.
     }
 }
