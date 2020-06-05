@@ -41,7 +41,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     private TextView clothingFirstProductCostLbl;
 
     private TextView clothingFirstProductColourLbl;
-    private Spinner clothingFirstProductColourMenu;
+    private Spinner clothingFirstProductColourMenu; // The colour menu for the first clothing product.
 
     private TextView clothingFirstProductSizeLbl; // The size label of the first clothing product.
     private Spinner clothingFirstProductSizeMenu; // The size menu of the clothing activity.
@@ -78,7 +78,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     private ArrayList<Size> listOfClothingSizesOne = null; // An Array List of clothing sizes, initially null (empty)
     private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesOne = null;
 
-    private ArrayList<TechActivity.Colours> listOfClothingColoursTwo = null;
+    private ArrayList<TechActivity.Colours> listOfClothingColoursTwo = null; // An Array list of clothing colours two
     private ArrayList<Size> listOfClothingSizesTwo = null;
     private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesTwo = null;
 
@@ -265,9 +265,9 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         Context context = getApplicationContext();
         String[] productResources = new String[]{context.getString(R.string.productCost)};
 
-        if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[0]))) {
-            clothingFirstProductCostLbl.setText(null);
-            clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[0]);
+        if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[0]))) { // If the first index in the drop-down menu option is chosen
+            clothingFirstProductCostLbl.setText(null); // Flush the text and set it to null.
+            clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[0]); // Append the cost to the field.
             valueAppended = true;
         } 
         
