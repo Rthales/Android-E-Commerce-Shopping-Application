@@ -1,25 +1,26 @@
 package com.example.weshopapplication.BusinessObjects;
 
+import java.io.Serializable;
+
 // Author of Application: Sabin Constantin Lungu 40397517
 // Purpose of Application: To store data regarding the products when they are added to basket, the data will get displayed in a list view
 // Date of Last Modification: 07/02/2020
 // Any Errors? No
 
-import java.io.Serializable;
-
 public class Products implements Serializable { // Products Class
     private int productID; // The Product ID
     private String productName; // The Product Name
-    private String colour; // Product Colour
+    private String colour; // Product Colour.
 
-    private int quantity;
-    private String cost;
-    private String size;
+    private int quantity; // The Product quantity .
+    private String cost; // The Product cost.
+    private String size; // The Product size.
 
     public Products(int productID, String productName, String colour, int quantity, String cost, String size) { // Constructor for products class that stores the data necessary to represent a product
         this.productID = productID;
         this.productName = productName;
         this.colour = colour;
+        
         this.quantity = quantity;
         this.cost = cost; // Set the cost.
         this.size = size;
@@ -42,10 +43,10 @@ public class Products implements Serializable { // Products Class
     }
 
     public String getColour() { // Returns the product colour if called.
-        return this.colour;
+        return this.colour; // Returns the colour
     }
 
-    public void setColour(String colour) {
+    public void setColour(String colour) { // Set the colour of the product
         this.colour = colour;
     }
 
