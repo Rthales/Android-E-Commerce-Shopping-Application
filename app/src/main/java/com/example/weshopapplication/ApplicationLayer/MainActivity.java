@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button registerButton; // Variable Button to register
     private Button loginButton; // Variable to store the login button
-    private Button contactUsBtn;
+    
+    private Button contactUsBtn; // Variable to store the contact us button details
     private FirebaseAuth auth;
 
     @Override
@@ -35,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialise components
         this.text = findViewById(R.id.welcomeTxt);
-
         this.registerButton = findViewById(R.id.registerBtn);
+        
         this.loginButton = findViewById(R.id.loginBtn);
         this.contactUsBtn = findViewById(R.id.contactUsBtn);
 
@@ -45,8 +46,9 @@ public class MainActivity extends AppCompatActivity {
         this.registerButton.setOnClickListener(new View.OnClickListener() { // Listener added to register button
             @Override
             public void onClick(View v) {
+                
                 try {
-
+                    
                     if (v.getId() == R.id.registerBtn) { // If the register button is clicked
                         Intent registerIntent = new Intent(MainActivity.this, RegisterActivity.class);
                         startActivity(registerIntent); // Take user to the register page
@@ -54,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 } 
                 
                 catch (ActivityNotFoundException act) { // Catch exception if the activity is not found
-                    act.printStackTrace();
-                    Log.d("Cause : ", act.getMessage());
+                    act.printStackTrace(); // Print the stack trace of the errors
+                    Log.d("Cause : ", act.getMessage()); // Log the cause of the error
                 }
             }
         });
@@ -63,20 +65,22 @@ public class MainActivity extends AppCompatActivity {
         this.loginButton.setOnClickListener(new View.OnClickListener() { // Listener for login button
             @Override
             public void onClick(View v) {
+                
                 try {
                     Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
-                    startActivity(loginIntent);
+                    startActivity(loginIntent); // Invoke routine to start the activity.
                 } 
                 
-                catch (ActivityNotFoundException exc) {
+                catch (ActivityNotFoundException exc) { // Catch the activity not found.
                     Log.d("Error : ", exc.getMessage());
                 }
             }
         });
 
-        this.contactUsBtn.setOnClickListener(new View.OnClickListener() {
+        this.contactUsBtn.setOnClickListener(new View.OnClickListener() { // An action listener for the contact us button
             @Override
             public void onClick(View v) {
+                
                 try {
                     Intent contactUsIntent = new Intent(MainActivity.this, ContactUsActivity.class);
                     startActivity(contactUsIntent);
@@ -155,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             exc.printStackTrace();
         }
 
-        return true;
+        return true; // Return true.
     }
 
     public void onBackPressed() { // Routine that determines if the back button is pressed
