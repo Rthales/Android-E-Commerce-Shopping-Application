@@ -136,7 +136,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         addToColoursList(); // Method invoked to add to the colours list
         addToSizesList();
 
-        addToQuantitiesList();
+        addToQuantitiesList(); // Invoke routine to add to the quantities list.
         addToQuantitiesListTwo();
 
         // Set-up Adapters.
@@ -180,7 +180,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
             @Override
 
             public void onClick(View firstButton) {
-                if (firstButton.getId() == R.id.clothingFirstProductAddToBasketBtn) {
+                if (firstButton.getId() == R.id.clothingFirstProductAddToBasketBtn) { // If the button chosen is the first product add to basket button
 
                     if (clothingFirstProductColourMenu.getSelectedItemPosition() == 0 || clothingFirstProductSizeMenu.getSelectedItemPosition() == 0 || clothingFirstProductQuantityMenu.getSelectedItemPosition() == 0) {
                         AlertDialog.Builder error = new AlertDialog.Builder(ClothingCategory.this)
@@ -202,7 +202,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                     } 
                     
                     else {
-                        clothingAddToBasketOne();
+                        clothingAddToBasketOne(); // Otherwise add the product to the basket.
                     }
                 }
             }
@@ -242,11 +242,13 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
             @Override
 
             public void onClick(View v) {
+                
                 try {
                     Intent intent = new Intent(ClothingCategory.this, ClothingActivityTwo.class);
                     startActivity(intent);
-
-                } catch (ActivityNotFoundException exc) { // Catch the error if the activity does not exist.
+                } 
+                
+                catch (ActivityNotFoundException exc) { // Catch the error if the activity does not exist.
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
             }
@@ -256,9 +258,9 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     @SuppressLint("SetTextI18n")
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        boolean valueAppended = false;
+        boolean valueAppended = false; // Boolean value that stores true or false if the value has been appended.
 
-        int[] indexes = new int[]{0, 1, 2, 3, 4};
+        int[] indexes = new int[]{0, 1, 2, 3, 4}; // An Array of indexes from 0-4
 
         Context context = getApplicationContext();
         String[] productResources = new String[]{context.getString(R.string.productCost)};
@@ -267,14 +269,12 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
             clothingFirstProductCostLbl.setText(null);
             clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[0]);
             valueAppended = true;
-
         } 
         
         else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[1]))) {
             clothingFirstProductCostLbl.setText(null);
             clothingFirstProductCostLbl.append(productResources[0] + clothingProductOneCosts[1]);
             valueAppended = true; // Value is appended
-
         } 
         
         else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[2]))) {
@@ -337,7 +337,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
     }
 
-    private boolean addToColoursList() {
+    private boolean addToColoursList() { // Routine 
         Context context = getApplicationContext();
 
         String[] clothingResources = new String[]{context.getString(R.string.colourPrompt), context.getString(R.string.brown), context.getString(R.string.navyBlue),
@@ -351,7 +351,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
             listOfClothingColoursOne.add(theColours);
             listOfClothingColoursTwo.add(theColours);
 
-            coloursAdded = true;
+            coloursAdded = true; // Colours added variable is true.
         }
 
         return true;
@@ -376,7 +376,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         return true;
     }
 
-    private boolean addToQuantitiesList() {
+    private boolean addToQuantitiesList() { // Routine to add to quantities list.
         boolean quantitiesAdded = false;
         Context context = getApplicationContext();
 
@@ -404,7 +404,7 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
         TechActivity.Quantities[] quantities = new TechActivity.Quantities[]{new TechActivity.Quantities(quantitiesResources[0]), new TechActivity.Quantities(quantitiesResources[1]), new TechActivity.Quantities(quantitiesResources[2]),
                 new TechActivity.Quantities(quantitiesResources[3]), new TechActivity.Quantities(quantitiesResources[4]), new TechActivity.Quantities(quantitiesResources[5])};
 
-        for (TechActivity.Quantities theQuantities : quantities) {
+        for (TechActivity.Quantities theQuantities : quantities) { // For every quantity in the quantities.
             listOfClothingQuantitiesTwo.add(theQuantities); // Add the quantities to the first array list
             quantitiesAdded = true;
         }
@@ -470,7 +470,9 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                 try {
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
-                } catch (InterruptedException exc) {
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
