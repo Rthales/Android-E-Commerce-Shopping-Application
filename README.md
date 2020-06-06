@@ -330,6 +330,12 @@ In this section you will find details on what most of the functions of the appli
 
 > boolean (True or False)
 
+### Purpose of Validate Username Method ###
+
+1. Username is validated against: ***Empty Username Field***
+
+2. Username length is no longer than ***20 Characters***
+
 ### Method Implementation ###
 
 <img width="975" alt="1  Validate Username" src="https://user-images.githubusercontent.com/29733613/83941601-91e04e80-a7e4-11ea-84d6-876e706c8ae7.png">
