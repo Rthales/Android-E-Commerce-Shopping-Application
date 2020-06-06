@@ -2,7 +2,6 @@ package com.example.weshopapplication;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-
 import java.util.regex.Pattern;
 
 // Author of Validators Unit Testing Class: Sabin Constantin Lungu
