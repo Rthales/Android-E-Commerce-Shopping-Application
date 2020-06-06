@@ -373,3 +373,7 @@ In this section you will find details on what most of the functions of the appli
 3. E-mail Address contains Regular Expression character (@ symbol).
 
 ### Method Implementation ###
+
+<img width="974" alt="1  Validate E-mail Address" src="https://user-images.githubusercontent.com/29733613/83943819-ca892380-a7f6-11ea-9513-16cc457c7c01.png">
+
+<img width="981" alt="1 1 Validate E-mail Address Length   Regex" src="https://user-images.githubusercontent.com/29733613/83943823-cd841400-a7f6-11ea-8a8d-8147aee71b0d.png">
