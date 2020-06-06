@@ -349,3 +349,27 @@ In this section you will find details on what most of the functions of the appli
 <img width="977" alt="1 2 Validate Username" src="https://user-images.githubusercontent.com/29733613/83943671-e04a1900-a7f5-11ea-8348-9aad67d39ed6.png">
 
 <img width="975" alt="1  Validate Username" src="https://user-images.githubusercontent.com/29733613/83943667-dcb69200-a7f5-11ea-86fb-1cd4b24652b8.png">
+
+# Validate E-mail Address Method #
+
+### Method Name ###
+
+> private boolean validateEmailAddress();
+
+### Method Parameters ###
+
+> None
+
+### Method Return Type ###
+
+> boolean (True or False)
+
+### Purpose of Validate Username Method ###
+
+1. E-mail Address is validated against: ***Empty Username Field***
+
+2. E-mail Address length is no longer than ***30 Characters***
+
+3. E-mail Address contains Regular Expression character (@ symbol).
+
+### Method Implementation ###
