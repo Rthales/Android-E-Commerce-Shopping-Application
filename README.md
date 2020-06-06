@@ -344,3 +344,8 @@ In this section you will find details on what most of the functions of the appli
 
 <img width="975" alt="1  Validate Username" src="https://user-images.githubusercontent.com/29733613/83941601-91e04e80-a7e4-11ea-84d6-876e706c8ae7.png">
 
+<img width="975" alt="1 1 Validate Username" src="https://user-images.githubusercontent.com/29733613/83943670-df18ec00-a7f5-11ea-8f9a-c28551e8a9bd.png">
+
+<img width="977" alt="1 2 Validate Username" src="https://user-images.githubusercontent.com/29733613/83943671-e04a1900-a7f5-11ea-8348-9aad67d39ed6.png">
+
+<img width="975" alt="1  Validate Username" src="https://user-images.githubusercontent.com/29733613/83943667-dcb69200-a7f5-11ea-86fb-1cd4b24652b8.png">
