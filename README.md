@@ -302,7 +302,7 @@ In this section you will find details on what most of the functions of the appli
 
 ### Method Name ###
 
-> onClick(View view)
+> onClick(View view);
 
 ### Method Parameters ###
 
@@ -315,3 +315,21 @@ In this section you will find details on what most of the functions of the appli
 ### Method Implementation ###
 
 <img width="714" alt="Login Button Listener" src="https://user-images.githubusercontent.com/29733613/78253201-f08b0280-74eb-11ea-9aca-b909d6d4b08b.png">
+
+# Validate Username Method #
+
+### Method Name ###
+
+> private boolean validateUsername();
+
+### Method Parameters ###
+
+> None
+
+### Method Return Type ###
+
+> boolean (True or False)
+
+### Method Implementation ###
+
+<img width="975" alt="1  Validate Username" src="https://user-images.githubusercontent.com/29733613/83941601-91e04e80-a7e4-11ea-84d6-876e706c8ae7.png">
