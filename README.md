@@ -377,3 +377,11 @@ In this section you will find details on what most of the functions of the appli
 <img width="974" alt="1  Validate E-mail Address" src="https://user-images.githubusercontent.com/29733613/83943819-ca892380-a7f6-11ea-9513-16cc457c7c01.png">
 
 <img width="981" alt="1 1 Validate E-mail Address Length   Regex" src="https://user-images.githubusercontent.com/29733613/83943823-cd841400-a7f6-11ea-8a8d-8147aee71b0d.png">
+
+# Unit Tests #
+
+The purpose of the following Unit Tests is to test different parts of the application and to see whether they successfully function without any bugs or not. The following features of the Android Application will be tested:
+
+> 1. Testing if the Username entered by the user when they registered is valid or not. ***Test Passes Successfully.***
+
+> 2. Testing to see if the Username entered by the user is not left empty. ***Test Passes. Successfully.***
