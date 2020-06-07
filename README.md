@@ -380,8 +380,12 @@ In this section you will find details on what most of the functions of the appli
 
 # Unit Tests #
 
-The purpose of the following Unit Tests is to test different parts of the application and to see whether they successfully function without any bugs or not. The following features of the Android Application will be tested:
+The purpose of the following Unit Tests is to test different parts of the application and to see whether they successfully function without any bugs or not. The Unit Test methods that are being incorporated in my application will ensure that they are fit for purpose and that no bugs are found whilst the testing is in process.
+
+The following features of the Android Application will be tested:
 
 > 1. Testing if the Username entered by the user when they registered is valid or not. ***Test Passes Successfully.***
 
 > 2. Testing to see if the Username entered by the user is not left empty. ***Test Passes. Successfully.***
+
+> 3. Testing 
