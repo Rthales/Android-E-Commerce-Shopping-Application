@@ -384,14 +384,16 @@ The purpose of the following Unit Tests is to test different parts of the applic
 
 The following features of the Android Application will be tested:
 
-> 1. Testing if the Username entered by the user when they registered is valid or not. ***Test Passes Successfully.***
+> 1. Testing if the **Username** entered by the user when they registered is valid or not. ***Test Passes Successfully.***
 
-> 2. Testing to see if the Username entered by the user is not left empty. ***Test Passes Successfully.***
+> 2. Testing to see if the **Username** entered by the user is not left empty. ***Test Passes Successfully.***
 
-> 3. Testing to see if the Username entered by the user does not exceed 20 characters. ***Test Passes Successfully.***
+> 3. Testing to see if the **Username** entered by the user does not exceed 20 characters. ***Test Passes Successfully.***
 
-> 4. Testing to see if the E-mail Address entered by the user is valid. ***Test Passses Successfully.***
+> 4. Testing to see if the **E-mail Address** entered by the user is valid. ***Test Passses Successfully.***
 
-> 5. Testing to see if the E-mail Address entered by the user does not exceed 30 characters. ***Test Passes Successfully.***
+> 5. Testing to see if the **E-mail Address** entered by the user does not exceed 30 characters. ***Test Passes Successfully.***
 
-> 6. Testing to see if the E-mail Address contains a special regex character (@ symbol). ***Test Passes Successfully.***
+> 6. Testing to see if the **E-mail Address** contains a special regex character (@ symbol). ***Test Passes Successfully.***
+
+> 7. Testing to see if the **Password** entered by the user starts with an Uppercase character, contains regex characters and is not left empty. ***Test Passes Successfully.***
