@@ -12,8 +12,8 @@ import android.database.sqlite.SQLiteStatement;
 // Any Errors? None. 25/25 Tests Passed.
 
 public class PaymentDatabase {
-    private static final String DATABASE_NAME = "payments.db"; // The payment database to create.
-    private static final String TABLE_NAME = "payments";
+    private static final String DATABASE_NAME = "payments.db"; // The Payment Database to create.
+    private static final String TABLE_NAME = "payments"; // The Database Table name.
 
     private static final String INSERT_DATA = "INSERT INTO " + TABLE_NAME
             + " (email_address, card_number, card_cvv, card_name, expiry_month, expiry_year) VALUES (?,?,?,?,?,?)"; // Insert Query (DML) that inserts data into the contacts DB
@@ -45,7 +45,7 @@ public class PaymentDatabase {
     }
 
     public void deleteData() { // Routine is only called when the database needs to be deleted.
-        db.delete(TABLE_NAME, null, null);
+        db.delete(TABLE_NAME, null, null); // Deletes the data in the database.
     }
 
     public static class OpenHelper extends SQLiteOpenHelper { // A Helper Class that inherits from SQLiteOpenHelper
