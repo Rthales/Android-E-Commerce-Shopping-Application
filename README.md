@@ -391,3 +391,7 @@ The following features of the Android Application will be tested:
 > 3. Testing to see if the Username entered by the user does not exceed 20 characters. ***Test Passes Successfully.***
 
 > 4. Testing to see if the E-mail Address entered by the user is valid. ***Test Passses Successfully.***
+
+> 5. Testing to see if the E-mail Address entered by the user does not exceed 30 characters. ***Test Passes Successfully.***
+
+> 6. Testing to see if the E-mail Address contains a special regex character (@ symbol). ***Test Passes Successfully.***
