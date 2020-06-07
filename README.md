@@ -397,3 +397,7 @@ The following features of the Android Application will be tested:
 > 6. Testing to see if the **E-mail Address** contains a special regex character (@ symbol). ***Test Passes Successfully.***
 
 > 7. Testing to see if the **Password** entered by the user starts with an Uppercase character, contains regex characters and is not left empty. ***Test Passes Successfully.***
+
+> 8. Testing to see if the **Card Number** entered by the user in the payment form is valid or not. ***Test Passes Successfully.***
+
+> 9. Testing to see if the **Card Number** entered by the user in the payment form is not left as an empty string. ***Test Passes Successfully.***
