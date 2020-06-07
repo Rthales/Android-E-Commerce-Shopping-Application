@@ -386,6 +386,8 @@ The following features of the Android Application will be tested:
 
 > 1. Testing if the Username entered by the user when they registered is valid or not. ***Test Passes Successfully.***
 
-> 2. Testing to see if the Username entered by the user is not left empty. ***Test Passes. Successfully.***
+> 2. Testing to see if the Username entered by the user is not left empty. ***Test Passes Successfully.***
 
-> 3. Testing 
+> 3. Testing to see if the Username entered by the user does not exceed 20 characters. ***Test Passes Successfully.***
+
+> 4. Testing to see if the E-mail Address entered by the user is valid. ***Test Passses Successfully.***
