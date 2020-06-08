@@ -405,3 +405,7 @@ The following features of the Android Application will be tested:
 > 10. Testing to see if the **Card Number** length entered by the user does not exceed 20 numbers. ***Test Passes Successfully***.
 
 > 11. Testing to see if the **Card Number** field is not left empty. ***Test Passes Successfully***.
+
+> 12. Testing to see if the **Card CVV** is valid. ***Test Passes Successfully and does not exceed 3 integers***.
+
+> 13. Testing to see if the **Card CVV** length is valid. ***Test Passes Successfully.***
