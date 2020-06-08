@@ -6,10 +6,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import com.example.weshopapplication.DataLayer.ContactUsDatabase;
 import com.example.weshopapplication.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +17,7 @@ import java.util.List;
 // Any Errors: None.
 
 public class CheckComplaints extends ListActivity { // Class Check Complaints inherits from the List Activity class
-    public int idToModify;
+    public int idToModify; // The ID to modify.
     private TextView selection;
     private ContactUsDatabase manipulator;
 
@@ -34,7 +32,7 @@ public class CheckComplaints extends ListActivity { // Class Check Complaints in
         setContentView(R.layout.activity_check_complaints);
 
         manipulator = new ContactUsDatabase(this); // Creates a new instance of the contact us database
-        listOfUsernames = manipulator.selectAllData();
+        listOfUsernames = manipulator.selectAllData(); // Selects all of the list of usernames.
 
         displayDataStrings = new String[listOfUsernames.size()]; // Creates a new array of strirngs.
         int index = 0; // The index
