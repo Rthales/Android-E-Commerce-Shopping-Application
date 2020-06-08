@@ -37,11 +37,13 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     
     private TextView firstProductText; // Text for the first product
     private Thread firstActivityThread;
+    
     private ImageView firstProductImg; // The Image for the first product
     private TextView productCost;
 
     private TextView firstProductColour;
     private Button firstAddToBasketButton;
+    
     private TextView firstProductSizes;
     private Spinner firstProductSizesMenu;
 
@@ -88,6 +90,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         // INITIALISE COMPONENTS FOR FIRST PRODUCT
         this.firstActivityThread = new Thread();
         this.firstProductText = findViewById(R.id.firstProductText);
+        
         this.firstProductImg = findViewById(R.id.firstProductImg);
         this.productCost = findViewById(R.id.firstProductCost);
 
@@ -239,8 +242,8 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                                     @Override
 
                                     public void onClick(DialogInterface dialog, int which) {
-                                        if (dialog != null) {
-                                            dialog.dismiss();
+                                        if (dialog != null) { // If there is a dialogue visible
+                                            dialog.dismiss(); // Dismiss it.
                                         }
                                     }
                                 });
@@ -273,9 +276,8 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         new Thread(new Runnable() { // Create a new thread
 
             @Override
-            public void run() {
+            public void run() { // Runs the thread
                 try {
-
                     Thread.sleep(sleepSeconds); // Sleep for 1.9 seconds
                 } 
                 
@@ -373,7 +375,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         Context context = getApplicationContext();
         String[] watchResources = new String[]{context.getString(R.string.sizePrompt), context.getString(R.string.fourtyMM), context.getString(R.string.fourtyTwoMM)};
 
-
         Size[] watchSizes = {new Size(0, watchResources[0]), new Size(1, watchResources[1]), new Size(2, watchResources[2])};
 
         for (Size size : watchSizes) {
@@ -421,7 +422,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         Context context = getApplicationContext();
         String[] productResource = new String[]{context.getString(R.string.product_cost)};
 
-        if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[0]))) {
+        if (parent.getItemAtPosition(position).equals(listOfQuantities.get(indexes[0]))) { // If the first option in the drop down menu is selected at index 0
             productCost.setText(null);
             productCost.append(productResource[0] + techProductOneCosts[0]);
 
@@ -535,7 +536,6 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                     return super.onOptionsItemSelected(item); // Return base item if no option is chosen
 
             }
-
         } 
         
         catch (ActivityNotFoundException act) { // Catch error
@@ -551,7 +551,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         return true;
     }
 
-    public static class Quantities {
+    public static class Quantities { // Anonymous Inner Class.
         private String quantity; // Quantity variable
 
         public Quantities(String quantity) { // Parameterised constructor that creates the object and the data when this is called.
@@ -591,7 +591,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) { // Routine to create the options menu.
 
         // Inflate the activities menu
         MenuInflater activityInflater = getMenuInflater(); // Get the activity inflater
@@ -604,13 +604,13 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
 
         cartIcon = view.findViewById(R.id.cart_icon);
 
-        cartIcon.setOnClickListener(new View.OnClickListener() {
+        cartIcon.setOnClickListener(new View.OnClickListener() { // Adds an on click listener to the Cart Icon.
             @Override
             public void onClick(View v) {
 
                 Intent basketIntent = new Intent(TechActivity.this, BasketActivity.class);
                 basketIntent.putExtra("map", listOfProductsToAddToBasket);
-                startActivity(basketIntent);
+                startActivity(basketIntent); // Start the basket activity
             }
         });
 
@@ -620,10 +620,10 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     // Anonymous inner classes that will be used later on in the basket activity and the payment form
 
     public static class Colours { // Anonymous inner class of colours
-        private int index;
-        private String colour;
+        private int index; // Index of the colour
+        private String colour; // The colour
 
-        public Colours(int index, String colour) {
+        public Colours(int index, String colour) { // Parameterised constructor
             this.index = index;
             this.colour = colour;
         }
@@ -636,7 +636,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
             this.index = index;
         }
 
-        public String getColour() {
+        public String getColour() { // Returns the colour
             return this.colour;
         }
 
