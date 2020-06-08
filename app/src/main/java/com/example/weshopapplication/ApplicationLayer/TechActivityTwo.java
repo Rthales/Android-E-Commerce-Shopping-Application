@@ -16,18 +16,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
 import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -102,7 +99,7 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
     private boolean addedCapacities = false;
 
     public int current_product_id = 1;
-    private HashMap<Integer, Products> listOfProductsToAdd = new HashMap<>();
+    private HashMap<Integer, Products> listOfProductsToAdd = new HashMap<>(); // A HashMap of products
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { // On create method
@@ -220,7 +217,9 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
                         colourError.show(); // Show the error
                         colourError.setCancelable(true); // Set cancelable to true
-                    } else {
+                    } 
+                    
+                    else {
 
                         addProductThreeToBasket();
                     }
@@ -251,7 +250,9 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
 
                         error.show();
                         error.setCancelable(true);
-                    } else {
+                    } 
+                    
+                    else {
                         addProductFourToBasket();
                     }
                 }
@@ -277,9 +278,10 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
             @Override
             public void run() {
                 try {
-
                     Thread.sleep(1900);
-                } catch (InterruptedException exc) {
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -312,9 +314,10 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
             @Override
             public void run() {
                 try {
-
                     Thread.sleep(1900);
-                } catch (InterruptedException exc) {
+                }
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -454,23 +457,31 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
             thirdProductCostTxt.append(productResource[0] + quantity_one_cost);
             valueAppended = true; // Value is appended
 
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(quantityIndexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(quantityIndexes[2]))) {
             thirdProductCostTxt.setText(null);
             thirdProductCostTxt.append(productResource[0] + quantity_two_cost);
 
             valueAppended = true;
 
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(quantityIndexes[3]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(quantityIndexes[3]))) {
             thirdProductCostTxt.setText(null);
             thirdProductCostTxt.append(productResource[0] + quantity_three_cost);
 
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(quantityIndexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(quantityIndexes[4]))) {
             thirdProductCostTxt.setText(null);
             thirdProductCostTxt.append(productResource[0] + quantity_four_cost);
 
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(quantityIndexes[5]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantities.get(quantityIndexes[5]))) {
             thirdProductCostTxt.setText(null);
             thirdProductCostTxt.append(productResource[0] + quantity_five_cost);
 
@@ -480,27 +491,37 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
         if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(quantityIndexes[0]))) {
             fourthProductCost.setText(null);
             fourthProductCost.append(productResource[0] + product_four_zero_cost);
-        } else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(quantityIndexes[1]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(quantityIndexes[1]))) {
             fourthProductCost.setText(null);
             fourthProductCost.append(productResource[0] + product_four_one_cost);
 
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(quantityIndexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(quantityIndexes[2]))) {
             fourthProductCost.setText(null);
             fourthProductCost.append(productResource[0] + product_four_two_cost);
 
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(quantityIndexes[3]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(quantityIndexes[3]))) {
             fourthProductCost.setText(null);
             fourthProductCost.append(productResource[0] + quantity_three_cost);
 
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(quantityIndexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(quantityIndexes[4]))) {
             fourthProductCost.setText(null);
             fourthProductCost.append(productResource[0] + quantity_four_cost);
 
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(quantityIndexes[5]))) {
+        }
+        
+        else if (parent.getItemAtPosition(position).equals(secondListOfQuantities.get(quantityIndexes[5]))) {
             fourthProductCost.setText(null);
             fourthProductCost.append(productResource[0] + quantity_five_cost);
         }
@@ -534,12 +555,13 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
             public void onClick(View v) {
 
                 try {
-
                     Intent basketIntent = new Intent(TechActivityTwo.this, BasketActivity.class);
                     basketIntent.putExtra("map", listOfProductsToAdd);
                     startActivity(basketIntent); // Start the basket intent
 
-                } catch (ActivityNotFoundException exc) {
+                } 
+                
+                catch (ActivityNotFoundException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
             }
@@ -584,8 +606,9 @@ public class TechActivityTwo extends AppCompatActivity implements AdapterView.On
                     return super.onOptionsItemSelected(item);
 
             }
-
-        } catch (ActivityNotFoundException exc) {
+        } 
+        
+        catch (ActivityNotFoundException exc) {
 
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
