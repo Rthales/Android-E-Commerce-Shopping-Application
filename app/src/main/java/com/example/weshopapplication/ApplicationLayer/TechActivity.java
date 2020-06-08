@@ -33,21 +33,21 @@ import java.util.HashMap;
 
 public class TechActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     public int current_product_id = 1; // The current product ID
-    private long sleepSeconds = 1900;
+    private long sleepSeconds = 1900; // Number of seconds for the thread to sleep for.
     
     private TextView firstProductText; // Text for the first product
-    private Thread firstActivityThread;
+    private Thread firstActivityThread; // The Activity Thread.
     
     private ImageView firstProductImg; // The Image for the first product
-    private TextView productCost;
+    private TextView productCost; // Product Cost Text.
 
-    private TextView firstProductColour;
-    private Button firstAddToBasketButton;
+    private TextView firstProductColour; // The colour for the first product.
+    private Button firstAddToBasketButton; // The first add to basket button.
     
     private TextView firstProductSizes;
-    private Spinner firstProductSizesMenu;
+    private Spinner firstProductSizesMenu; // Drop-down menu for the first product sizes.
 
-    private TextView secondProductText;
+    private TextView secondProductText; // The text for the second product.
     private ImageView secondProductImg;
     private TextView secondProductCost;
 
@@ -64,11 +64,11 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
     private Spinner secondProductColourOptions;
     private Spinner secondProductQuantityOptions;
 
-    private ArrayList<Colours> listOfColours = null; // An Array List of colours to store the colours for the product
-    private ArrayList<Quantities> listOfQuantities = null;
-    private ArrayList<Size> listOfSizes = null;
+    private ArrayList<Colours> listOfColours = null; // An Array List of colours to store the colours for the product.
+    private ArrayList<Quantities> listOfQuantities = null; // An Array List of Quantities to store the product quantities.
+    private ArrayList<Size> listOfSizes = null; // An Array List of sizes. Null (empty) initially.
 
-    private QuantitiesArrayAdapter quantitiesCustomAdapter = null;
+    private QuantitiesArrayAdapter quantitiesCustomAdapter = null; // Quantities Array Adapter to store a custom object.
     private ColourArrayAdapter colourArrayAdapter = null;
     private SizesAdapter sizesAdapter = null;
 
@@ -122,7 +122,7 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
         addToColoursList(); // Invoke routine to add the colours to the array list
         addToQuantitiesList();
 
-        addToSizesList();
+        addToSizesList(); // Invoke routine to add to the sizes array list.
         addToSizesTwoList();
 
         this.colourArrayAdapter = new ColourArrayAdapter(TechActivity.this, listOfColours); // Create an array adapter for the colours drop down menu
@@ -285,11 +285,11 @@ public class TechActivity extends AppCompatActivity implements AdapterView.OnIte
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
-                dialog.dismiss();
+                dialog.dismiss(); // Dismiss the dialogue.
             }
         }).start();
 
-        dialog.show();
+        dialog.show(); // Show the spinning dialogue.
 
         Products firstProduct = new Products(current_product_id, firstProductText.getText().toString(), firstProductColourOptions.getSelectedItem().toString(), (int) firstProductQuantityOptions.getSelectedItemId(), productCost.getText().toString(), firstProductSizesMenu.getSelectedItem().toString());
         listOfProductsToAddToBasket.put(current_product_id, firstProduct); // Add the product data to the hash map
