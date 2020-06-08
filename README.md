@@ -401,3 +401,7 @@ The following features of the Android Application will be tested:
 > 8. Testing to see if the **Card Number** entered by the user in the payment form is valid or not. ***Test Passes Successfully.***
 
 > 9. Testing to see if the **Card Number** entered by the user in the payment form is not left as an empty string. ***Test Passes Successfully.***
+
+> 10. Testing to see if the **Card Number** length entered by the user does not exceed 20 numbers. ***Test Passes Successfully***.
+
+> 11. Testing to see if the **Card Number** field is not left empty. ***Test Passes Successfully***.
