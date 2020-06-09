@@ -5,9 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-
 import androidx.annotation.NonNull;
-
 import java.util.ArrayList;
 
 // Author: Sabin Constantin Lungu
@@ -17,11 +15,11 @@ import java.util.ArrayList;
 // Any Bugs?: Currently none. Unit tested recently. 25/25 Tests completed
 
 public class YearsArrayAdapter extends ArrayAdapter<Years> {
-    private Context context;
-    private ArrayList<Years> listOfYears = null;
+    private Context context; // The current context
+    private ArrayList<Years> listOfYears = null; // An ArrayList of years
 
     public YearsArrayAdapter(Context context, ArrayList<Years> listOfYears) {
-        super(context, 0, listOfYears);
+        super(context, 0, listOfYears); // Inherit the features from the base Array adapter class using the super keyword.
         this.context = context;
         this.listOfYears = listOfYears;
     }
