@@ -5,9 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.R;
 
 // Author of Application: Sabin Constantin Lungu
@@ -27,12 +25,12 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
 
         View checkComplaint = findViewById(R.id.checkComplaintsBtn);
         checkComplaint.setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View v) {
         try {
+            
             switch (v.getId()) {
                 case R.id.submitComplaintBtn:
                     Intent submitComplaintIntent = new Intent(ContactUsActivity.this, SubmitComplaint.class);
@@ -45,8 +43,9 @@ public class ContactUsActivity extends AppCompatActivity implements View.OnClick
                     startActivity(checkComplaintsIntent);
                     break;
             }
-
-        } catch (ActivityNotFoundException exc) {
+        }
+        
+        catch (ActivityNotFoundException exc) {
 
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
