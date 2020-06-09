@@ -52,24 +52,24 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
     private Button clothingFirstProductAddToBasketBtn; // The first clothing product add to basket button.
 
     private TextView clothingSecondProductTxt;
-    private ImageView clothingSecondProductImg;
+    private ImageView clothingSecondProductImg; // The image for the second clothing product.
     private TextView clothingSecondProductCostLbl;
 
     private TextView clothingSecondProductColourLbl;
     private Spinner clothingSecondProductColourMenu;
 
-    private TextView clothingSecondProductSizeLbl;
+    private TextView clothingSecondProductSizeLbl; // The label for the second clothing product.
     private Spinner clothingSecondProductSizeMenu;
 
     private TextView clothingSecondProductQuantityLbl;
-    private Spinner clothingSecondProductQuantityMenu;
+    private Spinner clothingSecondProductQuantityMenu; // Quantity menu for the second clothing product
 
-    private Button clothingSecondProductAddToBasketBtn;
+    private Button clothingSecondProductAddToBasketBtn; // Button for adding the second product to the basket
 
     private double[] clothingProductOneCosts = new double[]{0.00, 25.00, 50.00, 150.00, 450.00, 1350.00}; // Clothing product one costs.
     private double[] clothingProductTwoCosts = new double[]{0.00, 30.00, 60.00, 120.00, 240.00, 480.00}; // Clothing product 2 costs.
 
-    private QuantitiesArrayAdapter quantitiesAdapter;
+    private QuantitiesArrayAdapter quantitiesAdapter; // Quantities Array adapter to store custom instances of Quantity.
     private ColourArrayAdapter coloursAdapter;
     private SizeArrayAdapter sizeArrayAdapter;
 
@@ -102,12 +102,13 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         this.clothingFirstProductSizeLbl = findViewById(R.id.clothingFirstProductSizeLbl);
         this.clothingFirstProductSizeMenu = findViewById(R.id.clothingFirstProductSizeMenu);
-
+        
         this.clothingFirstProductQuantityLbl = findViewById(R.id.clothingFirstProductQuantityLbl);
         this.clothingFirstProductQuantityMenu = findViewById(R.id.clothingFirstProductQuantityMenu);
+        
         this.clothingFirstProductAddToBasketBtn = findViewById(R.id.clothingFirstProductAddToBasketBtn);
-
         this.clothingSecondProductTxt = findViewById(R.id.clothingSecondProductTxt);
+        
         this.clothingSecondProductImg = findViewById(R.id.clothingSecondProductImg);
         this.clothingSecondProductCostLbl = findViewById(R.id.clothingSecondProductCostLbl);
 
@@ -119,15 +120,16 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
 
         this.clothingSecondProductQuantityLbl = findViewById(R.id.clothingSecondProductQuantityLbl);
         this.clothingSecondProductQuantityMenu = findViewById(R.id.clothingSecondProductQuantityMenu);
+        
         this.clothingSecondProductAddToBasketBtn = findViewById(R.id.clothingSecondProductAddToBasketBtn);
-
         this.nextPageBtn = findViewById(R.id.clothingNextPageBtn);
 
         this.listOfClothingColoursOne = new ArrayList<>(); // Creates a new array list of colours.
-        this.listOfClothingSizesOne = new ArrayList<>();
+        this.listOfClothingSizesOne = new ArrayList<>(); // A new array list of clothing sizes.
+        
         this.listOfClothingQuantitiesOne = new ArrayList<>();
-
         this.listOfClothingColoursTwo = new ArrayList<>();
+        
         this.listOfClothingSizesTwo = new ArrayList<>();
         this.listOfClothingQuantitiesTwo = new ArrayList<>();
 
@@ -221,8 +223,8 @@ public class ClothingCategory extends AppCompatActivity implements AdapterView.O
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         
-                                        if (dialog != null) {
-                                            dialog.dismiss();
+                                        if (dialog != null) { // If there is a dialogue
+                                            dialog.dismiss(); // Dismiss it.
                                         }
                                     }
                                 });
