@@ -4,9 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
-
 import java.util.Properties;
-
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
@@ -23,11 +21,11 @@ import javax.mail.internet.MimeMessage;
 public class SendPaymentInvoiceAPI extends AsyncTask<Void, Void, Void> { // The class inherits from an Asynchronous Task Class. with 3 parameters initially Void
     private Context context; // The context.
     private Session session; // The current session.
-
+    
     private String mail; // The mail instance.
     private String subject; // The subject variable.
+    
     private String theMessage; // The message that will be sent will be stored in this variable.
-
     private ProgressDialog dialog; // The progress dialog
 
     public SendPaymentInvoiceAPI(Context context, String mail, String subject, String theMessage) { // Constructor for the send payment invoice that stores the context, email, subject and message
