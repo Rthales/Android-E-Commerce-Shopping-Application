@@ -35,19 +35,19 @@ import java.util.regex.Pattern;
 public class LoginActivity extends AppCompatActivity {
     private TextView loginText; // The login text at the top of the application
     private EditText emailAddressField; // The E-mail Address field.
+    
     private EditText passwordField; // The Password field
-
     private Button loginButton; // Variable for the login button
+    
     private FirebaseFirestore firebaseFirestore;
-
-    private FirebaseAuth auth; // Firebase authentication variable
-    private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns that will be used to check if the entered e-mail address and password is valid
+    private FirebaseAuth auth; // Firebase authentication variable.
+    
+    private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns that will be used to check if the entered e-mail address and password is valid.
     private final int LOGOUT_BUTTON_ID = 101;
-
-    private boolean isAdded = false;
+    
+    private boolean isAdded = false; // Determines if the details have been added.
     public boolean isLoggedIn = false; // Determines if the user is logged in
-
-    private Button logoutBtn;
+    private Button logoutBtn; // Logout button variable.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,7 +112,6 @@ public class LoginActivity extends AppCompatActivity {
                     return true;
 
                 default:
-
                     return super.onOptionsItemSelected(item);
             }
         }
@@ -151,10 +150,9 @@ public class LoginActivity extends AppCompatActivity {
         } 
         
         else {
-
             emailAddressField.setError(null); // Set no error otherwise
-            login();
-            return true;
+            login(); // Log the user in.
+            return true; // Return true.
         }
     }
 
@@ -253,7 +251,6 @@ public class LoginActivity extends AppCompatActivity {
         try {
             Intent homeIntent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(homeIntent);
-
         }
         
         catch (ActivityNotFoundException act) {
