@@ -13,15 +13,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.BusinessObjects.Products;
 import com.example.weshopapplication.R;
-
 import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,7 +30,7 @@ import java.util.Map;
 
 public class BasketActivity extends AppCompatActivity implements View.OnClickListener { // The basket activity inherits from the AppCompat Activity and implements the methods for the view on click listener.
     private Button placeOrderBtn; // Variable for the place order button
-    private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<>();
+    private HashMap<Integer, Products> listOfProductsToAddToBasket = new HashMap<>(); // A HashMap of products to add to the basket
 
     protected void onCreate(Bundle savedInstanceState) { // Android LifeCycle method. onCreate()
         super.onCreate(savedInstanceState);
@@ -54,8 +50,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
                 View view = super.getView(position, convertView, parent);
 
                 TextView tv = view.findViewById(android.R.id.text1);
-
-                tv.setTextColor(Color.WHITE); // Change the colour of the list view.
+                tv.setTextColor(Color.WHITE); // Changes the colour of the list view to white.
 
                 return view; // Return the view
             }
@@ -64,8 +59,8 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
         ListView view = findViewById(R.id.listViewBasket); // Find the list view component
         view.setAdapter(arrayAdapter); // Set its adapter
 
-        for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // Loop over the hash map of products.
-            arrayAdapter.add(entry.toString()); // Add the entries to the adapter list.
+        for (Map.Entry<Integer, Products> entry : hashMap.entrySet()) { // For every entry in the Hash Map
+            arrayAdapter.add(entry.toString()); // Add the entries to the basket.
         }
     }
 
@@ -111,6 +106,7 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
                             }
                         }).setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                             @Override
+                    
                             public void onClick(DialogInterface dialog, int which) {
 
                                 Intent checkOutActivity = new Intent(BasketActivity.this, PaymentActivity.class); // Create an intent to switch from the basket activity to the payment activity if the customer is happy with their basket.
@@ -122,7 +118,9 @@ public class BasketActivity extends AppCompatActivity implements View.OnClickLis
                 builder.show(); // Show the dialogue.
                 builder.setCancelable(true); // User can click outside the alert dialogue to close it.
             }
-        } catch (ActivityNotFoundException exc) { // Catch the error if there is no activity.
+        } 
+        
+        catch (ActivityNotFoundException exc) { // Catch the error if there is no activity.
             Log.d(String.valueOf(R.string.error), exc.toString()); // Log the error to the console.
         }
     }
