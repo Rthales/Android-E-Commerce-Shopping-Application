@@ -17,17 +17,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
 import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -37,8 +34,8 @@ import java.util.HashMap;
 // Any Errors? Currently None
 
 public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    private int current_product_id = 1;
-    private ImageView cartIcon;
+    private int current_product_id = 1; // The current product ID is 1.
+    private ImageView cartIcon; // The cart icon image view
 
     private TextView sportsOutdoorsTxtTwo;
     private ImageView thirdSportsOutdoorsImg;
@@ -67,7 +64,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     private TextView fourthSportsOutdoorsQuantityLbl;
 
     private Spinner fourthSportsOutdoorsQuantityMenu;
-    private Button fourthAddToBasketBtn;
+    private Button fourthAddToBasketBtn; // Button to add the fourth product to the basket.
 
     private double[] thirdProductCosts = {0.00, 60.00, 120.00, 240.00, 480.00, 1020.00}; // The costs for the third product
     private double[] fourthProductCosts = {0.00, 100.00, 200.00, 400.00, 800.00, 1600.00}; // Costs for the fourth product
@@ -88,8 +85,8 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
     private QuantitiesArrayAdapter quantitiesAdapter;
     private SizeArrayAdapter sizesAdapter;
+    
     private ColourArrayAdapter coloursAdapter;
-
     private HashMap<Integer, Products> listOfProductsToAddToBasket; // A HashMap to store the products when adding to the basket
 
     @Override
@@ -143,7 +140,7 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
         addToColoursListOne();
         addToColoursListTwo();
-
+        
         addToQuantitiesList();
         addToQuantitiesListTwo();
         addToSizesListOne();
@@ -395,7 +392,9 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
                 try {
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
-                } catch (InterruptedException exc) {
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -449,21 +448,29 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
             thirdSportsOutdoorsCostLbl.setText(null);
             thirdSportsOutdoorsCostLbl.append(productResources[0] + (thirdProductCosts[0]));
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[1]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[1]))) {
             thirdSportsOutdoorsCostLbl.setText(null);
 
             thirdSportsOutdoorsCostLbl.setText(productResources[0] + (thirdProductCosts[1]));
             valueAppended = true; // Value is appended
 
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[2]))) {
             thirdSportsOutdoorsCostLbl.setText(null);
             thirdSportsOutdoorsCostLbl.append(productResources[0] + thirdProductCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[3]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[3]))) {
             thirdSportsOutdoorsCostLbl.setText(null);
             thirdSportsOutdoorsCostLbl.append(productResources[0] + thirdProductCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesOne.get(indexes[4]))) {
             thirdSportsOutdoorsCostLbl.setText(null);
             thirdSportsOutdoorsCostLbl.append(productResources[0] + thirdProductCosts[4]);
             valueAppended = true;
@@ -474,19 +481,27 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
             fourthSportsOutdoorsCostLbl.setText(null);
             fourthSportsOutdoorsCostLbl.append(productResources[0] + fourthProductCosts[0]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[1]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[1]))) {
             fourthSportsOutdoorsCostLbl.setText(null);
             fourthSportsOutdoorsCostLbl.append(productResources[0] + fourthProductCosts[1]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[2]))) {
             fourthSportsOutdoorsCostLbl.setText(null);
             fourthSportsOutdoorsCostLbl.append(productResources[0] + fourthProductCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[3]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[3]))) {
             fourthSportsOutdoorsCostLbl.setText(null);
             fourthSportsOutdoorsCostLbl.append(productResources[0] + fourthProductCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfQuantitiesTwo.get(indexes[4]))) {
             fourthSportsOutdoorsCostLbl.setText(null);
             fourthSportsOutdoorsCostLbl.append(productResources[0] + fourthProductCosts[4]);
             valueAppended = true;
@@ -496,8 +511,8 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
     public boolean onOptionsItemSelected(MenuItem item) {
 
         try {
-
             switch (item.getItemId()) {
+                    
                 case R.id.sportsAndOutdoorsCategory:
                     Intent sportsCategory = new Intent(SportsAndOutdoorsActivityTwo.this, SportsAndOutdoorsActivity.class);
                     startActivity(sportsCategory);
@@ -521,9 +536,10 @@ public class SportsAndOutdoorsActivityTwo extends AppCompatActivity implements A
 
                 default:
                     super.onOptionsItemSelected(item);
-
             }
-        } catch (ActivityNotFoundException exc) {
+        } 
+        
+        catch (ActivityNotFoundException exc) {
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
 
