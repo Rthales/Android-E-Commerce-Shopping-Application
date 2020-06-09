@@ -18,10 +18,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.BusinessObjects.Months;
 import com.example.weshopapplication.BusinessObjects.MonthsArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
@@ -30,7 +28,6 @@ import com.example.weshopapplication.BusinessObjects.Years;
 import com.example.weshopapplication.BusinessObjects.YearsArrayAdapter;
 import com.example.weshopapplication.DataLayer.PaymentDatabase;
 import com.example.weshopapplication.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -44,21 +41,23 @@ import java.util.regex.Pattern;
 public class PaymentActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private RadioGroup paymentGroup;
     private RadioButton visaPayment;
-    private int cardCVVLength = 3;
+    
+    private int cardCVVLength = 3; // The length of the Card Security Code must not exceed 3.
     private PaymentDatabase paymentDatabase;
-
+    
     private RadioButton masterCardPayment;
-
     private EditText emailAddressField;
-    private EditText cardNumber;
+    
+    private EditText cardNumber; // The Card Number input field.
     private EditText cardCVV;
+    
     private EditText cardholdersName;
-
-    private ImageView cartIcon;
-    private Button paypalBtn;
-
+    private ImageView cartIcon; // The Cart Icon Image View.
+    
+    private Button paypalBtn; // PayPal button option that allows customers to buy a product with PayPal.
     private TextView expiryMonthLbl;
-    private Spinner monthMenu;
+    
+    private Spinner monthMenu; // Expiry Month drop-down menu options.
     private Spinner yearsMenu;
 
     private MonthsArrayAdapter monthsArrayAdapter;
@@ -67,20 +66,20 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
     private ArrayList<Months> listOfMonths = null; // An array list of months to add to the spinner
     private ArrayList<Years> listOfYears = null;
 
-    private boolean isEmpty = false;
+    private boolean isEmpty = false; // Determines if the fields have been left empty or not.
     private boolean isValid = false;
     private boolean paymentOptionChosen = false;
 
-    private boolean isMonthChosen;
+    private boolean isMonthChosen; // Determines if the expiry month has been chosen.
     private boolean isYearChosen;
 
     private boolean exceedsLength;
-    private boolean hasRegex;
+    private boolean hasRegex; // Determines if the field contains any regular expression characters.
+    
     private boolean hasSpace;
-
     private boolean hasDigits;
-
     private Button confirmPaymentBtn;
+    
     private Pattern regexPatterns = Pattern.compile("[$&+,:;=\\\\?@#|/'<>.^*()%!-]"); // Regex patterns
     private HashMap<Integer, Products> orderSummary = new HashMap<>(); // A Hash Map data structure that stores the order summary.
 
@@ -90,7 +89,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         setContentView(R.layout.activity_payment);
         this.paymentGroup = findViewById(R.id.paymentGroup);
 
-        this.listOfMonths = new ArrayList<>();
+        this.listOfMonths = new ArrayList<>(); // Creates a new array list of months.
         this.listOfYears = new ArrayList<>();
 
         this.visaPayment = findViewById(R.id.visaOption);
@@ -128,12 +127,13 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         this.paypalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                
                 try {
-
                     Intent paypalGateway = new Intent(PaymentActivity.this, PaypalPaymentGateway.class);
-                    startActivity(paypalGateway);
-
-                } catch (ActivityNotFoundException exc) {
+                    startActivity(paypalGateway); // Start the activity.
+                } 
+                
+                catch (ActivityNotFoundException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
             }
@@ -151,6 +151,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                                 .setTitle(R.string.paymentErrorTitle)
                                 .setMessage(R.string.expiryDateError)
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                    
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
                                         if (dialog != null) {
@@ -164,7 +165,9 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
                         isMonthChosen = false;
                         isYearChosen = false;
-                    } else {
+                    }
+                    
+                    else {
                         isMonthChosen = true;
                         isYearChosen = true;
                     }
@@ -187,6 +190,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                     .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            
                             if (dialog != null) {
                                 dialog.dismiss();
                             }
@@ -195,18 +199,20 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
             paymentError.show();
             paymentError.setCancelable(true);
-
+            
             paymentOptionChosen = false;
             isValid = false;
 
             return true;
-        } else {
+        } 
+        
+        else {
             isValid = true;
             paymentOptionChosen = true;
         }
 
-        if (isValid && paymentOptionChosen) {
-            validateEmailAddress();
+        if (isValid && paymentOptionChosen) { // If the field is valid and the payment option is chosen
+            validateEmailAddress(); // Invoke routine to validate the E-mail Address.
         }
 
         return true;
@@ -224,7 +230,9 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
             isEmpty = true; // Is empty is true.
             isValid = false;
-        } else {
+        }
+        
+        else {
             isEmpty = false;
             isValid = true;
         }
@@ -236,9 +244,9 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
         return true;
     }
 
-    private boolean validateCardNumber() {
+    private boolean validateCardNumber() { // Routine that validates the card number enterd by the user. Returns true or false.
         int cardLength = 20;
-        String cardInput = cardNumber.getText().toString();
+        String cardInput = cardNumber.getText().toString(); // Gets the card input as a string.
         Context context = getApplicationContext();
 
         String[] paymentErrors = new String[]{context.getString(R.string.cardEmpty)
@@ -251,12 +259,14 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
             isEmpty = true;
             isValid = false;
-        } else {
-            isEmpty = false;
+        }
+        
+        else {
+            isEmpty = false; // Otherwise the field is not left empty and it's valid.
             isValid = true;
         }
 
-        for (int i = 0; i < cardInput.length(); i++) {
+        for (int i = 0; i < cardInput.length(); i++) { // Loop over the card input field length.
 
             if (!Character.isDigit(cardInput.charAt(i))) { // If there are no digits or there is no space in between the digits
 
@@ -278,21 +288,22 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
                 isValid = false;
                 break;
-            } else {
+            } 
+            
+            else {
                 hasDigits = true;
                 exceedsLength = false;
                 isValid = true;
             }
 
-            if (hasDigits && isValid && !isEmpty && !exceedsLength) {
-                validateCardCVV();
+            if (hasDigits && isValid && !isEmpty && !exceedsLength) { // If the card has digits, is valid, is not left empty and does not exceed the length
+                validateCardCVV(); // Validate the Card security code.
                 break;
             }
         }
 
         return true;
     }
-
 
     private boolean validateCardCVV() {
         Context context = getApplicationContext();
@@ -308,7 +319,7 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
             isValid = false;
         }
 
-        if (cardCVVInput.length() > cardCVVLength) { // If the length of the Card CVV is > 20
+        if (cardCVVInput.length() > cardCVVLength) { // If the length of the Card CVV is > 3
             cardCVV.setText(cardCVVResources[1]); // Set the error
             cardCVV.setError(cardCVVResources[2]);
 
@@ -344,14 +355,16 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
 
             hasRegex = true; // Has regex flag is true.
             isValid = false;
-        } else {
+        } 
+        
+        else {
             isEmpty = false;
             isValid = true;
             hasRegex = false;
         }
 
         if (!hasRegex && isValid && !isEmpty) { // If the field does not have special characters, has no digits and is not empty
-            sendPaymentInvoice();
+            sendPaymentInvoice(); // Invoke routine to send the payment invoice.
         }
 
         return true;
@@ -396,7 +409,9 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
             Intent homeActivity = new Intent(PaymentActivity.this, MainActivity.class);
             startActivity(homeActivity);
 
-        } catch (ActivityNotFoundException exc) { // Catch the error if the activity does not exist.
+        } 
+        
+        catch (ActivityNotFoundException exc) { // Catch the error if the activity does not exist.
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
     }
@@ -514,10 +529,11 @@ public class PaymentActivity extends AppCompatActivity implements AdapterView.On
                     return true;
 
                 default:
-
-                    return super.onOptionsItemSelected(item); // Return the base item selected
+                   return super.onOptionsItemSelected(item); // Return the base item selected
             }
-        } catch (ActivityNotFoundException act) {
+        } 
+        
+        catch (ActivityNotFoundException act) {
             Log.d(String.valueOf(R.string.error), act.toString()); // Get the cause of the error.
         }
 
