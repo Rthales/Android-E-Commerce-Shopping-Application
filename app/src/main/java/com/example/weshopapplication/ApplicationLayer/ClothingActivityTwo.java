@@ -16,17 +16,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.weshopapplication.BusinessObjects.ColourArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Products;
 import com.example.weshopapplication.BusinessObjects.QuantitiesArrayAdapter;
 import com.example.weshopapplication.BusinessObjects.Size;
 import com.example.weshopapplication.BusinessObjects.SizeArrayAdapter;
 import com.example.weshopapplication.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -40,7 +37,7 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     private ImageView cartIcon; // The Basket Icon.
 
     private TextView clothingThirdProductTxt; // The text for the third Clothing Product
-    private ImageView clothingThirdProductImg;
+    private ImageView clothingThirdProductImg; // The third product image.
 
     private TextView clothingThirdProductColourLbl;
 
@@ -49,7 +46,7 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
     private TextView clothingThirdProductSizeLbl; // The size for the clothing third product.
     private Spinner clothingThirdProductSizeMenu;
-    private TextView clothingFourthProductCostLbl;
+    private TextView clothingFourthProductCostLbl; // The label for the fourth product.
 
     private TextView clothingThirdProductQuantityLbl;
     private Spinner clothingThirdProductQuantityMenu;
@@ -69,7 +66,7 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     private Button clothingFourthProductAddToBasketBtn;
 
     private double[] clothingThirdProductCosts = new double[]{0.00, 30.00, 60.00, 120.00, 240.00, 480.00}; // This double array stores the costs for the third product
-    private double[] clothingFourthProductCosts = new double[]{0.00, 40.00, 80.00, 160.00, 320.00, 640.00};
+    private double[] clothingFourthProductCosts = new double[]{0.00, 40.00, 80.00, 160.00, 320.00, 640.00}; // The product costs for the fourth products.
 
     private QuantitiesArrayAdapter quantitiesAdapter;
     private ColourArrayAdapter coloursAdapter;
@@ -84,7 +81,7 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
     private ArrayList<TechActivity.Quantities> listOfClothingQuantitiesTwo = null;
 
     private boolean coloursAdded = false; // Boolean variable that stores either true or false if the colours have been added to the array list
-    private boolean quantitiesAdded = false;
+    private boolean quantitiesAdded = false; // Boolean variables that stores either true or false when the quantities have been added to the Array List.
     private boolean sizesAdded = false; // Boolean variable that stores true or false if the sizes have been added.
 
     private HashMap<Integer, Products> listOfProductsToAddToBasket; // A hash map that stores the product id and the product instance.
@@ -123,15 +120,15 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         this.clothingFourthProductQuantityMenu = findViewById(R.id.clothingFourthProductQuantityMenu);
 
         this.clothingFourthProductAddToBasketBtn = findViewById(R.id.clothingFourthProductAddToBasketBtn);
-
-        this.listOfClothingColoursOne = new ArrayList<>();
-        this.listOfClothingSizesOne = new ArrayList<>();
+        this.listOfClothingColoursOne = new ArrayList<>(); // Creates a new array list of colours
+        
+        this.listOfClothingSizesOne = new ArrayList<>(); // Creates a new array list of clothing sizes.
         this.listOfClothingQuantitiesOne = new ArrayList<>();
-
+        
         this.listOfClothingColoursTwo = new ArrayList<>();
         this.listOfClothingSizesTwo = new ArrayList<>();
+        
         this.listOfClothingQuantitiesTwo = new ArrayList<>();
-
         this.listOfProductsToAddToBasket = new HashMap<>();
 
         addToColoursList(); // Routine that adds the colours to the array list
@@ -198,7 +195,9 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
                         error.show(); // Show the error.
                         error.setCancelable(true);
-                    } else {
+                    } 
+                    
+                    else {
                         clothingAddToBasketThree(); // Otherwise add the product to the basket.
                     }
                 }
@@ -208,13 +207,13 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         this.clothingFourthProductAddToBasketBtn.setOnClickListener(new View.OnClickListener() { // Adds an on click listener for the fourth product.
             @Override
             public void onClick(View fourthBtn) {
+                
                 if (fourthBtn.getId() == R.id.clothingFourthProductAddToBasketBtn) {
 
                     if (clothingFourthProductColourMenu.getSelectedItemPosition() == 0 || clothingFourthProductSizeMenu.getSelectedItemPosition() == 0 || clothingFourthProductQuantityMenu.getSelectedItemPosition() == 0) {
                         AlertDialog.Builder error = new AlertDialog.Builder(ClothingActivityTwo.this)
-                                .setTitle(R.string.error)
+                                .setTitle(R.string.error) // Set the title of the dialogue
                                 .setMessage(R.string.errorMsg)
-
                                 .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
@@ -226,13 +225,14 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
                         error.show();
                         error.setCancelable(true);
-                    } else {
+                    }
+                    
+                    else {
                         clothingAddToBasketFour();
                     }
                 }
             }
         });
-
     }
 
     @Override
@@ -244,8 +244,7 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.basket_action_button, menu);
 
-        View view = menu.findItem(R.id.cart_menu).getActionView();
-
+        View view = menu.findItem(R.id.cart_menu).getActionView(); // Get the action view from the cart.
         cartIcon = view.findViewById(R.id.cart_icon);
 
         cartIcon.setOnClickListener(new View.OnClickListener() { // Add an action listener to the cart icon
@@ -265,15 +264,15 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
         try {
             switch (item.getItemId()) {
+                    
                 case R.id.sportsAndOutdoorsCategory: // If the sports and outdoors activity is chosen
                     Intent sportsCategory = new Intent(ClothingActivityTwo.this, SportsAndOutdoorsActivity.class);
                     startActivity(sportsCategory); // Start that activity
-
                     break;
 
-                case R.id.techCategory:
-                    Intent techActivity = new Intent(ClothingActivityTwo.this, TechActivity.class);
-                    startActivity(techActivity);
+                case R.id.techCategory: // When the tech category is chosen
+                    Intent techActivity = new Intent(ClothingActivityTwo.this, TechActivity.class); // Create a new intent
+                    startActivity(techActivity); // Start that activity
                     break;
 
                 case R.id.clothingCategory:
@@ -290,7 +289,9 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
                     super.onOptionsItemSelected(item);
 
             }
-        } catch (ActivityNotFoundException exc) {
+        } 
+        
+        catch (ActivityNotFoundException exc) {
             Log.d(String.valueOf(R.string.error), exc.toString());
         }
 
@@ -327,13 +328,13 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
         Size[] sizes = new Size[]{new Size(0, clothingSizes[0]), new Size(1, clothingSizes[1]), new Size(2, clothingSizes[2]), new Size(3, clothingSizes[3]), new Size(4, clothingSizes[4])};
 
-        for (Size theSizes : sizes) {
-            listOfClothingSizesOne.add(theSizes);
+        for (Size theSizes : sizes) { // For every size
+            listOfClothingSizesOne.add(theSizes); // Add it to the array list
             listOfClothingSizesTwo.add(theSizes);
             sizes_added = true;
         }
 
-        return true;
+        return true; // Return true
     }
 
     private boolean addToQuantitiesListOne() { // Adds to the quantities array list
@@ -380,8 +381,8 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
 
         final ProgressDialog dialog = new ProgressDialog(ClothingActivityTwo.this); // Spinning progress dialog
         dialog.setTitle(temp[0]); // Set the title of the dialog
+        
         dialog.setMessage(temp[1]);
-
         dialog.setCancelable(false);
 
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER); // Sets the style of the progress bar
@@ -393,7 +394,9 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
                 try {
 
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
-                } catch (InterruptedException exc) {
+                }
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -428,9 +431,11 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
             @Override
             public void run() {
                 try {
-
+                    
                     Thread.sleep(1900); // Sleep for 1.9 seconds.
-                } catch (InterruptedException exc) {
+                } 
+                
+                catch (InterruptedException exc) {
                     Log.d(String.valueOf(R.string.error), exc.toString());
                 }
 
@@ -461,20 +466,28 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
             clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[0]); // Append the product cost. Product Cost £: 0.00
             valueAppended = true; // Value has been appended.
 
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[1]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[1]))) {
             clothingThirdProductCostLbl.setText(null);
             clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[1]);
             valueAppended = true; // Value is appended
 
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[2]))) {
             clothingThirdProductCostLbl.setText(null);
             clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[3]))) {
+        }
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[3]))) {
             clothingThirdProductCostLbl.setText(null);
             clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesOne.get(indexes[4]))) {
             clothingThirdProductCostLbl.setText(null);
             clothingThirdProductCostLbl.append(productResources[0] + clothingThirdProductCosts[4]);
             valueAppended = true;
@@ -484,19 +497,27 @@ public class ClothingActivityTwo extends AppCompatActivity implements AdapterVie
             clothingFourthProductCostLbl.setText(null);
             clothingFourthProductCostLbl.append(productResources[0] + clothingFourthProductCosts[0]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[1]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[1]))) {
             clothingFourthProductCostLbl.setText(null);
             clothingFourthProductCostLbl.append(productResources[0] + clothingFourthProductCosts[1]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[2]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[2]))) {
             clothingFourthProductCostLbl.setText(null);
             clothingFourthProductCostLbl.append(productResources[0] + clothingFourthProductCosts[2]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[3]))) {
+        }
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[3]))) {
             clothingFourthProductCostLbl.setText(null);
             clothingFourthProductCostLbl.append(productResources[0] + clothingFourthProductCosts[3]);
             valueAppended = true;
-        } else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[4]))) {
+        } 
+        
+        else if (parent.getItemAtPosition(position).equals(listOfClothingQuantitiesTwo.get(indexes[4]))) {
             clothingFourthProductCostLbl.setText(null);
             clothingFourthProductCostLbl.append(productResources[0] + clothingFourthProductCosts[4]);
             valueAppended = true;
