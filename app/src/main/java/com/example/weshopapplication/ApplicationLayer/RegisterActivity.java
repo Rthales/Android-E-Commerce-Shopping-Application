@@ -211,7 +211,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             
             isEmpty = true; // The field is empty
             isValid = false; // Is valid is false.
-
         }
 
         for (int i = 0; i < usernameInputField.length(); i++) { // Loop over the username
@@ -251,8 +250,8 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                             @Override
 
                             public void onClick(DialogInterface dialog, int which) {
+                                
                                 if (dialog != null) {
-
                                     dialog.dismiss();
                                 }
                             }
@@ -264,7 +263,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
             } 
             
             else {
-
                 isValid = true;
                 usernameField.setError(null); // Set username error to null if no errors occur
             }
@@ -281,7 +279,7 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
         String emailAddressInputField = emailAddressField.getText().toString().trim(); // Get the input for the emailAddress
 
-        if (emailAddressInputField.isEmpty()) {
+        if (emailAddressInputField.isEmpty()) { // IF the E-mail Address field is left empty
 
             AlertDialog.Builder emailError = new AlertDialog.Builder(RegisterActivity.this).setTitle(emailAddressResources[0]).setMessage(emailAddressResources[1])
                     .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
@@ -330,14 +328,12 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
             emailRegexWarning.show();
             emailAddressField.setText(""); // Set the field to empty
+            
             isValid = false;
-
             return false;
-
         } 
         
         else {
-
             isValid = true; // Otherwise the
             return true;
         }
@@ -365,8 +361,8 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
             passwordWarning.show();
             passwordField.setText("");
-
             passwordField.setError(passwordResources[2]);
+            
             isEmpty = true; // Is empty is true
             hasRegex = false;
 
@@ -418,7 +414,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
             AlertDialog.Builder boxError = new AlertDialog.Builder(RegisterActivity.this).setTitle(termsAndConditionsResources[0])
                     .setMessage(termsAndConditionsResources[1])
-
                     .setNegativeButton(R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
 
@@ -440,10 +435,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
             writeToFirestore(); // Writes to firestore database
             showSpinningDialogue();
+            
             transitionToLogin(); // Take user to login page
-
             isRegistered = true;
-
         } 
         
         else {
@@ -489,7 +483,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
 
         dialog.show(); // Show the progress bar
     }
-
 
     private void sendNotification() { // Routine to send notification after registration
         int channelID = 12345; // The channel ID to send the notification on.
@@ -543,11 +536,9 @@ public class RegisterActivity extends AppCompatActivity { // Register class
                 if (task.isSuccessful()) { // If the register task is successful
 
                     Toast.makeText(RegisterActivity.this, "Data written to DB", Toast.LENGTH_LONG).show(); // Debug code.
-
                 } 
                 
                 else {
-
                     Toast.makeText(RegisterActivity.this, "Could not write to DB", Toast.LENGTH_LONG).show();
                 }
             }
@@ -559,7 +550,6 @@ public class RegisterActivity extends AppCompatActivity { // Register class
         String[] registrationResources = new String[]{context.getString(R.string.basket_username), context.getString(R.string.basket_email_address), context.getString(R.string.basket_password),
                 context.getString(R.string.collection_name)};
 
-        // Get the entries
         String usernameEntry = usernameField.getText().toString(); // Get the username entry
         String emailEntry = emailAddressField.getText().toString();
         String passwordEntry = passwordField.getText().toString();
