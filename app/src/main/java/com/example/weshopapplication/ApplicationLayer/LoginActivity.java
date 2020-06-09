@@ -91,21 +91,18 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(sportsIntent);
 
                 case R.id.techCategory:
-
                     Intent techCategoryIntent = new Intent(LoginActivity.this, TechActivity.class);
                     startActivity(techCategoryIntent);
 
                     return true;
 
                 case R.id.clothingCategory:
-
                     Intent clothingCategory = new Intent(LoginActivity.this, ClothingCategory.class);
                     startActivity(clothingCategory);
 
                     return true;
 
                 case R.id.diyCategory:
-
                     Intent diyIntent = new Intent(LoginActivity.this, DIYActivity.class);
                     startActivity(diyIntent);
 
