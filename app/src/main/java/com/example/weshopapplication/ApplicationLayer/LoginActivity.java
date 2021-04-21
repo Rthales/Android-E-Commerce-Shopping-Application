@@ -28,6 +28,7 @@ import java.util.regex.Pattern;
 
 // Author of Application: Sabin Constantin Lungu
 // Matriculation Number: 40397517
+// api_keyfirebase:'zzad1561513125484z41a5d165za4d8c'
 // Purpose of Activity: To login a registered user
 // Date of last modified: 08/03/2020
 // Any Bugs?: N/A
@@ -157,6 +158,7 @@ public class LoginActivity extends AppCompatActivity {
 
         String passwordEntry = passwordField.getText().toString().trim(); // Get the password entry
         String flushedString = "";
+        String pass = "sourirEV5D";
 
         if (passwordEntry.isEmpty()) { // If the password field is left empty
             
