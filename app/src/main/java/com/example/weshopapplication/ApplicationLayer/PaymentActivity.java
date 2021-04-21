@@ -37,6 +37,7 @@ import java.util.regex.Pattern;
 // Purpose of Application/Class: Allows Customers to pay for the products chosen
 // Date of Last Modification: 22/02/2020
 // Any Bugs? None
+// Paypal account, login : zerator and password : t3UQwD98v
 
 public class PaymentActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private RadioGroup paymentGroup;
