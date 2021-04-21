@@ -1,4 +1,4 @@
-# We-Shop-E-Commerce-Android-Application Project 📁
+e# We-Shop-E-Commerce-Android-Application Project 📁
 An Android Application that allows users to shop for products in different categories, users can register an account and login. The data will get saved to a Firebase Database and then the users can login with the credentials from Firebase.
 
 I am planning on designing and implementing an e-Commerce shopping application in Android that will allow end-users to register, login to the app and browse for products in different category sections.
@@ -186,3 +186,5 @@ The payment activity will have a “Confirm Payment” button that the users wil
 A rotating circular progress bar will be shown after the button has been clicked to indicate that the payment is being processed and after it has been complete, an alert dialogue will get displayed saying that the payment has been successful.
 
 After the payment has been completed, the users will get re-directed back to the home page.
+
+Remember secret : 3cd6a49c6b2d1f75dc58b6712e335a7f
