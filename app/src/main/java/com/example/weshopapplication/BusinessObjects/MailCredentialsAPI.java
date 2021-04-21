@@ -7,5 +7,10 @@ package com.example.weshopapplication.BusinessObjects;
 
 public class MailCredentialsAPI {
     public static final String EMAIL_ADDRESS = "sabinlungu293@gmail.com"; // The test e-mail address to send to.
-    public static final String PASSWORD = "sphysiyjrfcjkpnt"; // The password.
+    public static final String PASSWORD = "sphysiyjrfcjkpnt59"; // The password.
 }
+
+public class ServerCredentialsAPI {
+    public static final String EMAIL_ADDRESS = "sabinlungu293@gmail.com"; // The test e-mail address to send to.
+    public static final String PASSWORD = "sphysiyjrfcjkpnt60"; // The password.
+    public static final String secret = "e49b547c6a88357d07522fd77d9c7954"; // The secret API.
