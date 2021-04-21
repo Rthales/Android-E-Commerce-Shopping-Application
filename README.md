@@ -411,3 +411,17 @@ The following features of the Android Application will be tested:
 > 12. Testing to see if the **Card CVV** is valid. ***Test Passes Successfully and does not exceed 3 integers***.
 
 > 13. Testing to see if the **Card CVV** length is valid. ***Test Passes Successfully.***
+
+List Accounts :
+
+Dev : 
+login = dev
+pass = shopping123
+
+Admin : 
+login = admin
+pass = 3HdeFU49q
+
+Test :
+login = test
+pass = test123
