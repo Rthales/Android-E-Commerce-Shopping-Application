@@ -59,6 +59,12 @@ public class ContactUsDatabase {
 
         Cursor cursor = db.query(TABLE_NAME, new String[]{"id", "username", "email", "phone_number", "problem"}, null, null, null, null, "username ASC");
 
+        // id = 1
+        // username = administrator
+        // email = test@test.test
+        // phone_number = 061232451265
+        // password = administrator123456
+        
         int index = 0;
 
         if (cursor.moveToFirst()) {
